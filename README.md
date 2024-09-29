@@ -1,6 +1,6 @@
 # **Trainee 2024.2**
 
-# **Nome do seu blog**
+# **CartoonVerse**
 
 ## **Projeto Trainee, Code Jr, Grupo 000, 2024.2**
 
@@ -13,16 +13,15 @@
 
 #### Desenvolvedores:
 
-* Trainee 1
-* Trainee 2
-* Trainee 3
-* Trainee 4
-* Trainee 5
+* Carlos Eduardo
+* Geovanni Dias
+* Pablo Henrique
+* Rafael Rocha
 
 
 #### Scrum Master:
 
-* [Nome do Scrum](coloque o link do github, se quiser).
+* [Caio Reis](https://github.com/caioangel)
 
 #### Links Úteis:
 
