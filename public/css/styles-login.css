@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: red;
+  font-size: 72;
+  color: rgba(19, 172, 177, 1);
+}
+
+#background-image img {
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  width: 100%;
+  margin: 40px 40px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+#login {
+  border: 1px solid green;
+}
+
+h1 {
+  font-size: 80px;
+}
+p {
+  font-size: 40px;
+}
+
+#logo {
+  width: 50%;
+}
+
+h1 {
+  border: 1px solid red;
+}
