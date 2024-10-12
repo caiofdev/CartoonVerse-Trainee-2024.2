@@ -1,0 +1,14 @@
+@font-face {
+  font-family: comiccartoon;
+  src: url(../assets/fonts/Comicartoon-3DExtrude.ttf);
+}
+
+@font-face {
+  font-family: sugar-bread;
+  src: url(../assets/fonts/Sugar\ Bread.otf);
+}
+
+@font-face {
+  font-family: open-sans;
+  src: url(../assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf);
+}

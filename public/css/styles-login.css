@@ -10,32 +10,64 @@ body {
   color: rgba(19, 172, 177, 1);
 }
 
-#background-image img {
-  width: 100%;
-  height: 100%;
+h1 {
+  font-size: 80px;
+  font-family: comiccartoon;
+}
+p {
+  font-size: 40px;
+  font-family: open-sans;
 }
 
 #container {
   width: 100%;
+  height: 1000px;
   margin: 40px 40px;
   border: 1px solid red;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: auto;
 }
 
 #login {
+  width: 100%;
+  height: 100%;
   border: 1px solid green;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
-h1 {
-  font-size: 80px;
+#campos {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-p {
-  font-size: 40px;
+
+.input {
+  width: 100%;
+  border: 0;
+  border-radius: 30px;
+  box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+button {
+  color: rgba(19, 172, 177, 1);
+  font-family: sugar-bread;
+  font-size: 48px;
+  width: 100%;
+  background: white;
+  border: 0;
+  border-radius: 30px;
+  box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 #logo {
-  width: 50%;
+  width: 40%;
 }
 
 h1 {
