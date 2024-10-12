@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,16 +16,24 @@
     <link rel="stylesheet" href="../../../public/css/fonts.css">
   </head>
   <body>
-    <div id="container">
-      <div id="login">
-        <h1>LOGIN</h1>
-        <div id="campos">
-          <p>Email:</p>
-          <input type="text" class="input email" />
-          <p>Senha:</p>
-          <input type="text" class="input senha" />
-        </div>
-        <button type="button">Login</button>
+    <div id="pagina-login">
+      <div class="formulario">
+        <form action="/pagina-dos-dados" method="post">
+          <div>
+            <label for="titulo" id="titulo">LOGIN</label>
+          </div>
+          <div class="input formulario">
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+          </div>
+          <div class="input formulario">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha">
+          </div>
+          <div class="button formulario">
+            <button type="submit">Login</button>
+          </div>
+        </form>
       </div>
       <!-- add linha -->
       <div id="logo">
