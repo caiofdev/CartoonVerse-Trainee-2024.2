@@ -77,12 +77,13 @@ body {
 
 .load-more button {
     background-color: #D9D9D9;
-    border: 2px solid #b8958d;
+    border: 2px;
     padding: 1% 1.2%;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 20px;
     transition: background-color 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .load-more button p {
