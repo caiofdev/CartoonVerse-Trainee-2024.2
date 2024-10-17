@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Comicartoon-regular";
+    src: url(../assets/Comicartoon-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Comicartoon-extrude";
+    src: url(../assets/Comicartoon-3DExtrude.ttf) format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.footer {
+    background-color: rgba(0, 0, 0, .2);
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: 28px 20px 0px 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 400px;
+    height: 100vh;
+    
+}
+.footer div {
+    display: flex;
+    width: 801px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+.footer ul {
+    /* font-family: "Inter"; */
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 36px;
+    font-style: normal;
+    color: black;
+    text-align: center;
+    line-height: normal;
+    gap: 24px;
+    list-style: none;
+}
+.footer li {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.footer #pilares {
+    display: flex;
+    width: 121px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer img {
+    width: 242px;
+    height: 55.929px;
+}
+
