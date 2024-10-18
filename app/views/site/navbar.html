@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/css/navbar_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Navbar</title>
 </head>
 
 <body>
+    <div class="off-screen-hamb-menu">
+        <ul>
+            <li>
+                <div id="home"></div> <a href="#">Home</a>
+            </li>
+            <li>
+                <div id="posts"></div> <a href="#">Posts</a>
+            </li>
+            <li>
+                <div id="login"></div> <a href="#">Login</a>
+            </li>
+        </ul>
+    </div>
 
     <nav class="navbar">
-        <div class="hamb-menu">
-            <svg >
-                <path d="M0 0H28V4.66667H0V0ZM0 11.6667H28V16.3333H0V11.6667ZM0 23.3333H28V28H0V23.3333Z" fill="black"/>
-            </svg>
+        <div class="hamb-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <!-- Desktop version -> media rule -->
         <div class="left-side-desktop">
@@ -39,6 +55,6 @@
             </a>
         </div>
     </nav>
-
+    <script src="../../../public/js/navbar.js"></script>
 </body>
 </html>

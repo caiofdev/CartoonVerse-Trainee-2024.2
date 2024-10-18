@@ -22,7 +22,7 @@ html, main {
 }
 
 .footer {
-    background: rgba(0, 0, 0, 0.2);
+    background: #4A5759;
     height: 696px;
     display: flex;
     flex-direction: column;
@@ -53,12 +53,17 @@ html, main {
     justify-content: center;
     align-items: center;
 }
+.footer ul {
+    color: white;
+}
 .footer ul li a {
-    color: black;
+    color: white;
     text-decoration: none;
+    display: flex;
+    align-items: flex-end;
 }
 .footer ul li a:hover {
-    color: white;
+    color: black;
 }
 .codejr-logo {
     width: 242px;
@@ -69,12 +74,33 @@ html, main {
 @media (min-width: 768px) {
     .footer {
         flex-direction: row;
+        font-weight: 700;
         padding: 28px 20px 0px 20px;
         align-items: flex-start;
         height: 284px;
     }
     .footer ul {
+        font-family: "Inter";
+        font-weight: 700;
         font-size: 36px;
     }
-    
+    .footer li {
+        font-family: "Inter";
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .div-pilares {
+        margin-left: auto;
+    }
+    .div-contatos {
+        margin-left: auto;
+    }
+    .div-contatos a {
+        align-items: center;
+    }
+    .codejr-logo {
+        margin-left: 107px;
+    }
 }
