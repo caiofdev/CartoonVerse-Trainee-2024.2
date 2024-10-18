@@ -11,50 +11,64 @@
 </head>
 
 <body>
-    <div class="off-screen-hamb-menu">
-        <ul>
-            <li>
-                <div id="home"></div> <a href="#">Home</a>
-            </li>
-            <li>
-                <div id="posts"></div> <a href="#">Posts</a>
-            </li>
-            <li>
-                <div id="login"></div> <a href="#">Login</a>
-            </li>
-        </ul>
-    </div>
+    <header>
+        <div class="off-screen-hamb-menu">
+            <ul>
+                <li>
+                    <div id="home">
+                        <img src="../../../public/assets/Home-light.png" alt="">
+                        <a href="#">Home</a>
+                        <span></span>
+                    </div>
+                </li>
+                <li>
+                    <div id="posts">
+                        <img src="../../../public/assets/Activity-feed-light.png" alt="">
+                        <p><a href="#">Posts</a></p>
+                        <span></span>
+                    </div>
+                </li>
+                <li>
+                    <div id="login">
+                        <img src="../../../public/assets/user2-light.png" alt="">
+                        <a href="#">Login</a>
+                        <span></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    <nav class="navbar">
-        <div class="hamb-menu" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <!-- Desktop version -> media rule -->
-        <div class="left-side-desktop">
-            <a href="#" id="home">
-                <div></div>
+        <nav class="navbar">
+            <div class="hamb-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Desktop version -> media rule -->
+            <div class="left-side-desktop">
+                <a href="#" id="home">
+                    <div></div>
+                </a>
+                <a href="#" id="posts">Posts</a>
+            </div>
+            
+            <a class='logo-link' href="#">
+                <div class="logo"></div>
             </a>
-            <a href="#" id="posts">Posts</a>
-        </div>
-        
-        <a class='logo-link' href="#">
-            <div class="logo"></div>
-        </a>
-        <a class='phone-right-side' href="#">
-            <div id="search"></div>
-        </a>
-        <!-- Desktop version -> media rule -->
-        <div class="right-side-desktop">
-            <a href="#">
+            <a class='phone-right-side' href="#">
                 <div id="search"></div>
             </a>
-            <a href="#">
-                <div id="profile"></div>
-            </a>
-        </div>
-    </nav>
+            <!-- Desktop version -> media rule -->
+            <div class="right-side-desktop">
+                <a href="#">
+                    <div id="search"></div>
+                </a>
+                <a href="#">
+                    <div id="profile"></div>
+                </a>
+            </div>
+        </nav>
+    </header>
     <script src="../../../public/js/navbar.js"></script>
 </body>
 </html>
