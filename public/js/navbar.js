@@ -5,4 +5,8 @@ function toggleMenu(){
         menu.classList.toggle('active');
         offScreen.classList.toggle('active');
     })
+    offScreen.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        offScreen.classList.toggle('active');
+    })
 }

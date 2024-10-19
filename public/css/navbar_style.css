@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Sugarbread";
+    src: url(../assets/Sugar\ Bread.otf) format('opentype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +28,6 @@ a:hover {
     align-items: center;
     border-radius: 0 0 10px 10px;
     background: #4A5759;
-    /* height: 61px; */
 }
 
 .left-side-desktop{
@@ -44,7 +48,7 @@ a:hover {
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-
+    
 }
 .off-screen-hamb-menu {
     background-color: #4A5759;
@@ -52,33 +56,38 @@ a:hover {
     width: 100%;
     position: fixed;
     top: 0;
-    left: -450px;
+    left: -768px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: left;
 }
-.off-screen-hamb-menu div {
-    align-items: center;
-    margin-left: 20px;
-    /* padding-left: 20px; */
+.off-screen-hamb-menu #quit-div {
+    margin: 10px;
+    margin-left: auto;
+    width: 64px;
+    height: 64px;
+    background: url(../assets/close-light.png) center;
 }
-.off-screen-hamb-menu p {
-    border: 1px yellow solid;
+.off-screen-hamb-menu #sec-container {
     display: flex;
-    align-items: top;
+    align-items: flex-end;
+    text-align: left;
+    margin-left: 20px;
+    
+    gap: 12px;
+}
+.off-screen-hamb-menu #text-container a {
+    display: flex;
+    align-items: center;
+    font-family: "Sugarbread";
 }
 
 .off-screen-hamb-menu ul {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 111px;
-    margin-right: 20px;
-    padding-left: 20px;
-    gap: 35px;
-    /* margin-left: 20px; */
-    /* border: 1px solid red; */
+    padding: 10px;
 }
 .off-screen-hamb-menu li {
     display: flex;
@@ -88,21 +97,31 @@ a:hover {
     font-family: "Inter";
     font-size: 48px;
     font-weight: 700;
-    border: 1px solid blue;
-
 }
-.off-screen-hamb-menu p {
-    display: inline;
-    position: relative;
-    /* WORK ON ME! */
+.off-screen-hamb-menu #span-container {
+    display: block;
+    align-items: end;
+    padding: 35px 20px 35px 20px;
+    height: 35px;
+    width:  100%;
 }
-
 .off-screen-hamb-menu span {
     display: flex;
     height: 3px;
     width: 100%;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
     background-color: white;
+}
+.off-screen-hamb-menu #text-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.off-screen-hamb-menu img {
+    display: flex;
+    align-items: flex-start;
 }
 .off-screen-hamb-menu.active {
     left: 0;
@@ -111,12 +130,14 @@ a:hover {
 .hamb-menu {
     height: 28px;
     width: 28px;
-    /* margin-right: auto; */
     position: relative;
+}
+.hamb-menu.active {
+    display: none;
 }
 .hamb-menu span {
     height: 4px;
-    width: 100%;
+    width: 90%;
     background-color: black;
     position: absolute;
     top: 50%;
@@ -128,23 +149,6 @@ a:hover {
 }
 .hamb-menu span:nth-child(3) {
     top: 75%;
-}
-.hamb-menu.active {
-    position: absolute;
-    z-index: 100;
-    right: 0;
-    margin: 10px;
-}
-.hamb-menu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-.hamb-menu.active span:nth-child(2){
-    opacity: 0;
-}
-.hamb-menu.active span:nth-child(3){
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .logo {
@@ -184,7 +188,6 @@ a:hover {
 @media (min-width: 768px){
     .navbar{
         padding: 10px 35px 10px 35px;
-        /* height: 155px; */
     }
     .left-side-desktop{
         display: flex;
