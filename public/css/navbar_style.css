@@ -192,9 +192,7 @@ a {
 .left-side-desktop #posts:hover{
     color: black;
 }
-*:hover {
-    color: black;
-}
+
 .phone-right-side #search:hover {
     background: url(../assets/Search.png) no-repeat local center/cover;
 }
