@@ -5,14 +5,20 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   border: 1px solid red;
   font-family: open-sans;
   font-size: 40px;
   color: rgba(19, 172, 177, 1);
+  background-color: rgba(0, 0, 0, 1);
+  position: inherit;
+}
+
+#background {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.25;
 }
 
 #pagina-login {
@@ -68,6 +74,13 @@ button {
   box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.linhaVertical {
+  width: 4px;
+  height: 90vh;
+  background: white;
+}
+
 #logo {
-  width: 40%;
+  width: 50vh;
+  align-self: center;
 }
