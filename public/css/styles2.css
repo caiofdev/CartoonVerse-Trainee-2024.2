@@ -12,8 +12,8 @@ body {
 
 .fundo_title {
     text-align: center; 
-    width: 540px;  
-    height: 80px;
+    width: 588px;  
+    height: 191px;
     padding: 20px; 
     background-color: #4A5759; 
     color: #FFFFFF;
@@ -27,24 +27,23 @@ body {
 }
 
 .imagem_perfil {
-    margin-bottom: 20px;  
+    margin-bottom: 70px;  
     text-align: center; 
-    width: 540px;  
+    width: 588px;  
     height: 280px; 
 }
 .imagem_perfil img {
-
     border-radius: 20px; 
     object-fit: cover;
-    width: 540px;  
-    height: 280px;
+    width: 588px;  
+    height: 329px;
 
 }
 
 .perfil{
     border-radius: 20px; 
-    width: 540px;  
-    height: 400px; 
+    width: 580px;  
+    height: 510px; 
     background-color: #4A5759; 
     display: flex;
     padding: 10px;
@@ -53,15 +52,18 @@ body {
 .perfil img {
     width: 50px; 
     height: 50px;
-    margin: 50px; 
+    margin: 10px; 
 }
 
-.perfil p {
-    margin: 0;
-    padding-top: 10px;
-    line-height: 1.6; 
+.texto {
+    padding-left: 20px;
+    padding-right: 20px; 
+    padding-top: 20px; 
+    color: #FFFFFF;
 }
-.texte {
+.img_descricao {
+
+    color: #FFFFFF;
     display: flex;
     flex-direction: row;
 }
