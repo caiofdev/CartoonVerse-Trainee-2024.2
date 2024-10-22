@@ -5,8 +5,11 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
+  padding: 40px;
   border: 1px solid red;
   font-family: open-sans;
   font-size: 40px;
@@ -19,25 +22,33 @@ body {
   position: absolute;
   z-index: -1;
   opacity: 0.25;
+  left: 0;
+  top: 0;
 }
 
 #pagina-login {
   width: 100%;
   height: 100%;
-  margin: 40px 40px;
+  /* margin: 40px 40px; */
   /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
-  gap: auto;
+  align-content: center;
+  justify-content: space-between;
+  border: 1px solid green;
 }
 
 form {
+  width: 250%;
   display: grid;
-  margin: 0;
+  padding: 40px;
   height: 100%;
+  border: 1px solid blue;
+  border-right: 4px solid white;
 }
 
 #titulo {
+  display: block;
   font-family: comiccartoon;
   font-size: 80px;
   text-align: center;
@@ -83,4 +94,5 @@ button {
 #logo {
   width: 50vh;
   align-self: center;
+  border: 1px solid yellow; 
 }
