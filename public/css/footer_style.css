@@ -67,11 +67,12 @@ html, main {
     display: flex;
     align-items: flex-end;
 }
-.footer ul li a:hover {
-    color: white;
-    text-decoration: none;
+.footer ul li:hover a{
+    color: black;
+    /* text-decoration: none; */
     display: flex;
     align-items: flex-end;
+    /* background: url(../assets/Instagram-light.png) center; */
 }
 #pilares li:hover {
     color: black;
@@ -95,17 +96,14 @@ html, main {
 #x-div {
     background: url(../assets/TwitterX-light.png) center;
 }
-#ig-div:hover{
+.footer ul li:hover #ig-div{
     background: url(../assets/Instagram-dark.png) center;
 }
-#fb-div:hover{
+.footer ul li:hover #fb-div{
     background: url(../assets/Facebook-dark.png) center;
 }
-#x-div:hover{
+.footer ul li:hover #x-div{
     background: url(../assets/TwitterX-dark.png) center;
-}
-a:hover {
-    color: black;
 }
 
 .codejr-logo {
