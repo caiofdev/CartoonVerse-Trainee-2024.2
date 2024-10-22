@@ -45,6 +45,8 @@ li {
 .search-bar {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 20px;
     /* overflow: scroll; */
     width: 225px;
@@ -123,14 +125,9 @@ li {
     color: white;
     font-size: 15px;
 }
-.div-botao-mais a{
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-/* nao funciona? */
-.general-container a:hover {
-    color: black;
+.div-botao-mais:hover p{
+    /* background-color: aliceblue; */
+    color:black;
 }
 
 @media (min-width: 768px) {
@@ -149,18 +146,19 @@ li {
         justify-content: center;
         flex: 1 0 0;
     }
-    .posts-div li {
-        margin: 0 auto;
-    }
-    .posts-div div {
-        margin: 0 auto;
-    }
     .posts-div ul {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
-        justify-content: space-between;
+        justify-content: center;
+    }
+    .posts-div li {
+        margin: auto 0;
+    }
+    .posts-div div {
+        /* margin: 0 auto; */
+        width: 440px;
     }
     #post {
         width: 440px;
@@ -171,5 +169,4 @@ li {
         left: calc((100vw / 2) - (225px / 2));
         bottom: 20px;
     }
-
 }
