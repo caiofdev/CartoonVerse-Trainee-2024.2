@@ -1,5 +1,10 @@
 @font-face {
   font-family: comiccartoon;
+  src: url(../assets/fonts/Comicartoon-Regular.ttf);
+}
+
+@font-face {
+  font-family: comiccartoon-3d;
   src: url(../assets/fonts/Comicartoon-3DExtrude.ttf);
 }
 
