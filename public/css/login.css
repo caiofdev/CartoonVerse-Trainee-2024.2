@@ -4,12 +4,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --line-opacity: 0;
+  --pagina-login-display-direction: column;
+  --form-width: 280%;
+  --form-height: 100%;
+  --logo-order: -1;
+  --logo-width: 230px;
+}
+
+
 body {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 16px;
   /* border: 1px solid red; */
   font-family: open-sans;
   font-size: 40px;
@@ -32,19 +42,19 @@ body {
   /* margin: 40px 40px; */
   /* border: 1px solid red; */
   display: flex;
-  flex-direction: row;
+  flex-direction: var(--pagina-login-display-direction);
   align-content: center;
   justify-content: space-between;
   /* border: 1px solid green; */
 }
 
 form {
-  width: 280%;
+  width: var(--form-width);
+  height: var(--form-height);
   display: grid;
   padding: 20px;
-  height: 100%;
   /* border: 1px solid blue; */
-  border-right: 4px solid white;
+  border-right: 4px solid rgba(19, 172, 177, var(--line-opacity));
 }
 
 #titulo {
@@ -96,7 +106,19 @@ button {
 }
 
 #logo {
-  width: 494px;
+  width: var(--logo-width);
   align-self: center;
+  order: var(--logo-order);
   /* border: 1px solid yellow;  */
+}
+
+@media (min-width: 768px) {
+    :root {
+      --line-opacity: 1;
+      --pagina-login-display-direction: row;
+      --form-width: 280%;
+      --form-height: 100%;
+      --logo-order: 0;
+      --logo-width: 494px;
+    }
 }
