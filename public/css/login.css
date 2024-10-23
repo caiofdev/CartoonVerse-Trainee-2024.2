@@ -7,8 +7,10 @@
 :root {
   --line-opacity: 0;
   --pagina-login-display-direction: column;
-  --form-width: 280%;
+  --pagina-login-elements-gap: 8%;
+  --form-width: 100%;
   --form-height: 100%;
+  --input-height: 32px;
   --logo-order: -1;
   --logo-width: 200px;
 }
@@ -50,7 +52,8 @@ body {
   display: flex;
   flex-direction: var(--pagina-login-display-direction);
   align-content: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: var(--pagina-login-elements-gap);
   /* border: 1px solid green; */
 }
 
@@ -77,7 +80,7 @@ form {
 }
 
 .input input {
-  height: 32px;
+  height: var(--input-height);
   padding: 10px;
   border: transparent;
   border-radius: 30px;
@@ -122,8 +125,10 @@ button {
     :root {
       --line-opacity: 1;
       --pagina-login-display-direction: row;
+      --pagina-login-elements-gap: 40%;
       --form-width: 280%;
       --form-height: 100%;
+      --input-height: 32px;
       --logo-order: 0;
       --logo-width: 494px;
     }
