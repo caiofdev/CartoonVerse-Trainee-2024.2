@@ -32,7 +32,6 @@ body {
     height: 75%;
     width: 100%;
     object-fit: none;
-    
 }
 
 .hero h1 {
@@ -94,4 +93,28 @@ body {
 .load-more button:hover {
     background-color: #b8958d;
     color: white;
+}
+
+@media only screen and (max-width: 530px) {
+
+    .hero {
+        background-size: contain;
+        height: 50vh;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero img {
+        height: 65%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        font-family: 'Comicartoon', 'Comic Sans MS', sans-serif;
+        text-transform: uppercase;
+        
+    }
+
 }
