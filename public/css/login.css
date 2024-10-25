@@ -7,27 +7,45 @@
 :root {
   --line-opacity: 0;
   --pagina-login-display-direction: column;
-  --pagina-login-elements-gap: 8%;
+  --pagina-login-elements-gap: 2%;
   --form-width: 100%;
   --form-height: 100%;
-  --input-height: 32px;
+  --titulo-display: none;
+  --input-height: 44px;
+  --button-margin-top: 15%;
   --logo-order: -1;
-  --logo-width: 200px;
+  --logo-width: 160px;
 }
 
+body, html{
+  height: 100%;
+}
 
 body {
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   /* padding: 16px; */
   /* border: 1px solid red; */
-  font-family: open-sans;
+  font-family: sugar-bread;
   font-size: 40px;
-  color: rgba(19, 172, 177, 1);
-  background-color: rgba(0, 0, 0, 1);
-  position: inherit;
+  color: rgb(255, 255, 255);
+  /* background-color: rgba(0, 0, 0, 1); */
+  position: relative;
+  background-color: black;
+}
+
+body::before {
+  content: ' ';
+  background-image: url(../assets/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-attachment: scroll;
+
 }
 
 #background {
@@ -44,8 +62,10 @@ body {
 }
 
 #pagina-login {
+  isolation: isolate;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
+  margin: 0;
   padding: 16px;
   /* margin: 40px 40px; */
   /* border: 1px solid red; */
@@ -67,7 +87,7 @@ form {
 }
 
 #titulo {
-  display: block;
+  display: var(--titulo-display);
   font-family: comiccartoon;
   font-size: 80px;
   text-align: center;
@@ -98,10 +118,12 @@ form {
 } */
 
 button {
-  color: rgba(19, 172, 177, 1);
+  color: black;
   font-family: sugar-bread;
-  font-size: 48px;
+  font-size: 28px;
   width: 100%;
+  height: var(--input-height);
+  margin-top: var(--button-margin-top);
   background: white;
   border: 0;
   border-radius: 30px;
@@ -118,18 +140,31 @@ button {
   width: var(--logo-width);
   align-self: center;
   order: var(--logo-order);
+  object-fit: fill;
   /* border: 1px solid yellow;  */
 }
 
-@media (min-width: 768px) {
-    :root {
-      --line-opacity: 1;
-      --pagina-login-display-direction: row;
-      --pagina-login-elements-gap: 40%;
-      --form-width: 280%;
-      --form-height: 100%;
-      --input-height: 32px;
-      --logo-order: 0;
-      --logo-width: 494px;
-    }
+/* Tablet */
+@media (min-width: 768px){
+  :root {
+    --logo-width: 168px;
+    --input-height: 42px;
+    --button-margin-top: 10%;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  :root {
+    --line-opacity: 1;
+    --pagina-login-display-direction: row;
+    --pagina-login-elements-gap: 40%;
+    --form-width: 280%;
+    --form-height: 100%;
+    --titulo-display: block;
+    --input-height: 60px;
+    --button-margin-top: 32px;
+    --logo-order: 0;
+    --logo-width: 494px;
+  }
 }
