@@ -5,14 +5,18 @@
 }
 
 :root {
+  --body-font-size: 40px;
   --line-opacity: 0;
   --pagina-login-display-direction: column;
   --pagina-login-elements-gap: 2%;
   --form-width: 100%;
   --form-height: 100%;
   --titulo-display: none;
+  --titulo-font-size: 80px;
   --input-height: 44px;
+  --input-font-size: 12px;
   --button-margin-top: 15%;
+  --button-font-size: 28px;
   --logo-order: -1;
   --logo-width: 160px;
 }
@@ -25,12 +29,9 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: row;
-  /* padding: 16px; */
-  /* border: 1px solid red; */
   font-family: sugar-bread;
-  font-size: 40px;
+  font-size: var(--body-font-size);
   color: rgb(255, 255, 255);
-  /* background-color: rgba(0, 0, 0, 1); */
   position: relative;
   background-color: black;
 }
@@ -54,14 +55,10 @@ body::before {
   height: 100dvh;
   margin: 0;
   padding: 16px;
-  /* margin: 40px 40px; */
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: var(--pagina-login-display-direction);
   align-content: center;
-  /* justify-content: space-between; */
   gap: var(--pagina-login-elements-gap);
-  /* border: 1px solid green; */
 }
 
 form {
@@ -69,15 +66,13 @@ form {
   height: var(--form-height);
   display: grid;
   padding: 20px;
-  /* border: 1px solid blue; */
-  /* Linha Vertical */
   border-right: 4px solid rgba(255, 255, 255, var(--line-opacity));
 }
 
 #titulo {
   display: var(--titulo-display);
   font-family: comiccartoon;
-  font-size: 80px;
+  font-size: var(--titulo-font-size);
   text-align: center;
 }
 
@@ -94,13 +89,13 @@ form {
   border-radius: 30px;
   box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
   font: open-sans;
-  /* font-size: 32px; */
+  font-size: var(--input-font-size);
 }
 
 button {
   color: black;
   font-family: sugar-bread;
-  font-size: 28px;
+  font-size: var(--button-font-size);
   width: 100%;
   height: var(--input-height);
   margin-top: var(--button-margin-top);
@@ -115,15 +110,16 @@ button {
   align-self: center;
   order: var(--logo-order);
   object-fit: fill;
-  /* border: 1px solid yellow;  */
 }
 
 /* Tablet */
 @media (min-width: 768px){
   :root {
     --logo-width: 168px;
-    --input-height: 42px;
+    --input-height: 40px;
+    --input-font-size: 16px;
     --button-margin-top: 10%;
+    --button-font-size: 32px;
   }
 }
 
@@ -133,11 +129,12 @@ button {
     --line-opacity: 1;
     --pagina-login-display-direction: row;
     --pagina-login-elements-gap: 34%;
-    --form-width: 204%;
+    --form-width: 212%;
     --form-height: 100%;
     --titulo-display: block;
-    --input-height: 48px;
-    --button-margin-top: 32px;
+    --input-height: 68px;
+    --input-font-size: 20px;
+    --button-font-size: 60px;
     --logo-order: 0;
     --logo-width: 360px;
   }
@@ -146,16 +143,26 @@ button {
 /* Laptop L */
 @media (min-width: 1440px) {
   :root {
-    --line-opacity: 1;
-    --pagina-login-display-direction: row;
     --pagina-login-elements-gap: 48%;
     --form-width: 300%;
     --form-height: 100%;
-    --titulo-display: block;
-    --input-height: 48px;
-    --button-margin-top: 32px;
-    --logo-order: 0;
+    --input-height: 72px;
+    --input-font-size: 20px;
+    --button-font-size: 64px;
     --logo-width: 360px;
+  }
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+  :root {
+    --body-font-size: 80px;
+    --titulo-font-size: 120px;
+    --input-height: 96px;
+    --input-font-size: 36px;
+    --button-font-size: 88px;
+    --logo-order: 0;
+    --logo-width: 680px;
   }
 }
 
