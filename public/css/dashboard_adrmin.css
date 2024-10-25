@@ -1,0 +1,129 @@
+/* Fontes */
+
+@font-face {
+  font-family: Comicartoon;
+  src: url(../assets/Comicartoon-Regular.ttf);
+}
+
+@font-face {
+  font-family: SugarBread;
+  src: url(../assets/Sugar\ Bread.otf);
+}
+
+/* Estilos Globais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0e5ec;
+}
+
+/* Hero Section */
+.hero-dashboard {
+  background-color: #6c757d;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  color: white;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-dashboard h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: "Comicartoon";
+  text-transform: uppercase;
+}
+
+.hero-dashboard p {
+  font-size: 1.2rem;
+}
+
+/* Seção de Links Administrativos */
+.admin-links {
+  display: grid;
+  justify-content: space-around;
+  padding: 40px;
+  gap: 20px;
+  align-items: center;
+}
+
+.admin-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.link-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  font-family: "SugarBread";
+}
+
+.link-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Efeito de Hover nos Links */
+.link-card:hover {
+  transform: scale(1.05);
+}
+
+/* Botão de Logout */
+.logout h2 {
+  color: #d9534f; /* Cor de destaque para o logout */
+  font-family: "SugarBread";
+}
+
+.logout p {
+  color: #d9534f;
+}
+
+/* Responsividade */
+
+/* Para telas menores que 768px (tablets e smartphones) */
+@media (max-width: 768px) {
+  .admin-links {
+    flex-direction: column; /* Os links serão dispostos em coluna */
+    align-items: center;
+  }
+
+  .link-card {
+    width: 100%; /* O botão vai ocupar 100% da largura do container */
+    max-width: 400px; /* Largura máxima para manter a estética */
+    margin-bottom: 20px; /* Espaçamento entre os botões */
+  }
+
+  .hero-dashboard h1 {
+    font-size: 2rem; /* Reduzindo tamanho do título */
+  }
+
+  .hero-dashboard p {
+    font-size: 1rem; /* Reduzindo o subtítulo */
+  }
+}
+
+/* Para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+  .hero-dashboard h1 {
+    font-size: 1.8rem; /* Ajuste ainda menor para smartphones */
+  }
+
+  .hero-dashboard p {
+    font-size: 0.9rem;
+  }
+
+  .link-card {
+    padding: 15px; /* Reduzindo o padding dos cards */
+  }
+}
