@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ body {
     padding: 0;
 }
 
-.fundo_title {
+.fundo_title{
     text-align: center;
     width: 100%;
     max-width: 588px;
@@ -29,7 +29,7 @@ body {
     margin-bottom: 20px;
 }
 
-.imagem_perfil {
+.imagem_perfil{
     margin-bottom: 70px;
     text-align: center;
     width: 100%;
@@ -37,7 +37,7 @@ body {
     height: auto;
 }
 
-.imagem_perfil img {
+.imagem_perfil img{
     border-radius: 20px;
     object-fit: cover;
     width: 100%;
@@ -45,7 +45,7 @@ body {
     height: auto;
 }
 
-.perfil {
+.perfil{
     border-radius: 20px;
     width: 100%;
     max-width: 580px;
@@ -56,18 +56,18 @@ body {
     margin-bottom: 20px;
 }
 
-.perfil img {
+.perfil img{
     width: 50px;
     height: 50px;
     margin: 10px;
 }
 
-.texto {
+.texto{
     padding: 20px;
     color: #FFFFFF;
 }
 
-.img_descricao {
+.img_descricao{
     color: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -75,21 +75,20 @@ body {
     justify-content: center;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .fundo_title, .imagem_perfil, .perfil {
+@media (max-width: 768px){
+    .fundo_title, .imagem_perfil, .perfil{
         width: 90%;
     }
 
-    .fundo_title {
+    .fundo_title{
         font-size: 22px;
     }
 
-    .imagem_perfil img, .perfil {
+    .imagem_perfil img, .perfil{
         width: 100%;
     }
 
-    .img_descricao {
+    .img_descricao{
         flex-direction: column;
     }
 }
