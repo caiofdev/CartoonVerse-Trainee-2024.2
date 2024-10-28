@@ -48,8 +48,8 @@ th {
   text-align: left;
 }
 
-.modal {
-  width: 60px;
+.botao {
+  width: 40px;
 }
 
 table, th, td {
@@ -69,7 +69,8 @@ table {
 }
 
 button {
-  font-size: 20px;
-  border-radius: 10px;
-  padding: 4px;
+  width: fit-content;
+  border: 0;
+  border-radius: 50%;
 }
+
