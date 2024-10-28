@@ -1,120 +1,147 @@
 @font-face {
-    font-family: Comicartoon;
-    src: url(../assets/Comicartoon-Regular.ttf)
-  }
+  font-family: Comicartoon;
+  src: url(../assets/Comicartoon-Regular.ttf);
+}
 
-  @font-face {
-    font-family: SugarBread;
-    src: url(../assets/Sugar\ Bread.otf)
-  }
+@font-face {
+  font-family: SugarBread;
+  src: url(../assets/Sugar\ Bread.otf);
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
-    background-color: #d5e6e2;
+  background-color: #d5e6e2;
 }
 
 /* Hero Section */
 .hero {
-    background: url('../assets/imagem\ de\ fundo.png');
-    background-size: contain;
-    height: 350px;
-    width: 100%;
-    text-align: center;
+  display: flex;
+  background: url("../assets/imagem\ de\ fundo.png");
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(114, 161, 124, 0.5);
 }
 
-.hero img {
-    height: 75%;
-    width: 100%;
-    object-fit: none;
+#hero2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 0px 30px 0px;
+  width: 70%;
+}
+
+#logoslogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding-left: 70px;
+}
+
+#logo2,
+#logo3 {
+  height: auto;
+  max-width: 20vw;
+  margin: 20px;
+  object-fit: contain;
+}
+
+#logo2 {
+  width: 15vw;
+}
+
+#logo3 {
+  width: 35vw;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    font-family: 'Comicartoon', 'Comic Sans MS', sans-serif;
-    text-transform: uppercase;
+  font-size: 2.5rem;
+  font-family: "Comicartoon", "Comic Sans MS", sans-serif;
+  text-transform: uppercase;
 }
 
 /* Posts Section */
 .posts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 40px 60px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px 60px;
+  justify-items: center;
 }
 
 .post-item {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    text-align: center;
-    max-width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
+  max-width: 300px;
 }
 
 .post-item img {
-    width: 100%;
-    border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .post-item p {
-    margin-top: 10px;
-    font-weight: bold;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 /* Load More Button */
 .load-more {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .load-more button {
-    background-color: #D9D9D9;
-    border: 2px;
-    padding: 1% 1.2%;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #d9d9d9;
+  border: 2px;
+  padding: 1% 1.2%;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .load-more button p {
-    font-family: 'SugarBread';
-    
+  font-family: "SugarBread";
 }
 
 .load-more button:hover {
-    background-color: #b8958d;
-    color: white;
+  background-color: #b8958d;
+  color: white;
 }
 
 @media only screen and (max-width: 530px) {
+  .hero {
+    background-size: contain;
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+  }
 
-    .hero {
-        background-size: contain;
-        height: 50vh;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .hero img {
-        height: 65%;
-        width: 100%;
-        object-fit: cover;
-    }
+  .hero img {
+    height: 65%;
+    width: 100%;
+    object-fit: cover;
+  }
 
-    .hero h1 {
-        font-size: 2rem;
-        font-family: 'Comicartoon', 'Comic Sans MS', sans-serif;
-        text-transform: uppercase;
-        
-    }
-
+  .hero h1 {
+    font-size: 2rem;
+    font-family: "Comicartoon", "Comic Sans MS", sans-serif;
+    text-transform: uppercase;
+    flex-direction: column;
+  }
 }
