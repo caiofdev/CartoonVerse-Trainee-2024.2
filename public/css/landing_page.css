@@ -8,6 +8,27 @@
   src: url(../assets/Sugar\ Bread.otf);
 }
 
+/* Paleta
+1 000
+2 212627
+3 4a5759
+4 b0c4c4
+5 fff
+6 13acb1
+7 7e241e
+*/
+
+:root {
+  --fundo: #b0c4c4;
+  --textos: #000000;
+  --slogan: #fff;
+  --destaque: #13acb1;
+  --sobre-text: #000000;
+  --botoes: #13acb1;
+  --botoes-hover: #7e241e;
+  --posts: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,22 +37,24 @@
 }
 
 body {
-  background-color: #d5e6e2;
+  background-color: var(--fundo);
+  color: var(--textos);
 }
 
 /* Hero Section */
 .hero {
   display: flex;
-  background: url("../assets/imagem\ de\ fundo.png");
+  background: url("../assets/imagem\ de\ fundoborrada.png");
   background-size: cover;
   height: auto;
   width: 100%;
   text-align: center;
   justify-content: center;
-  box-shadow: 0 5px 10px rgba(114, 161, 124, 0.5);
+  box-shadow: 0 5px 10px rgba(75, 75, 75, 0.5);
+  color: var(--slogan);
 }
 
-#hero2 {
+.logos {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -53,6 +76,7 @@ body {
 #logo3 {
   height: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 #logo2 {
@@ -61,6 +85,32 @@ body {
 
 #logo3 {
   width: 350px;
+}
+
+.logos:hover #logo2 {
+  animation: giraLogo 0.6s ease forwards;
+}
+
+.logos:hover #logoslogan {
+  animation: giraLogo 0.6s ease forwards;
+}
+
+@keyframes giraLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(6deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .hero h1 {
@@ -95,12 +145,13 @@ body {
 /* Estilos dos cards de Missão, Visão e Valores */
 .about-cards {
   display: flex;
-  gap: 20px;
+  gap: 4vw;
   justify-content: center;
+  color: var(--sobre-text);
 }
 
 .about-card {
-  background-color: #ffffff;
+  background-color: var(--destaque);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 20px;
@@ -110,7 +161,6 @@ body {
 .about-card h3 {
   font-size: 24px;
   font-family: "SugarBread";
-  color: #000000; /* Cor destaque para os títulos */
   margin-bottom: 5px;
   text-transform: uppercase;
   font-weight: lighter;
@@ -131,7 +181,7 @@ body {
 }
 
 .post-item {
-  background-color: white;
+  background-color: var(--posts);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -156,7 +206,7 @@ body {
 }
 
 .load-more button {
-  background-color: #d9d9d9;
+  background-color: var(--botoes);
   border: 2px;
   padding: 1% 1.2%;
   font-size: 1rem;
@@ -171,11 +221,11 @@ body {
 }
 
 .load-more button:hover {
-  background-color: #b8958d;
+  background-color: var(--botoes-hover);
   color: white;
 }
 
-@media only screen and (max-width: 530px) {
+@media (max-width: 768px) {
   .hero {
     background-size: contain;
   }
@@ -188,8 +238,61 @@ body {
     width: 40vw;
   }
 
+  #logoslogan {
+    padding-left: 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-section{
+    padding-top: 40px;
+    max-width: 90%;
+  }
+
+  .about-text {
+    font-size: 18px;
+    max-width: 60%;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .posts {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+/* @media (min-width:290px) and (max-width: 425px) {
+  .hero {
+    background-size: contain;
+    width: 100%;
+  }
+
+  #logo2 {
+    width: 30vw;
+  }
+
+  #logo3 {
+    width: 40vw;
+  }
+
+  #logoslogan {
+    padding-left: 20px;
+  }
+
   .hero h1 {
   font-size: 1.5rem;
 }
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 
-}
+} */
