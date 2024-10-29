@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   width: 100vw;
   height: 100vh;
 }
@@ -12,16 +13,58 @@ body, html {
 body {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
   border: 1px solid yellow;
-  font-family: comiccartoon;
-  color: white;
-  background-color: black;
+  background: black;
 }
 
+#main {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid blue;
+  border-radius: 10%;
+}
 
+#login {
+  width: 60%;
+}
 
+#formulario {
 
+}
 
+#titulo {
+  font-family: comiccartoon;
+  color: white;
+}
+
+label {
+  font-family: sugar-bread;
+  color: white;
+}
+
+input {
+  font-family: open-sans;
+  color: black;
+  border: 0;
+  border-radius: 10%;
+}
+
+#botao {
+  font-family: sugar-bread;
+  color: black;
+  border: 0;
+  border-radius: 10%;
+}
+
+.logo {
+  width: 140px;
+  border: 1px solid violet;
+}
 
 #logo {
   width: 10vw;
