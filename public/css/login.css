@@ -36,7 +36,7 @@ body {
   background-color: black;
 }
 
-body::before {
+/* body::before {
   content: ' ';
   background-image: url(../assets/background.jpeg);
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body::before {
   opacity: 0.25;
   background-attachment: scroll;
 
-}
+} */
 
 #pagina-login {
   isolation: isolate;
@@ -105,6 +105,10 @@ button {
   box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+#login:hover {
+  color: #212627;
+}
+
 #logo {
   width: var(--logo-width);
   align-self: center;
@@ -141,7 +145,7 @@ button {
 }
 
 /* Laptop L */
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   :root {
     --pagina-login-elements-gap: 48%;
     --form-width: 300%;
@@ -151,10 +155,10 @@ button {
     --button-font-size: 64px;
     --logo-width: 360px;
   }
-}
+} */
 
 /* 4K */
-@media (min-width: 2560px) {
+/* @media (min-width: 2560px) {
   :root {
     --body-font-size: 80px;
     --titulo-font-size: 120px;
@@ -164,7 +168,7 @@ button {
     --logo-order: 0;
     --logo-width: 680px;
   }
-}
+} */
 
 /* Funciona no Note sem o inspecionar ativado
 
