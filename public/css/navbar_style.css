@@ -21,20 +21,20 @@ a {
 
 .navbar {
     display: flex;
-    padding: 4px 10px 7px 0px;
-    justify-content: center;
+    padding: 4px 10px 7px 10px;
+    justify-content: space-between;
     align-items: center;
     background: #4A5759;
 }
 
-.left-side-desktop{
-    display: none;
+.left-side-desktop {
+    display: flex;
     gap: 36px;
     align-items: center;
 }
 .left-side-desktop div {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     background: url(../assets/Home-light.png) no-repeat top center/cover;
 }
 .left-side-desktop a {
@@ -44,8 +44,10 @@ a {
     text-align: center;
     font-size: 26px;
     font-style: normal;
-    font-weight: 700;
-    
+    font-weight: 700;   
+}
+#posts {
+    display: none;
 }
 .off-screen-hamb-menu {
     background-color: #4A5759;
@@ -124,13 +126,21 @@ a {
 .off-screen-hamb-menu.active {
     right: 0;
 }
-
+/* .left-side-phone {
+    height: 40px;
+    width: 40px;
+    background: url(../assets/Home-light.png) no-repeat local center/cover;
+    /* position: absolute;
+    left: 10px; 
+}
+.left-side-phone:hover{
+    background: url(../assets/Home.png);
+} */
 .hamb-menu {
     height: 28px;
     width: 28px;
-    position: absolute;
-    right: 0;
-    
+    position: relative;
+    /* right: 0; */
 }
 .hamb-menu.active {
     display: none;
@@ -141,7 +151,7 @@ a {
     background-color: white;
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
 }
 .hamb-menu span:nth-child(1) {
     top: 25%;
@@ -201,10 +211,13 @@ a {
     .navbar{
         padding: 10px 35px 10px 35px;
         justify-content: space-between;
-
     }
     .left-side-desktop{
         display: flex;
+    }
+    .left-side-desktop div {
+        width: 40px;
+        height: 40px;
     }
     .hamb-menu {
         display: none;
@@ -218,14 +231,15 @@ a {
         display: flex;
         justify-content: center;
     }
-    /* .phone-right-side {
-        display: none;
-    } */
+    
     .right-side-desktop {
         display: flex;
     }
     .right-side-desktop #search {
         width: 26px;
         height: 26px;
+    }
+    #home:hover {
+        background: url(../assets/Home.png) no-repeat top center/cover;
     }
 }
