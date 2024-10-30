@@ -13,18 +13,17 @@
 body {
     height: 100vh;
 }
+
 a {
     text-decoration: none;
     color: white;
 }
 
-
 .navbar {
     display: flex;
-    padding: 4px 10px 7px 10px;
+    padding: 4px 0px 7px 0px;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0 0 10px 10px;
     background: #4A5759;
 }
 
@@ -34,8 +33,8 @@ a {
     align-items: center;
 }
 .left-side-desktop div {
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
     background: url(../assets/Home-light.png) no-repeat top center/cover;
 }
 .left-side-desktop a {
@@ -43,7 +42,7 @@ a {
     line-height: normal;
     text-decoration: none;
     text-align: center;
-    font-size: 32px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 700;
     
@@ -175,8 +174,8 @@ a {
 }
 .right-side-desktop #profile {
     background: url(../assets/user2-light.png) no-repeat top center/cover;
-    width: 66px;
-    height: 66px;
+    width: 40px;
+    height: 40px;
     border-radius: 100px;
 }
 
@@ -210,8 +209,10 @@ a {
         display: none;
     }
     .logo {
-        width: 140px;
-        height: 113px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
     }
     .phone-right-side {
         display: none;
@@ -220,7 +221,7 @@ a {
         display: flex;
     }
     .right-side-desktop #search {
-        width: 40px;
-        height: 40px;
+        width: 26px;
+        height: 26px;
     }
 }
