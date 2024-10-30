@@ -277,5 +277,12 @@ body {
   .posts {
     padding: 0;
     max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
   }
+
+  .load-more button p {
+    padding: 3px;
+  }
+
 }
