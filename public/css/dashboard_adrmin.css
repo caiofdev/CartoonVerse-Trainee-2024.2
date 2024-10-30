@@ -10,22 +10,40 @@
   src: url(../assets/Sugar\ Bread.otf);
 }
 
+/* Paleta
+1 000
+2 212627
+3 4a5759
+4 b0c4c4
+5 fff
+6 13acb1
+7 7e241e
+*/
+
+:root {
+  --fundo: #b0c4c4;
+  --textos: #000000;
+  --slogan: #fff;
+  --destaque: #13acb1;
+  --sobre-text: #000000;
+  --botoes: #13acb1;
+  --botoes-hover: #7e241e;
+  --posts: #fff;
+}
+
 /* Estilos Globais */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #e0e5ec;
+  background-image: url(/public/assets/imagem\ de\ fundoborrada.png);
   align-content: center;
 }
 
 /* Hero Section */
 .hero-dashboard {
-  background-color: #6c757d;
   text-align: center;
   color: white;
-  width: 100%;
-  height: auto;
   padding-top: 5px;
   padding-bottom: 5px;
   align-items: center;
@@ -36,20 +54,22 @@ body {
   font-weight: lighter;
   font-family: "Comicartoon";
   text-transform: uppercase;
+  text-shadow: 2px 2px #7e241e
 }
 
 .hero-dashboard p {
   font-size: 1.2rem;
+  text-shadow: 1px 1px #000000
 }
 
 /* Seção de Links Administrativos */
 .admin-links {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  padding-top: 50px;
-  gap: 20px;
+  gap: 15px;
+  padding-top: 20px;
   align-content: center;
   align-items: center;
 }
@@ -95,6 +115,7 @@ body {
 @media (max-width: 768px) {
   .admin-links {
     flex-direction: column;
+    padding-top: 50px;
   }
   .admin-link {
     width: 35%;
@@ -104,6 +125,7 @@ body {
 @media (min-width: 320px) and (max-width: 767px) {
   .admin-links {
     flex-direction: column;
+    padding-top: 20px;
   }
 
   .admin-link {
