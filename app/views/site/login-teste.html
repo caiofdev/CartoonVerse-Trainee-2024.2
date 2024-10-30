@@ -15,32 +15,33 @@
     <link rel="stylesheet" href="../../../public/css/fonts.css" />
   </head>
   <body>
-      <div id="login">
-        <form action="/pagina-dos-dados" method="post" id="formulario">
-          <div id="titulo">
-            <label for="titulo">LOGIN</label>
-          </div>
-          <div class="campos">
-            <div class="input">
-              <label for="email">Email:</label>
+      <div class="container">
+        <div class="login">
+          <form action="/pagina-dos-dados" method="post" id="formulario">
+          
+          <h1 id="titulo">LOGIN</h1>
+
+          <div class="input-container">
               <input placeholder="Email" type="email" id="email" required/>
-            </div>
-            <div class="input">
-              <label for="senha">Senha:</label>
+              <img src="../../../public/assets/Icons/icons8-email-96.png" alt="Email" width="20">
+          </div>
+          <div class="input-container">
               <input placeholder="Senha" type="password" id="senha" required/>
-            </div>
+              <img src="../../../public/assets/Icons/icons8-lock-96.png" alt="Email" width="20">
           </div>
-          <div class="botao">
-            <button type="submit" id="botao">Login</button>
-          </div>
+        
+            <button type="submit" class="submit-button">Login</button>
+
         </form>
+        </div>
+        <img src="../../../public/assets/Logo 2 sem fundo.png" alt="Logo" class="logo">
       </div>
-      <div class="logo">
+      <!-- <div class="logo">
         <img
           src="../../../public/assets/Logo 1 sem fundo.png"
           alt="Logo do CartoonVerse"
           id="logo"
         />
-      </div>
+      </div> -->
   </body>
 </html>

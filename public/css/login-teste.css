@@ -4,77 +4,123 @@
   box-sizing: border-box;
 }
 
-body,
+/* body,
 html {
   width: 100vw;
   height: 100vh;
-}
+} */
 
 body {
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 2%;
-  border: 1px solid yellow;
-  background: black;
+  /* border: 1px solid yellow; */
+  /* background: url("https://img.pikbest.com/illustration/20240617/nature-and-a-deer-forest-lake-scenery-image-_10624399.jpg!bwr800"); */
+  background: url(../assets/background-rafael.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-#main {
+/* #main {
   width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid blue;
   border-radius: 10%;
-}
+} */
 
-#login {
+.container {
   display: flex;
-  flex-direction: column;
-  border: 1px solid royalblue;
+  /*flex-direction: column; */
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  padding: 2% 3%;
 }
 
-#formulario {
+/* #formulario {
   width: 40vw;
   height: 80vh;
   display: flex;
   flex-direction: column;
   align-content: center;
-  border: 1px solid green;
+  border: 1px solid green; 
 
-}
+} */
 
 #titulo {
   font-family: comiccartoon;
+  font-size: 88px;
   color: white;
+  text-align: center;
+  text-shadow: 2px 2px #13ACB1;
 }
 
-label {
-  font-family: sugar-bread;
-  color: white;
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20% 0;
+  align-items: center;
+  justify-content: center;
 }
 
-input {
+.input-container input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  /* border: none; */
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   font-family: open-sans;
-  color: black;
-  border: 0;
-  border-radius: 10%;
+  font-size: 36px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
 }
 
-#botao {
+.input-container input:hover {
+  border: 2px solid white;
+}
+
+.input-container img {
+  position: absolute;
+  right: 4%;
+  top: 30%;
+  bottom: 30%;
+}
+
+.submit-button {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #13ACB1;
   font-family: sugar-bread;
+  font-size: 32px;
   color: black;
-  border: 0;
-  border-radius: 10%;
+  margin-top: 24px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+}
+
+.submit-button:hover {
+  /* background-color: #0f898d; */
+  /* color: #cccccc; */
+  background-color: #7E241E;
+  color: white;
+}
+
+.submit-button:hover #titulo {
+  text-shadow: 2px 2px #7E241E;
 }
 
 .logo {
-  width: 140px;
-  border: 1px solid violet;
-}
-
-#logo {
-  width: 10vw;
-  border: 1px solid yellow;
+  width: 600px;
+  object-fit: contain;
 }
