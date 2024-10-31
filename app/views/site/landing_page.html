@@ -9,6 +9,11 @@
       href="https://fonts.googleapis.com/css?family=Open Sans"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
     <!-- Main Section -->
@@ -53,8 +58,22 @@
         coords="548,83,12"
         shape="circle"
       />
-    <area target="" alt="" title="" href="https://www.youtube.com/watch?v=mErzkOQGoBI" coords="756,6,16" shape="circle">
-    <area target="" alt="" title="" href="https://www.youtube.com/watch?v=mErzkOQGoBI" coords="733,8,14" shape="circle">
+      <area
+        target=""
+        alt=""
+        title=""
+        href="https://www.youtube.com/watch?v=mErzkOQGoBI"
+        coords="756,6,16"
+        shape="circle"
+      />
+      <area
+        target=""
+        alt=""
+        title=""
+        href="https://www.youtube.com/watch?v=mErzkOQGoBI"
+        coords="733,8,14"
+        shape="circle"
+      />
     </map>
 
     <section class="about-section">
@@ -85,6 +104,41 @@
             os fãs e criadores.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Carrossel -->
+    <section class="carrossel-section">
+      <h1>POSTS DESTAQUE</h1>
+      <div class="carrossel-container">
+        <div class="carrossel">
+          <div class="carrossel-item active">
+            <img
+              src="https://super.abril.com.br/wp-content/uploads/2018/07/566ee0ae82bee174ca0300dahomer-simpson.jpeg?crop=1&resize=1212,909"
+              alt="Imagem 1"
+            />
+          </div>
+          <div class="carrossel-item">
+            <img
+              src="https://s2-monet.glbimg.com/SRdhuGZxspaxF-CTuhqIurJnlyU=/0x0:1036x579/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e7c91519bbbb4fadb4e509085746275d/internal_photos/bs/2024/C/u/AlX1VRQay7uxxOCYYK1g/captura-de-tela-2024-10-29-as-07.47.08.png"
+              alt="Imagem 2"
+            />
+          </div>
+          <div class="carrossel-item">
+            <img
+              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BB9A325FBD603DB140BE78B630ABB64D72030DD55928192851959DE28441AB75/scale?width=440&aspectRatio=1.78&format=webp"
+              alt="Imagem 3"
+            />
+          </div>
+          <div class="carrossel-item">
+            <img
+              src="https://seeklogo.com/images/H/homer-simpson-holding-beer-duff-logo-9172512EF9-seeklogo.com.png"
+              alt="Imagem 4"
+            />
+          </div>
+        </div>
+        <button class="btn prev" onclick="previousSlide()">&#10094;</button>
+        <button class="btn next" onclick="nextSlide()">&#10095;</button>
       </div>
     </section>
 

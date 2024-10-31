@@ -182,6 +182,68 @@ body {
   line-height: 1.5;
 }
 
+/* Carrossel */
+.carrossel-section {
+  max-width: 500px;
+  margin: auto;
+  text-align: center; /* Centraliza os botões */
+}
+
+.carrossel-section h1 {
+  font-family: "Comicartoon";
+  font-size: 50px;
+}
+
+.carrossel-container {
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+  margin: auto;
+  text-align: center; /* Centraliza os botões */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrossel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carrossel-item.active {
+  display: block; /* Exibe apenas a imagem ativa */
+}
+
+.carrossel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  /* border: 5px solid #333;  */
+}
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 10px; /* Espaçamento entre os botões */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
 /* Posts Section */
 .posts {
   display: grid;
@@ -257,7 +319,7 @@ body {
     font-size: 1.5rem;
   }
 
-  .about-section{
+  .about-section {
     padding-top: 40px;
     max-width: 90%;
   }
@@ -284,5 +346,4 @@ body {
   .load-more button p {
     padding: 3px;
   }
-
 }
