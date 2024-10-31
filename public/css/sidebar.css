@@ -64,7 +64,6 @@ main {
   position: relative;
   transition: all 0.5s;
   min-width: 82px;
-  z-index: 2;
 }
 
 #sidebar-content {
@@ -82,14 +81,25 @@ main {
   height: 20px;
   border: none;
   cursor: pointer;
+  padding-top: 3px;
 }
 
 #hamburguer {
-    display: none;
+  background-color: var(--botoes);
+  color: #fff;
+  border-radius: 30%;
+  border-color: #fff;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
+  display: none; /* Esconde o ícone por padrão */
 }
 
 #open-btn-icon {
   transition: transform 0.3s ease;
+  padding-top: 1px;
 }
 
 #side-items {
@@ -190,9 +200,25 @@ main {
   gap: 14px;
 }
 
-
-@media (min-width: 320px) and (max-width: 1440px) {
+@media (min-width: 769px) and (max-width: 1440px) {
   #user {
     padding-top: 52vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #hamburguer {
+    display: block;
+    margin: 10px;
+    margin-bottom: 0;
+  }
+  #sidebar {
+    background-color: transparent;
+  }
+  #sidebar-content {
+    display: none;
+  }
+  .open-btn {
+    display: none;
   }
 }
