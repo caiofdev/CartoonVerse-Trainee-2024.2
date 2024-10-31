@@ -4,185 +4,153 @@
   box-sizing: border-box;
 }
 
-:root {
-  --body-font-size: 40px;
-  --line-opacity: 0;
-  --pagina-login-display-direction: column;
-  --pagina-login-elements-gap: 2%;
-  --form-width: 100%;
-  --form-height: 100%;
-  --titulo-display: none;
-  --titulo-font-size: 80px;
-  --input-height: 44px;
-  --input-font-size: 12px;
-  --button-margin-top: 15%;
-  --button-font-size: 28px;
-  --logo-order: -1;
-  --logo-width: 160px;
-}
+/* body,
+html {
+  width: 100vw;
+  height: 100vh;
+} */
 
-body, html{
-  height: 100%;
+:root {
+  --container-direction: row;
+  --titulo-display: block;
+  --logo-width: 60%;
+  --login-width: 50%;
+  --logo-order: 0;
 }
 
 body {
-  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid yellow; */
+  /* background: url("https://img.pikbest.com/illustration/20240617/nature-and-a-deer-forest-lake-scenery-image-_10624399.jpg!bwr800"); */
+  background: url(../assets/background-rafael.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* #main {
+  width: 80vw;
   display: flex;
   flex-direction: row;
-  font-family: sugar-bread;
-  font-size: var(--body-font-size);
-  color: rgb(255, 255, 255);
-  position: relative;
-  background-color: black;
-}
-
-/* body::before {
-  content: ' ';
-  background-image: url(../assets/background.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
-  inset: 0;
-  opacity: 0.25;
-  background-attachment: scroll;
-
+  justify-content: space-between;
+  border: 1px solid blue;
+  border-radius: 10%;
 } */
 
-#pagina-login {
-  isolation: isolate;
-  width: 100%;
-  height: 100dvh;
-  margin: 0;
-  padding: 16px;
+.container {
   display: flex;
-  flex-direction: var(--pagina-login-display-direction);
-  align-content: center;
-  gap: var(--pagina-login-elements-gap);
+  flex-direction: var(--container-direction);
+  width: 90%;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  margin: 4%;
+  padding: 4%;
+  align-items: center;
+  justify-content: center;
 }
 
-form {
-  width: var(--form-width);
-  height: var(--form-height);
-  display: grid;
-  padding: 20px;
-  border-right: 4px solid rgba(255, 255, 255, var(--line-opacity));
-}
+/* #formulario {
+  width: 40vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: 1px solid green; 
+
+} */
 
 #titulo {
   display: var(--titulo-display);
   font-family: comiccartoon;
-  font-size: var(--titulo-font-size);
+  font-size: 88px;
+  color: white;
   text-align: center;
+  text-shadow: 2px 2px #13acb1;
 }
 
-.input {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
+.login {
+  width: var(--login-width);
+  /* height: fit-content; */
+  /* border: 1px solid blue; */
 }
 
-.input input {
-  height: var(--input-height);
-  padding: 10px;
-  border: transparent;
-  border-radius: 30px;
-  box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
-  font: open-sans;
-  font-size: var(--input-font-size);
-}
-
-button {
-  color: black;
-  font-family: sugar-bread;
-  font-size: var(--button-font-size);
+.input-container {
+  position: relative;
   width: 100%;
-  height: var(--input-height);
-  margin-top: var(--button-margin-top);
-  background: white;
-  border: 0;
-  border-radius: 30px;
-  box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 50px;
+  margin: 20% 0;
+  align-items: center;
+  justify-content: center;
 }
 
-#login:hover {
-  color: #212627;
+.input-container input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  /* border: none; */
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-family: open-sans;
+  font-size: 36px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
 }
 
-#logo {
-  width: var(--logo-width);
-  align-self: center;
+.input-container input:hover {
+  border: 2px solid white;
+}
+
+.input-container img {
+  position: absolute;
+  right: 4%;
+  top: 30%;
+  bottom: 30%;
+}
+
+.submit-button {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #13acb1;
+  font-family: sugar-bread;
+  font-size: 32px;
+  color: black;
+  margin-top: 24px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+}
+
+.submit-button:hover {
+  /* background-color: #0f898d; */
+  /* color: #cccccc; */
+  background-color: #7e241e;
+  color: white;
+}
+
+.logo {
   order: var(--logo-order);
-  object-fit: fill;
+  width: var(--logo-width);
+  object-fit: contain;
+  align-self: center;
 }
 
-/* Tablet */
-@media (min-width: 768px){
-  :root {
-    --logo-width: 168px;
-    --input-height: 40px;
-    --input-font-size: 16px;
-    --button-margin-top: 10%;
-    --button-font-size: 32px;
+/* Mobile */
+@media (max-width: 768px) {
+  :root{
+
+    --container-direction: column;
+    --login-width: 100%;
+    --titulo-display: none;
+    --logo-order: -1;
+    --logo-width: 60%;
   }
+  
 }
-
-/* Laptop */
-@media (min-width: 1024px) {
-  :root {
-    --line-opacity: 1;
-    --pagina-login-display-direction: row;
-    --pagina-login-elements-gap: 34%;
-    --form-width: 212%;
-    --form-height: 100%;
-    --titulo-display: block;
-    --input-height: 68px;
-    --input-font-size: 20px;
-    --button-font-size: 60px;
-    --logo-order: 0;
-    --logo-width: 360px;
-  }
-}
-
-/* Laptop L */
-/* @media (min-width: 1440px) {
-  :root {
-    --pagina-login-elements-gap: 48%;
-    --form-width: 300%;
-    --form-height: 100%;
-    --input-height: 72px;
-    --input-font-size: 20px;
-    --button-font-size: 64px;
-    --logo-width: 360px;
-  }
-} */
-
-/* 4K */
-/* @media (min-width: 2560px) {
-  :root {
-    --body-font-size: 80px;
-    --titulo-font-size: 120px;
-    --input-height: 96px;
-    --input-font-size: 36px;
-    --button-font-size: 88px;
-    --logo-order: 0;
-    --logo-width: 680px;
-  }
-} */
-
-/* Funciona no Note sem o inspecionar ativado
-
-@media (min-width: 1024px) {
-  :root {
-    --line-opacity: 1;
-    --pagina-login-display-direction: row;
-    --pagina-login-elements-gap: 40%;
-    --form-width: 280%;
-    --form-height: 100%;
-    --titulo-display: block;
-    --input-height: 60px;
-    --button-margin-top: 32px;
-    --logo-order: 0;
-    --logo-width: 494px;
-  }
-} */

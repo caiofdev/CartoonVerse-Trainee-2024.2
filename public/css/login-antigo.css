@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-font-size: 40px;
+  --line-opacity: 0;
+  --pagina-login-display-direction: column;
+  --pagina-login-elements-gap: 2%;
+  --form-width: 100%;
+  --form-height: 100%;
+  --titulo-display: none;
+  --titulo-font-size: 80px;
+  --input-height: 44px;
+  --input-font-size: 12px;
+  --button-margin-top: 15%;
+  --button-font-size: 28px;
+  --logo-order: -1;
+  --logo-width: 160px;
+}
+
+body, html{
+  height: 100%;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  font-family: sugar-bread;
+  font-size: var(--body-font-size);
+  color: rgb(255, 255, 255);
+  position: relative;
+  background-color: black;
+}
+
+/* body::before {
+  content: ' ';
+  background-image: url(../assets/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-attachment: scroll;
+
+} */
+
+#pagina-login {
+  isolation: isolate;
+  width: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: var(--pagina-login-display-direction);
+  align-content: center;
+  gap: var(--pagina-login-elements-gap);
+}
+
+form {
+  width: var(--form-width);
+  height: var(--form-height);
+  display: grid;
+  padding: 20px;
+  border-right: 4px solid rgba(255, 255, 255, var(--line-opacity));
+}
+
+#titulo {
+  display: var(--titulo-display);
+  font-family: comiccartoon;
+  font-size: var(--titulo-font-size);
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.input input {
+  height: var(--input-height);
+  padding: 10px;
+  border: transparent;
+  border-radius: 30px;
+  box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
+  font: open-sans;
+  font-size: var(--input-font-size);
+}
+
+button {
+  color: black;
+  font-family: sugar-bread;
+  font-size: var(--button-font-size);
+  width: 100%;
+  height: var(--input-height);
+  margin-top: var(--button-margin-top);
+  background: white;
+  border: 0;
+  border-radius: 30px;
+  box-shadow: 5px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#login:hover {
+  color: #212627;
+}
+
+#logo {
+  width: var(--logo-width);
+  align-self: center;
+  order: var(--logo-order);
+  object-fit: fill;
+}
+
+/* Tablet */
+@media (min-width: 768px){
+  :root {
+    --logo-width: 168px;
+    --input-height: 40px;
+    --input-font-size: 16px;
+    --button-margin-top: 10%;
+    --button-font-size: 32px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  :root {
+    --line-opacity: 1;
+    --pagina-login-display-direction: row;
+    --pagina-login-elements-gap: 34%;
+    --form-width: 212%;
+    --form-height: 100%;
+    --titulo-display: block;
+    --input-height: 68px;
+    --input-font-size: 20px;
+    --button-font-size: 60px;
+    --logo-order: 0;
+    --logo-width: 360px;
+  }
+}
+
+/* Laptop L */
+/* @media (min-width: 1440px) {
+  :root {
+    --pagina-login-elements-gap: 48%;
+    --form-width: 300%;
+    --form-height: 100%;
+    --input-height: 72px;
+    --input-font-size: 20px;
+    --button-font-size: 64px;
+    --logo-width: 360px;
+  }
+} */
+
+/* 4K */
+/* @media (min-width: 2560px) {
+  :root {
+    --body-font-size: 80px;
+    --titulo-font-size: 120px;
+    --input-height: 96px;
+    --input-font-size: 36px;
+    --button-font-size: 88px;
+    --logo-order: 0;
+    --logo-width: 680px;
+  }
+} */
+
+/* Funciona no Note sem o inspecionar ativado
+
+@media (min-width: 1024px) {
+  :root {
+    --line-opacity: 1;
+    --pagina-login-display-direction: row;
+    --pagina-login-elements-gap: 40%;
+    --form-width: 280%;
+    --form-height: 100%;
+    --titulo-display: block;
+    --input-height: 60px;
+    --button-margin-top: 32px;
+    --logo-order: 0;
+    --logo-width: 494px;
+  }
+} */

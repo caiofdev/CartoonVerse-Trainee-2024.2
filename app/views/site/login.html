@@ -11,36 +11,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CartoonVerse</title>
-    <link rel="stylesheet" href="../../../public/css/login.css" />
+    <link rel="stylesheet" href="../../../public/css/login-teste.css" />
     <link rel="stylesheet" href="../../../public/css/fonts.css" />
   </head>
   <body>
-    <div id="main">
-      <div class="formulario">
-        <form action="/pagina-dos-dados" method="post">
-          <div id="titulo">
-            <label for="titulo">LOGIN</label>
+    <div class="container">
+      <div class="login">
+        <form action="/pagina-dos-dados" method="post" id="formulario">
+          <h1 id="titulo">LOGIN</h1>
+
+          <div class="input-container">
+            <input placeholder="Email" type="email" id="email" required />
+            <img
+              src="../../../public/assets/Icons/icons8-email-96.png"
+              alt="Email"
+              width="20"
+            />
           </div>
-          <div class="input">
-            <div class="input formulario">
-              <label for="email">Email:</label>
-              <input placeholder="Email" type="email" required />
-            </div>
-            <div class="input formulario">
-              <label for="senha">Senha:</label>
-              <input placeholder="Senha" type="password" required />
-            </div>
+          <div class="input-container">
+            <input placeholder="Senha" type="password" id="senha" required />
+            <img
+              src="../../../public/assets/Icons/icons8-lock-96.png"
+              alt="Email"
+              width="20"
+            />
           </div>
-          <div class="button formulario">
-            <button type="submit" id="login">Login</button>
-          </div>
+
+          <button
+            type="submit"
+            class="submit-button"
+            onmouseenter="trocarShadow()"
+            onmouseleave="trocarShadow()"
+          >
+            Login
+          </button>
         </form>
       </div>
       <img
-        src="../../../public/assets/Logo 1 sem fundo.png"
-        alt="Logo do CartoonVerse"
-        id="logo"
+        src="../../../public/assets/Logo 2 sem fundo.png"
+        alt="Logo"
+        class="logo"
       />
     </div>
+    <!-- <div class="logo">
+        <img
+          src="../../../public/assets/Logo 1 sem fundo.png"
+          alt="Logo do CartoonVerse"
+          id="logo"
+        />
+      </div> -->
+    <script>
+      function trocarShadow() {
+        var titulo = document.getElementById("titulo")
+        if ((titulo.style.textShadow = "#13ACB1")) {
+          titulo.style.textShadow = "#7E241E"
+        }
+        if ((titulo.style.textShadow = "#7E241E")) {
+          titulo.style.textShadow = "#13ACB1"
+        }
+      }
+    </script>
   </body>
 </html>
