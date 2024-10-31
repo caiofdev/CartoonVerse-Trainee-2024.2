@@ -9,21 +9,12 @@
 </head>
 <body>
     <nav id="sidebar">
-        <div id="sidebar_content">
-            <div id="user">
-                <img src="/public/assets/chopp.jpg" id="user_avatar" alt="Avatar">
-    
-                <p id="info-user">
-                    <span class="item-description">
-                        Caio Webson Codinson
-                    </span>
-                    <span class="item-description">
-                        Lorem Ipsum
-                    </span>
-                </p>
-            </div>
-    
-            <ul id="side_items">
+        <button class="open-btn" id="hamburguer"><i id="open-btn-icon" class="fa-solid fa-bars"></i></button>
+        <div id="sidebar-content">    
+            <button class="open-btn" id="arrow">
+                <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+            <ul id="side-items">
                 <li class="side-item active">
                     <a href="#">
                         <i class="fa-solid fa-chart-line"></i>
@@ -50,19 +41,28 @@
                         </span>
                     </a>
                 </li>
-    
-            <button id="open_btn">
-                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
 
-        <div id="logout">
-            <button id="logout_btn">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="item-description">
-                    Logout
-                </span>
-            </button>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="item-description">
+                            Logout
+                        </span>
+                    </a>
+                </li>
+
+            <div id="user">
+                <img src="/public/assets/chopp.jpg" id="user-avatar" alt="Avatar">
+                <p id="info-user">
+                    <span class="item-description">
+                        Caio Webson Codinson
+                    </span>
+                    <span class="item-description">
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                    </span>
+                </p>
+            </div>
+
         </div>
     </nav>
     <script src="/public/js/index.js"></script>
