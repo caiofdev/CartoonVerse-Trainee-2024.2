@@ -15,4 +15,7 @@ function Losteps() {
   if ((ep = "yabadabadooo")) {
     window.open("https://youtu.be/qpGx4foRdPw?si=lV3fis_yQxZOYmlz", "_self")
   }
+  if (ep = "mago") {
+    window.open("https://youtu.be/I0nYyNxm8Ew?si=3bjpUjMsheeVYVT9", "_self")
+  }
 }
