@@ -7,8 +7,8 @@
 :root {
   --height-container: 100vh;
   --font-size-header: 36px;
-  --font-size-usuario: 32px;
-  --font-size-usuario-bi: 44px;
+  --font-size-novo: 32px;
+  --font-size-novo-bi: 44px;
   --margin-top-main: 1%;
   --font-size-table: 20px;
   --font-size-table-th: 28px;
@@ -49,14 +49,14 @@ h1 {
   font-size: var(--font-size-header);
 }
 
-#usuario {
+#novo {
   display: flex;
   width: fit-content;
   height: fit-content;
   align-items: center;
   font-family: sugar-bread;
   color: black;
-  font-size: var(--font-size-usuario);
+  font-size: var(--font-size-novo);
   gap: 8%;
   padding: 0.5% 1%;
   background-color: #13acb1;
@@ -65,18 +65,18 @@ h1 {
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.468)
 }
 
-#usuario:hover {
+#novo:hover {
   background-color: #7E241E;
   color: white;
 }
 
-#usuario p {
+#novo p {
   display: inline;
   /* border: 2px solid yellow; */
 }
 
-#usuario .bi{
-  font-size: var(--font-size-usuario-bi);
+#novo .bi{
+  font-size: var(--font-size-novo-bi);
   font-weight: bolder;
 }
 
@@ -143,7 +143,7 @@ tr p {
   margin-right: var(--margin-right-id-p);
 }
 
-.email p {
+.data p {
   margin-right: 12px;
 }
 
@@ -208,11 +208,11 @@ tr p {
 @media (max-width: 768px) {
   :root {
     --font-size-header: 24px;
-    --font-size-usuario: 12px;
-    --font-size-usuario-bi: 20px;
+    --font-size-novo: 12px;
+    --font-size-novo-bi: 20px;
     --margin-top-main: 4%;
-    --font-size-table-th: 20px;
-    --font-size-table: 15px;
+    --font-size-table-th: 16px;
+    --font-size-table: 9px;
     --margin-right-id-p: 12px;
     --font-size-acoes-bi: 16px;
     --margin-right-paginacao: 2%;
