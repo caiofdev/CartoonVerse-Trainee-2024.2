@@ -44,20 +44,11 @@ body {
   min-height: 100vh;
   background-color: #6c6c6c45;
 }
-
-main {
-  padding: 20px;
-  position: fixed;
-  z-index: 1;
-  padding-left: calc(82px + 20px);
-}
-
 /* Sidebar Fechada */
 
 #sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: var(--fundo);
   height: 100vh;
   border-radius: 0px 14px 14px 0px;
@@ -105,7 +96,7 @@ main {
 #side-items {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 10px;
   list-style: none;
 }
 
@@ -150,7 +141,7 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-top: 45vh;
+  padding-top: 50vh;
 }
 
 #user-avatar {
@@ -202,11 +193,14 @@ main {
 
 @media (min-width: 769px) and (max-width: 1440px) {
   #user {
-    padding-top: 52vh;
+    padding-top: 40vh;
   }
 }
 
 @media (max-width: 768px) {
+  #user {
+    padding-top: 35vh;
+  }
   #hamburguer {
     display: block;
     margin: 10px;
