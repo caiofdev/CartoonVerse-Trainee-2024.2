@@ -23,7 +23,8 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: fit-content;  
+    width: fit-content;
+    /* */  
 }
 .fundo_title{
     text-align: center;
