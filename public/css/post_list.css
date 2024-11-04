@@ -43,20 +43,20 @@ li {
     background: #212627;
 }
 .search-bar {
+    margin-bottom: auto;
+    /* margin-top: 20px; */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 20px;
     /* overflow: scroll; */
-    width: 225px;
+    width: 300px;
     height: 40px;
     padding: 10px;
     gap: 10px;
     border-radius: 20px;
     background: #4A5759;
     font-family: "Sugarbread";
-    z-index: 3;
 }
 .search-bar a {
     display: flex;
@@ -74,18 +74,19 @@ li {
     margin: auto;
 }
 
+.posts-div {
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+}
 .posts-div li {
-    /* padding-bottom: 20px; */
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
-    /* flex: 0 1 calc(33.333% - 20px); */
-    /* padding: 0; */
+    /* margin-top: 20px; */
 }
-
 .posts-div div {
+    margin-top: 20px;
     display: flex;
-    width: 353px;
+    width: 310px;
     padding: 10px;
     flex-direction: column;
     align-items: flex-start;
@@ -99,53 +100,70 @@ li {
 }
 .posts-div #post p {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-self: stretch;
     font-weight: 700;
+    font-size: 14px;
 }
-.div-botao-mais {
-    z-index: 2;
+.posts-div #post #titulo {
+    justify-content: center;
+    font-size: 16px;
+}
+
+.div-botao-pagina {
+    margin-top: auto;
+    /* margin-bottom: 20px; */
     display: flex;
-    /* overflow: scroll; */
     justify-content: center;
     text-align: center;
     align-items: center;
+    flex-direction: row;
     height: 37px;
-    width: 225px;
+    width: 300px;
     border-radius: 20px;
     background: #4A5759;
-    width: 225px;
     /* padding: 0 10px; */
 }
-.div-botao-mais p {
+.div-botao-pagina div {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     text-align: center;
-    font-family: "Sugarbread";
-    color: white;
-    font-size: 15px;
+    align-items: center;
+    flex-direction: row;
 }
-.div-botao-mais:hover p{
-    /* background-color: aliceblue; */
-    color:black;
+.div-botao-pagina .numero div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+.div-botao-pagina .numero div:hover{
+    color: rgba(255,255,255, 0.8);
+}
+.div-botao-pagina .numero .active {
+    color:white
+}
+
 
 @media (min-width: 768px) {
     .general-container {
         align-items: center;
-        /* justify-content: space-between; */
+        justify-content: center;
     }
     .search-bar {
-        position: fixed;
+        /* position: relative;
+        top: 40px; */
+        margin-bottom: auto;
+        margin-top: 20px;
         width: 416px;
-        top: 20px;
-        margin-bottom: 20px;
     }
     .search-bar p {
         display: flex;
         justify-content: center;
         flex: 1 0 0;
     }
+    
     .posts-div ul {
         display: flex;
         flex-direction: row;
@@ -155,18 +173,29 @@ li {
     }
     .posts-div li {
         margin: auto 0;
-    }
-    .posts-div div {
-        /* margin: 0 auto; */
-        width: 440px;
+        /* margin: auto 0; */
     }
     #post {
-        width: 440px;
-        margin: auto;
+        width: 370px;
+        /* height: 300; */
     }
-    .div-botao-mais {
-        position: absolute;
-        left: calc((100vw / 2) - (225px / 2));
-        bottom: 20px;
+    .div-botao-pagina {
+        /* position: absolute;
+        bottom: 30px; */
+        margin-top: auto;
+        margin-bottom: 20px;
+        width: 416px;
+    }
+    .div-botao-pagina div {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+    }
+    .div-botao-pagina div:not(.numero),
+    .div-botao-pagina div.numero div {
+        width: 40px;
+        height: 40px;
     }
 }
