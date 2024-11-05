@@ -71,6 +71,10 @@ h1 {
   color: white;
 }
 
+#novo .bi:hover {
+  color: white;
+}
+
 #novo p {
   display: inline;
   /* border: 2px solid yellow; */
@@ -205,7 +209,8 @@ td {
 }
 
 .bi:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
+  cursor: none;
 }
 
 /* 4K */
