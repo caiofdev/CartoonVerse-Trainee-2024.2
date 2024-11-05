@@ -5,6 +5,8 @@
 }
 
 :root {
+  --overflow-container: hidden;
+  --overflow-main: hidden;
   --height-container: 100vh;
   --font-size-header: 36px;
   --font-size-novo: 32px;
@@ -27,7 +29,7 @@ body {
 
 .container {
   width: 99%;
-  overflow: scroll;
+  overflow: hidden;
   height: var(--height-container);
   margin-left: 1%;
   background-color: #B0C4C4;
@@ -88,7 +90,7 @@ h1 {
 
 #main {
   width: 98%;
-  overflow: scroll;
+  overflow: var(--overflow-main);
   padding: 1%;
   align-content: space-between;
   margin-top: var(--margin-top-main);
@@ -216,6 +218,7 @@ td {
 /* 4K */
 @media (min-width: 2560px) {
   :root {
+    --overflow-container: scroll;
     --height-container: 114vh;
     --font-size-table: 18px;
   }
@@ -224,6 +227,7 @@ td {
 /* MOBILE */
 @media (max-width: 768px) {
   :root {
+    --overflow-main: scroll;
     --font-size-header: 28px;
     --font-size-novo: 16px;
     --font-size-novo-bi: 24px;
