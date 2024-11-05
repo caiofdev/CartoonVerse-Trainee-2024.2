@@ -70,6 +70,10 @@ h1 {
   color: white;
 }
 
+#usuario .bi:hover {
+  color: white;
+}
+
 #usuario p {
   display: inline;
   /* border: 2px solid yellow; */
@@ -175,7 +179,7 @@ tr p {
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-self: end;
+  justify-self: start;
   /* position: absolute;
   right: 3%; */
   margin-right: var(--margin-right-paginacao);
