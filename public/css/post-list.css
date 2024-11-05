@@ -27,6 +27,7 @@ body {
 
 .container {
   width: 99%;
+  overflow: scroll;
   height: var(--height-container);
   margin-left: 1%;
   background-color: #B0C4C4;
@@ -83,6 +84,7 @@ h1 {
 
 #main {
   width: 98%;
+  overflow: scroll;
   padding: 1%;
   align-content: space-between;
   margin-top: var(--margin-top-main);
@@ -109,6 +111,8 @@ th {
   font-size: var(--font-size-table-th);
   text-align: left;
   border-bottom: 2px solid rgba(0, 0, 0, 0.40);
+  padding-left: 10px;
+  padding-right: 10px;
   /* background-color: #13acb1; */
 }
 
@@ -136,6 +140,12 @@ tr p {
   font-family: open-sans;
   color: black;
   align-self: center;
+  width: fit-content;
+}
+
+td {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .id p {
@@ -175,7 +185,7 @@ tr p {
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-self: end;
+  justify-self: start;
   /* position: absolute;
   right: 3%; */
   margin-right: var(--margin-right-paginacao);
@@ -198,21 +208,23 @@ tr p {
   cursor: pointer;
 }
 
+/* 4K */
 @media (min-width: 2560px) {
   :root {
     --height-container: 114vh;
+    --font-size-table: 18px;
   }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
   :root {
-    --font-size-header: 24px;
-    --font-size-novo: 12px;
-    --font-size-novo-bi: 20px;
-    --margin-top-main: 4%;
+    --font-size-header: 28px;
+    --font-size-novo: 16px;
+    --font-size-novo-bi: 24px;
+    --margin-top-main: 10%;
     --font-size-table-th: 16px;
-    --font-size-table: 9px;
+    --font-size-table: 14px;
     --margin-right-id-p: 12px;
     --font-size-acoes-bi: 16px;
     --margin-right-paginacao: 2%;
