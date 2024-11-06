@@ -14,22 +14,22 @@ function Losteps() {
     window.open("https://youtu.be/rklpHFbLABg?si=l0xRNLK_OVHidCzl", "_self")
   }
   //yabadabadooo
-  if ((ep = "yabadabadooo")) {
+  else if ((ep = "yabadabadooo")) {
     window.open("https://youtu.be/qpGx4foRdPw?si=lV3fis_yQxZOYmlz", "_self")
   }
   //contemplem o mago
-  if ((ep = "mago")) {
+  else if ((ep = "mago")) {
     window.open("https://youtu.be/I0nYyNxm8Ew?si=3bjpUjMsheeVYVT9", "_self")
   }
   //dangerous
-  if ((ep = "hermes")) {
+  else if ((ep = "hermes")) {
     window.open(
       "https://open.spotify.com/intl-pt/track/2sxpbOUUSzRrms8vSZwxvo?si=ffbe1ca2348541e3",
       "_self"
     )
   }
   //Epic
-  if ((ep = "athena")) {
+  else if ((ep = "athena")) {
     window.open(
       "https://open.spotify.com/playlist/3HvgaZeBWbr7UjFeicPFRI?si=VtDOEEA0TQG3fFI9V3W-Sw&pi=AZ5z8RnMQ0-0b",
       "_self"
