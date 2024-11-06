@@ -138,6 +138,18 @@ li {
     align-items: center;
     text-align: center;
 }
+.div-botao-pagina .first:hover{
+    color: rgba(255,255,255, 0.8);
+}
+.div-botao-pagina .prox:hover{
+    color: rgba(255,255,255, 0.8);
+}
+.div-botao-pagina .prev:hover{
+    color: rgba(255,255,255, 0.8);
+}
+.div-botao-pagina .last:hover{
+    color: rgba(255,255,255, 0.8);
+}
 .div-botao-pagina .numero div:hover{
     color: rgba(255,255,255, 0.8);
 }
