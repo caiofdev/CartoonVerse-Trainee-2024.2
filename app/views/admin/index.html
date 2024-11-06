@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modais Exemplo</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+
+<!-- Botões para abrir os modais -->
+<button id="btnCriar">Criar</button>
+<button id="btnEditar">Editar</button>
+<button id="btnVisualizar">Visualizar</button>
+<button id="btnExcluir">Excluir</button>
+
+<!-- Modal de Criar -->
+<div id="modalCriar" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeCriar">&times;</span>
+        <h2>Criar</h2>
+        <p>Conteúdo do modal para criar.</p>
+        <button>Salvar</button>
+    </div>
+</div>
+
+<!-- Modal de Editar -->
+<div id="modalEditar" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEditar">&times;</span>
+        <h2>Editar</h2>
+        <p>Conteúdo do modal para editar.</p>
+        <button>Salvar</button>
+    </div>
+</div>
+
+<!-- Modal de Visualizar -->
+<div id="modalVisualizar" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeVisualizar">&times;</span>
+        <h2>Visualizar</h2>
+        <p>Conteúdo do modal para visualizar.</p>
+    </div>
+</div>
+
+<!-- Modal de Excluir -->
+<div id="modalExcluir" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeExcluir">&times;</span>
+        <h2>Excluir</h2>
+        <p>Tem certeza que deseja excluir?</p>
+        <button>Sim</button>
+        <button>Não</button>
+    </div>
+</div>
+
+<script src="/public/js/index.js"></script>
+</body>
+</html>
