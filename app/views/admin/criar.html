@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../public/css/fonts.css">
+  <link rel="stylesheet" href="../../../public/css/criar.css">
+  <title>CartoonVerse</title>
+</head>
+<body>
+  <div id="modalCriar" class="modal">
+    <div class="modal-content">
+      <div class="perfil">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-person-circle" id="foto-perfil" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-lg" id="plus" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+        </svg>
+      </div>
+      <form action="/pagina-dos-dados" method="post" id="formulario">
+        <div class="input-form"><input type="text" placeholder="Nome" required></div>
+        <div class="input-form"><input type="email" placeholder="Email" required></div>
+        <div class="input-form" id="input-senha">
+          <input type="password" placeholder="Senha" required autocomplete="off">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-eye-fill" id="eye-senha" viewBox="0 0 16 16">
+            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+          </svg>
+        </div>
+        <div class="button-form">
+          <button type="submit" class="button-form" onclick="">Cancelar</button>
+          <button class="button-form" onclick="">Criar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
