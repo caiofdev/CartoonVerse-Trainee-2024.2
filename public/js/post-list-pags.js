@@ -1,7 +1,7 @@
 let SIZE = 200
 
 function populate() {
-    const dados = Array.from({length:SIZE}).map((_,i) => '<li><a href="#"> <div id="post"><p id="autor-data">Michael • 10/10/2010</p><p id="titulo"><br>Título aqui</p><img src="../../../gumball.jpg" alt=""></div></a></li>')
+    const dados = Array.from({length:SIZE}).map((_,i) => '<li><a href="#"> <div id="post"><p id="titulo">Título aqui</p><p id="autor-data"><br>Michael • 10/10/2010</p><img src="../../../gumball.jpg" alt=""></div></a></li>')
     const list = document.querySelector('.posts-div #list')
     list.innerHTML = dados.join('')
     return dados
