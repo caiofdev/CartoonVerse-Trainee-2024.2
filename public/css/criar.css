@@ -12,7 +12,7 @@ body {
   align-items: center;
 }
 
-.modal-content {
+.container {
   background-color: white;
   width: 60vw;
   height: 80vh;
@@ -51,35 +51,40 @@ body {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 4%;
+  gap: 40px;
 }
 
-#formulario .input-form div {
+#formulario .input-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
   height: fit-content;
+  gap: 40px;
 }
 
-#formulario .input-form div {
-  height: fit-content;
+.input {
+  height: 16px;
 }
 
-#formulario .input-form input {
+#formulario .input input {
   height: fit-content;
   font-size: 16px;
   border: 0;
+  padding-left: 4%;
   outline: none;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
 }
 
 
-#input-senha {
+#senha {
   position: relative;
   font-family: open-sans;
   /* font-size: 12px; */
 }
 
-#input-senha #eye-senha {
+/* #senha #visualizar-senha {
   font-size: 12px;
   position: absolute;
   top: 50%;
-}
+} */
