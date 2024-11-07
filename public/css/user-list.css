@@ -17,6 +17,7 @@
   --font-size-acoes-bi: 28px;
   --margin-right-paginacao: 1%;
   --font-size-paginacao-bi: 40px;
+  --fundo-input: #000
 }
 
 body {
@@ -201,6 +202,173 @@ tr p {
 .bi:hover {
   cursor: pointer;
 }
+
+/* Estilos gerais do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #666;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  gap: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40vw;
+  height: 73vh;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Botão de fechar (X) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Imagem do usuário */
+.user-image {
+  background-color: var(--fundo-input);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+/* Estilos dos campos de entrada */
+.input-group {
+  margin: 10px 0;
+}
+
+.input-group input {
+  width: 100%;
+  height: 37px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--fundo-input);
+  color: #fff;
+  padding-left: 30px;
+}
+
+.input-group input[readonly] {
+  cursor: not-allowed;
+  background-color: var(--fundo-input);
+}
+
+/* Botões de ação */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.confirm, .cancel {
+  background-color: var(--fundo-input);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: sugar-bread;
+}
+
+.cancel {
+  background-color: var(--fundo-input);
+}
+
+.confirm:hover, .cancel:hover {
+  background-color: var(--fundo-input);
+}
+
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo específico para o modal de exclusão */
+#modalExcluir {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+  z-index: 1000;
+}
+
+#modalExcluir .modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #555555; 
+  border-radius: 20px; 
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto de aviso */
+#modalExcluir .modal-content p {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* Botões de ação */
+#modalExcluir .modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  font-family: sugar-bread;
+}
+
+#modalExcluir .confirm {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#modalExcluir .cancel {
+  background-color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#modalExcluir .confirm:hover {
+  background-color: #e60000;
+}
+
+#modalExcluir .cancel:hover {
+  background-color: #e0e0e0;
+}
+
 
 @media (min-width: 2560px) {
   :root {
