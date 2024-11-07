@@ -1,34 +1,30 @@
-let currentSlide = 0
+let slideIndex = 1
+showSlide(slideIndex)
 
-function showSlide(slideIndex) {
-  const slides = document.querySelectorAll(".carrossel-item")
-  if (slideIndex >= slides.length) {
-    currentSlide = 0
+function currentSlide(n) {
+  showSlide((slideIndex = n))
+}
+
+function showSlide(n) {
+  let slides = document.querySelectorAll(".slide")
+  let indicators = document.querySelectorAll(".indicator")
+
+  if (n > slides.length) {
+    slideIndex = 1
   }
-  if (slideIndex < 0) {
-    currentSlide = slides.length - 1
+  if (n < 1) {
+    slideIndex = slides.length
   }
 
-  slides.forEach((slide, index) => {
-    slide.classList.remove("active")
-    if (index === currentSlide) {
-      slide.classList.add("active")
-    }
-  })
+  slides.forEach((slide) => (slide.style.display = "none"))
+  indicators.forEach((indicator) => indicator.classList.remove("active"))
 
-  const carrossel = document.querySelector(".carrossel")
-  carrossel.style.transform = `translateX(-${currentSlide * 100}%)`
+  slides[slideIndex - 1].style.display = "block"
+  indicators[slideIndex - 1].classList.add("active")
 }
 
-function nextSlide() {
-  currentSlide++
-  showSlide(currentSlide)
-}
-
-function previousSlide() {
-  currentSlide--
-  showSlide(currentSlide)
-}
-
-// Exibir o primeiro slide ao carregar
-showSlide(currentSlide)
+// Avança automaticamente para o próximo slide a cada 5 segundos
+setInterval(() => {
+  slideIndex++
+  showSlide(slideIndex)
+}, 5000)

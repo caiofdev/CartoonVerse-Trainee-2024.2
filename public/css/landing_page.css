@@ -183,48 +183,63 @@ body {
 }
 
 /* Carrossel */
-.carrossel-section {
-  max-width: 500px;
-  margin: auto;
-  text-align: center; /* Centraliza os botões */
-}
-
 .carrossel-section h1 {
   font-family: "Comicartoon";
   font-size: 50px;
+  text-align: center;
 }
 
-.carrossel-container {
+.carousel {
   position: relative;
-  width: 80%;
-  max-width: 300px;
+  max-width: 600px;
+  max-height: 600px;
   margin: auto;
-  text-align: center; /* Centraliza os botões */
   overflow: hidden;
   border-radius: 10px;
 }
 
-.carrossel {
+.carousel-slides {
   display: flex;
-  transition: transform 0.5s ease;
 }
 
-.carrossel-item {
+.slide {
   min-width: 100%;
-  box-sizing: border-box;
 }
 
-.carrossel-item.active {
-  display: block; /* Exibe apenas a imagem ativa */
-}
-
-.carrossel img {
+.slide img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  /* border: 5px solid #333;  */
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid black; /* Borda preta */
 }
+
+.carousel-indicators {
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Fica no meio da tela*/
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+  gap: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(1, 1, 1, 4); /* Sombra para destaque */
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
 
 .btn {
   background-color: rgba(255, 255, 255, 0.7);
