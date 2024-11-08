@@ -11,29 +11,28 @@ function Fecharlosteps() {
 function Losteps() {
   //rachador
   if ((ep = "biruta")) {
+    ep = "null"
     window.open("https://youtu.be/rklpHFbLABg?si=l0xRNLK_OVHidCzl", "_self")
   }
   //yabadabadooo
-  else if ((ep = "yabadabadooo")) {
+  if ((ep = "yabadabadooo")) {
+    ep = "null"
     window.open("https://youtu.be/qpGx4foRdPw?si=lV3fis_yQxZOYmlz", "_self")
   }
   //contemplem o mago
-  else if ((ep = "mago")) {
+  if ((ep = "mago")) {
+    ep = "null"
     window.open("https://youtu.be/I0nYyNxm8Ew?si=3bjpUjMsheeVYVT9", "_self")
   }
   //dangerous
-  else if ((ep = "hermes")) {
-    window.open(
-      "https://open.spotify.com/intl-pt/track/2sxpbOUUSzRrms8vSZwxvo?si=ffbe1ca2348541e3",
-      "_self"
-    )
+  if ((ep = "hermes")) {
+    ep = "null"
+    window.open("https://open.spotify.com/intl-pt/track/2sxpbOUUSzRrms8vSZwxvo?si=ffbe1ca2348541e3","_self")
   }
   //Epic
-  else if ((ep = "athena")) {
-    window.open(
-      "https://open.spotify.com/playlist/3HvgaZeBWbr7UjFeicPFRI?si=VtDOEEA0TQG3fFI9V3W-Sw&pi=AZ5z8RnMQ0-0b",
-      "_self"
-    )
+  if ((ep = "athena")) {
+    ep = "null"
+    window.open("https://open.spotify.com/playlist/3HvgaZeBWbr7UjFeicPFRI?si=VtDOEEA0TQG3fFI9V3W-Sw&pi=AZ5z8RnMQ0-0b", "_self")
   }
 }
 
@@ -59,9 +58,9 @@ function Losteps() {
 // Samurai Jack
 // EPIC (AUREA)
 // trigemeas
-// Capitão Planeta 
+// Capitão Planeta
 // Saint Seiya
 // Os gárgulas
 // castelo rá-tim-bum
-// 
+//
 //
