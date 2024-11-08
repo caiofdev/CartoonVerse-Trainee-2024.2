@@ -22,7 +22,6 @@
 
 body {
   width: 100vw;
-  /* height: 100vh; */
   background-color: #586262a8;
 }
 
@@ -31,9 +30,9 @@ body {
   height: var(--height-container);
   margin-left: 1%;
   background-color: #B0C4C4;
-  /* border: 2px solid #7E241E; */
 }
 
+/* Header */
 #header {
   display: flex;
   flex-direction: row;
@@ -50,6 +49,7 @@ h1 {
   font-size: var(--font-size-header);
 }
 
+/* Botão de novo usuário */
 #usuario {
   display: flex;
   width: fit-content;
@@ -85,7 +85,7 @@ h1 {
   font-weight: bolder;
 }
 
-
+/* Tabela de Usuários */
 #main {
   width: 98%;
   padding: 1%;

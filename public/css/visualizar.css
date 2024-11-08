@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-    --fundo-input: #000
-}
-
 /* Estilos gerais do modal */
 .modal {
   display: none;
@@ -64,7 +60,7 @@
 }
 
 
-/* Estilos dos campos de entrada */
+/* Estilos dos campos de dados */
 .input-group {
   display: flex;
   flex-direction: column;

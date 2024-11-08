@@ -1,90 +1,139 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  background: #B0C4C4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Estilos gerais do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(	176, 196, 196, 0.5);
 }
 
-.container {
+.modal-content {
   background-color: white;
-  width: 60vw;
-  height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  padding: 4%;
-  gap: 40px;
-  font-family: open-sans;
-  font-size: 68px;
-}
-
-.perfil {
-  width: fit-content;
-  height: fit-content;
   position: relative;
-}
-
-#foto-perfil {
-  font-size: 80px;
-}
-
-#plus {
-  color: blue;
-  font-size: 48px;
-  position: absolute;
-  left: 20%;
-  top: 12%;
-}
-
-
-
-#formulario {
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-#formulario .input-container {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  height: fit-content;
-  gap: 40px;
-}
-
-.input {
-  height: 16px;
-}
-
-#formulario .input input {
-  height: fit-content;
-  font-size: 16px;
-  border: 0;
-  padding-left: 4%;
-  outline: none;
+  text-align: center;
+  gap: 30px;
+  margin: auto;
+  padding: 20px;
   border-radius: 10px;
+  width: 40vw;
+  height: 73vh;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Botão de fechar (X) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Imagem do usuário */
+.user-image {
+  background-color: transparent;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+  margin: 0 auto 20px;
+}
+
+.user-image:hover {
+  cursor: pointer;
+}
+
+.user-image svg {
+  font-size: 48px;
+  color: black;
+}
+
+
+
+/* Estilos dos campos de entrada */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+}
+
+#first {
+  margin-top: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 37px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+  color: #000;
+  font-size: 32px;
+  padding-left: 30px;
+}
+
+.input-group input[readonly] {
+  cursor: not-allowed;
+  background-color: var(--fundo-input);
+}
+
+/* Botões de ação */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16%;
+}
+
+.confirm, .cancel {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: sugar-bread;
+  font-size: 32px;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
 }
 
-
-#senha {
-  position: relative;
-  font-family: open-sans;
-  /* font-size: 12px; */
+.cancel:hover {
+  background-color: #7E241E;
 }
 
-/* #senha #visualizar-senha {
-  font-size: 12px;
-  position: absolute;
-  top: 50%;
-} */
+.confirm:hover {
+  background-color: #13ACB1;
+}
+
+.confirm:hover, .cancel:hover {
+  color: white;
+}
+
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
