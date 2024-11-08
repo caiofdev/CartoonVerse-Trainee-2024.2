@@ -80,9 +80,10 @@ body {
   color: #fff;
   border-radius: 30%;
   border-color: #fff;
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
+  width: 47px;
+  height: 45px;
+  font-size: 28px;
+  padding-top: 2px;
   color: #000;
   cursor: pointer;
   display: none; /* Esconde o ícone por padrão */
@@ -156,11 +157,6 @@ body {
   flex-direction: column;
 }
 
-#info-user span:last-child {
-  color: #6b6b6b;
-  font-size: 12px;
-}
-
 /* Abrindo Sidebar */
 .open-sidebar #open-btn-icon {
   transform: rotate(180deg);
@@ -174,6 +170,7 @@ body {
   font-size: 14px;
   transition: width 0.6s;
   height: 0px;
+  white-space: normal;
 }
 
 /* Sidebar Aberta */
