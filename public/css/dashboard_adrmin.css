@@ -38,6 +38,7 @@ body {
   font-family: Arial, sans-serif;
   background-image: url(/public/assets/imagem\ de\ fundoborrada.png);
   align-content: center;
+  background-size: cover;
 }
 
 /* Hero Section */
@@ -54,22 +55,22 @@ body {
   font-weight: lighter;
   font-family: "Comicartoon";
   text-transform: uppercase;
-  text-shadow: 2px 2px #7e241e
+  text-shadow: 2px 2px #7e241e;
+  padding-top: 20px;
 }
 
 .hero-dashboard p {
   font-size: 1.2rem;
-  text-shadow: 1px 1px #000000
+  text-shadow: 1px 1px #000000;
 }
 
 /* Seção de Links Administrativos */
 .admin-links {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
-  gap: 15px;
-  padding-top: 20px;
+  gap: 100px;
+  padding-top: 110px;
   align-content: center;
   align-items: center;
 }
@@ -113,9 +114,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-dashboard h1 {
+  padding-top: 1px;
+  }
+
   .admin-links {
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 15px;
+    gap: 20px;
   }
   .admin-link {
     width: 35%;
@@ -126,6 +132,7 @@ body {
   .admin-links {
     flex-direction: column;
     padding-top: 20px;
+    gap: 20px;
   }
 
   .admin-link {
