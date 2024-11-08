@@ -1,7 +1,12 @@
+@import url(fonts.css);
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 
 :root {
@@ -23,15 +28,51 @@
 
 .modal {
   display: none;
-  background-color: #586262a8;
-  border: solid 1px black;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #b0c4c4;
   z-index: 2;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 1;
+}
+.modal-content {
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  background-color: white;
+  height: fit-content;
+  width: 40%;
+  border-radius: 10px;
+}
+#modalExcluir .modal-content h2 {
+  font-family: comiccartoon;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.modal-content .certeza-excluir {
+  font-family: sugar-bread;
+  display: flex;
+  justify-content: center;
+}
+
+#modalExcluir .modal-content button:not(.close#closeExcluir) {
+  margin-top: 20px;
+}
+
+.div-excluir-botao {
+  height: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.div-excluir-botao button {
+  border: none;
+  background-color: white;
+  margin-right: 10px;
 }
 
 body {
