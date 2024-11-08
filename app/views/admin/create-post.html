@@ -15,11 +15,23 @@
           href="post-list.html"
           >&times;</a
         >
-        <label for="titulo">Título</label>
-        <input type="text" id="titulo" name="titulo" required />
-        <label for="conteudo">Conteúdo do Post</label>
-        <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
-        <label for="imagem">Imagem</label>
+        <!-- <label for="titulo">Título</label> -->
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          required
+          placeholder="Título"
+        />
+        <!-- <label for="conteudo">Conteúdo do Post</label> -->
+        <textarea
+          id="conteudo"
+          name="conteudo"
+          rows="5"
+          required
+          placeholder="Conteúdo"
+        ></textarea>
+        <!-- <label for="imagem">Imagem</label> -->
         <input
           type="file"
           id="imagem"
@@ -27,9 +39,17 @@
           required
           accept=".jpg, .jpeg, .png"
         />
-        <label for="autor">Autor</label>
-        <input type="text" id="autor" name="autor" required />
-        <label for="data-criacao">Data de criação</label>
+        <!-- <label for="autor">Autor</label> -->
+        <input
+          type="text"
+          id="autor"
+          name="autor"
+          required
+          placeholder="Autor"
+        />
+        <!-- <label id="label-data-criacao" for="data-criacao"
+          >Data de criação</label
+        > -->
         <input type="date" id="data-criacao" name="data-criacao" required />
         <div class="botoes">
           <a href="post-list.html">
