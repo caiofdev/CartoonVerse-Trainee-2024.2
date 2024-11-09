@@ -16,12 +16,15 @@
           >&times;</span
         >
         <div class="modal-body">
-          <!-- Imagem do usuário -->
-          <div class="user-image">
-          </div>
           <!-- Dados do Usuário -->
            <div class="modal-form">
             <form action="" method="post" class="modal-form" id="dados-user">
+              <!-- Imagem do usuário -->
+                <label for="dados-image" class="user-image" tabindex="0" id="image">
+                  <span class="user-image" id="image">
+                  </span>
+                </label>
+                <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image">
               <div class="input-group" id="first">
                 <input type="text" placeholder="id" form="dados-user" readonly/>
               </div>

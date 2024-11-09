@@ -369,7 +369,7 @@ tr p {
   background-color: #e0e0e0;
 }
 
-
+/* 4K */
 @media (min-width: 2560px) {
   :root {
     --height-container: 114vh;
