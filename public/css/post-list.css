@@ -262,11 +262,6 @@ td {
   border: 0;
 }
 
-.bi:hover {
-  /* cursor: pointer; */
-  cursor: none;
-}
-
 /* 4K */
 @media (min-width: 2560px) {
   :root {
