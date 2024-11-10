@@ -25,66 +25,60 @@ body {
     width: fit-content;
     padding: 20px;
 }
-.fundo_title{
+.title{
     width: 100%;
-    /* max-width: 40%; */
     height: auto;
-    padding: 20px;
+    padding: 5px;
     color: #000000;
     background-color: #b0c4c4;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
     justify-content: center;
-    font-size: 32px;
-    font-family:'Comicartoon';
-    /* margin-bottom: 20px; */
+    font-size: 26px;
+    font-weight: 400;
+    font-family:'Inter';
 }
 
 .imagem_principal{
-    /* max-height: 622px; */
-    overflow: hidden;
-    height: 30vh;
-    border: black 1px solid;
-    /* margin-bottom: 20px; */
-    /* border-radius: 20px; */
+    margin-top: 20px;
 }
-
+.imagem_principal img {
+    border-radius: 20px;
+}
 
 .conteudo{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     width: 100%;
-    /* max-width: 40%; */
-    min-height: 300px;
     display: flex;
     padding: 20px;
+    padding-top: 0px;
     flex-direction: column;
-    /* margin-bottom: 20px; */
     font-size: 20px;
     background-color: #b0c4c4;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
-.conteudo img{
-    width: 50px;
-    height: 50px;
-    /* margin: 10px;? */
-    border: 1px solid black;    
-}
-
-.descricao{
-    color: #000000;
-    border: black 1px solid;
-    display: flex;
-    justify-content: center;
-}
 .autor {
-    /* border: 1px solid red; */
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: flex-start;
+    margin: 10px 0;
+}
+.autor img{
+    width: 40px;
+    height: 40px;
+    /* margin: 10px;? */
+    /* border: 1px solid black;     */
+}
+
+.descricao{
+    color: #000000;
+    /* border: black 1px solid; */
+    display: flex;
+    justify-content: center;
 }
 .data {
     /* border: 1px solid black; */
@@ -94,9 +88,11 @@ body {
     /* border: 1px solid red; */
     padding-top: 5px;
     color: #000000;
+    background-color: #b0c4c4;
     text-align: left;
     font-size: 24px;
-    background-color: #b0c4c4;
+    font-weight: 400;
+    font-family: "Inter";
 }
 
 
