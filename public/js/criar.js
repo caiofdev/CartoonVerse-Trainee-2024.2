@@ -1,7 +1,7 @@
 const inputFile = document.querySelector('#input-image');
 const pictureImage = document.querySelector('#image');
 const pictureImageTxt = "Perfil";
-pictureImage.innerHTML = pictureImageTxt;
+// pictureImage.innerHTML = pictureImageTxt;
 
 inputFile.addEventListener('change', function(e) {
   const inputTarget = e.target;
@@ -23,8 +23,6 @@ inputFile.addEventListener('change', function(e) {
     });
 
     reader.readAsDataURL(file);
-  } else {
-    pictureImage.innerHTML = pictureImageTxt;
   }
   
-})
+});
