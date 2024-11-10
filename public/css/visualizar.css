@@ -8,6 +8,7 @@
   --modal-content-width: 40vw;
   --modal-content-height: 90vh;
   --font-size: 40px;
+  --width-height-user-image: 168px;
   --font-size-buttons: 28px;
   --margin-top-buttons: 16%;
 }
@@ -57,8 +58,8 @@
 /* Imagem do usuário */
 .user-image {
   background-color: transparent;
-  width: 168px;
-  height: 168px;
+  width: var(--width-height-user-image);
+  height: var(--width-height-user-image);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -137,6 +138,17 @@
 .fechar:hover {
   background-color: #7E241E;
   color: white;
+}
+
+/* 4K */
+@media (min-width:2560px) {
+  :root {
+    --modal-content-width: 40vw;
+    --modal-content-height: 72vh;
+    --font-size: 56px;
+    --width-height-user-image: 208px;
+    --font-size-buttons: 48px;
+  }
 }
 
 /* MOBILE */

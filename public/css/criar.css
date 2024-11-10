@@ -8,6 +8,7 @@
   --modal-content-width: 40vw;
   --modal-content-height: 90vh;
   --font-size: 40px;
+  --width-height-user-image: 168px;
   --margin-top-first: 12%;
   --flex-direction-buttons: row;
   --font-size-buttons: 24px;
@@ -61,8 +62,8 @@
 /* Imagem do usuário */
 .user-image {
   background-color: transparent;
-  width: 168px;
-  height: 168px;
+  width: var(--width-height-user-image);
+  height: var(--width-height-user-image);
   display: flex;
   justify-content: center;
   align-content: center;
@@ -180,8 +181,9 @@ input[type="file"] {
 @media (min-width:2560px) {
   :root {
     --modal-content-width: 40vw;
-    --modal-content-height: 64vh;
+    --modal-content-height: 72vh;
     --font-size: 56px;
+    --width-height-user-image: 208px;
     --font-size-buttons: 48px;
   }
 }
