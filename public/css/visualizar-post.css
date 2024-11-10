@@ -12,6 +12,19 @@
   --margin-top-buttons: 16%;
 }
 
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #13ACB1;
+    height: 90%;
+}
+
 /* Estilos gerais do modal */
 .modal {
   display: none;
@@ -99,8 +112,9 @@
 }
 
 .input-group textarea {
-  height: 200px;
+  height: 400px;
   width: 100%;
+  border-radius: 10px;
   resize: none;
 }
 
