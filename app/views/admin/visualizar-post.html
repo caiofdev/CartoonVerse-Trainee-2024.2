@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../public/css/fonts.css">
+  <link rel="stylesheet" href="../../../public/css/visualizar-post.css">
+  <title>CartoonVerse</title>
+</head>
+<body>
+  <button onclick="abrirModal('modalVisualizar')">Visualizar</button>
+  <!-- Modal de Criar -->
+    <div id="modalVisualizar" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeCriar" onclick="fecharModal('modalVisualizar')"
+          >&times;</span
+        >
+        <div class="modal-body">
+          <!-- Dados do Usuário -->
+           <div class="modal-form">
+            <form action="" method="post" class="modal-form" id="dados-user">
+              <!-- Imagem do usuário -->
+                <label for="dados-image" class="user-image" tabindex="0" id="image">
+                </label>
+                <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image">
+              <div class="input-group" id="first">
+                <input type="text" placeholder="id" form="dados-user" readonly/>
+              </div>
+              <div class="input-group">
+                <input type="text" placeholder="Nome" form="dados-user" readonly/>
+              </div>
+              <div class="input-group">
+                <input type="email" placeholder="Email" form="dados-user" readonly/>
+              </div>
+              <div class="button-fechar">
+                <button class="fechar" onclick="fecharModal('modalVisualizar')" form="dados-user" type="button">Fechar</button>
+              </div>
+            </form>
+           </div>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="../../../public/js/post-list-modais.js"></script>
+</html>
