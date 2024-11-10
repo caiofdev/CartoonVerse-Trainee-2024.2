@@ -7,9 +7,13 @@
 :root {
   --modal-content-width: 40vw;
   --modal-content-height: 90vh;
-  --font-size: 32px;
+  --font-size: 36px;
+  --margin-top-first: 12%;
+  --flex-direction-buttons: row;
   --font-size-buttons: 24px;
   --margin-top-buttons: 16%;
+  --margin-bottom-buttons: 24px;
+  --margin-bottom-cancel: 24px;
 }
 
 /* Estilos gerais do modal */
@@ -17,7 +21,7 @@
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 50px;
+  padding-top: 40px;
   left: 0;
   top: 0;
   width: 100%;
@@ -56,9 +60,9 @@
 
 /* Imagem do usuário */
 .user-image {
-  background-color: white;
-  width: 128px;
-  height: 128px;
+  background-color: transparent;
+  width: 168px;
+  height: 168px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -70,8 +74,8 @@
 #image {
   overflow: hidden;
   font-family: open-sans;
-  font-size: 24px;
-  line-height: 128px;
+  font-size: 32px;
+  line-height: 168px;
 }
 
 .perfil-image {
@@ -105,12 +109,12 @@ input[type="file"] {
 }
 
 #first {
-  margin-top: 12%;
+  margin-top: var(--margin-top-first);
 }
 
 .input-group input {
   width: 100%;
-  height: 37px;
+  height: var(--font-size);
   padding: 10px;
   border-radius: 20px;
   border: none;
@@ -124,12 +128,12 @@ input[type="file"] {
 
 .input-group input[readonly] {
   cursor: not-allowed;
-  background-color: var(--fundo-input);
 }
 
 /* Botões de ação */
 .modal-buttons {
   display: flex;
+  flex-direction: var(--flex-direction-buttons);
   height: fit-content;
   justify-content: space-between;
   /* margin-top: var(--margin-top-buttons); */
@@ -149,7 +153,11 @@ input[type="file"] {
   font-family: sugar-bread;
   font-size: var(--font-size-buttons);
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
-  margin-bottom: 8%;
+  margin-bottom: var(--margin-bottom-buttons);
+}
+
+.cancel {
+  margin-bottom: var(--margin-bottom-cancel);
 }
 
 .cancel:hover {
@@ -175,9 +183,13 @@ input[type="file"] {
 @media (max-width: 768px) {
   :root {
     --modal-content-width: 90vw;
-    --modal-content-height: 90vh;
-    --font-size: 24px;
-    --font-size-buttons: 12px;
+    --modal-content-height: 92vh;
+    --font-size: 32px;
+    --margin-top-first: 6%;
+    --flex-direction-buttons: column;
+    --font-size-buttons: 16px;
     --margin-top-buttons: 40%;
+    --margin-bottom-buttons: 24px;
+    --margin-bottom-cancel: 24px;
   }
 }
