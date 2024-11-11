@@ -1,0 +1,81 @@
+:root {
+  --modal-content-width: 40vw;
+  --modal-content-height: 90vh;
+  --font-size: 40px;
+  --width-height-user-image: 168px;
+  --font-size-buttons: 28px;
+  --margin-top-buttons: 16%;
+}
+
+/* Estilo base do modal */
+.modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+  background-color: rgba(	176, 196, 196, 0.5);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px; /* Menor largura */
+  text-align: center;
+}
+
+/* Estilo específico para o modal de exclusão */
+.modal-excluir {
+  width: 400px;
+}
+
+/* Botão de fechar */
+.close {
+  color: #333;
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilo dos botões de confirmação e cancelamento */
+.modal-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btn-confirmar {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  background-color: #7f8c8d;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancelar, .btn-confirmar {
+  font-family: sugar-bread;
+}
+
+.btn-confirmar:hover {
+  background-color: #7E241E;
+}
+
+.btn-cancelar:hover {
+  background-color: #13ACB1;
+}
