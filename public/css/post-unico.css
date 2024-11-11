@@ -23,7 +23,7 @@ body {
     flex-direction: column;
     text-align: center;
     width: fit-content;
-    padding: 20px;
+    margin: 20px;
 }
 .title{
     width: 100%;
@@ -42,9 +42,12 @@ body {
 
 .imagem_principal{
     margin-top: 20px;
+    width: fit-content;
+    max-width: 100%;
 }
 .imagem_principal img {
     border-radius: 20px;
+    max-width: 100%;
 }
 
 .conteudo{
@@ -74,12 +77,6 @@ body {
     /* border: 1px solid black;     */
 }
 
-.descricao{
-    color: #000000;
-    /* border: black 1px solid; */
-    display: flex;
-    justify-content: center;
-}
 .data {
     /* border: 1px solid black; */
     display: inline;
@@ -95,11 +92,19 @@ body {
     font-family: "Inter";
 }
 
+@media (max-device-width: 768px) {
+    .title {
+        padding: 3%;
+        padding-bottom: 0;
+        font-size: 40px;
+    }
 
-@media (max-width: 768px){
-    
-}
+    .conteudo {
+        font-size: 38px;
+    }
 
-@media (max-width: 480px){
-    
+    .texto {
+        font-size: 38px;
+    }
+
 }
