@@ -17,11 +17,11 @@
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 2px;
     background: #F4F4F4;
 }
 ::-webkit-scrollbar-thumb {
-    background: #13ACB1;
+    background: #B0C4C4;
     height: 90%;
 }
 
@@ -114,7 +114,7 @@
 .input-group textarea {
   height: 400px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   resize: none;
 }
 
