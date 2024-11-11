@@ -68,14 +68,10 @@ textarea {
   justify-content: center;
   width: 50%;
 }
-/* #input-image {
-  height: 32px;
-  padding-left: 10px;
-  padding-top: 3px;
-  display: flex;
-  align-items: center;
-  ext-align: center; 
-} */
+#input-image {
+  max-width: 100%;
+  max-height: ;
+}
 
 .preview {
   object-fit: cover;
