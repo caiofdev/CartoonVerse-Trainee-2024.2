@@ -29,6 +29,7 @@ a {
   /* border: 1px solid black; */
   width: fit-content;
   height: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .janela-principal:not(.close) {
   justify-content: space-around;
@@ -67,7 +68,7 @@ button {
   font-weight: 500;
   font-size: 1.2em;
   /* height: 100%; */
-  box-shadow: 0px 3px 3px 3px rgba(11, 11, 11, 0.47);
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
 }
 .botoes div:hover {
   background-color: #13acb1;
