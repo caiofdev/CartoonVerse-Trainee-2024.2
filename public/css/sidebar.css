@@ -1,0 +1,225 @@
+/* Fontes */
+
+@font-face {
+  font-family: Comicartoon;
+  src: url(../assets/Comicartoon-Regular.ttf);
+}
+
+@font-face {
+  font-family: SugarBread;
+  src: url(../assets/Sugar\ Bread.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SugarBread", sans-serif;
+}
+
+/*
+Paleta
+000
+212627
+4a5759
+b0c4c4
+fff
+13acb1
+7e241e
+*/
+
+:root {
+  --fundo: #b0c4c4;
+  --textos: #000;
+  --slogan: #fff;
+  --destaque: #13acb1;
+  --sobre-text: #000000;
+  --botoes: #13acb1;
+  --botoes-hover: #7e241e;
+  --posts: #fff;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #6c6c6c45;
+}
+/* Sidebar Fechada */
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fundo);
+  height: 100vh;
+  border-radius: 0px 14px 14px 0px;
+  position: relative;
+  transition: all 0.5s;
+  min-width: 82px;
+}
+
+#sidebar-content {
+  padding: 12px;
+}
+
+.open-btn {
+  position: absolute;
+  bottom: 30px;
+  right: -10px;
+  background-color: var(--botoes);
+  color: #fff;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  padding-top: 3px;
+}
+
+#hamburguer {
+  display: block;
+  background-color: var(--botoes);
+  color: #fff;
+  border-radius: 30%;
+  border-color: #fff;
+  width: 47px;
+  height: 45px;
+  font-size: 28px;
+  padding-top: 2px;
+  color: #000;
+  cursor: pointer;
+  display: none; /* Esconde o ícone por padrão */
+}
+
+#open-btn-icon {
+  transition: transform 0.3s ease;
+  padding-top: 1px;
+}
+
+#side-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.side-item {
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.side-item:hover:not(.active),
+#logout-btn:hover,
+.side-item:hover:not(.active) a {
+  background-color: var(--botoes-hover);
+  color: #fff;
+}
+
+.side-item a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.side-item.active {
+  background-color: var(--botoes);
+}
+
+.side-item.active a {
+  color: #fff;
+}
+
+.side-item a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+#user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 50vh;
+}
+
+#user-avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 17px;
+}
+
+#info-user {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Abrindo Sidebar */
+.open-sidebar #open-btn-icon {
+  transform: rotate(180deg);
+}
+
+.item-description {
+  width: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  transition: width 0.6s;
+  height: 0px;
+  white-space: normal;
+}
+
+/* Sidebar Aberta */
+#sidebar.open-sidebar {
+  min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+  width: 120px;
+  height: auto;
+}
+
+#sidebar.open-sidebar .side-item a {
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  #user {
+    padding-top: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #user {
+    padding-top: 35vh;
+  }
+  #hamburguer {
+    display: block;
+    align-self: end;
+    margin: 10px;
+    margin-bottom: 0;
+  }
+  #sidebar {
+    background-color: transparent;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #a8d0d4; /* Cor da sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #sidebar-content {
+    display: none;
+    padding: 20px;
+  }
+  .open-btn {
+    display: none;
+  }
+}
