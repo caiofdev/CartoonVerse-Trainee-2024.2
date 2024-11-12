@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --modal-content-width: 50%;
+  --modal-content-height: 80vh;
+  --font-size: 20px;
+  --font-size-buttons: 28px;
+  --margin-top-buttons: 16%;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #B0C4C4;
+    height: 90%;
+}
+
+/* Estilos gerais do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(	176, 196, 196, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  gap: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: var(--modal-content-width);
+  height: var(--modal-content-height);
+  overflow-y: scroll;
+  margin-bottom: 20vh;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Botão de fechar (X) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Imagem do usuário */
+.user-image {
+  /* border: #7E241E 1px solid; */
+  background-color: transparent;
+  width: 50%;
+  height: 168px;
+  display: flex;
+  margin-left: 25%;
+  justify-self: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+  /* margin: 0 auto 20px; */
+}
+
+#input-image {
+  display: none;
+}
+
+/* Estilos dos campos de dados */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  align-items: center;
+}
+
+/* #first {
+  margin-top: 12%;
+} */
+
+.input-group input, textarea {
+  width: 100%;
+  height: calc(var(--font-size) + 10px);
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+  color: #000;
+  font-size: var(--font-size);
+  padding-left: 30px;
+}
+
+.input-group input {
+  text-align: center;
+}
+
+.input-group textarea {
+  height: 400px;
+  width: 90%;
+  border-radius: 10px 0px 0px 10px;
+  resize: none;
+}
+
+.input-group input[readonly], textarea[readonly] {
+  cursor: default;
+}
+
+#data-criacao {
+  display: flex;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  justify-self: center;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Botão de fechar */
+.button-fechar {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  bottom: 0%;
+  left: 30px;
+  right: 30px;
+}
+
+
+.fechar {
+  width: 100%;
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: sugar-bread;
+  font-size: var(--font-size-buttons);
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+  margin-bottom: 24px;
+}
+
+.fechar:hover {
+  background-color: #7E241E;
+  color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  :root {
+    --modal-content-width: 90vw;
+    --modal-content-height: 90vh;
+    --font-size: 32px;
+    --font-size-buttons: 24px;
+    --margin-top-buttons: 40%;
+  }
+}
