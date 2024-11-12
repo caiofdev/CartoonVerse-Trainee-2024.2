@@ -1,0 +1,364 @@
+@font-face {
+  font-family: Comicartoon;
+  src: url(../assets/Comicartoon-Regular.ttf);
+}
+
+@font-face {
+  font-family: SugarBread;
+  src: url(../assets/Sugar\ Bread.otf);
+}
+
+/* Paleta
+1 000
+2 212627
+3 4a5759
+4 b0c4c4
+5 fff
+6 13acb1
+7 7e241e
+*/
+
+:root {
+  --fundo: #b0c4c4;
+  --textos: #000000;
+  --slogan: #fff;
+  --destaque: #13acb1;
+  --sobre-text: #000000;
+  --botoes: #13acb1;
+  --botoes-hover: #7e241e;
+  --posts: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", "Arial";
+}
+
+body {
+  background-color: var(--fundo);
+  color: var(--textos);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(75, 75, 75, 0.5);
+  color: var(--slogan);
+}
+
+#fundo-hero {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.logos {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 0px 30px 0px;
+  width: 70%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#logoslogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+  padding-left: 70px;
+  padding-top: 40px;
+  pointer-events: none;
+}
+
+#logo2,
+#logo3 {
+  height: auto;
+  object-fit: contain;
+}
+
+#logo2 {
+  width: 15vw;
+  pointer-events: all;
+}
+
+#logo3 {
+  width: 350px;
+  pointer-events: all;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  font-family: "Comicartoon", "Comic Sans MS", sans-serif;
+  text-transform: uppercase;
+  pointer-events: all;
+}
+
+.logos:hover #logo2 {
+  animation: giraLogo 0.6s ease forwards;
+}
+
+.logos:hover #logoslogan {
+  animation: giraLogo 0.6s ease forwards;
+}
+
+@keyframes giraLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(6deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Estilos para a seção Sobre */
+.about-section {
+  padding: 40px 20px; /* cima e baixo */
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título da seção */
+.about-section h2 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+/* Texto de introdução */
+.about-text {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Estilos dos cards de Missão, Visão e Valores */
+.about-cards {
+  display: flex;
+  gap: 4vw;
+  justify-content: center;
+  color: var(--sobre-text);
+}
+
+.about-card {
+  background-color: var(--destaque);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 300px;
+}
+
+.about-card h3 {
+  font-size: 24px;
+  font-family: "SugarBread";
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.about-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Carrossel */
+.carrossel-section h1 {
+  font-family: "Comicartoon";
+  font-size: 50px;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  max-width: 600px;
+  max-height: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-slides {
+  display: flex;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid black; /* Borda preta */
+}
+
+.carousel-indicators {
+  position: relative;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Fica no meio da tela*/
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+  gap: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(1, 1, 1, 4); /* Sombra para destaque */
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 10px; /* Espaçamento entre os botões */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Posts Section */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px 60px;
+  justify-items: center;
+}
+
+.post-item {
+  background-color: var(--posts);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.post-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.post-item p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Load More Button */
+.load-more {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.load-more button {
+  background-color: var(--botoes);
+  border: 2px;
+  padding: 1% 1.2%;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.load-more button p {
+  font-family: "SugarBread";
+}
+
+.load-more button:hover {
+  background-color: var(--botoes-hover);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-size: contain;
+  }
+
+  #logo2 {
+    width: 30vw;
+  }
+
+  #logo3 {
+    width: 40vw;
+  }
+
+  #logoslogan {
+    padding-left: 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-section {
+    padding-top: 40px;
+    max-width: 90%;
+  }
+
+  .about-text {
+    font-size: 18px;
+    max-width: 60%;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .posts {
+    padding: 0;
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+
+  .load-more button p {
+    padding: 3px;
+  }
+}
