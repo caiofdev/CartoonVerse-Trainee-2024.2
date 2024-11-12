@@ -20,10 +20,10 @@
            <div class="modal-form">
             <form action="" method="post" class="modal-form" id="dados-user">
               <div class="input-group" id="id">
-                <input type="text" placeholder="ID" value="65" form="dados-user" readonly/>
+                <input type="text" placeholder="ID" value="65" form="dados-user"/>
               </div>
               <div class="input-group" id="Título">
-                <input type="text" placeholder="Título" value="Quem é o detetive mais inteligente dos desenhos?" form="dados-user" readonly/>
+                <input type="text" placeholder="Título" value="Quem é o detetive mais inteligente dos desenhos?" form="dados-user"/>
               </div>
               <div class="input-group">
                 <textarea
@@ -31,7 +31,6 @@
                   name="conteudo"
                   rows="5"
                   placeholder="Conteúdo"
-                  readonly
                 >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis lectus in felis cursus, at euismod ipsum feugiat. Cras quis condimentum magna. Cras ac ex eu erat hendrerit pellentesque. Phasellus mauris ex, dapibus sit amet nunc eget, maximus venenatis erat. Quisque quam diam, consectetur id cursus vulputate, lacinia sit amet ligula. Nulla dolor dui, semper eu enim vitae, interdum varius arcu. In sagittis, leo quis euismod dictum, libero augue sollicitudin arcu, a tincidunt mi tellus vel tellus. Quisque ultrices cursus fringilla. Sed vitae velit orci.
 
                 Donec vestibulum nec ligula ut blandit. Morbi lobortis eros sit amet elementum aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam porta commodo urna id porttitor. Phasellus ac sollicitudin augue. Aliquam id lobortis tortor. Curabitur ornare tortor eget rutrum malesuada. Vestibulum tincidunt egestas orci, vitae molestie enim blandit nec. Duis elementum, orci a condimentum commodo, massa nibh sollicitudin arcu, vitae dictum arcu dui in magna. Proin nec nunc faucibus, sodales quam sed, tempus lectus. Suspendisse laoreet, libero at rutrum pulvinar, magna tellus accumsan est, vitae pulvinar ipsum eros non risus. Proin lobortis semper nulla, sit amet posuere ligula mattis quis.
@@ -43,14 +42,14 @@
                 Suspendisse nec sollicitudin magna. Morbi rutrum, quam et viverra pellentesque, justo lectus viverra justo, nec lacinia tortor turpis vel quam. Sed ut tellus consectetur, rhoncus quam id, tincidunt mi. Cras in mauris porttitor, pretium dui vel, efficitur augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tincidunt pellentesque hendrerit. Sed molestie porttitor molestie. Curabitur dignissim dui sapien, vitae vestibulum sapien pharetra vitae. Ut fringilla a nibh at lobortis.</textarea>
               </div>
               <!-- Imagem do post -->
-                <label for="dados-image" class="user-image" tabindex="0" id="image">
+                <label for="input-image" class="user-image" tabindex="0" id="image">
                 </label>
-                <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image" readonly>
+                <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image">
               <div class="input-group">
                 <input type="text" placeholder="Autor" value="Áurea Webson Codinson" form="dados-user" readonly/>
               </div>
               <div class="input-group">
-                <input type="date" placeholder="Data de Criação" value="11/03/20014" form="dados-user" readonly/>
+                <input type="date" name="data-criacao" placeholder="Data de Criação" value="11/03/20014" form="dados-user" id="data-criacao" readonly/>
               </div>
               <div class="button-fechar">
                 <button class="fechar" onclick="fecharModal('modalEditar')" form="dados-user" type="button">Fechar</button>
