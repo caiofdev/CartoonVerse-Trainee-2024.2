@@ -14,14 +14,13 @@
 #### Desenvolvedores:
 
 * Carlos Eduardo
-* Geovanni Dias
 * Pablo Henrique
 * Rafael Rocha
 
 
 #### Scrum Master:
 
-* [Caio Reis](https://github.com/caioangel)
+* [Caio Reis](https://github.com/caiofdev)
 
 #### Links Úteis:
 
