@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: Comicartoon;
+    src: url(../assets/fonts/Comicartoon.ttf) format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #4A5759;
+    justify-content: center
+}
+.principal {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+    margin: 20px;
+}
+.title{
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    color: #000000;
+    background-color: #b0c4c4;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 400;
+    font-family:'Inter';
+}
+
+.imagem_principal{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 100%;
+    
+}
+.imagem_principal img {
+    width: fit-content;
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+.conteudo{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    padding-top: 0px;
+    flex-direction: column;
+    font-size: 20px;
+    background-color: #b0c4c4;
+    /* border: 1px solid black; */
+}
+
+.autor {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+.autor img{
+    width: 40px;
+    height: 40px;
+}
+
+.data {
+    /* border: 1px solid black; */
+    display: inline;
+}
+.texto{
+    /* border: 1px solid red; */
+    padding-top: 5px;
+    color: #000000;
+    background-color: #b0c4c4;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Inter";
+}
+
+@media (max-device-width: 768px) {
+    .title {
+        padding: 3%;
+        padding-bottom: 0;
+        font-size: 40px;
+    }
+
+    .conteudo {
+        font-size: 38px;
+    }
+
+    .texto {
+        font-size: 38px;
+    }
+
+}
