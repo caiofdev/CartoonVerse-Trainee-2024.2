@@ -69,6 +69,7 @@ h1 {
 #usuario:hover {
   background-color: #7E241E;
   color: white;
+  cursor: pointer;
 }
 
 #usuario .bi:hover {
