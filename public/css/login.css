@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../assets/background-login.jpg);
+  background: url(../assets/img/imagemdefundoborrada.png);
   background-size: cover;
   background-position: center;
 }

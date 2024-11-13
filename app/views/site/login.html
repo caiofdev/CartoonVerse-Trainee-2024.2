@@ -44,7 +44,7 @@
         </form>
       </div>
       <img
-        src="/public/assets/Logo 2 sem fundo.png"
+        src="/public/assets/logo/Logo 2 sem fundo.png"
         alt="Logo"
         class="logo"
         role="button"
