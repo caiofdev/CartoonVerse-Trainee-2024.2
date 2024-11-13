@@ -1,13 +1,3 @@
-@font-face {
-  font-family: Comicartoon;
-  src: url(../assets/Comicartoon-Regular.ttf);
-}
-
-@font-face {
-  font-family: SugarBread;
-  src: url(../assets/Sugar\ Bread.otf);
-}
-
 /* Paleta
 1 000
 2 212627
@@ -100,7 +90,7 @@ body {
 .hero h1 {
   font-size: 2.5rem;
   font-weight: lighter;
-  font-family: "Comicartoon", "Comic Sans MS", sans-serif;
+  font-family: comicartoon, "Comic Sans MS", sans-serif;
   text-transform: uppercase;
   pointer-events: all;
 }
@@ -171,7 +161,7 @@ body {
 
 .about-card h3 {
   font-size: 24px;
-  font-family: "SugarBread";
+  font-family: sugar-bread;
   margin-bottom: 5px;
   text-transform: uppercase;
   font-weight: lighter;
@@ -184,7 +174,7 @@ body {
 
 /* Carrossel */
 .carrossel-section h1 {
-  font-family: "Comicartoon";
+  font-family: comicartoon;
   font-size: 50px;
   text-align: center;
 }
@@ -305,7 +295,7 @@ body {
 }
 
 .load-more button p {
-  font-family: "SugarBread";
+  font-family: sugar-bread;
 }
 
 .load-more button:hover {

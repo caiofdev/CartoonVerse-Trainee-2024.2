@@ -1,20 +1,8 @@
-/* Fontes */
-
-@font-face {
-  font-family: Comicartoon;
-  src: url(../assets/Comicartoon-Regular.ttf);
-}
-
-@font-face {
-  font-family: SugarBread;
-  src: url(../assets/Sugar\ Bread.otf);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SugarBread", sans-serif;
+  font-family: sugar-bread, sans-serif;
 }
 
 /*
@@ -210,9 +198,6 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    background-color: #a8d0d4; /* Cor da sidebar */
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
   }
   #sidebar-content {
