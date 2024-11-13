@@ -8,25 +8,24 @@
 }
 
 /* Estilo base do modal */
-.modal {
+#modalExcluir {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(176, 196, 196, 0.5);
 }
 
 /* Estilo do conteúdo do modal */
-.modal-content {
+#modalExcluir .modal-content {
   background-color: white;
-  margin: 15% auto;
-  padding: 20px;
+  margin: 20vh auto;
+  padding-top: 55px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 400px;
+  height: auto;
   text-align: center;
 }
 
@@ -39,16 +38,15 @@
 }
 
 /* Estilo dos botões de confirmação e cancelamento */
-.modal-footer {
+#modalExcluir .modal-footer {
   display: flex;
   justify-content: space-around;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .btn-confirmar {
-  background-color: #e74c3c;
   color: #fff;
-  padding: 8px 16px;
+  padding: 6px 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -88,8 +86,8 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .modal-content {
-    width: 200px;
+  #modalExcluir .modal-content {
+    width: 260px;
   }
   .btn-cancelar,
   .btn-confirmar {

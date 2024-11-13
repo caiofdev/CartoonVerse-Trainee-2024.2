@@ -5,9 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/public/css/fonts.css">
   <link rel="stylesheet" href="/public/css/user-list.css">
+  <link rel="stylesheet" href="/public/css/criar-user.css">
+  <link rel="stylesheet" href="/public/css/excluir-user.css">
+  <link rel="stylesheet" href="/public/css/visualizar-user.css">
   <title>CartoonVerse</title>
 </head>
 <body>
+    <!-- Modal de Criar -->
+    <div id="modalCriar" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeCriar" onclick="fecharModal('modalCriar')"
+          >&times;</span
+        >
+        <div class="modal-body">
+          <!-- Campos de Entrada -->
+           <div class="modal-form">
+            <form action="" method="post" class="modal-form" id="new-user">
+              <!-- Imagem do usuário -->
+                <label for="input-image" class="user-image" tabindex="0" id="image">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                  </svg>
+                </label>
+                <input type="file" accept="image/png,image/jpeg, image/jpg" class="input-image" form="new-user" name="input-image" id="input-image" required>
+              <div class="input-group" id="first">
+                <input type="text" placeholder="Nome" form="new-user" required/>
+              </div>
+              <div class="input-group">
+                <input type="email" placeholder="Email" form="new-user" required/>
+              </div>
+              <div class="input-group">
+                <input type="" placeholder="Senha" form="new-user" required/>
+              </div>
+              <!-- Botões de Ação -->
+              <div class="modal-buttons">
+                <button class="cancel" onclick="fecharModal('modalCriar')" form="new-user"  formnovalidate type="button">
+                  Cancelar
+                </button>
+                <button class="confirm" form="new-user" formmethod="post">Confirmar</button>
+              </div>
+            </form>
+           </div>
+        </div>
+      </div>
+    </div>
+      <!-- Modal de Visualizar -->
+      <div id="modalVisualizar" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeCriar" onclick="fecharModal('modalVisualizar')"
+            >&times;</span
+          >
+          <div class="modal-body">
+            <!-- Dados do Usuário -->
+             <div class="modal-form">
+              <form action="" method="post" class="modal-form" id="dados-user">
+                <!-- Imagem do usuário -->
+                  <label for="dados-image" class="user-image" tabindex="0" id="image">
+                    <img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/12/13/istock-1331962950-1iemnjv7a6ng6.jpg" alt="">
+                  </label>
+                  <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image">
+                <div class="input-group" id="first">
+                  <input type="text" placeholder="id" value="6" form="dados-user" readonly/>
+                </div>
+                <div class="input-group">
+                  <input type="text" placeholder="Nome" value="Caio Webson Codinson" form="dados-user" readonly/>
+                </div>
+                <div class="input-group">
+                  <input type="email" placeholder="Email" value="CaioWebsonCodinson@Webson.Codinson" form="dados-user" readonly/>
+                </div>
+                <div class="button-fechar">
+                  <button class="fechar" onclick="fecharModal('modalVisualizar')" form="dados-user" type="button">Fechar</button>
+                </div>
+              </form>
+             </div>
+          </div>
+        </div>
+      </div>
+    <!-- Modal de Editar -->
+    <div id="modalEditar" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeEditar" onclick="fecharModal('modalEditar')"
+          >&times;</span
+        >
+        <div class="modal-body">
+          <!-- Campos de Entrada -->
+           <div class="modal-form">
+            <form action="" method="post" class="modal-form" id="edit-user">
+              <!-- Imagem do usuário -->
+                <label for="input-image" class="user-image" tabindex="0" id="image">
+                  <img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/12/13/istock-1331962950-1iemnjv7a6ng6.jpg" alt="">
+                </label>
+                <input type="file" accept="image/png,image/jpeg, image/jpg" class="input-image" form="edit-user" name="input-image" id="input-image" required>
+              <div class="input-group" id="first">
+                <input type="text" value="Rafael Webson Choppinson Jr" placeholder="Nome" form="edit-user" required/>
+              </div>
+              <div class="input-group">
+                <input type="email" value="Rafael Pagode da Silva" placeholder="Email" form="edit-user" required/>
+              </div>
+              <div class="input-group">
+                <input type="" value="Rafael Pagode da Silva" placeholder="Senha" form="edit-user" required/>
+              </div>
+              <!-- Botões de Ação -->
+              <div class="modal-buttons">
+                <button class="cancel" onclick="fecharModal('modalEditar')" form="edit-user"  formnovalidate type="button">
+                  Cancelar
+                </button>
+                <button class="confirm" form="edit-user" formmethod="post">Confirmar</button>
+              </div>
+            </form>
+           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Excluir -->
+    <div id="modalExcluir" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeExcluir" onclick="fecharModal('modalExcluir')">&times;</span>
+        <p>Tem certeza de que deseja excluir este item?</p>
+        <div class="modal-footer">
+          <button onclick="confirmarExclusao()" class="btn-confirmar">Confirmar</button>
+          <button onclick="fecharModal('modalExcluir')" class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
   <div class="container">
     <div id="header">
     <!-- Titulo -->
