@@ -32,8 +32,8 @@ body {
   min-height: 100vh;
   background-color: #6c6c6c45;
 }
-/* Sidebar Fechada */
 
+/* Sidebar Fechada */
 #sidebar {
   display: flex;
   flex-direction: column;
@@ -189,16 +189,12 @@ body {
   }
   #hamburguer {
     display: block;
-    align-self: end;
     margin: 10px;
     margin-bottom: 0;
   }
   #sidebar {
     background-color: transparent;
     position: fixed;
-    right: 0;
-    top: 0;
-    justify-content: space-between;
   }
   #sidebar-content {
     display: none;
