@@ -28,25 +28,6 @@ foreach ($usuarios as $usuario) {
     echo "Senha: {$usuario['password']}\n\n";
 }
 
-//DELETE
-function deleteUser(){
-    if (isset($_POST['id']) && is_numeric($_POST['id'])) {
-        $id = $_POST['id'];
-        try {
-            // Preparar a consulta SQL para excluir o registro
-            $stmt = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
-
-            echo "Registro excluído com sucesso!";
-        } catch (PDOException $e) {
-            echo "Erro ao excluir o registro: " . $e->getMessage();
-        }
-    } else {
-        echo "ID inválido ou não fornecido.";
-    }
-}
-
 //Função para obter um usuário específico pelo ID
 function getUser($id) {
 
@@ -70,3 +51,23 @@ echo "ID: {$usuario['id']}\n";
 echo "Nome: {$usuario['name']}\n";
 echo "Email: {$usuario['email']}\n";
 echo "Senha: {$usuario['password']}\n\n";
+
+//DELETE
+function deleteUser(){
+    if (isset($_POST['id']) && is_numeric($_POST['id'])) {
+        $id = $_POST['id'];
+        try {
+            // Preparar a consulta SQL para excluir o registro
+            $stmt = $pdo->prepare("DELETE FROM users WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            echo "Registro excluído com sucesso!";
+        } catch (PDOException $e) {
+            echo "Erro ao excluir o registro: " . $e->getMessage();
+        }
+    } else {
+        echo "ID inválido ou não fornecido.";
+    }
+}
+
