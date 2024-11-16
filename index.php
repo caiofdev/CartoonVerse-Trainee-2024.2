@@ -27,13 +27,9 @@
 
     <?php
     if (isset($_GET['id'])) {
-        require 'crud.php';
-        $id = $_GET['id'];
-        $pdo = getDatabaseConnection();
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        require_once 'crud.php';
+
+        $user = getUserById($_GET['id']);
 
         if ($user) {
             echo '<h2>Atualizar Usuário</h2>';

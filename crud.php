@@ -91,6 +91,22 @@ function getAllUsers()
     return $users;
 }
 
+// Função para obter um usuário pelo ID
+function getUserById($id)
+{
+    $pdo = getDatabaseConnection();
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    } catch (PDOException $e) {
+        echo "Erro ao obter o usuário: " . $e->getMessage();
+        return null;
+    }
+}
+
 // Função para criar um novo usuário
 function createUser($name, $email, $password, $image)
 {
