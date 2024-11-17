@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Criar Usuário</h2>
-    <form action="crud.php" method="post" enctype="multipart/form-data">
+    <form action="create-user" method="post" enctype="multipart/form-data">
         <input type="hidden" name="action" value="create">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required><br><br>

@@ -1,6 +1,8 @@
 <?php
 
-require '/core/bootstrap.php';
+use App\Core\App;
+
+require 'bootstrap.php';
 require __DIR__ . '/vendor/autoload.php';
 
 function getDatabaseConnection() {
