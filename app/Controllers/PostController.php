@@ -55,7 +55,9 @@ class PostController
         App::get('database')->delete('posts', $id);
         header('Location: /admin/post-list');
     }
-
+    public function getEdit(){
+        return view('admin/editar-post');
+    }
 }
 
 ?>
