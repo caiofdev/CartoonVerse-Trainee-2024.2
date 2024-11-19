@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="general-container">
-      <form id="formulario">
+      <form id="formulario" action="create-post" method="post">
         <a
           class="close"
           onclick="fecharModal('modalCriar')"
@@ -19,14 +19,14 @@
         <input
           type="text"
           id="titulo"
-          name="titulo"
+          name="title"
           required
           placeholder="Título"
         />
         <!-- <label for="conteudo">Conteúdo do Post</label> -->
         <textarea
           id="conteudo"
-          name="conteudo"
+          name="content"
           rows="5"
           required
           placeholder="Conteúdo"
@@ -38,7 +38,7 @@
           type="file"
           class="input-image"
           id="input-image"
-          name="input-image"
+          name="image"
           required
           accept=".jpg, .jpeg, .png"
         />
@@ -46,14 +46,14 @@
         <input
           type="text"
           id="autor"
-          name="autor"
+          name="author"
           required
           placeholder="Autor" readonly
         />
         <!-- <label id="label-data-criacao" for="data-criacao"
           >Data de criação</label
         > -->
-        <input type="date" id="data-criacao" name="data-criacao" readonly required />
+        <input type="date" id="data-criacao" name="created_at" readonly required />
         <div class="botoes">
           <a href="post-list.html">
             <div type="submit">Cancelar</div>

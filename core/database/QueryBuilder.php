@@ -54,10 +54,16 @@ class QueryBuilder
         } catch (Exception $e) {
             die($e->getMessage());
         }
+    } 
+    public function delete($table, $id){
+        $sql = "DELETE FROM {$table} WHERE id = ?";
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
     }
-    // public function create(){
-    //     $parameters = [
-
-    //     ]
-    // }
+    
 }

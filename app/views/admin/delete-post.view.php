@@ -15,7 +15,9 @@
           <a href="post-list.html">
             <div id="nao">Cancelar</div>
           </a>
-          <button id="sim">Excluir</button>
+          <form action="delete-post" method="POST">
+            <button type="submit" id="sim" name="id" value="<?= $_GET['id'] ?>">Excluir</button>
+          </form>
         </div>
       </div>
     </div>
