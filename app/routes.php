@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Controllers;
-use App\Controllers\UserController;
+use App\Controllers\ExampleController;
+use App\Controllers\AdminController;
 use App\Core\Router;
 
-    $router->post('criar-user', 'UserController@createUser');
+    $router->get('users', 'AdminController@index');
+    $router->post('users/create', 'AdminController@createUser');
+    $router->post('users/update', 'AdminController@updateUser');
+    $router->post('users/delete', 'AdminController@deleteUser');
 ?>
