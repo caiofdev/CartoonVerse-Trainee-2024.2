@@ -20,21 +20,22 @@ a {
     display: flex;
     padding: 4px 10px 7px 10px;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
     background: #4A5759;
 }
 
-.left-side-desktop {
+.home-side-desktop {
     display: flex;
     gap: 36px;
     align-items: center;
 }
-.left-side-desktop div {
+.home-side-desktop div {
     width: 34px;
     height: 34px;
     background: url(/public/assets/img/Home-light.png) no-repeat top center/cover;
 }
-.left-side-desktop a {
+.home-side-desktop a {
     color: white;
     line-height: normal;
     text-decoration: none;
@@ -52,7 +53,7 @@ a {
     width: 100%;
     position: fixed;
     top: 0;
-    right: -768px;
+    left: -768px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -121,7 +122,7 @@ a {
     align-items: flex-start;
 }
 .off-screen-hamb-menu.active {
-    right: 0;
+    left: 0;
 }
 /* .left-side-phone {
     height: 40px;
@@ -164,13 +165,6 @@ a {
     margin: 0 auto;
 }
 
-/* .phone-right-side #search {
-    width: 28px;
-    height: 28px;
-    margin-left: auto;
-    background: url(../assets/Search-light.png) no-repeat local center/cover;
-} */
-
 .right-side-desktop {
     display: none;
     gap: 36px;
@@ -194,10 +188,10 @@ a {
 .right-side-desktop #search:hover {
     background: url(/public/assets/img/Search.png) no-repeat top center/cover;
 }
-.left-side-desktop #home:hover{
+.home-side-desktop #home:hover{
     background: url(/public/assets/img/Home.png) no-repeat top center/cover;
 }
-.left-side-desktop #posts:hover{
+.home-side-desktop #posts:hover{
     color: black;
 }
 /* 
@@ -208,11 +202,12 @@ a {
     .navbar{
         padding: 10px 35px 10px 35px;
         justify-content: space-between;
+        flex-direction: row;
     }
-    .left-side-desktop{
+    .home-side-desktop{
         display: flex;
     }
-    .left-side-desktop div {
+    .home-side-desktop div {
         width: 40px;
         height: 40px;
     }

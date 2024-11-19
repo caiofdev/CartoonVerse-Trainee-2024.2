@@ -1,16 +1,5 @@
-@font-face {
-    font-family: "Comicartoon-regular";
-    src: url(../assets/Comicartoon-Regular.ttf) format('truetype');
-}
-@font-face {
-    font-family: "Comicartoon-extrude";
-    src: url(../assets/Comicartoon-3DExtrude.ttf) format('truetype');
-}
+@import url(fonts.css);
 
-@font-face {
-    font-family: "Sugarbread";
-    src: url(../assets/Sugar\ Bread.otf) format('opentype');
-}
 
 * {
     padding: 0;
@@ -31,14 +20,14 @@
     margin: auto;
 }
 .footer ul {
-    font-family: "Comicartoon-regular";
+    font-family: comiccartoon;
     font-size: 32px;
     font-weight: 400;
     text-align: center;
     list-style: none;
 }
 .footer li{
-    font-family: "Sugarbread";
+    font-family: sugar-bread;
     font-size: 20px;
     font-weight: 400;
     
@@ -85,28 +74,28 @@
     height: 24px;
 }
 #ig-div {
-    background: url(../assets/Instagram-light.png) center;
+    background: url(/public/assets/img/Instagram-light.png) center;
 }
 #fb-div {
-    background: url(../assets/Facebook-light.png) center;
+    background: url(/public/assets/img/Facebook-light.png) center;
 }
 #x-div {
-    background: url(../assets/TwitterX-light.png) center;
+    background: url(/public/assets/img/TwitterX-light.png) center;
 }
 .footer ul li:hover #ig-div{
-    background: url(../assets/Instagram-dark.png) center;
+    background: url(/public/assets/img/Instagram-dark.png) center;
 }
 .footer ul li:hover #fb-div{
-    background: url(../assets/Facebook-dark.png) center;
+    background: url(/public/assets/img/Facebook-dark.png) center;
 }
 .footer ul li:hover #x-div{
-    background: url(../assets/TwitterX-dark.png) center;
+    background: url(/public/assets/img/TwitterX-dark.png) center;
 }
 
 .codejr-logo {
     width: 242px;
     height: 56px;
-    background: url(../assets/code-logo.png) no-repeat top center/cover;
+    background: url(/public/assets/img/code-logo.png) no-repeat top center/cover;
 }
 
 @media (min-width: 768px) {
@@ -119,12 +108,12 @@
         height: 240px;
     }
     .footer ul {
-        font-family: "Comicartoon-regular";
+        font-family: comiccartoon;
         font-weight: 700;
         font-size: 32px;
     }
     .footer li {
-        font-family: "Sugarbread";
+        font-family: sugar-bread;
         font-weight: 700;
         display: flex;
         flex-direction: row;
