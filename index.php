@@ -37,14 +37,14 @@
             echo '<input type="hidden" name="action" value="update">';
             echo '<input type="hidden" name="id" value="' . $user['id'] . '">';
             echo '<label for="name">Nome:</label>';
-            echo '<input type="text" id="name" name="name" value="' . $user['name'] . '"><br><br>';
+            echo '<input type="text" id="name" name="name" value="' . htmlspecialchars($user['name']) . '"><br><br>';
             echo '<label for="email">Email:</label>';
-            echo '<input type="email" id="email" name="email" value="' . $user['email'] . '"><br><br>';
+            echo '<input type="email" id="email" name="email" value="' . htmlspecialchars($user['email']) . '"><br><br>';
             echo '<label for="password">Senha:</label>';
-            echo '<input type="password" id="password" name="password" value="' . $user['password'] . '"><br><br>';
+            echo '<input type="password" id="password" name="password" value="' . htmlspecialchars($user['password']) . '"><br><br>';
             echo '<label for="image">Imagem:</label>';
             echo '<input type="file" id="image" name="image"><br><br>';
-            echo '<img src="' . $user['image'] . '" alt="Imagem de ' . $user['name'] . '" width="100"><br><br>';
+            echo '<img src="' . htmlspecialchars($user['image']) . '" alt="Imagem de ' . htmlspecialchars($user['name']) . '" width="100"><br><br>';
             echo '<input type="submit" value="Atualizar">';
             echo '</form>';
         } else {
@@ -63,14 +63,35 @@
 
     <h2>Lista de Usuários</h2>
     <?php
+
     require 'crud.php';
-    $usuarios = getAllUsers();
-    foreach ($usuarios as $usuario) {
-        echo "ID: {$usuario['id']}<br>";
-        echo "Nome: {$usuario['name']}<br>";
-        echo "Email: {$usuario['email']}<br>";
-        echo "Imagem: <img src='{$usuario['image']}' alt='Imagem de {$usuario['name']}' width='100'><br><br>";
-    }
+    $users = getAllUsers();
     ?>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($user['id']); ?></td>
+                    <td><?php echo htmlspecialchars($user['name']); ?></td>
+                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                    <td>
+                        <?php if (!empty($user['image'])): ?>
+                            <img src="<?php echo htmlspecialchars($user['image']); ?>" alt="Profile Image" width="auto" height="50px">
+                        <?php else: ?>
+                            No image
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 </html>

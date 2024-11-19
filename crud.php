@@ -40,12 +40,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
 function uploadImage($file, $userId = null)
 {
     $targetDir = __DIR__ . '/public/assets/img/profile/';
-    $imageFileType = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-    $fileName = pathinfo($file['name'], PATHINFO_FILENAME);
+    
+    // Verificar se o diretório existe, se não, criar
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
 
-    // Se o ID do usuário for fornecido, inclua-o no nome do arquivo
-    if ($userId) {
-        $fileName .= "_user{$userId}";
+    $imageFileType = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    $fileName = 'user' . $userId;
+
+    // Apagar arquivos existentes com o mesmo nome, mas extensão diferente
+    foreach (glob($targetDir . $fileName . '.*') as $existingFile) {
+        unlink($existingFile);
     }
 
     $targetFile = $targetDir . $fileName . '.' . $imageFileType;
@@ -67,17 +73,12 @@ function uploadImage($file, $userId = null)
         die("Desculpe, apenas arquivos JPG, JPEG, PNG e GIF são permitidos.");
     }
 
-    // Trocar o nome da imagem se ela já existir
-    while (file_exists($targetFile)) {
-        $targetFile = $targetDir . $fileName . '_' . uniqid() . '.' . $imageFileType;
-    }
-
     // Tentar fazer o upload do arquivo
     if (!move_uploaded_file($file['tmp_name'], $targetFile)) {
         die("Desculpe, houve um erro ao fazer o upload do seu arquivo.");
     }
 
-    return '/public/assets/img/profile/' . basename($targetFile);
+    return './public/assets/img/profile/' . basename($targetFile);
 }
 
 // Função para obter todos os usuários
