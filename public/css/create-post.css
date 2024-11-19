@@ -99,9 +99,13 @@ input[type="file"] {
 /* #input-image {
   font-size: 14px;
 } */
+#autor {
+  color: black;
+}
 #data-criacao {
   width: 25%;
   text-align: center;
+  color: black;
 }
 
 .botoes {

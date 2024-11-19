@@ -47,13 +47,14 @@
           type="text"
           id="autor"
           name="author"
+          value="<?php echo $_SESSION['id']; ?>"
           required
           placeholder="Autor" readonly
         />
         <!-- <label id="label-data-criacao" for="data-criacao"
           >Data de criação</label
         > -->
-        <input type="date" id="data-criacao" name="created_at" readonly required />
+      <input type="date" id="data-criacao" name="created_at" value="<?php echo date('Y-m-d'); ?>" readonly required />
         <div class="botoes">
           <a href="post-list.html">
             <div type="submit">Cancelar</div>
