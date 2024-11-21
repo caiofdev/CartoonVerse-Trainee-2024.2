@@ -42,7 +42,7 @@ class QueryBuilder
     }
 
     // Função para atualizar um usuário existente
-    public function update($id, $name, $email, $password, $image = null)
+    public function update($table, $id, $parameters)
     {
 
         $sql = sprintf("UPDATE %s SET %s WHERE id = %s",
@@ -58,7 +58,7 @@ class QueryBuilder
             $stmt->execute($parameters);
 
             echo "Usuário atualizado com sucesso!";
-        } catch (PDOException $e) {
+        } catch (Exception $e) {
             echo "Erro ao atualizar o usuário: " . $e->getMessage();
         }
     }
@@ -82,7 +82,7 @@ class QueryBuilder
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(compact('id'));
             echo "Usuário deletado com sucesso!";
-        } catch (PDOException $e) {
+        } catch (Exception $e) {
             echo "Erro ao deletar o usuário: " . $e->getMessage();
         }
     }
@@ -106,7 +106,7 @@ class QueryBuilder
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             return $user;
-        } catch (PDOException $e) {
+        } catch (Exception $e) {
             echo "Erro ao obter o usuário: " . $e->getMessage();
             return null;
         }

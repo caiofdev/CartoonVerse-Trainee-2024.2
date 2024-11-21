@@ -5,8 +5,32 @@ use App\Controllers\ExampleController;
 use App\Controllers\AdminController;
 use App\Core\Router;
 
-    $router->get('users', 'AdminController@index');
-    $router->post('users/create', 'AdminController@createUser');
-    $router->post('users/update', 'AdminController@updateUser');
-    $router->post('users/delete', 'AdminController@deleteUser');
+    $router->get('admin/users', 'AdminController@index');
+    $router->post('admin/users/create', 'AdminController@createUser');
+    $router->post('admin/users/update', 'AdminController@updateUser');
+    $router->post('admin/users/delete', 'AdminController@deleteUser');
+
+    /*
+    Não sei se isso vai ser util ou se voce ja sabe, mas achei que pudesse ser interessante deixar umas
+    anotações aqui, já que é algo que pode gerar duvidas
+    ----
+    Deixei tudo com admin/ apenas para padronizar, ja que isso vai ser na tela do adm
+    ai resolvi deixar assim pra ficar mais "organizado"
+    Sobre o $router: o primeiro parametro indica o que deve aparecer no URL para que a função (2° parametro)
+    seja executada. Ou seja, se o URL for www.cartoonverse.com/admin/users, o index() de AdminController vai
+    ser executado. Veja que essa função, index() retorna uma View() para um arquivo (user-list.view.php).
+    Ou seja, o nome do arquivo NAO é o que aparece na URL. Para isso mesmo que serve as rotas: para "esconder"
+    a arquitetura de pastas do projeto e determinar o que é acessivel e o que é executado quando algo
+    é acessado.
+
+    Nota: o arquivo que vai ser retornado pela View() deve estar dentro de views/ e deve terminar com
+    .view.php (user-list.view.php). Você provavelmente sabe disso, mas é que quando peguei o código pra rever
+    eu vi ele com .html, ai achei bom ressaltar
+
+    -> 1° parametro do router é acessado (na url)
+    -> 2° parametro do router é executado
+    -> o 2° parametro retorna uma view() normalmente - pode ser um header("Location ... ") também, nada impede
+    -> usuário recebe os dados, fica feliz e com um URL bonito e pequeno
+
+    */
 ?>
