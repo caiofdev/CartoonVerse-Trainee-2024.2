@@ -75,15 +75,13 @@ class QueryBuilder
             } */
 
             // Deletar o usuário
-            $sql = sprintf("DELETE FROM %s WHERE %s",
-                $table, 
-                'id = :id'
-            );
-            
+            $sql = sprintf("DELETE FROM %s WHERE id = :id", $table);
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute(compact('id'));
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
             echo "Usuário deletado com sucesso!";
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
             echo "Erro ao deletar o usuário: " . $e->getMessage();
         }
     }

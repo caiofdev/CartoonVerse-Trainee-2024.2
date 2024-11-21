@@ -15,7 +15,30 @@ function redirect($path)
 // Função para fazer o upload da imagem
 function uploadImage($file, $userId = null)
 {
-    $targetDir = __DIR__ . '/public/assets/img/profile/';
+    var_dump($file); // Adicione esta linha para verificar o conteúdo do arquivo
+
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        switch ($file['error']) {
+            case UPLOAD_ERR_INI_SIZE:
+                die("O arquivo excede o tamanho máximo permitido pelo servidor.");
+            case UPLOAD_ERR_FORM_SIZE:
+                die("O arquivo excede o tamanho máximo permitido pelo formulário.");
+            case UPLOAD_ERR_PARTIAL:
+                die("O upload do arquivo foi feito parcialmente.");
+            case UPLOAD_ERR_NO_FILE:
+                die("Nenhum arquivo foi enviado.");
+            case UPLOAD_ERR_NO_TMP_DIR:
+                die("Pasta temporária ausente.");
+            case UPLOAD_ERR_CANT_WRITE:
+                die("Falha em escrever o arquivo em disco.");
+            case UPLOAD_ERR_EXTENSION:
+                die("Uma extensão do PHP interrompeu o upload do arquivo.");
+            default:
+                die("Erro desconhecido no upload do arquivo.");
+        }
+    }
+
+    $targetDir = __DIR__ . '/../public/assets/img/profile/';
     $imageFileType = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     $fileName = pathinfo($file['name'], PATHINFO_FILENAME);
 
@@ -27,6 +50,10 @@ function uploadImage($file, $userId = null)
     $targetFile = $targetDir . $fileName . '.' . $imageFileType;
 
     // Verificar se o arquivo é uma imagem
+    if (empty($file['tmp_name'])) {
+        die("Nenhum arquivo foi enviado.");
+    }
+
     $check = getimagesize($file['tmp_name']);
     if ($check === false) {
         die("O arquivo não é uma imagem.");
@@ -48,7 +75,6 @@ function uploadImage($file, $userId = null)
         $targetFile = $targetDir . $fileName . '_' . uniqid() . '.' . $imageFileType;
     }
 
-    // Tentar fazer o upload do arquivo
     if (!move_uploaded_file($file['tmp_name'], $targetFile)) {
         die("Desculpe, houve um erro ao fazer o upload do seu arquivo.");
     }

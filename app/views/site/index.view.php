@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Criar Usuário</h2>
-    <form action="admin/users/create" method="post" enctype="multipart/form-data">
+    <form action="users/create" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="action" value="create">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required><br><br>
@@ -25,32 +25,26 @@
         <input type="submit" value="Buscar">
     </form>
 
-    <?php
-    if (isset($_GET['id'])) {
-        if ($user) {
-            echo '<h2>Atualizar Usuário</h2>';
-            echo '<form action="admin/users/update" method="post" enctype="multipart/form-data">';
-            echo '<input type="hidden" name="action" value="update">';
-            echo '<input type="hidden" name="id" value="' . $user['id'] . '">';
-            echo '<label for="name">Nome:</label>';
-            echo '<input type="text" id="name" name="name" value="' . htmlspecialchars($user['name']) . '"><br><br>';
-            echo '<label for="email">Email:</label>';
-            echo '<input type="email" id="email" name="email" value="' . htmlspecialchars($user['email']) . '"><br><br>';
-            echo '<label for="password">Senha:</label>';
-            echo '<input type="password" id="password" name="password" value="' . htmlspecialchars($user['password']) . '"><br><br>';
-            echo '<label for="image">Imagem:</label>';
-            echo '<input type="file" id="image" name="image"><br><br>';
-            echo '<img src="' . htmlspecialchars($user['image']) . '" alt="Imagem de ' . htmlspecialchars($user['name']) . '" width="100"><br><br>';
-            echo '<input type="submit" value="Atualizar">';
-            echo '</form>';
-        } else {
-            echo 'Usuário não encontrado.';
-        }
-    }
-    ?>
+    <?php if (isset($user)): ?>
+        <h2>Atualizar Usuário</h2>
+        <form action="admin/users/update" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($user->id); ?>">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user->name); ?>"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user->email); ?>"><br><br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($user->password); ?>"><br><br>
+            <label for="image">Imagem:</label>
+            <input type="file" id="image" name="image"><br><br>
+            <img src="<?php echo htmlspecialchars($user->image); ?>" alt="Imagem de <?php echo htmlspecialchars($user->name); ?>" width="100"><br><br>
+            <input type="submit" value="Atualizar">
+        </form>
+    <?php endif; ?>
 
     <h2>Deletar Usuário</h2>
-    <form action="admin/users/delete" method="post">
+    <form action="users/delete" method="POST">
         <input type="hidden" name="action" value="delete">
         <label for="id">ID:</label>
         <input type="number" id="id" name="id" required><br><br>

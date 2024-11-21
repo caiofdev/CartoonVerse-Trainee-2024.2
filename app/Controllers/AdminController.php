@@ -23,12 +23,12 @@ class AdminController
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-            'image' => uploadImage('image')
+            'image' => uploadImage($_FILES['image'], )
         ];
 
         App::get('database')->insert('users', $parameters);
 
-        header('Location: /users');
+        header('Location: /admin/users');
     }
 
     public function updateUser(){
@@ -36,7 +36,7 @@ class AdminController
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-            'image' => uploadImage('image')
+            'image' => isset($_FILES['image']) ? uploadImage($_FILES['image'], $id) : null
         ];
 
         $id = $_POST['id'];
@@ -59,6 +59,6 @@ class AdminController
 
         App::get('database')->delete('users', $id);
 
-        header('Location: /users');
+        redirect('admin/users');
     }
 }
