@@ -8,14 +8,10 @@ use App\Core\Router;
     $router->get('admin/users', 'AdminController@index');
     $router->post('admin/users/create', 'AdminController@createUser');
     $router->post('admin/users/update', 'AdminController@updateUser');
+    $router->get('admin/users/verify', 'AdminController@verifyUser');
     $router->post('admin/users/delete', 'AdminController@deleteUser');
 
     /*
-    Não sei se isso vai ser util ou se voce ja sabe, mas achei que pudesse ser interessante deixar umas
-    anotações aqui, já que é algo que pode gerar duvidas
-    ----
-    Deixei tudo com admin/ apenas para padronizar, ja que isso vai ser na tela do adm
-    ai resolvi deixar assim pra ficar mais "organizado"
     Sobre o $router: o primeiro parametro indica o que deve aparecer no URL para que a função (2° parametro)
     seja executada. Ou seja, se o URL for www.cartoonverse.com/admin/users, o index() de AdminController vai
     ser executado. Veja que essa função, index() retorna uma View() para um arquivo (user-list.view.php).

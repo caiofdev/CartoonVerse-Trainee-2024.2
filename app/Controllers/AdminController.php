@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-// require '/core/helpers.php'; ---> desnecessário [pois o autoload do composer ja faz isso] (oq ta entre
-// colchetes foi o copilot. Nao faço ideia se é verdade, so sei que o require é desnecessário)
-
 use App\Core\App;
 use Exception;
 
@@ -13,11 +10,10 @@ class AdminController
     public function index()
     {
         $users = App::get('database')->selectAll('users');
-        return view('admin/user-list', compact('users'));
+        return view('site/index', compact('users'));
         // o primeiro parametro de view() é o arquivo dentro de views/ que deve ser retornado.
         // ou seja, é o que vai aparecer na tela. O segundo é a variavel $users transformada em array
         // confira o arquivo routes.php
-
     }
 
     // Função para criar um novo usuário
@@ -47,7 +43,15 @@ class AdminController
 
         App::get('database')->update('users', $id, $parameters);
     
-        header('Location: /users');
+        header('Location: admin/users');
+    }
+
+    public function verifyUser(){
+        $id = $_GET['id'];
+
+        $user = App::get('database')->getUserById($id);
+
+        return view('site/index', compact('user'));
     }
 
     public function deleteUser(){

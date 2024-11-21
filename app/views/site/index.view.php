@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Criar Usuário</h2>
-    <form action="users/create" method="post" enctype="multipart/form-data">
+    <form action="admin/users/create" method="post" enctype="multipart/form-data">
         <input type="hidden" name="action" value="create">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required><br><br>
@@ -19,7 +19,7 @@
     </form>
 
     <h2>Buscar Usuário para Atualizar</h2>
-    <form action="index.php" method="get">
+    <form action="admin/users/verify" method="get">
         <label for="id">ID:</label>
         <input type="number" id="id" name="id" required><br><br>
         <input type="submit" value="Buscar">
@@ -29,7 +29,7 @@
     if (isset($_GET['id'])) {
         if ($user) {
             echo '<h2>Atualizar Usuário</h2>';
-            echo '<form action="users/update" method="post" enctype="multipart/form-data">';
+            echo '<form action="admin/users/update" method="post" enctype="multipart/form-data">';
             echo '<input type="hidden" name="action" value="update">';
             echo '<input type="hidden" name="id" value="' . $user['id'] . '">';
             echo '<label for="name">Nome:</label>';
@@ -50,7 +50,7 @@
     ?>
 
     <h2>Deletar Usuário</h2>
-    <form action="users/delete" method="post">
+    <form action="admin/users/delete" method="post">
         <input type="hidden" name="action" value="delete">
         <label for="id">ID:</label>
         <input type="number" id="id" name="id" required><br><br>
@@ -58,8 +58,6 @@
     </form>
 
     <h2>Lista de Usuários</h2>
-    <?php
-    ?>
     <table>
         <thead>
             <tr>
@@ -72,12 +70,12 @@
         <tbody>
             <?php foreach ($users as $user): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($user['id']); ?></td>
-                    <td><?php echo htmlspecialchars($user['name']); ?></td>
-                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                    <td><?php echo htmlspecialchars($user->id); ?></td>
+                    <td><?php echo htmlspecialchars($user->name); ?></td>
+                    <td><?php echo htmlspecialchars($user->email); ?></td>
                     <td>
-                        <?php if (!empty($user['image'])): ?>
-                            <img src="<?php echo htmlspecialchars($user['image']); ?>" alt="Profile Image" width="auto" height="50px">
+                        <?php if (!empty($user->image)): ?>
+                            <img src="<?php echo htmlspecialchars($user->image); ?>" alt="Profile Image" width="auto" height="50px">
                         <?php else: ?>
                             No image
                         <?php endif; ?>

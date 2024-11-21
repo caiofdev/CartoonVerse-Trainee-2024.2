@@ -1,4 +1,4 @@
-
+<?php
 namespace App\Controllers;
 
 use App\Core\App;
@@ -9,7 +9,7 @@ class ExampleController
 
     public function index()
     {
-        return view('admin/index');
+        return view('/app/views/site/index.view.php');
     }
 }
 

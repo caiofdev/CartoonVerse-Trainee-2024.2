@@ -36,6 +36,7 @@ class QueryBuilder
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($parameters);
+            echo "Usuário criado com sucesso!";
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -67,11 +68,11 @@ class QueryBuilder
     public function delete($table, $id)
     {
         try {
-            // Verificar se o usuário tem posts
+           /*  // Verificar se o usuário tem posts
             if (userHasPosts($id)) {
                 // Deletar os posts do usuário
                 deletePostsByUserId($id);
-            }
+            } */
 
             // Deletar o usuário
             $sql = sprintf("DELETE FROM %s WHERE %s",
@@ -88,7 +89,7 @@ class QueryBuilder
     }
 
     // Função para obter todos os usuários
-    function getAllUsers()
+    public function getAllUsers()
     {
         $sql = "SELECT * FROM users";
         $stmt = $this->pdo->prepare($sql);
@@ -98,7 +99,7 @@ class QueryBuilder
     }
 
     // Função para obter um usuário pelo ID
-    function getUserById($id)
+    public function getUserById($id)
     {
         try {
             $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
@@ -111,4 +112,32 @@ class QueryBuilder
             return null;
         }
     }
+
+    // Função para verificar se um usuário tem posts
+    public function userHasPosts($userId)
+    {
+        try {
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = :user_id");
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            $count = $stmt->fetchColumn();
+            return $count > 0;
+        } catch (PDOException $e) {
+            echo "Erro ao verificar os posts do usuário: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    // Função para deletar os posts de um usuário
+    public function deletePostsByUserId($userId)
+    {
+        try {
+            $stmt = $this->pdo->prepare("DELETE FROM posts WHERE user_id = :user_id");
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+        }
+    }
 }
+

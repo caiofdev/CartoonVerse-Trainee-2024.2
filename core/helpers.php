@@ -55,32 +55,3 @@ function uploadImage($file, $userId = null)
 
     return '/public/assets/img/profile/' . basename($targetFile);
 }
-
-// Função para verificar se um usuário tem posts
-function userHasPosts($userId)
-{
-    $pdo = getDatabaseConnection();
-    try {
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = :user_id");
-        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-        $count = $stmt->fetchColumn();
-        return $count > 0;
-    } catch (PDOException $e) {
-        echo "Erro ao verificar os posts do usuário: " . $e->getMessage();
-        return false;
-    }
-}
-
-// Função para deletar os posts de um usuário
-function deletePostsByUserId($userId)
-{
-    $pdo = getDatabaseConnection();
-    try {
-        $stmt = $pdo->prepare("DELETE FROM posts WHERE user_id = :user_id");
-        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-    } catch (PDOException $e) {
-        echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
-    }
-}
