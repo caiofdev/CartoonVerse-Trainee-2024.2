@@ -48,10 +48,15 @@ class AdminController
 
     public function verifyUser(){
         $id = $_GET['id'];
-
+    
         $user = App::get('database')->getUserById($id);
-
-        return view('site/index', compact('user'));
+        redirect('admin/users');
+        if ($user) {
+            return view('site/index', compact('user'));
+        } else {
+            // Redirecionar ou mostrar uma mensagem de erro se o usuário não for encontrado
+            return view('site/index', ['error' => 'Usuário não encontrado']);
+        }
     }
 
     public function deleteUser(){
