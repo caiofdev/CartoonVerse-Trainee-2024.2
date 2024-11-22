@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="../../../../public/css/editar-user.css">
 </head>
 
-<div id="modalEditar-<?=$user->id ?? '1'?>" class="modal">
+<div id="modalEditar-<?=$user->id?>" class="modal hidden">
       <div class="modal-content">
         <span class="close" id="closeEditar" onclick="fecharModal('modalEditar-<?=$user->id?>')"
           >&times;</span
