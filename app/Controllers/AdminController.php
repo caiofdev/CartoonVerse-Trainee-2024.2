@@ -55,12 +55,14 @@ class AdminController
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-            'image' => isset($_FILES['image']) ? uploadImage($_FILES['image'], $id) : null
         ];
+        if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+            $parameters['image'] = uploadImage($_FILES['image'], $id);
+        }
 
         App::get('database')->update('users', $id, $parameters);
 
-        return viewAdmin('user-list');
+        redirect('admin/users');
     }
 
     public function deleteUser(){
