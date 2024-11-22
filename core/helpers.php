@@ -1,10 +1,31 @@
 <?php
 
-function view($name, $data = [])
+function viewAdmin($name, $data = [])
 {
     extract($data);
 
-    return require "app/views/{$name}.view.php";
+    return require "app/views/admin/{$name}.view.php";
+}
+
+function viewModalUser($name, $data = [])
+{
+    extract($data);
+
+    return require "app/views/site/admin/user-modals/{$name}.view.php";
+}
+
+function viewModalPost($name, $data = [])
+{
+    extract($data);
+
+    return require "app/views/site/admin/post-modals/{$name}.view.php";
+}
+
+function viewSite($name, $data = [])
+{
+    extract($data);
+
+    return require "app/views/site/{$name}.view.php";
 }
 
 function redirect($path)
@@ -15,6 +36,10 @@ function redirect($path)
 // Função para fazer o upload da imagem
 function uploadImage($file, $userId = null)
 {
+    if (!isset($file) || !isset($file['error'])) {
+        die("Nenhum arquivo foi enviado.");
+    }
+    
     var_dump($file); // Adicione esta linha para verificar o conteúdo do arquivo
 
     if ($file['error'] !== UPLOAD_ERR_OK) {
@@ -52,6 +77,12 @@ function uploadImage($file, $userId = null)
     // Verificar se o arquivo é uma imagem
     if (empty($file['tmp_name'])) {
         die("Nenhum arquivo foi enviado.");
+    }
+
+    // Padronizar o nome do arquivo da foto de perfil
+    $fileName = 'profile_picture';
+    if ($userId) {
+        $fileName .= "_user{$userId}";
     }
 
     $check = getimagesize($file['tmp_name']);

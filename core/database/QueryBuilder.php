@@ -25,6 +25,24 @@ class QueryBuilder
         }
     }
 
+    public function selectOne($table, $parameters)
+    {
+        $sql = sprintf(
+            'SELECT * FROM %s WHERE %s = :%s',
+            $table,
+            implode(', ', array_keys($parameters)),
+            implode(', :', array_keys($parameters))
+        );
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function insert($table, $parameters){
         $sql = sprintf(
             'INSERT INTO %s (%s) VALUES (%s)',
@@ -83,31 +101,6 @@ class QueryBuilder
         }
         catch (Exception $e) {
             echo "Erro ao deletar o usuário: " . $e->getMessage();
-        }
-    }
-
-    // Função para obter todos os usuários
-    public function getAllUsers()
-    {
-        $sql = "SELECT * FROM users";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $users;
-    }
-
-    // Função para obter um usuário pelo ID
-    public function getUserById($id)
-    {
-        try {
-            $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $user;
-        } catch (Exception $e) {
-            echo "Erro ao obter o usuário: " . $e->getMessage();
-            return null;
         }
     }
 

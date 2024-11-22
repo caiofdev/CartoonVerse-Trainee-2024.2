@@ -10,20 +10,25 @@ class AdminController
     public function index()
     {
         $users = App::get('database')->selectAll('users');
-        return view('site/index', compact('users'));
-        // o primeiro parametro de view() é o arquivo dentro de views/ que deve ser retornado.
-        // ou seja, é o que vai aparecer na tela. O segundo é a variavel $users transformada em array
-        // confira o arquivo routes.php
+        return viewAdmin('user-list', compact('users'));
     }
 
     // Função para criar um novo usuário
     public function createUser()
     {
+        $email = $_POST['email'];
+        $existingUser = App::get('database')->selectOne('users', ['email' => $email]);
+
+        if ($existingUser) {
+            // Redirecionar ou mostrar uma mensagem de erro se o email já estiver no sistema
+            return viewAdmin('user-list', ['error' => 'Email já cadastrado']);
+        }
+
         $parameters = [
             'name' => $_POST['name'],
-            'email' => $_POST['email'],
+            'email' => $email,
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-            'image' => uploadImage($_FILES['image'], )
+            'image' => isset($_FILES['image']) ? uploadImage($_FILES['image']) : null
         ];
 
         App::get('database')->insert('users', $parameters);
@@ -31,7 +36,21 @@ class AdminController
         header('Location: /admin/users');
     }
 
+    public function verifyUser(){
+        $id = $_GET['id'];
+    
+        $user = App::get('database')->selectOne('users', ['id' => $id]);
+
+        if ($user) {
+            return viewUserModals('view-user', compact('user'));
+        } else {
+            // Redirecionar ou mostrar uma mensagem de erro se o usuário não for encontrado
+            return viewUserModals('view-user', ['error' => 'Usuário não encontrado']);
+        }
+    }
+
     public function updateUser(){
+        $id = $_POST['id'];
         $parameters = [
             'name' => $_POST['name'],
             'email' => $_POST['email'],
@@ -39,24 +58,9 @@ class AdminController
             'image' => isset($_FILES['image']) ? uploadImage($_FILES['image'], $id) : null
         ];
 
-        $id = $_POST['id'];
-
         App::get('database')->update('users', $id, $parameters);
-    
-        header('Location: admin/users');
-    }
 
-    public function verifyUser(){
-        $id = $_GET['id'];
-    
-        $user = App::get('database')->getUserById($id);
-        redirect('admin/users');
-        if ($user) {
-            return view('site/index', compact('user'));
-        } else {
-            // Redirecionar ou mostrar uma mensagem de erro se o usuário não for encontrado
-            return view('site/index', ['error' => 'Usuário não encontrado']);
-        }
+        return viewAdmin('user-list');
     }
 
     public function deleteUser(){
