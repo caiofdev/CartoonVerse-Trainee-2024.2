@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" href="../../../../public/css/fonts.css">
+  <link rel="stylesheet" href="../../../../public/css/visualizar-user.css">
+</head>
+
 <div id="modalVisualizar-<?=$user->id ?? '1'?>" class="modal">
     <div class="modal-content">
         <span class="close" id="closeCriar" onclick="fecharModal('modalVisualizar-<?=$user->id?>')">&times;</span>

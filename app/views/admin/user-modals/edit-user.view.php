@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" href="../../../../public/css/fonts.css">
+  <link rel="stylesheet" href="../../../../public/css/editar-user.css">
+</head>
+
 <div id="modalEditar-<?=$user->id ?? '1'?>" class="modal">
       <div class="modal-content">
         <span class="close" id="closeEditar" onclick="fecharModal('modalEditar-<?=$user->id?>')"
@@ -33,3 +38,5 @@
         </div>
       </div>
     </div>
+
+<script src="../../../../public/js/modais.js"></script>

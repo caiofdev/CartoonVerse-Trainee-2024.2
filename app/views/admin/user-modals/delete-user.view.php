@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" href="../../../../public/css/fonts.css">
+  <link rel="stylesheet" href="../../../../public/css/excluir-user.css">
+</head>
+
 <div id="modalExcluir-<?=$user->id ?? '1'?>" class="modal">
     <div class="modal-content">
     <span class="close" id="closeExcluir" onclick="fecharModal('modalExcluir-<?=$user->id?>')">&times;</span>

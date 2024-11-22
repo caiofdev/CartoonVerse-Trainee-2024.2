@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/public/css/fonts.css">
   <link rel="stylesheet" href="/public/css/user-list.css">
-  <link rel="stylesheet" href="/public/css/criar-user.css">
-  <link rel="stylesheet" href="/public/css/excluir-user.css">
-  <link rel="stylesheet" href="/public/css/visualizar-user.css">
   <title>CartoonVerse</title>
 </head>
 <body>
@@ -24,7 +21,7 @@
       </button>
     </div>
 
-  <div id="main"></div>
+  <div id="main">
     <!-- Tvz um contador de registros -->
     <!-- adicionar botão de criar usuários -->
      <!-- Tabela -->

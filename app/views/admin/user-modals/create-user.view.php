@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" href="../../../../public/css/fonts.css">
+  <link rel="stylesheet" href="../../../../public/css/criar-user.css">
+</head>
+
 <div id="modalCriar" class="modal">
     <div class="modal-content">
       <span class="close" id="closeCriar" onclick="fecharModal('modalCriar')"
@@ -36,3 +41,5 @@
       </div>
     </div>
   </div>
+
+<script src="../../../../public/js/modais.js"></script>
