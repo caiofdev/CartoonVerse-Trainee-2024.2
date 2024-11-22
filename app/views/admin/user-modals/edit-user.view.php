@@ -9,32 +9,57 @@
           >&times;</span
         >
         <div class="modal-body">
-          <!-- Campos de Entrada -->
-           <div class="modal-form">
-            <form action="users/update" method="POST" class="modal-form" id="edit-user">
-              <!-- Imagem do usuário -->
-                <label for="input-image" class="user-image" tabindex="0" id="image">
-                  <img src="<?=$user->image?>" alt="Imagem de <?=$user->name?>">
-                </label>
-                <input type="file" accept="image/png,image/jpeg, image/jpg" class="input-image" form="edit-user" name="input-image" id="input-image" required>
-              <div class="input-group" id="first">
-                <input type="text" value="<?=$user->name?>" placeholder="Nome" form="edit-user" required/>
-              </div>
-              <div class="input-group">
-                <input type="email" value="<?=$user->email?>" placeholder="Email" form="edit-user" required/>
-              </div>
-              <div class="input-group">
-                <input type="" value="<?=$user->password?>" placeholder="Senha" form="edit-user" required/>
-              </div>
-              <!-- Botões de Ação -->
-              <div class="modal-buttons">
-                <button class="cancel" onclick="fecharModal('modalEditar-<?=$user->id?>')" form="edit-user"  formnovalidate type="button">
-                  Cancelar
-                </button>
-                <button class="confirm" form="edit-user" formmethod="post" type="submit">Confirmar</button>
-              </div>
-            </form>
-           </div>
+            <div class="modal-form">
+                <form action="/admin/users/update" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?=$user->id?>">
+                    
+                    <!-- Imagem do usuário -->
+                    <div class="form-group">
+                        <label for="image-<?=$user->id?>" class="user-image">
+                            <img src="<?=$user->image?>" alt="Imagem de <?=$user->name?>" class="preview-image">
+                        </label>
+                        <input type="file" 
+                               id="image-<?=$user->id?>" 
+                               name="image" 
+                               accept="image/png,image/jpeg,image/jpg" 
+                               class="input-image">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" 
+                               name="name" 
+                               value="<?=$user->name?>" 
+                               placeholder="Nome" 
+                               required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" 
+                               name="email" 
+                               value="<?=$user->email?>" 
+                               placeholder="Email" 
+                               required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" 
+                               name="password" 
+                               placeholder="Nova senha" 
+                               required>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button type="button" 
+                                class="cancel" 
+                                onclick="fecharModal('modalEditar-<?=$user->id?>')">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="confirm">
+                            Confirmar
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
       </div>
     </div>
