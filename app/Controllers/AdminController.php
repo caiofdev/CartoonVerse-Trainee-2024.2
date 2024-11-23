@@ -28,7 +28,7 @@ class AdminController
             'name' => $_POST['name'],
             'email' => $email,
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-            'image' => isset($_FILES['image']) ? uploadImage($_FILES['image']) : null
+            'image' => isset($_FILES['image']) ? uploadImage($_FILES['image']) : "/public/assets/img/profile/chopp.jpg",
         ];
 
         App::get('database')->insert('users', $parameters);

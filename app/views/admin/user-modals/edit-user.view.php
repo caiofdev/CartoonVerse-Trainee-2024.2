@@ -44,6 +44,7 @@
                     <div class="input-group">
                         <input type="password" 
                                name="password" 
+                               value="<?=$user->password?>" 
                                placeholder="Nova senha" 
                                required>
                     </div>
