@@ -20,7 +20,7 @@ class AdminController
             }
         }
 
-        $itemsPage = 1;
+        $itemsPage = 5;
         $inicio = $itemsPage * $page - $itemsPage;
 
         $rows_count = App::get('database')->countAll('users');

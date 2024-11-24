@@ -13,6 +13,35 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
+    public function checkAndCreateDefaultUser()
+    {
+        // Verifica se há usuários no banco de dados
+        $sql = "SELECT COUNT(*) FROM users";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $userCount = intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
+        if ($userCount === 0) {
+            try {
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->execute();
+                $userCount = intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
+                // Se não houver usuários, cria um usuário padrão
+                    $defaultUser = [
+                        'name' => 'Usuário Exemplo',
+                        'email' => 'default@example.com',
+                        'password' => password_hash('password', PASSWORD_DEFAULT),
+                        'image' => '/public/assets/img/profile/chopp.jpg'
+                    ];
+
+                    $this->insert('users', $defaultUser);
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+        }
+    }
+
     public function selectAll($table, $inicio = null, $rows_count = null)
     {
         $sql = "SELECT * FROM {$table}";
@@ -107,18 +136,19 @@ class QueryBuilder
     {
         try {
 
-            /* // Verificar se o usuário tem posts
+            // Verificar se o usuário tem posts
             if ($this->userHasPosts($id) > 0) {
                 // Deletar os posts do usuário
                 $this->deletePostsByUserId($id);
-            } */
+            }
 
             // Deletar o usuário
             $sql = sprintf("DELETE FROM %s WHERE id = :id", $table);
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-            /* $this->resetAutoIncrement('users'); */
+
+            $this->resetAutoIncrement($table);
         }
         catch (Exception $e) {
             echo "Erro ao deletar o usuário: " . $e->getMessage();
@@ -132,39 +162,34 @@ class QueryBuilder
             $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = :user_id");
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();
-            $count = $stmt->fetchColumn();
-            return $count;
-        } catch (PDOException $e) {
-            echo "Erro ao verificar os posts do usuário: " . $e->getMessage();
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+        } catch (Exception $e) {
+            echo "Erro ao verificar se o usuário tem posts: " . $e->getMessage();
             return 0;
         }
     }
 
     // Função para deletar os posts de um usuário
     public function deletePostsByUserId($userId)
-    {
-        try {
-            $stmt = $this->pdo->prepare("DELETE FROM posts WHERE user_id = :user_id");
-            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-            $stmt->execute();
-            return true;
-        } catch (PDOException $e) {
-            echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
-            return false;
-        }
+{
+    try {
+        $sql = "DELETE FROM posts WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (Exception $e) {
+        echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
     }
+}
 
     public function resetAutoIncrement($table)
     {
         try {
-            $sql = "ALTER TABLE $table AUTO_INCREMENT = 0";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
-            return true;
+            $sql = "ALTER TABLE {$table} AUTO_INCREMENT = 1";
+            $this->pdo->exec($sql);
         } catch (Exception $e) {
-            echo "Erro ao resetar o auto incremento: " . $e->getMessage();
-            return false;
+            echo "Erro ao resetar o auto-increment: " . $e->getMessage();
         }
-    }
+    }   
 }
 

@@ -10,3 +10,5 @@ App::bind('config', require __DIR__ . '/../config.php');
 App::bind('database', new QueryBuilder(
     Connection::make(App::get('config')['database'])
 ));
+
+App::get('database')->checkAndCreateDefaultUser();
