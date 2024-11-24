@@ -85,10 +85,11 @@ class QueryBuilder
     public function delete($table, $id)
     {
         try {
-           /*  // Verificar se o usuário tem posts
-            if (userHasPosts($id)) {
+
+            /* // Verificar se o usuário tem posts
+            if ($this->userHasPosts($id) > 0) {
                 // Deletar os posts do usuário
-                deletePostsByUserId($id);
+                $this->deletePostsByUserId($id);
             } */
 
             // Deletar o usuário
@@ -96,7 +97,7 @@ class QueryBuilder
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-            
+            /* $this->resetAutoIncrement('users'); */
         }
         catch (Exception $e) {
             echo "Erro ao deletar o usuário: " . $e->getMessage();
@@ -111,10 +112,10 @@ class QueryBuilder
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             $count = $stmt->fetchColumn();
-            return $count > 0;
+            return $count;
         } catch (PDOException $e) {
             echo "Erro ao verificar os posts do usuário: " . $e->getMessage();
-            return false;
+            return 0;
         }
     }
 
@@ -125,8 +126,23 @@ class QueryBuilder
             $stmt = $this->pdo->prepare("DELETE FROM posts WHERE user_id = :user_id");
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();
+            return true;
         } catch (PDOException $e) {
             echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function resetAutoIncrement($table)
+    {
+        try {
+            $sql = "ALTER TABLE $table AUTO_INCREMENT = 0";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return true;
+        } catch (Exception $e) {
+            echo "Erro ao resetar o auto incremento: " . $e->getMessage();
+            return false;
         }
     }
 }

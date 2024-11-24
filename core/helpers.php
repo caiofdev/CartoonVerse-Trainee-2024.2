@@ -89,6 +89,7 @@ function uploadImage($file, $email)
     }
 
     // Trocar o nome da imagem se ela já existir
+    // Adicionar generalização de tipo de arquivo caso a imagem trocada tenha outra extensão
     while (file_exists($targetFile)) {
         $targetFile = $targetDir . $fileName . '.' . $imageFileType;
     }
