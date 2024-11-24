@@ -16,7 +16,7 @@ class AdminController
             $page = intval($_GET['page']);
 
             if($page <= 0){
-                return redirect('admin/index');
+                return redirect('admin/users');
             }
         }
 
@@ -26,7 +26,7 @@ class AdminController
         $rows_count = App::get('database')->countAll('users');
 
         if($inicio > $rows_count){
-            return redirect('admin/index');
+            return redirect('admin/users');
         }
 
         $users = App::get('database')->selectAll('users', $inicio, $itemsPage);
