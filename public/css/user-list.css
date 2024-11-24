@@ -177,29 +177,63 @@
     width: 40px;
   }
   
-  .paginacao {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-self: start;
-    /* position: absolute;
-    right: 3%; */
-    margin-right: var(--margin-right-paginacao);
-    margin-top: 1%;
-    /* padding: 1%; */
-    gap: 12%;
-    /* border: 1px solid lime; */
-  }
-  
-  .paginacao .bi {
-    font-size: var(--font-size-paginacao-bi);
-  }
-  
-  .paginacao button {
-    background: transparent;
-    border: 0;
-  }
+/* Estilo geral da paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #c5d9d9; /* cor de fundo combinando com a página */
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos itens de paginação */
+.pagination .page-item {
+  margin: 0 5px;
+}
+
+.pagination .page-link {
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #000; /* cor do texto */
+  font-weight: bold;
+  background-color: #e8f0f0; /* cor de fundo dos botões */
+  border: 1px solid #a5b8b8; /* borda combinando com o design */
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Estilo ao passar o mouse */
+.pagination .page-link:hover {
+  background-color: #a5b8b8; /* cor ao passar o mouse */
+  color: #fff; /* cor do texto ao passar o mouse */
+  transform: scale(1.05);
+}
+
+/* Estilo do botão ativo */
+.pagination .page-item.active .page-link {
+  background-color: #007bff; /* cor do botão ativo */
+  color: #fff;
+  border: none;
+}
+
+/* Estilo do botão desabilitado */
+.pagination .page-item.disabled .page-link {
+  background-color: #d9d9d9;
+  color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+/* Margem extra para separação da tabela */
+.pagination-container {
+  margin-top: 20px;
+}
+
+
   
   .bi:hover {
     cursor: pointer;
@@ -318,6 +352,12 @@
   
   /* MOBILE */
   @media (max-width: 768px) {
+
+    .pagination .page-link {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+    
     :root {
       --font-size-header: 24px;
       --font-size-usuario: 12px;

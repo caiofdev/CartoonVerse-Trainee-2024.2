@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Controllers\AdminController;
+use App\Controllers\GeneralController;
 use App\Core\Router;
 
     $router->get('admin/users', 'AdminController@index');

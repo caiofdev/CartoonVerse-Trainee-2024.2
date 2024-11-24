@@ -9,8 +9,31 @@ class AdminController
 {
     public function index()
     {
-        $users = App::get('database')->selectAll('users');
-        return viewAdmin('user-list', compact('users'));
+
+        $page = 1;
+
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $page = intval($_GET['page']);
+
+            if($page <= 0){
+                return redirect('admin/index');
+            }
+        }
+
+        $itemsPage = 1;
+        $inicio = $itemsPage * $page - $itemsPage;
+
+        $rows_count = App::get('database')->countAll('users');
+
+        if($inicio > $rows_count){
+            return redirect('admin/index');
+        }
+
+        $users = App::get('database')->selectAll('users', $inicio, $itemsPage);
+
+        $totalPages = ceil($rows_count / $itemsPage);
+
+        return viewAdmin('user-list', compact('users', 'page', 'totalPages'));
     }
 
     // Função para criar um novo usuário
