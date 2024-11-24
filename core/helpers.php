@@ -34,13 +34,11 @@ function redirect($path)
 }
 
 // Função para fazer o upload da imagem
-function uploadImage($file, $userId = null)
+function uploadImage($file, $email)
 {
-    if (!isset($file) || !isset($file['error'])) {
-        die("Nenhum arquivo foi enviado.");
+    if (!isset($file) || !isset($file['error']) || empty($file['tmp_name'])) {
+        return '../../public/assets/img/profile/' . "chopp.jpg";
     }
-    
-    var_dump($file); // Adicione esta linha para verificar o conteúdo do arquivo
 
     if ($file['error'] !== UPLOAD_ERR_OK) {
         switch ($file['error']) {
@@ -63,27 +61,16 @@ function uploadImage($file, $userId = null)
         }
     }
 
-    $targetDir = __DIR__ . '/../public/assets/img/profile/';
+    $targetDir = $_SERVER['DOCUMENT_ROOT'] . '/public/assets/img/profile/';
     $imageFileType = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     $fileName = pathinfo($file['name'], PATHINFO_FILENAME);
 
     // Se o ID do usuário for fornecido, inclua-o no nome do arquivo
-    if ($userId) {
-        $fileName .= "_user{$userId}";
+    if ($email) {
+        $fileName = "{$email}";
     }
 
     $targetFile = $targetDir . $fileName . '.' . $imageFileType;
-
-    // Verificar se o arquivo é uma imagem
-    if (empty($file['tmp_name'])) {
-        die("Nenhum arquivo foi enviado.");
-    }
-
-    // Padronizar o nome do arquivo da foto de perfil
-    $fileName = 'profile_picture';
-    if ($userId) {
-        $fileName .= "_user{$userId}";
-    }
 
     $check = getimagesize($file['tmp_name']);
     if ($check === false) {
@@ -103,12 +90,12 @@ function uploadImage($file, $userId = null)
 
     // Trocar o nome da imagem se ela já existir
     while (file_exists($targetFile)) {
-        $targetFile = $targetDir . $fileName . '_' . uniqid() . '.' . $imageFileType;
+        $targetFile = $targetDir . $fileName . '.' . $imageFileType;
     }
 
     if (!move_uploaded_file($file['tmp_name'], $targetFile)) {
         die("Desculpe, houve um erro ao fazer o upload do seu arquivo.");
     }
 
-    return '/public/assets/img/profile/' . basename($targetFile);
+    return '../../public/assets/img/profile/' . basename($targetFile);
 }

@@ -54,7 +54,7 @@ class QueryBuilder
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($parameters);
-            echo "Usuário criado com sucesso!";
+            
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -76,7 +76,6 @@ class QueryBuilder
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($parameters);
 
-            echo "Usuário atualizado com sucesso!";
         } catch (Exception $e) {
             echo "Erro ao atualizar o usuário: " . $e->getMessage();
         }
@@ -97,7 +96,7 @@ class QueryBuilder
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-            echo "Usuário deletado com sucesso!";
+            
         }
         catch (Exception $e) {
             echo "Erro ao deletar o usuário: " . $e->getMessage();

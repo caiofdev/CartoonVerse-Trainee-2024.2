@@ -16,24 +16,16 @@ class AdminController
     // Função para criar um novo usuário
     public function createUser()
     {
-        $email = $_POST['email'];
-        $existingUser = App::get('database')->selectOne('users', ['email' => $email]);
-
-        if ($existingUser) {
-            // Redirecionar ou mostrar uma mensagem de erro se o email já estiver no sistema
-            return viewAdmin('user-list', ['error' => 'Email já cadastrado']);
-        }
-
-        $parameters = [
+            $parameters = [
             'name' => $_POST['name'],
-            'email' => $email,
+            'email' => $_POST['email'],
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-            'image' => isset($_FILES['image']) ? uploadImage($_FILES['image']) : "/public/assets/img/profile/chopp.jpg",
+            'image' => uploadImage($_FILES['image'], $_POST['email'])
         ];
 
         App::get('database')->insert('users', $parameters);
 
-        header('Location: /admin/users');
+        redirect('admin/users');
     }
 
     public function verifyUser(){
@@ -50,17 +42,16 @@ class AdminController
     }
 
     public function updateUser(){
-        $id = $_POST['id'];
         $parameters = [
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
         ];
         if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
-            $parameters['image'] = uploadImage($_FILES['image'], $id);
+            $parameters['image'] = uploadImage($_FILES['image'], $_POST['email']);
         }
 
-        App::get('database')->update('users', $id, $parameters);
+        App::get('database')->update('users', $_POST['id'], $parameters);
 
         redirect('admin/users');
     }
