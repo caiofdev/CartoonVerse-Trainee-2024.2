@@ -41,6 +41,18 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function getPostByName($name){
+        $sql = "select * from posts where name = ?";
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(1, $name);
+            $stmt->execute();
+            return $stmt->fetchObject();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
     
     public function insert($table, $parameters){
         $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
