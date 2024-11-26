@@ -73,4 +73,9 @@ class AdminController
 
         redirect('admin/users');
     }
+
+    public function login(){
+
+        return viewSite('Login');
+    }
 }
