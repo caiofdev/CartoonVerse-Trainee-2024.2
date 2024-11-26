@@ -41,6 +41,19 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function getBySimilar($table, $column, $name){
+        // $sql = "select * from $table where $column like :name";
+        $sql = sprintf('SELECT * FROM %s WHERE %s LIKE ?', $table, $column);
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(1, "'%$name%'");
+            $stmt->execute();
+            return $stmt->fetchObject();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
     
     public function insert($table, $parameters){
         $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
@@ -61,6 +74,21 @@ class QueryBuilder
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(1, $id);
             $stmt->execute();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+    public function countAll($table)
+    {
+        $sql = "SELECT COUNT(*) FROM {$table}";
+
+        try {
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
         } catch (Exception $e) {
             die($e->getMessage());
         }

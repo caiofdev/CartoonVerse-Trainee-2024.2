@@ -11,7 +11,7 @@ class PostController
     public function index()
     {
         $posts = App::get('database')->selectAll('posts');
-
+        
         foreach ($posts as $post) {
 
             // troca o id pelo nome de cada um
@@ -58,6 +58,45 @@ class PostController
     }
     public function getEdit(){
         return view('admin/editar-post');
+    }
+
+    public function index_user_post_list(){
+        // $posts = App::get('database')->selectAll('posts');
+
+        $page = 1;
+
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $page = intval($_GET['page']);
+
+            if($page <= 0){
+                return redirect('site/post-list');
+            }
+        }
+
+        $itemsPage = 6;
+        $inicio = $itemsPage * $page - $itemsPage;
+
+        $rows_count = App::get('database')->countAll('posts');
+
+        if($inicio > $rows_count){
+            return redirect('site/post-list');
+        }
+
+        $posts = App::get('database')->selectAll('posts', $inicio, $itemsPage);
+
+        $totalPages = ceil($rows_count / $itemsPage);
+
+        return view('site/post-list', compact('posts', 'page', 'totalPages'));
+
+
+        // return view('site/post-list', compact('posts'));
+    }
+    public function searchPost() {
+        if (isset($_GET['title'])) {   
+            $title = htmlspecialchars($_GET['title']);
+            $posts = App::get('database')->getBySimilar('posts', 'title', $title);
+            return view('site/post-list',compact($posts));
+        }
     }
 }
 

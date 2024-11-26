@@ -11,6 +11,9 @@
     font-family: "Sugarbread";
     src: url(../assets/Sugar\ Bread.otf) format('opentype');
 }
+:root {
+    --default-border-radius: 20px;
+}
 
 * {
     padding: 0;
@@ -30,6 +33,9 @@ a {
 }
 li {
     list-style: none;
+}
+button {
+    cursor: pointer;
 }
 
 .general-container {
@@ -54,11 +60,11 @@ li {
     height: 40px;
     padding: 10px;
     gap: 10px;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
     background: #4A5759;
     font-family: "Sugarbread";
 }
-.search-bar a {
+.search-bar form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,8 +73,28 @@ li {
     font-size: 20px;
     font-weight: 400;
 }
-.search-bar img {
-    margin-left: auto;
+.search-bar button {
+    margin-left:auto;
+}
+.search-bar form, button {
+    background: transparent;
+    border: none;
+}
+.search-bar #search {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    border-radius: var(--default-border-radius);
+    width: 88%;
+}
+.search-bar #lupa {
+    height: 40px;
+    width: 40px;
+    background: url(/public/assets/img/Search.png) no-repeat local center/cover;
+    border-radius: var(--default-border-radius);
+}
+.search-bar #lupa:hover { /* CHANGE ME !!!!!!!!!!!!!*/
+    background: url(/public/assets/img/chopp.jpg) no-repeat local center/cover;
 }
 .search-bar p {
     margin: auto;
@@ -92,11 +118,11 @@ li {
     align-items: flex-start;
     gap: 10px;
     background: #4A5759;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
 }
 .posts-div #post img {
     align-self: stretch;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
 }
 .posts-div #post p {
     display: flex;
@@ -120,7 +146,7 @@ li {
     flex-direction: row;
     height: 37px;
     width: 300px;
-    border-radius: 20px;
+    border-radius: var(--default-border-radius);
     background: #4A5759;
     /* padding: 0 10px; */
 }
@@ -157,6 +183,7 @@ li {
 .div-botao-pagina .numero .active {
     color:white
 }
+
 
 
 @media (min-width: 768px) {
