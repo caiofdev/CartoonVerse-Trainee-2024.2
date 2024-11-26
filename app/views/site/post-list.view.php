@@ -25,7 +25,7 @@
             <ul id="list">
             </ul>
         </div>
-        <?php require('../../components/pagination.php') ?>
+        <?php require(__DIR__ . '/../components/paginacao.php') ?>
         <!-- <div class="div-botao-pagina">
             <div class="first">&#171;</div>
             <div class="prev">&lt;</div>
