@@ -67,7 +67,6 @@ class PostController
     public function searchPost() {
         $title = $_GET['title'];
         $posts = App::get('database')->getBySimilar('posts', 'title', $title);
-        var_dump($posts);
         return view('site/post-list',compact($posts));
     }
 }

@@ -25,7 +25,8 @@
             <ul id="list">
             </ul>
         </div>
-        <div class="div-botao-pagina">
+        <?php require('../../components/pagination.php') ?>
+        <!-- <div class="div-botao-pagina">
             <div class="first">&#171;</div>
             <div class="prev">&lt;</div>
             <div class="numero">
@@ -33,7 +34,7 @@
             </div>
             <div class="prox">&gt;</div>
             <div class="last">&#187;</div>
-        </div>
+        </div> -->
     </div>
     <script src="/public/js/post-list-pags.js"></script>
 </body>
