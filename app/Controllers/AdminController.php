@@ -76,6 +76,10 @@ class AdminController
 
     public function login(){
 
-        return viewSite('Login');
+        return viewSite('login');
+    }
+
+    public function dashboard(){
+        return viewAdmin('dashboard-admin');
     }
 }

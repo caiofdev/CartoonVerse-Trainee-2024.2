@@ -10,6 +10,7 @@ use App\Core\Router;
     $router->post('admin/users/update', 'AdminController@updateUser');
     $router->post('admin/users/delete', 'AdminController@deleteUser');
     $router->get('login', 'AdminController@login');
+    $router->get('admin/dashboard', 'AdminController@dashboard');
 
     /*
     Sobre o $router: o primeiro parametro indica o que deve aparecer no URL para que a função (2° parametro)
