@@ -14,15 +14,45 @@
 <body>
     <div class="general-container">
         <div class="search-bar">
-            <form id="searchForm" method="GET" action="search-post">
+            <form id="searchForm" method="GET" ">
                 <input id="search" type="text" name="title" placeholder="PESQUISA" required>
-                <button type="submit">
+                <button type="submit" id="searchButton">
                     <div id="lupa"></div>
                 </button>
             </form>
         </div>
         <div class="posts-div">
             <ul id="list">
+                <?php
+                    
+                    use App\Core\App;
+                    
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $limit = 6;
+                    $offset = ($page - 1) * $limit;
+                    $posts = App::get('database')->selectAll('posts', $limit, $offset);
+                    if (empty($posts)) {
+                        ?>
+                        <p>Não foram encontrados posts com essa busca</p>
+                        <?php
+                    } else {
+                        foreach($posts as $post) {
+                            $post->author = App::get('database')->selectOne('users', $post->author)->name;
+                        }
+                        foreach($posts as $post):
+                    ?>
+                    <li>
+                        <a href="/post/<?= $post->id ?>">
+                            <div id="post">
+                                <p id="titulo"><?= $post->title ?></p>
+                                <p id="autor-data">
+                                    <br><?= $post->author ?> • <?= $post->created_at ?>
+                                </p>
+                                <img src=<?= '/public/assets/img/'.$post->image ?> alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <?php endforeach; }?>
             </ul>
         </div>
         <?php require(__DIR__ . '/../components/paginacao.php') ?>
@@ -37,5 +67,21 @@
         </div> -->
     </div>
     <script src="/public/js/post-list-pags.js"></script>
+    <!-- <script>
+        document.getElementById('searchButton').addEventListener('click', async () => {
+            
+            const query = document.getElementById('search').value;
+            const resultsDiv = document.getElementById('list');
+            if (query) {
+                try {
+                    const response = await fetch(`search-post?title=${encodeURIComponent(query)}`);
+                    const results = await response;
+                    resultsDiv.innerHTML = results;
+                } catch (error) {
+                    resultsDiv.innerHTML = '<p>Erro ao buscar resultados.</p>';
+                    console.error(error);
+                }
+            }});
+    </script> -->
 </body>
 </html>
