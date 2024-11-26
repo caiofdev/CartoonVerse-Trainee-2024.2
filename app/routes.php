@@ -13,5 +13,6 @@ use App\Core\Router;
     $router->post('admin/delete-post', 'PostController@delete');
 
     $router->get('admin/editar-post','PostController@getEdit');
+    
 
 ?>

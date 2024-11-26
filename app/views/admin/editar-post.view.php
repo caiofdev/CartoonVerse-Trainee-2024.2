@@ -8,7 +8,6 @@
   <title>CartoonVerse</title>
 </head>
 <body>
-  <button onclick="abrirModal('modalEditar')">editar</button>
   <!-- Modal de Criar -->
     <div id="modalEditar" class="modal">
       <div class="modal-content">
@@ -60,5 +59,5 @@
       </div>
     </div>
 </body>
-<script src="/public/js/post-list-modais.js"></script>
+<script src="/public/js/modais.js"></script>
 </html>
