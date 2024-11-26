@@ -11,7 +11,7 @@ class PostController
     public function index()
     {
         $posts = App::get('database')->selectAll('posts');
-
+        
         foreach ($posts as $post) {
 
             // troca o id pelo nome de cada um
@@ -58,6 +58,17 @@ class PostController
     }
     public function getEdit(){
         return view('admin/editar-post');
+    }
+
+    public function index_user_post_list(){
+        $posts = App::get('database')->selectAll('posts');
+        return view('site/post-list', compact('posts'));
+    }
+    public function searchPost() {
+        $title = $_GET['title'];
+        $posts = App::get('database')->getBySimilar('posts', 'title', $title);
+        var_dump($posts);
+        return view('site/post-list',compact($posts));
     }
 }
 

@@ -14,8 +14,8 @@
 <body>
     <div class="general-container">
         <div class="search-bar">
-            <form id="searchForm" method="GET" action="search.php">
-                <input id="search" type="text" name="query" placeholder="PESQUISA" required>
+            <form id="searchForm" method="GET" action="search-post">
+                <input id="search" type="text" name="title" placeholder="PESQUISA" required>
                 <button type="submit">
                     <div id="lupa"></div>
                 </button>

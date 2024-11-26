@@ -42,11 +42,11 @@ class QueryBuilder
         }
     }
 
-    public function getPostByName($name){
-        $sql = "select * from posts where name = ?";
+    public function getBySimilar($table, $column, $name){
+        $sql = "select * from $table where $column like :name";
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(1, $name);
+            $stmt->bindValue(":name", "%$name%");
             $stmt->execute();
             return $stmt->fetchObject();
         } catch (Exception $e) {

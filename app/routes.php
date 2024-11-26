@@ -14,4 +14,7 @@ use App\Core\Router;
 
     $router->get('admin/editar-post','PostController@getEdit');
 
+    $router->get('post-list', 'PostController@index_user_post_list');
+    $router->get('search-post', 'PostController@searchPost');
+
 ?>
