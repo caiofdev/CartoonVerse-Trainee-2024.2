@@ -8,8 +8,7 @@
   <title>CartoonVerse</title>
 </head>
 <body>
-  <button onclick="abrirModal('modalVisualizar')">Visualizar</button>
-  <!-- Modal de Criar -->
+  <!-- Modal de Visualizar -->
     <div id="modalVisualizar" class="modal">
       <div class="modal-content">
         <span class="close" id="closeCriar" onclick="fecharModal('modalVisualizar')"

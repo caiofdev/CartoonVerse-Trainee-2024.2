@@ -64,6 +64,7 @@
                 fill="currentColor"
                 class="bi bi-list"
                 viewBox="0 0 16 16"
+                onclick="abrirModal('modalVisualizar')"
               >
                 <path
                   fill-rule="evenodd"
@@ -103,6 +104,9 @@
             </td>
           </tr>
 
+          <!-- Modal de Visualizar -->
+          <?php require __DIR__ . '/visualizar-post.view.php' ?>
+          <!-- Modal de Editar -->
           <?php require __DIR__ . '/editar-post.view.php' ?>
           <?php endforeach; ?>
         </table>
