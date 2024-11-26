@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['id'])){
+    header('Location: /login');
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -24,10 +32,12 @@
         <h2>Usuários</h2>
         <p>Gerenciar usuários</p>
       </a>
-      <a href="logout" class="admin-link logout">
-        <h2>Logout</h2>
-        <p>Encerrar sessão</p>
-      </a>
+      <form action="/logout" method="POST">
+        <button type="submit" class="admin-link logout">
+          <h2>Logout</h2>
+          <p>Encerrar sessão</p>
+        </button>
+      </form>
     </div>
   </body>
 </html>

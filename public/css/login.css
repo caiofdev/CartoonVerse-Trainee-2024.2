@@ -45,6 +45,15 @@ body {
   text-shadow: 2px 2px #13acb1;
 }
 
+.mensagem-erro p{
+  justify-self: center;
+  text-align: center;
+  color: #7e241e;
+  font-size: 20px;
+  font-family: open-sans;
+  font-weight: 700;
+}
+
 .login {
   width: var(--login-width);
 }

@@ -9,9 +9,14 @@ use App\Core\Router;
     $router->post('admin/users/create', 'AdminController@createUser');
     $router->post('admin/users/update', 'AdminController@updateUser');
     $router->post('admin/users/delete', 'AdminController@deleteUser');
+    // Exibe o login
     $router->get('login', 'AdminController@login');
+    // Rota de envio - Login
+    $router->post('login', 'AdminController@fazerLogin');
+    // Exibe a dashboard
     $router->get('admin/dashboard', 'AdminController@dashboard');
-
+    // Rota de envio - Logout
+    $router->post('logout', 'AdminController@logout');
     /*
     Sobre o $router: o primeiro parametro indica o que deve aparecer no URL para que a função (2° parametro)
     seja executada. Ou seja, se o URL for www.cartoonverse.com/admin/users, o index() de AdminController vai

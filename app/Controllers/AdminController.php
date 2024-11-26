@@ -76,10 +76,41 @@ class AdminController
 
     public function login(){
 
+        session_start();
+        
+        if(isset($_SESSION['id'])){
+            header('Location: /admin/dashboard');
+        }
+
         return viewSite('login');
     }
 
     public function dashboard(){
         return viewAdmin('dashboard-admin');
+    }
+
+    public function fazerLogin(){
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $user = APP::get('database')->verificaLogin($email, $senha);
+
+        if($user != false){
+            session_start();
+            $_SESSION['id'] = $user->id;
+            header('Location: /admin/dashboard');
+        }
+        else {
+            session_start();
+            $_SESSION['mensagem-erro'] = "Usuário não encontrado! Email e/ou senha incorretos!";
+            header('Location: /login');
+        }
+    }
+
+    public function logout(){
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location: /login');
     }
 }

@@ -171,16 +171,16 @@ class QueryBuilder
 
     // Função para deletar os posts de um usuário
     public function deletePostsByUserId($userId)
-{
-    try {
-        $sql = "DELETE FROM posts WHERE user_id = :user_id";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-    } catch (Exception $e) {
-        echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+    {
+        try {
+            $sql = "DELETE FROM posts WHERE user_id = :user_id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (Exception $e) {
+            echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+        }
     }
-}
 
     public function resetAutoIncrement($table)
     {
@@ -191,5 +191,23 @@ class QueryBuilder
             echo "Erro ao resetar o auto-increment: " . $e->getMessage();
         }
     }   
+
+    public function verificaLogin($email, $senha){
+        $sql = sprintf('SELECT * FROM users WHERE email = :email AND password = :password');
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                'email' => $email,
+                'password' => $senha
+            ]);
+
+            $user = $stmt->fetch(PDO::FETCH_OBJ); 
+
+            return $user;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
 
