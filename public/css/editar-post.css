@@ -25,6 +25,11 @@
     height: 90%;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 /* Estilos gerais do modal */
 .modal {
   display: none;

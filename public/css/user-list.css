@@ -1,330 +1,373 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: open-sans;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: open-sans;
+}
+
+:root {
+  --height-container: 100vh;
+  --font-size-header: 36px;
+  --font-size-usuario: 32px;
+  --font-size-usuario-bi: 44px;
+  --margin-top-main: 1%;
+  --font-size-table: 20px;
+  --font-size-table-th: 28px;
+  --margin-left-id-p: 8%;
+  --margin-right-id-p: 1%;
+  --font-size-acoes-bi: 28px;
+  --margin-right-paginacao: 1%;
+  --font-size-paginacao-bi: 40px;
+  --fundo-input: #000
+}
+
+body {
+  width: 100vw;
+  background-color: #1b2020;
+}
+
+.container {
+  width: 99%;
+  height: var(--height-container);
+  margin-left: 1%;
+  background-color: #586262a8;
+}
+
+/* Header */
+#header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  padding: 2%;
+  background-color: #B0C4C4;
+}
+
+h1 {
+  font-family: comiccartoon;
+  font-size: var(--font-size-header);
+}
+
+/* Botão de novo usuário */
+#usuario {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  font-family: sugar-bread;
+  color: black;
+  font-size: var(--font-size-usuario);
+  gap: 8%;
+  padding: 0.5% 1%;
+  background-color: #13acb1;
+  /* border: 1px solid blue; */
+  border-radius: 50px;
+  box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.468)
+}
+
+#usuario:hover {
+  background-color: #7E241E;
+  color: white;
+}
+
+#usuario .bi:hover {
+  color: white;
+}
+
+#usuario p {
+  display: inline;
+  font-family: sugar-bread;
+  /* border: 2px solid yellow; */
+}
+
+#usuario .bi{
+  font-size: var(--font-size-usuario-bi);
+  font-weight: bolder;
+}
+
+/* Tabela de Usuários */
+#main {
+  width: 98%;
+  padding: 1%;
+  align-content: space-between;
+  margin-top: var(--margin-top-main);
+  margin-bottom: 1%;
+  margin-left: 1%;
+  background-color: #B0C4C4;
+  border-radius: 10px;
+  position: relative;
+}
+
+table {
+  width: 100%;
+  height: 68vh;
+  margin-top: 0.5%;
+  border-collapse: collapse;
+  /* border: 1px solid black; */
+  font-family: open-sans;
+  font-size: var(--font-size-table);
+  color: black;
+}
+
+th {
+  font-family: sugar-bread;
+  font-size: var(--font-size-table-th);
+  text-align: left;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.40);
+  /* background-color: #13acb1; */
+}
+
+tr th p {
+  font-family: sugar-bread;
+}
+
+tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  /* align-items: center;
+  justify-content: center; */
+}
+
+tr:hover {
+  background-color: #e5e5e5;
+}
+
+/* .bi-person-circle {
+  font-size: 28px;
+  align-self: center;
+  margin-right: 1%;
+} */
+
+tr p {
+  font-family: open-sans;
+  color: black;
+  align-self: center;
+}
+
+.id p {
+  margin-left: var(--margin-left-id-p);
+  margin-right: var(--margin-right-id-p);
+}
+
+.email p {
+  margin-right: 12px;
+}
+
+
+.acoes .bi{
+  font-size: var(--font-size-acoes-bi);
+}
+
+.bi:hover {
+  color: #13acb1;
+}
+
+.acoes .bi-trash:hover {
+  color: #7E241E;
+}
+
+/* .bi-person-circle{
+  font-size: 50px;
+} */
+
+/* Adicionar sombra quando passar por cima */
+
+.botao {
+  width: 40px;
+}
+
+/* Estilo geral da paginação */
+.pagination {
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+padding: 10px;
+margin: 0;
+background-color: #c5d9d9; /* cor de fundo combinando com a página */
+border-radius: 10px;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos itens de paginação */
+.pagination .page-item {
+margin: 0 5px;
+}
+
+.pagination .page-link {
+display: inline-block;
+padding: 8px 12px;
+text-decoration: none;
+color: #000; /* cor do texto */
+font-weight: bold;
+background-color: #e8f0f0; /* cor de fundo dos botões */
+border: 1px solid #a5b8b8; /* borda combinando com o design */
+border-radius: 5px;
+transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Estilo ao passar o mouse */
+.pagination .page-link:hover {
+background-color: #a5b8b8; /* cor ao passar o mouse */
+color: #fff; /* cor do texto ao passar o mouse */
+transform: scale(1.05);
+}
+
+/* Estilo do botão ativo */
+.pagination .page-item.active .page-link {
+background-color: #007bff; /* cor do botão ativo */
+color: #fff;
+border: none;
+}
+
+/* Estilo do botão desabilitado */
+.pagination .page-item.disabled .page-link {
+background-color: #d9d9d9;
+color: #7a7a7a;
+cursor: not-allowed;
+}
+
+/* Margem extra para separação da tabela */
+.pagination-container {
+margin-top: 20px;
+}
+
+
+
+.bi:hover {
+  cursor: pointer;
+}
+
+/* Estilos gerais do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #666;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  gap: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40vw;
+  height: 73vh;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Botão de fechar (X) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Imagem do usuário */
+.user-image {
+  background-color: var(--fundo-input);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+/* Estilos dos campos de entrada */
+.input-group {
+  margin: 10px 0;
+}
+
+.input-group input {
+  width: 100%;
+  height: 37px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--fundo-input);
+  color: #fff;
+  padding-left: 30px;
+}
+
+.input-group input[readonly] {
+  cursor: not-allowed;
+  background-color: var(--fundo-input);
+}
+
+/* Botões de ação */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.confirm, .cancel {
+  background-color: var(--fundo-input);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: sugar-bread;
+}
+
+.cancel {
+  background-color: var(--fundo-input);
+}
+
+.confirm:hover, .cancel:hover {
+  background-color: var(--fundo-input);
+}
+
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+  :root {
+    --height-container: 114vh;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .pagination .page-link {
+    font-size: 14px;
+    padding: 8px 10px;
   }
   
   :root {
-    --height-container: 100%;
-    --font-size-header: 36px;
-    --font-size-usuario: 32px;
-    --font-size-usuario-bi: 44px;
-    --margin-top-main: 1%;
-    --font-size-table: 20px;
-    --font-size-table-th: 28px;
-    --margin-left-id-p: 8%;
-    --margin-right-id-p: 1%;
-    --font-size-acoes-bi: 28px;
-    --margin-right-paginacao: 1%;
-    --font-size-paginacao-bi: 40px;
-    --fundo-input: #000
+    --font-size-header: 24px;
+    --font-size-usuario: 12px;
+    --font-size-usuario-bi: 20px;
+    --margin-top-main: 4%;
+    --font-size-table-th: 20px;
+    --font-size-table: 15px;
+    --margin-right-id-p: 12px;
+    --font-size-acoes-bi: 16px;
+    --margin-right-paginacao: 2%;
+    --font-size-paginacao-bi: 24px;
   }
-  
-  body {
-    width: 100%;
-    background-color: #586262a8;
-  }
-  
-  .container {
-    width: 100%;
-    height: var(--height-container);
-  }
-  
-  /* Header */
-  #header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: fit-content;
-    padding: 1%;
-    background-color: white;
-  }
-  
-  h1 {
-    font-family: comiccartoon;
-    font-size: var(--font-size-header);
-  }
-  
-  /* Botão de novo usuário */
-  #usuario {
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
-    font-family: sugar-bread;
-    color: black;
-    font-size: var(--font-size-usuario);
-    gap: 8%;
-    padding: 0.5% 1%;
-    background-color: #13acb1;
-    /* border: 1px solid blue; */
-    border-radius: 50px;
-    box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.468)
-  }
-  
-  #usuario:hover {
-    background-color: #7E241E;
-    color: white;
-  }
-  
-  #usuario .bi:hover {
-    color: white;
-  }
-  
-  #usuario p {
-    display: inline;
-    /* border: 2px solid yellow; */
-  }
-  
-  #usuario .bi{
-    font-size: var(--font-size-usuario-bi);
-    font-weight: bolder;
-  }
-  
-  /* Tabela de Usuários */
-  #main {
-    width: 98%;
-    padding: 1%;
-    align-content: space-between;
-    margin-top: var(--margin-top-main);
-    margin-bottom: 1%;
-    margin-left: 1%;
-    background-color: white;
-    border-radius: 10px;
-    position: relative;
-  }
-  
-  table {
-    width: 100%;
-    height: 68vh;
-    margin-top: 0.5%;
-    border-collapse: collapse;
-    /* border: 1px solid black; */
-    font-family: open-sans;
-    font-size: var(--font-size-table);
-    color: black;
-  }
-  
-  th {
-    font-family: sugar-bread;
-    font-size: var(--font-size-table-th);
-    text-align: left;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.40);
-    /* background-color: #13acb1; */
-  }
-  
-  tr th p {
-    font-family: sugar-bread;
-  }
-  
-  tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-    /* align-items: center;
-    justify-content: center; */
-  }
-  
-  tr:hover {
-    background-color: #e5e5e5;
-  }
-  
-  /* .bi-person-circle {
-    font-size: 28px;
-    align-self: center;
-    margin-right: 1%;
-  } */
-  
-  tr p {
-    font-family: open-sans;
-    color: black;
-    align-self: center;
-  }
-  
-  .id p {
-    margin-left: var(--margin-left-id-p);
-    margin-right: var(--margin-right-id-p);
-  }
-  
-  .email p {
-    margin-right: 12px;
-  }
-  
-  
-  .acoes .bi{
-    font-size: var(--font-size-acoes-bi);
-  }
-  
-  .bi:hover {
-    color: #13acb1;
-  }
-  
-  .acoes .bi-trash:hover {
-    color: #7E241E;
-  }
-  
-  /* .bi-person-circle{
-    font-size: 50px;
-  } */
-  
-  /* Adicionar sombra quando passar por cima */
-  
-  .botao {
-    width: 40px;
-  }
-  
-  .paginacao {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-self: start;
-    /* position: absolute;
-    right: 3%; */
-    margin-right: var(--margin-right-paginacao);
-    margin-top: 1%;
-    /* padding: 1%; */
-    gap: 12%;
-    /* border: 1px solid lime; */
-  }
-  
-  .paginacao .bi {
-    font-size: var(--font-size-paginacao-bi);
-  }
-  
-  .paginacao button {
-    background: transparent;
-    border: 0;
-  }
-  
-  .bi:hover {
-    cursor: pointer;
-  }
-  
-  /* Estilos gerais do modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    background-color: #666;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: center;
-    gap: 30px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 40vw;
-    height: 73vh;
-  }
-  
-  .modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  
-  /* Botão de fechar (X) */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* Imagem do usuário */
-  .user-image {
-    background-color: var(--fundo-input);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-  }
-  
-  /* Estilos dos campos de entrada */
-  .input-group {
-    margin: 10px 0;
-  }
-  
-  .input-group input {
-    width: 100%;
-    height: 37px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    background-color: var(--fundo-input);
-    color: #fff;
-    padding-left: 30px;
-  }
-  
-  .input-group input[readonly] {
-    cursor: not-allowed;
-    background-color: var(--fundo-input);
-  }
-  
-  /* Botões de ação */
-  .modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
-  .confirm, .cancel {
-    background-color: var(--fundo-input);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: sugar-bread;
-  }
-  
-  .cancel {
-    background-color: var(--fundo-input);
-  }
-  
-  .confirm:hover, .cancel:hover {
-    background-color: var(--fundo-input);
-  }
-  
-  
-  .close:hover, .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* 4K */
-  @media (min-width: 2560px) {
-    :root {
-      --height-container: 114vh;
-    }
-  }
-  
-  /* MOBILE */
-  @media (max-width: 768px) {
-    :root {
-      --font-size-header: 24px;
-      --font-size-usuario: 12px;
-      --font-size-usuario-bi: 20px;
-      --margin-top-main: 4%;
-      --font-size-table-th: 20px;
-      --font-size-table: 15px;
-      --margin-right-id-p: 12px;
-      --font-size-acoes-bi: 16px;
-      --margin-right-paginacao: 2%;
-      --font-size-paginacao-bi: 24px;
-    }
-  }
+}

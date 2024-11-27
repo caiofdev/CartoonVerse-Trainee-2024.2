@@ -13,6 +13,7 @@ use App\Core\Router;
     $router->post('admin/delete-post', 'PostController@delete');
 
     $router->get('admin/editar-post','PostController@getEdit');
+    
 
     $router->get('post-list', 'PostController@index_user_post_list');
     $router->get('search-post', 'PostController@searchPost');
