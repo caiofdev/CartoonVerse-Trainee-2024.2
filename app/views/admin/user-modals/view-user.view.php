@@ -12,10 +12,10 @@
                 <form action="users/verify" method="GET" class="modal-form" id="dados-user">
                   
                     <!-- Imagem do usuário -->
-                    <label for="dados-image" class="user-image" tabindex="0" id="image">
+                    <label for="dados-image" class="user-image-view" tabindex="0" id="image-view">
                         <img src="<?=($user->image)?>" alt="Imagem de <?=($user->name)?>">
                     </label>
-                    <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image" readonly>
+                    <input type="file" accept="image/png,image/jpeg" class="input-image-view" form="dados-user" name="input-image" id="input-image" readonly>
                     <div class="input-group" id="first">
                         <input type="text" placeholder="id" value="<?=($user->id)?>" form="dados-user" readonly/>
                     </div>

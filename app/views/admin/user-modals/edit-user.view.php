@@ -15,7 +15,7 @@
                     
                     <!-- Imagem do usuário -->
                     <div class="form-group">
-                        <label for="image-<?=$user->id?>" class="user-image">
+                        <label for="image-<?=$user->id?>" class="user-image-view">
                             <img src="<?=$user->image?>" alt="Imagem de <?=$user->name?>" class="preview-image">
                         </label>
                         <input type="file" 

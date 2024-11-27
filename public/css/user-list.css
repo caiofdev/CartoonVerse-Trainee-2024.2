@@ -301,14 +301,12 @@
     padding: 10px;
     border-radius: 20px;
     border: none;
-    background-color: var(--fundo-input);
     color: #fff;
     padding-left: 30px;
   }
   
   .input-group input[readonly] {
     cursor: not-allowed;
-    background-color: var(--fundo-input);
   }
   
   /* Botões de ação */
@@ -319,7 +317,6 @@
   }
   
   .confirm, .cancel {
-    background-color: var(--fundo-input);
     color: #fff;
     border: none;
     padding: 10px 20px;

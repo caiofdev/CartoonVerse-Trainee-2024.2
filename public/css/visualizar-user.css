@@ -56,7 +56,7 @@
 }
 
 /* Imagem do usuário */
-.user-image {
+.user-image-view {
   background-color: transparent;
   width: var(--width-height-user-image);
   height: var(--width-height-user-image);
@@ -69,12 +69,12 @@
   margin: 0 auto 20px;
 }
 
-.user-image img {
-  object-fit: cover;
+#image-view img {
+  object-fit: contain;
 }
 
-#input-image {
-  display: none;
+#input-image-view {
+  object-fit: contain;
 }
 
 /* Estilos dos campos de dados */
