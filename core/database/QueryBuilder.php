@@ -47,9 +47,9 @@ class QueryBuilder
         $sql = sprintf('SELECT * FROM %s WHERE %s LIKE ?', $table, $column);
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(1, "'%$name%'");
+            $stmt->bindValue(1, "%$name%");
             $stmt->execute();
-            return $stmt->fetchObject();
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
         } catch (Exception $e) {
             die($e->getMessage());
         }

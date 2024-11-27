@@ -84,6 +84,13 @@ class PostController
 
         $posts = App::get('database')->selectAll('posts', $inicio, $itemsPage);
 
+        
+        foreach ($posts as $post) {
+            // troca o id pelo nome de cada um
+            $post->author = App::get('database')->selectOne('users', $post->author)->name; 
+        }
+        
+
         $totalPages = ceil($rows_count / $itemsPage);
 
         return view('site/post-list', compact('posts', 'page', 'totalPages'));
@@ -95,7 +102,33 @@ class PostController
         if (isset($_GET['title'])) {   
             $title = htmlspecialchars($_GET['title']);
             $posts = App::get('database')->getBySimilar('posts', 'title', $title);
-            return view('site/post-list',compact($posts));
+            
+            foreach ($posts as $post) {
+                // troca o id pelo nome de cada um
+                $post->author = App::get('database')->selectOne('users', $post->author)->name; 
+            }
+            
+            return view('site/post-list',compact('posts'));
+        }
+    }
+
+    public function user_view_single_post(){
+        var_dump($_GET);
+        if (isset($_GET['id'])) {
+            $postId = htmlspecialchars($_GET['id']);
+            
+            if (!is_numeric($postId)) { // se nao for numerico pula fora pra evitar confusao
+                header('Location: /site/post-list');
+                return;
+            }
+
+            $post = App::get('database')->selectOne('posts', $postId); // ve se existe um post com esse id
+            if (!$post) {
+                header('Location: /site/post-list');
+                return;
+            }
+            return view('site/post-unico', $post);
+
         }
     }
 }

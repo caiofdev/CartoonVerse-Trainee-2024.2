@@ -13,8 +13,9 @@
 </head>
 <body>
     <div class="general-container">
+        
         <div class="search-bar">
-            <form id="searchForm" method="GET" ">
+            <form id="searchForm" method="GET" action="search-post">
                 <input id="search" type="text" name="title" placeholder="PESQUISA" required>
                 <button type="submit" id="searchButton">
                     <div id="lupa"></div>
@@ -23,36 +24,19 @@
         </div>
         <div class="posts-div">
             <ul id="list">
-                <?php
-                    
-                    use App\Core\App;
-                    
-                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                    $limit = 6;
-                    $offset = ($page - 1) * $limit;
-                    $posts = App::get('database')->selectAll('posts', $limit, $offset);
-                    if (empty($posts)) {
-                        ?>
-                        <p>Não foram encontrados posts com essa busca</p>
-                        <?php
-                    } else {
-                        foreach($posts as $post) {
-                            $post->author = App::get('database')->selectOne('users', $post->author)->name;
-                        }
-                        foreach($posts as $post):
-                    ?>
+                <?php foreach($posts as $post):?>
                     <li>
-                        <a href="/post/<?= $post->id ?>">
+                        <a href="/post?id=<?= $post->id ?>">  
                             <div id="post">
                                 <p id="titulo"><?= $post->title ?></p>
                                 <p id="autor-data">
-                                    <br><?= $post->author ?> • <?= $post->created_at ?>
+                                    <br><?= $post->author . ' • ' . $post->created_at ?>
                                 </p>
                                 <img src=<?= '/public/assets/img/'.$post->image ?> alt="">
                             </div>
                         </a>
                     </li>
-                    <?php endforeach; }?>
+                <?php endforeach; ?>
             </ul>
         </div>
         <div class="div-botao-pagina">
