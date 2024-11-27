@@ -26,7 +26,8 @@ body {
   font-family: Arial, sans-serif;
   background-image: url(/public/assets/img/imagemdefundoborrada.png);
   align-content: center;
-  background-size: cover;
+  object-fit: cover;
+  background-position: center;
 }
 
 /* Hero Section */
@@ -66,7 +67,7 @@ body {
 .admin-link {
   text-decoration: none;
   color: inherit;
-  background-color: white;
+  background-color: #B0C4C4;
   width: 17vw;
   border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -94,11 +95,12 @@ body {
 /* Botão de Logout */
 .logout h2 {
   color: #d9534f; /* Cor de destaque para o logout */
-  font-family: "SugarBread";
+  font-family: sugar-bread;
 }
 
 .logout p {
   color: #d9534f;
+  font-family: open-sans;
 }
 
 @media (max-width: 768px) {

@@ -24,14 +24,18 @@
 
     <!-- Links Administrativos -->
     <div class="admin-links">
-      <a href="publicacoes-admin.html" class="admin-link">
-        <h2>Publicações</h2>
-        <p>Acessar publicações</p>
-      </a>
-      <a href="usuarios-admin.html" class="admin-link">
-        <h2>Usuários</h2>
-        <p>Gerenciar usuários</p>
-      </a>
+      <form action="/admin/post-list" method="GET">
+        <button type="submit" class="admin-link">
+          <h2>Publicações</h2>
+          <p>Acessar publicações</p>
+        </button>
+      </form>
+      <form action="/admin/users" method="GET">
+        <button type="submit" class="admin-link">
+          <h2>Usuários</h2>
+          <p>Gerenciar usuários</p>
+        </button>
+      </form>
       <form action="/logout" method="POST">
         <button type="submit" class="admin-link logout">
           <h2>Logout</h2>

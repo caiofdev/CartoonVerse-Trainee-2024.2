@@ -12,8 +12,15 @@
   --logo-order: 0;
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px transparent;
+
+/* Fazendo o Autocomplete não ficar branco, não mecham PELO AMOR DE DEUS!!!! */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
 }
 
 body {
