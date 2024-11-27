@@ -12,6 +12,10 @@
   --logo-order: 0;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px transparent;
+}
+
 body {
   min-height: 100vh;
   display: flex;
