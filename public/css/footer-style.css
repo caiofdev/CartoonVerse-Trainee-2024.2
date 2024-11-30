@@ -30,6 +30,7 @@
     font-family: sugar-bread;
     font-size: 20px;
     font-weight: 400;
+    width: fit-content;
     
     display: flex;
     align-items: center;
@@ -74,12 +75,18 @@
     height: 24px;
 }
 #ig-div {
+    width: 14px;
+    height: 14px;
     background: url(/public/assets/img/Instagram-light.png) center;
 }
 #fb-div {
+    width: 14px;
+    height: 14px;
     background: url(/public/assets/img/Facebook-light.png) center;
 }
 #x-div {
+    width: 14px;
+    height: 14px;
     background: url(/public/assets/img/TwitterX-light.png) center;
 }
 .footer ul li:hover #ig-div{
@@ -93,8 +100,9 @@
 }
 
 .codejr-logo {
-    width: 242px;
-    height: 56px;
+    border: solid 1px red;
+    width: 130px;
+    height: 30px;
     background: url(/public/assets/img/code-logo.png) no-repeat top center/cover;
 }
 
@@ -133,5 +141,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+    }
+    .codejr-logo {
+        width: 173px;
+        height: 40px;       
     }
 }
