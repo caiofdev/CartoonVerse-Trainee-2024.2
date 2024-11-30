@@ -25,10 +25,10 @@
      <!-- Tabela -->
      <table>
       <tr>
-        <th class="id"><p>ID</p></th>
-        <th class="nome"><p>NOME</p></th>
-        <th class="email"><p>EMAIL</p></th>
-        <th class="acoes"><p>AÇÕES</p></th>
+        <th class="head id"><p>ID</p></th>
+        <th class="head nome"><p>NOME</p></th>
+        <th class="head email"><p>EMAIL</p></th>
+        <th class="head acoes"><p>AÇÕES</p></th>
       </tr>
       <?php foreach($users as $user): ?>
         <tr>

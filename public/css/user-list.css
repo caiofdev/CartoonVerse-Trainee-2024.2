@@ -129,7 +129,11 @@
     justify-content: center; */
   }
   
-  tr:hover {
+  /* tr:hover {
+    background-color: #e5e5e5;
+  } */
+
+  tr:not(:first-child):hover {
     background-color: #e5e5e5;
   }
   
