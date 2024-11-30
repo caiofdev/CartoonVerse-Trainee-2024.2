@@ -32,7 +32,7 @@ class QueryBuilder
                         'name' => 'Usuário Exemplo',
                         'email' => 'default@example.com',
                         'password' => password_hash('password', PASSWORD_DEFAULT),
-                        'image' => '/public/assets/img/profile/chopp.jpg'
+                        'image' => '/public/assets/img/profile/padrao.jpg'
                     ];
 
                     $this->insert('users', $defaultUser);

@@ -49,25 +49,8 @@
   margin-top: 15px;
 }
 
-.btn-confirmar {
-  color: #fff;
-  padding: 6px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
+.btn-confirmar,
 .btn-cancelar {
-  background-color: #7f8c8d;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-cancelar,
-.btn-confirmar {
   background-color: transparent;
   color: #000;
   border: none;
@@ -77,7 +60,17 @@
   font-size: 20px;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   margin-bottom: var(--margin-bottom-buttons);
+  padding: 8px 16px;
 }
+
+.btn-confirmar {
+  margin-right: 50px;
+}
+
+.btn-cancelar {
+  margin-left: 10px;
+}
+
 
 .btn-confirmar:hover {
   background-color: #7e241e;

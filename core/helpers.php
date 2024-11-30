@@ -37,7 +37,7 @@ function redirect($path)
 function uploadImage($file, $email)
 {
     if (!isset($file) || !isset($file['error']) || empty($file['tmp_name'])) {
-        return '../../public/assets/img/profile/' . "chopp.jpg";
+        return '../../public/assets/img/profile/' . "padrao.jpg";
     }
 
     if ($file['error'] !== UPLOAD_ERR_OK) {
