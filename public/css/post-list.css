@@ -27,7 +27,7 @@ a {
   --fundo-input: #000
 }
 
-.modal {
+/* .modal {
   display: none;
   width: 100%;
   height: 100%;
@@ -123,7 +123,7 @@ a {
   border: none;
   background-color: white;
   margin-right: 10px;
-}
+} */
 
 body {
   width: 100vw;
@@ -132,7 +132,6 @@ body {
 
 .container {
   width: 99%;
-  overflow: hidden;
   height: var(--height-container);
   margin-left: 1%;
   background-color: #586262a8;
@@ -198,7 +197,6 @@ h1 {
 
 #main {
   width: 98%;
-  overflow: var(--overflow-main);
   padding: 1%;
   align-content: space-between;
   margin-top: var(--margin-top-main);
@@ -214,7 +212,6 @@ table {
   height: 68vh;
   margin-top: 0.5%;
   border-collapse: collapse;
-  /* border: 1px solid black; */
   font-family: open-sans;
   font-size: var(--font-size-table);
   color: black;
@@ -240,7 +237,7 @@ tr {
   justify-content: center; */
 }
 
-tr:hover {
+tr:not(:first-child):hover {
   background-color: #e5e5e5;
 }
 
@@ -323,7 +320,7 @@ td {
 }
 
 /* Estilos gerais do modal */
-.modal {
+/* .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -355,7 +352,7 @@ td {
   gap: 6px;
 }
 
-/* Botão de fechar (X) */
+ Botão de fechar (X) 
 .close {
   position: absolute;
   top: 10px;
@@ -364,7 +361,7 @@ td {
   cursor: pointer;
 }
 
-/* Imagem do usuário */
+ Imagem do usuário 
 .user-image {
   background-color: var(--fundo-input);
   width: 100px;
@@ -373,7 +370,7 @@ td {
   margin: 0 auto 20px;
 }
 
-/* Estilos dos campos de entrada */
+ Estilos dos campos de entrada 
 .input-group {
   margin: 10px 0;
 }
@@ -394,7 +391,7 @@ td {
   background-color: var(--fundo-input);
 }
 
-/* Botões de ação */
+ Botões de ação
 .modal-buttons {
   display: flex;
   justify-content: space-between;
@@ -426,12 +423,12 @@ td {
   cursor: pointer;
 }
 
-/* Estilo específico para o modal de exclusão */
+ Estilo específico para o modal de exclusão
 #modalExcluir {
   display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+  background-color: rgba(0, 0, 0, 0.5);  Fundo escurecido 
   z-index: 1000;
 }
 
@@ -447,14 +444,14 @@ td {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Texto de aviso */
+ Texto de aviso 
 #modalExcluir .modal-content p {
   font-size: 16px;
   color: #000;
   margin-bottom: 20px;
 }
 
-/* Botões de ação */
+ Botões de ação 
 #modalExcluir .modal-buttons {
   display: flex;
   justify-content: space-around;
@@ -486,7 +483,7 @@ td {
 
 #modalExcluir .cancel:hover {
   background-color: #e0e0e0;
-}
+} */
 
 /* 4K */
 @media (min-width: 2560px) {
