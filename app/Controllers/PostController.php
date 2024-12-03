@@ -41,6 +41,7 @@ class PostController
     public function getDelete(){
         return view('admin/delete-post');
     }
+    
     public function delete(){
         $id = $_POST['id'];
         if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
@@ -61,18 +62,30 @@ class PostController
     }
 
     public function edit(){
-        //session_start();
-            $parameters = [
-                'title' => $_POST['title'],
-                'content' => $_POST['content'],
-                'image' => uniqid() . $_POST['image'],
-                'created_at' => date('Y-m-d'),
-                'author' => $_SESSION['id'] // CHECK ME!!
-            ];
-            // var_dump($parameters);
-            App::get('database')->update('posts', $_POST['id'], $parameters);
-            header('Location: /admin/post-list');
-        }
+        $parameters = [
+            'title' => $_POST['title'],
+            'content' => $_POST['content'],
+            'image' => $_POST['image'],
+        ];
+        
+        $id = $_POST['id'];
+
+        App::get('database')->update('posts', $id, $parameters);
+
+        header('Location: /admin/post-list');
+        
+        // $sql = sprintf("UPDATE `posts` SET `id`= id,`title`='[value-2]',`content`='[value-3]',`image`='[value-4]',`created_at`='[value-5]',`author`='[value-6]' WHERE 1",
+        //                  $table,
+        //                  implode(', ', array_keys($parameters)),
+        //                  ':' . implode(', :', array_keys($parameters))
+        //                 );
+        // try {
+        //     $stmt = $this->pdo->prepare($sql);
+        //     $stmt->execute($parameters);
+        // } catch (Exception $e) {
+        //     die($e->getMessage());
+        // }
+    }
 
     public function index_user_post_list(){
         // $posts = App::get('database')->selectAll('posts');

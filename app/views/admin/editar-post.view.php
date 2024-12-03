@@ -19,10 +19,12 @@
            <div class="modal-form">
             <form action="/admin/editar-post" method="POST" class="modal-form" id="dados-user">
               <div class="input-group-editar-post" id="id">
-                <input type="text" placeholder="ID" value="<?=$post->id?>" form="dados-user" name="id"/>
+                <input type="text" placeholder="ID" value="<?=$post->id?>" 
+                name="id"/>
               </div>
               <div class="input-group-editar-post" id="Título">
-                <input type="text" placeholder="Título" value="<?=$post->title?>" form="dados-user" name="title"/>
+                <input type="text" placeholder="Título" value="<?=$post->title?>" 
+                name="title"/>
               </div>
               <div class="input-group-editar-post">
                 <textarea
@@ -35,15 +37,15 @@
               <!-- Imagem do post -->
                 <label for="input-image" class="user-image-editar-post" tabindex="0" id="image">
                 </label>
-                <input type="file" accept="image/png,image/jpeg" class="input-image-editar-post" form="dados-user" name="image" id="input-image">
+                <input type="file" accept="image/png,image/jpeg" class="input-image-editar-post" name="image" id="input-image">
               <div class="input-group-editar-post">
-                <input type="text" placeholder="Autor" value="<?=$post->author?>" form="dados-user" name="author" readonly/>
+                <input type="text" placeholder="Autor" value="<?=$post->author?>" name="author" readonly/>
               </div>
               <div class="input-group-editar-post">
-                <input type="date" name="created_at" placeholder="Data de Criação" value="<?=$post->created_at?>" form="dados-user" id="data-criacao" readonly/>
+                <input type="date" name="created_at" placeholder="Data de Criação" value="<?=$post->created_at?>" id="data-criacao" readonly/>
               </div>
               <div class="button-editar-post">
-                <button class="fechar-editar-post" onclick="fecharModal('modalEditarPost-<?= $post->id ?>')" form="dados-user" type="button">Fechar</button>
+                <button class="fechar-editar-post" onclick="fecharModal('modalEditarPost-<?= $post->id ?>')" type="button">Fechar</button>
                 <button type="submit" class="confirmar-editar-post">
                    Confirmar
                 </button>
