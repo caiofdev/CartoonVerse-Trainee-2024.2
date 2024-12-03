@@ -9,9 +9,9 @@
 </head>
 <body>
   <!-- Modal de Visualizar -->
-    <div id="modalVisualizarPost" class="modal-visualizar-post">
+    <div id="modalVisualizarPost-<?= $post->id ?>" class="modal-visualizar-post">
       <div class="modal-content-visualizar-post">
-        <span class="close-visualizar-post" id="closeCriar" onclick="fecharModal('modalVisualizarPost')"
+        <span class="close-visualizar-post" id="closeCriar" onclick="fecharModal('modalVisualizarPost-<?= $post->id ?>')"
           >&times;</span
         >
         <div class="modal-body-visualizar-post">
@@ -19,10 +19,10 @@
            <div class="modal-form">
             <form action="" method="post" class="modal-form" id="dados-user">
               <div class="input-group-visualizar-post" id="id">
-                <input type="text" placeholder="ID" value="65" form="dados-user" readonly/>
+                <input type="text" placeholder="ID" value="<?=$post->id?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post" id="Título">
-                <input type="text" placeholder="Título" value="Quem é o detetive mais inteligente dos desenhos?" form="dados-user" readonly/>
+                <input type="text" placeholder="Título" value="<?=$post->title?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post">
                 <textarea
@@ -31,28 +31,20 @@
                   rows="5"
                   placeholder="Conteúdo"
                   readonly
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis lectus in felis cursus, at euismod ipsum feugiat. Cras quis condimentum magna. Cras ac ex eu erat hendrerit pellentesque. Phasellus mauris ex, dapibus sit amet nunc eget, maximus venenatis erat. Quisque quam diam, consectetur id cursus vulputate, lacinia sit amet ligula. Nulla dolor dui, semper eu enim vitae, interdum varius arcu. In sagittis, leo quis euismod dictum, libero augue sollicitudin arcu, a tincidunt mi tellus vel tellus. Quisque ultrices cursus fringilla. Sed vitae velit orci.
-
-                Donec vestibulum nec ligula ut blandit. Morbi lobortis eros sit amet elementum aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam porta commodo urna id porttitor. Phasellus ac sollicitudin augue. Aliquam id lobortis tortor. Curabitur ornare tortor eget rutrum malesuada. Vestibulum tincidunt egestas orci, vitae molestie enim blandit nec. Duis elementum, orci a condimentum commodo, massa nibh sollicitudin arcu, vitae dictum arcu dui in magna. Proin nec nunc faucibus, sodales quam sed, tempus lectus. Suspendisse laoreet, libero at rutrum pulvinar, magna tellus accumsan est, vitae pulvinar ipsum eros non risus. Proin lobortis semper nulla, sit amet posuere ligula mattis quis.
-
-                Etiam posuere id dolor a tincidunt. Sed malesuada tellus nec nibh commodo pharetra. Aenean sit amet lacinia dui. Vestibulum id lorem id leo gravida lobortis. Pellentesque fringilla lacus non tortor sollicitudin, nec commodo leo pulvinar. Fusce id varius mi. Sed eget nibh mauris. Vestibulum dictum molestie elit vel luctus. Nunc id felis ac urna ultricies ultricies quis sit amet velit.
-
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris ipsum quam, egestas id lacinia at, porttitor pharetra ipsum. Donec elementum eros et pretium cursus. Etiam pretium id tortor molestie rutrum. Sed maximus arcu at felis molestie efficitur. Suspendisse et neque consequat, consectetur ipsum sit amet, bibendum eros. Mauris non erat eu nulla malesuada rhoncus. Phasellus eget suscipit elit. Ut hendrerit nulla sed tempus pharetra. Ut tincidunt orci at metus auctor, nec semper dolor molestie. Proin ac est quis enim ullamcorper viverra nec a velit. Sed et sem sed nibh ultricies pellentesque sit amet nec quam. Nunc accumsan massa in ante tincidunt facilisis. Etiam pellentesque pulvinar ante, id dapibus mauris luctus sed.
-
-                Suspendisse nec sollicitudin magna. Morbi rutrum, quam et viverra pellentesque, justo lectus viverra justo, nec lacinia tortor turpis vel quam. Sed ut tellus consectetur, rhoncus quam id, tincidunt mi. Cras in mauris porttitor, pretium dui vel, efficitur augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tincidunt pellentesque hendrerit. Sed molestie porttitor molestie. Curabitur dignissim dui sapien, vitae vestibulum sapien pharetra vitae. Ut fringilla a nibh at lobortis.</textarea>
+                ><?=$post->content?></textarea>
               </div>
               <!-- Imagem do post -->
                 <label for="dados-image" class="user-image-visualizar-post" tabindex="0" id="image">
                 </label>
                 <input type="file" accept="image/png,image/jpeg" class="input-image-visualizar-post" form="dados-user" name="input-image" id="input-image" readonly>
               <div class="input-group-visualizar-post">
-                <input type="text" placeholder="Autor" value="Áurea Webson Codinson" form="dados-user" readonly/>
+                <input type="text" placeholder="Autor" value="<?= $post->author ?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post">
-                <input type="date" placeholder="Data de Criação" form="dados-user" readonly/>
+                <input type="date" placeholder="Data de Criação" form="dados-user" value="<?=$post->created_at?>" readonly/>
               </div>
               <div class="button-fechar-visualizar-post">
-                <button class="fechar-visualizar-post" onclick="fecharModal('modalVisualizarPost')" form="dados-user" type="button">Fechar</button>
+                <button class="fechar-visualizar-post" onclick="fecharModal('modalVisualizarPost-<?= $post->id ?>')" form="dados-user" type="button">Fechar</button>
               </div>
             </form>
            </div>

@@ -60,6 +60,20 @@ class PostController
         return view('admin/editar-post');
     }
 
+    public function edit(){
+        //session_start();
+            $parameters = [
+                'title' => $_POST['title'],
+                'content' => $_POST['content'],
+                'image' => uniqid() . $_POST['image'],
+                'created_at' => date('Y-m-d'),
+                'author' => $_SESSION['id'] // CHECK ME!!
+            ];
+            // var_dump($parameters);
+            App::get('database')->update('posts', $_POST['id'], $parameters);
+            header('Location: /admin/post-list');
+        }
+
     public function index_user_post_list(){
         // $posts = App::get('database')->selectAll('posts');
 

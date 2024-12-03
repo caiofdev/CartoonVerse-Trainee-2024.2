@@ -67,7 +67,8 @@ class QueryBuilder
         } catch (Exception $e) {
             die($e->getMessage());
         }
-    } 
+    }
+
     public function delete($table, $id){
         $sql = "DELETE FROM {$table} WHERE id = ?";
         try {

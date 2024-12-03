@@ -12,18 +12,18 @@
   --margin-top-buttons: 16%;
 }
 
-#modalVisualizarPost ::-webkit-scrollbar-track {
+/* #modalVisualizarPost ::-webkit-scrollbar-track {
     background-color: #b0c4c4;
-}
+} */
 
-#modalVisualizarPost ::-webkit-scrollbar {
-    width: 3px;
+::-webkit-scrollbar {
+    display: none;
     /* height: 90%; */
 }
-#modalVisualizarPost ::-webkit-scrollbar-thumb {
-    /* background: #3333331d; */
+/* #modalVisualizarPost ::-webkit-scrollbar-thumb {
+    /* background: #3333331d;
     background-color: #595959;
-}
+} */
 
 /* Estilos gerais do modal */
 .modal-visualizar-post {
@@ -47,7 +47,7 @@
   gap: 30px;
   margin: auto;
   padding: 20px;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   width: var(--modal-content-width);
   height: var(--modal-content-height);
   overflow-y: scroll;
@@ -88,6 +88,10 @@
   display: none;
 }
 
+#id {
+  display: none;
+}
+
 /* Estilos dos campos de dados */
 .input-group-visualizar-post {
   display: flex;
@@ -103,7 +107,7 @@
 .input-group-visualizar-post input, textarea {
   width: 100%;
   height: calc(var(--font-size) + 10px);
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   background-color: transparent;
   outline: none;
@@ -118,9 +122,9 @@
 }
 
 .input-group-visualizar-post textarea {
-  height: 400px;
+  height: 100vh;
   width: 90%;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   resize: none;
 }
 

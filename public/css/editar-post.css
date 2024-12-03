@@ -12,18 +12,18 @@
   --margin-top-buttons: 16%;
 }
 
-#modalEditarPost ::-webkit-scrollbar-track {
+/* #modalEditarPost ::-webkit-scrollbar-track {
   background-color: #b0c4c4;
-}
+} */
 
-#modalEditarPost ::-webkit-scrollbar {
-  width: 3px;
+::-webkit-scrollbar {
+  display: none;
   /* height: 90%; */
 }
-#modalEditarPost ::-webkit-scrollbar-thumb {
-  /* background: #3333331d; */
+/* #modalEditarPost ::-webkit-scrollbar-thumb {
+   background: #3333331d; 
   background-color: #595959;
-}
+} */
 
 /* Estilos gerais do modal */
 .modal-editar-post {
@@ -47,7 +47,7 @@
   gap: 30px;
   margin: auto;
   padding: 20px;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   width: var(--modal-content-width);
   height: var(--modal-content-height);
   overflow-y: scroll;
@@ -84,7 +84,7 @@
   /* margin: 0 auto 20px; */
 }
 
-#modalEditarPost #input-image {
+#input-image {
   display: none;
 }
 
@@ -103,7 +103,7 @@
 .input-group-editar-post input, textarea {
   width: 100%;
   height: calc(var(--font-size) + 10px);
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   background-color: transparent;
   outline: none;
@@ -118,9 +118,9 @@
 }
 
 .input-group-editar-post textarea {
-  height: 400px;
+  height: 100vh;
   width: 90%;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   resize: none;
 }
 
@@ -144,18 +144,18 @@
 }
 
 /* Botão de fechar */
-.button-fechar-editar-post {
+.button-editar-post {
   display: flex;
   height: fit-content;
-  justify-content: center;
+  justify-content: space-between;
   bottom: 0%;
   left: 30px;
   right: 30px;
 }
 
 
-.fechar-editar-post {
-  width: 100%;
+.fechar-editar-post, .confirmar-editar-post {
+  width: 40%;
   background-color: transparent;
   color: #000;
   border: none;
@@ -171,6 +171,11 @@
 
 .fechar-editar-post:hover {
   background-color: #7E241E;
+  color: white;
+}
+
+.confirmar-editar-post:hover {
+  background-color: #13ACB1;
   color: white;
 }
 
