@@ -12,26 +12,21 @@
   --margin-top-buttons: 16%;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #F4F4F4;
+#modalEditarPost ::-webkit-scrollbar-track {
+  background-color: #b0c4c4;
 }
 
-::-webkit-scrollbar {
-    width: 2px;
-    background: #F4F4F4;
+#modalEditarPost ::-webkit-scrollbar {
+  width: 3px;
+  /* height: 90%; */
 }
-::-webkit-scrollbar-thumb {
-    background: #B0C4C4;
-    height: 90%;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
+#modalEditarPost ::-webkit-scrollbar-thumb {
+  /* background: #3333331d; */
+  background-color: #595959;
 }
 
 /* Estilos gerais do modal */
-.modal {
+.modal-editar-post {
   display: none;
   position: fixed;
   z-index: 1;
@@ -40,11 +35,11 @@ body {
   top: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(	176, 196, 196, 0.5);
+  background-color: rgba(	0, 0, 0, 0.5);
 }
 
-.modal-content {
-  background-color: white;
+.modal-content-editar-post {
+  background-color: #B0C4C4;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -52,21 +47,21 @@ body {
   gap: 30px;
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   width: var(--modal-content-width);
   height: var(--modal-content-height);
   overflow-y: scroll;
   margin-bottom: 20vh;
 }
 
-.modal-body {
+.modal-body-editar-post {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
 /* Botão de fechar (X) */
-.close {
+.close-editar-post {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -75,13 +70,12 @@ body {
 }
 
 /* Imagem do usuário */
-.user-image {
+.user-image-editar-post {
   /* border: #7E241E 1px solid; */
   background-color: transparent;
   width: 50%;
   height: 168px;
   display: flex;
-  margin-left: 25%;
   justify-self: center;
   justify-content: center;
   align-content: center;
@@ -90,12 +84,12 @@ body {
   /* margin: 0 auto 20px; */
 }
 
-#input-image {
+#modalEditarPost #input-image {
   display: none;
 }
 
 /* Estilos dos campos de dados */
-.input-group {
+.input-group-editar-post {
   display: flex;
   flex-direction: column;
   margin: 40px 0;
@@ -106,7 +100,7 @@ body {
   margin-top: 12%;
 } */
 
-.input-group input, textarea {
+.input-group-editar-post input, textarea {
   width: 100%;
   height: calc(var(--font-size) + 10px);
   border-radius: 20px;
@@ -119,18 +113,18 @@ body {
   padding-left: 30px;
 }
 
-.input-group input {
+.input-group-editar-post input {
   text-align: center;
 }
 
-.input-group textarea {
+.input-group-editar-post textarea {
   height: 400px;
   width: 90%;
   border-radius: 10px 0px 0px 10px;
   resize: none;
 }
 
-.input-group input[readonly], textarea[readonly] {
+.input-group-editar-post input[readonly], textarea[readonly] {
   cursor: default;
 }
 
@@ -143,14 +137,14 @@ body {
   justify-self: center;
 }
 
-.close:hover, .close:focus {
+.close-editar-post:hover, .close-editar-post:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
 /* Botão de fechar */
-.button-fechar {
+.button-fechar-editar-post {
   display: flex;
   height: fit-content;
   justify-content: center;
@@ -160,7 +154,7 @@ body {
 }
 
 
-.fechar {
+.fechar-editar-post {
   width: 100%;
   background-color: transparent;
   color: #000;
@@ -175,7 +169,7 @@ body {
   margin-bottom: 24px;
 }
 
-.fechar:hover {
+.fechar-editar-post:hover {
   background-color: #7E241E;
   color: white;
 }

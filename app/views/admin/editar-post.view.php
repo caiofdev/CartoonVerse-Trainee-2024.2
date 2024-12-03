@@ -9,22 +9,22 @@
 </head>
 <body>
   <!-- Modal de Criar -->
-    <div id="modalEditar" class="modal">
-      <div class="modal-content">
-        <span class="close" id="closeCriar" onclick="fecharModal('modalEditar')"
+    <div id="modalEditarPost" class="modal-editar-post">
+      <div class="modal-content-editar-post">
+        <span class="close-editar-post" id="closeCriar" onclick="fecharModal('modalEditarPost')"
           >&times;</span
         >
-        <div class="modal-body">
+        <div class="modal-body-editar-post">
           <!-- Dados do post -->
            <div class="modal-form">
             <form action="" method="post" class="modal-form" id="dados-user">
-              <div class="input-group" id="id">
+              <div class="input-group-editar-post" id="id">
                 <input type="text" placeholder="ID" value="65" form="dados-user"/>
               </div>
-              <div class="input-group" id="Título">
+              <div class="input-group-editar-post" id="Título">
                 <input type="text" placeholder="Título" value="Quem é o detetive mais inteligente dos desenhos?" form="dados-user"/>
               </div>
-              <div class="input-group">
+              <div class="input-group-editar-post">
                 <textarea
                   id="conteudo"
                   name="conteudo"
@@ -41,17 +41,17 @@
                 Suspendisse nec sollicitudin magna. Morbi rutrum, quam et viverra pellentesque, justo lectus viverra justo, nec lacinia tortor turpis vel quam. Sed ut tellus consectetur, rhoncus quam id, tincidunt mi. Cras in mauris porttitor, pretium dui vel, efficitur augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tincidunt pellentesque hendrerit. Sed molestie porttitor molestie. Curabitur dignissim dui sapien, vitae vestibulum sapien pharetra vitae. Ut fringilla a nibh at lobortis.</textarea>
               </div>
               <!-- Imagem do post -->
-                <label for="input-image" class="user-image" tabindex="0" id="image">
+                <label for="input-image" class="user-image-editar-post" tabindex="0" id="image">
                 </label>
-                <input type="file" accept="image/png,image/jpeg" class="input-image" form="dados-user" name="input-image" id="input-image">
-              <div class="input-group">
+                <input type="file" accept="image/png,image/jpeg" class="input-image-editar-post" form="dados-user" name="input-image" id="input-image">
+              <div class="input-group-editar-post">
                 <input type="text" placeholder="Autor" value="Áurea Webson Codinson" form="dados-user" readonly/>
               </div>
-              <div class="input-group">
+              <div class="input-group-editar-post">
                 <input type="date" name="data-criacao" placeholder="Data de Criação" value="11/03/20014" form="dados-user" id="data-criacao" readonly/>
               </div>
-              <div class="button-fechar">
-                <button class="fechar" onclick="fecharModal('modalEditar')" form="dados-user" type="button">Fechar</button>
+              <div class="button-fechar-editar-post">
+                <button class="fechar-editar-post" onclick="fecharModal('modalEditarPost')" form="dados-user" type="button">Fechar</button>
               </div>
             </form>
            </div>
