@@ -17,7 +17,7 @@
         <div class="modal-body-visualizar-post">
           <!-- Dados do post -->
            <div class="modal-form">
-            <form action="" method="post" class="modal-form" id="dados-user">
+            <form action="" method="POST" enctype="multipart/form-data" class="modal-form" id="dados-user">
               <div class="input-group-visualizar-post" id="id">
                 <input type="text" placeholder="ID" value="<?=$post->id?>" form="dados-user" readonly/>
               </div>
@@ -35,6 +35,7 @@
               </div>
               <!-- Imagem do post -->
                 <label for="dados-image" class="user-image-visualizar-post" tabindex="0" id="image">
+                  <img src="<?= $post->image?>" alt="Imagem de <?= $post->title?>">
                 </label>
                 <input type="file" accept="image/png,image/jpeg" class="input-image-visualizar-post" form="dados-user" name="input-image" id="input-image" readonly>
               <div class="input-group-visualizar-post">
@@ -52,5 +53,5 @@
       </div>
     </div>
 </body>
-<script src="/public/js/post-list-modais.js"></script>
+<script src="/public/js/modais.js"></script>
 </html>

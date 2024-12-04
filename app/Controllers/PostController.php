@@ -65,7 +65,7 @@ class PostController
         $parameters = [
             'title' => $_POST['title'],
             'content' => $_POST['content'],
-            'image' => $_POST['image'],
+            'image' => uploadImagePost($_FILES['image'], $_POST['id'])
         ];
         
         $id = $_POST['id'];

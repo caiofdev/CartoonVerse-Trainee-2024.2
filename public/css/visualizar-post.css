@@ -84,6 +84,12 @@
   /* margin: 0 auto 20px; */
 }
 
+.user-image-visualizar-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
 #input-image {
   display: none;
 }
