@@ -93,8 +93,8 @@ button {
     background: url(/public/assets/img/Search.png) no-repeat local center/cover;
     border-radius: var(--default-border-radius);
 }
-.search-bar #lupa:hover { /* CHANGE ME !!!!!!!!!!!!!*/
-    background: url(/public/assets/img/chopp.jpg) no-repeat local center/cover;
+.search-bar #lupa:hover {
+    background: url(/public/assets/img/Search-light.png) no-repeat local center/cover;
 }
 .search-bar p {
     margin: auto;
