@@ -100,7 +100,7 @@
 }
 
 .codejr-logo {
-    border: solid 1px red;
+    /* border: solid 1px red; */
     width: 130px;
     height: 30px;
     background: url(/public/assets/img/code-logo.png) no-repeat top center/cover;
