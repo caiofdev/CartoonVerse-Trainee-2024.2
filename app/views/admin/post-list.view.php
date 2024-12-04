@@ -13,10 +13,8 @@
       <div id="header">
         <!-- Titulo -->
         <h1>LISTA DE POSTS</h1>
-        <button id="novo">
-          <a href="create-post">
-            <p class="criar">Novo</p>
-          </a>
+        <button id="novo" onclick="abrirModal('modalCriarPost')">
+          Novo
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -104,12 +102,17 @@
             </td>
           </tr>
 
+          
           <!-- Modal de Visualizar -->
           <?php require __DIR__ . '/visualizar-post.view.php' ?>
           <!-- Modal de Editar -->
           <?php require __DIR__ . '/editar-post.view.php' ?>
           <?php endforeach; ?>
         </table>
+
+        <!-- Modal de Criar -->
+        <?php require __DIR__ . '/create-post.view.php' ?>
+
         <!-- paginação -->
         <div class="paginacao">
           <button>
