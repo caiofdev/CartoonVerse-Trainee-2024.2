@@ -46,7 +46,6 @@ class PostController
         $id = $_POST['id'];
         if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
             header('Location: /admin/post-list');
-            return;
         }
 
         $post = App::get('database')->selectOne('posts', $id); // ve se existe um post com esse id

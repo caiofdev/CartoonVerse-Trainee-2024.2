@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,20 +7,18 @@
     <link rel="stylesheet" href="/public/css/delete-post.css" />
   </head>
   <body>
-    <div class="general-container">
-      <div class="janela-principal">
-        <a class="close" href="post-list.html">&times;</a>
+    <div id="modalDeletePost-<?= $post->id ?>" class="modal-delete-post">
+      <div class="modal-content-delete-post">
+        <a class="close-delete-post" onclick="fecharModal('modalDeletePost-<?= $post->id ?>')">&times;</a>
         <h1>Tem certeza que deseja excluir o post?</h1>
-        <div class="botoes">
-          <a href="post-list.html">
-            <div id="nao">Cancelar</div>
-          </a>
-          <form action="delete-post" method="POST">
-            <button type="submit" id="sim" name="id" value="<?= $_GET['id'] ?>">Excluir</button>
+        <div class="botoes-delete-post">
+          <button class="fechar-delete-post" type="button" onclick="fecharModal('modalDeletePost-<?= $post->id ?>')">Cancelar</button>
+          <form action="delete-post" method="POST" class="modal-form">
+            <button type="submit" name="id" class="excluir-delete-post" value="<?= $post->id ?>">Excluir</button>
           </form>
         </div>
       </div>
     </div>
-    <script src="/public/js/delete-post.js"></script>
+    <script src="/public/js/modais.js"></script>
   </body>
 </html>
