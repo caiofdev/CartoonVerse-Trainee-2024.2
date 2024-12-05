@@ -86,8 +86,8 @@ body {
 }
 .texto{
     /* border: 1px solid red; */
-    padding-top: 5px;
-    margin: 0px 20px;
+    padding: 5px 160px 0px 160px;
+    /* margin: 0px 50px; */
     color: #000000;
     background-color: #b0c4c4;
     text-align: left;
@@ -100,15 +100,21 @@ body {
     .title {
         padding: 3%;
         padding-bottom: 0;
-        font-size: 40px;
+        font-size: 48px;
     }
 
     .conteudo {
-        font-size: 38px;
+        font-size: 48px;
     }
 
+    .nome-autor {
+        padding: 10px 0;
+    }
+    
     .texto {
-        font-size: 38px;
+        font-size: 48px;
+        padding: 0px;
+        margin: 0 20px;
     }
 
 }
