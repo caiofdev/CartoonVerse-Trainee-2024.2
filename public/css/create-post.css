@@ -13,7 +13,9 @@ textarea {
   border: none;
   border-radius: 20px;
 }
-
+:root {
+  --cor-branca-mas-nem-tanto: antiquewhite;
+}
 ::placeholder {
   text-align: center;
 }
@@ -206,7 +208,7 @@ input[type="file"] {
 
 .fechar-create-post, .criar-create-post {
   width: 40%;
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   color: #000;
   border: none;
   padding: 10px 20px;
@@ -227,6 +229,13 @@ input[type="file"] {
 .criar-create-post:hover {
   background-color: #13ACB1;
   color: white;
+}
+.input-group-create-post input, textarea, #data-criacao {
+  background-color: var(--cor-branca-mas-nem-tanto);
+}
+#image {
+  background-color: var(--cor-branca-mas-nem-tanto);
+  margin: 0 auto;
 }
 
 @media (max-width: 950px) {

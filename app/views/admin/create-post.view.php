@@ -39,7 +39,7 @@
               </div>
               <label for="input-image" class="label-imagem-create-post" id="image" tabindex="0"
               >
-              <img src="<?= $post->image?>" alt="Imagem de <?= $post->title?>">
+              <img src="<?= $post->image?>" alt="Imagem do Post">
               </label
               >
               <input
