@@ -10,6 +10,7 @@
   --font-size: 20px;
   --font-size-buttons: 28px;
   --margin-top-buttons: 16%;
+  --cor-branca-mas-nem-tanto: antiquewhite;
 }
 
 /* #modalEditarPost ::-webkit-scrollbar-track {
@@ -72,7 +73,7 @@
 /* Imagem do usuário */
 .user-image-editar-post {
   /* border: #7E241E 1px solid; */
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   width: 50%;
   height: 168px;
   display: flex;
@@ -105,7 +106,7 @@
   height: calc(var(--font-size) + 10px);
   border-radius: 10px;
   border: none;
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   outline: none;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   color: #000;
@@ -155,7 +156,7 @@
 
 .fechar-editar-post, .confirmar-editar-post {
   width: 40%;
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   color: #000;
   border: none;
   padding: 10px 20px;
