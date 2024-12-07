@@ -33,7 +33,7 @@ function redirect($path)
 function uploadImagePost($file, $id)
 {
     if (!isset($file) || !isset($file['error']) || empty($file['tmp_name'])) {
-        return '/public/assets/img/post/' . "default-thumb.png";
+        return '../../public/assets/img/post/' . "default-thumb.png";
     }
 
     if ($file['error'] !== UPLOAD_ERR_OK) {
@@ -94,5 +94,5 @@ function uploadImagePost($file, $id)
         die("Desculpe, houve um erro ao fazer o upload do seu arquivo.");
     }
 
-    return '/public/assets/img/post/' . basename($targetFile);
+    return '../../public/assets/img/post/' . basename($targetFile);
 }

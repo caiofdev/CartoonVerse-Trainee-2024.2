@@ -100,7 +100,9 @@
             </td>
           </tr>
 
-          
+
+          <!-- Modal de Criar -->
+          <?php require __DIR__ . '/create-post.view.php' ?>
           <!-- Modal de Visualizar -->
           <?php require __DIR__ . '/visualizar-post.view.php' ?>
           <!-- Modal de Editar -->
@@ -110,8 +112,7 @@
           <?php endforeach; ?>
         </table>
 
-        <!-- Modal de Criar -->
-        <?php require __DIR__ . '/create-post.view.php' ?>
+
 
         <!-- paginação -->
         <div class="paginacao">

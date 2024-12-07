@@ -35,7 +35,7 @@
               </div>
               <!-- Imagem do post -->
                 <label for="dados-image" class="user-image-visualizar-post" tabindex="0" id="image">
-                  <img src="<?= $post->image?>" alt="Imagem de <?= $post->title?>">
+                  <img src="<?= ($post->image)?>" alt="Imagem de <?= ($post->title)?>">
                 </label>
                 <input type="file" accept="image/png,image/jpeg" class="input-image-visualizar-post" form="dados-user" name="input-image" id="input-image" readonly>
               <div class="input-group-visualizar-post">

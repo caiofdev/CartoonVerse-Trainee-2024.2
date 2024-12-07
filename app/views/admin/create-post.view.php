@@ -16,7 +16,7 @@
         >
         <div class="modal-body-create-post">
           <div class="modal-form">
-            <form id="formulario" action="create-post" method="post" class="modal-form">
+            <form id="formulario" action="create-post" method="post" enctype="multipart/form-data" class="modal-form">
               <!-- <label for="titulo">Título</label> -->
               <div class="input-group-create-post" id="Título">
                 <input
@@ -39,7 +39,7 @@
               </div>
               <label for="input-image" class="label-imagem-create-post" id="image" tabindex="0"
               >
-              <img src="<?= $post->image?>" alt="Imagem do Post">
+              <!-- <img src="<?= $post->image?>" alt="Imagem do Post"> -->
               </label
               >
               <input
@@ -47,7 +47,7 @@
                 class="input-image-create-post"
                 id="input-image"
                 name="image"
-                accept=".jpg, .jpeg, .png"
+                required
               />
               <!-- <label for="autor">Autor</label> -->
               <div class="input-group-create-post">

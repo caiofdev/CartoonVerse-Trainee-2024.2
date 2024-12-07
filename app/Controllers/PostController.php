@@ -29,7 +29,7 @@ class PostController
         $parameters = [
             'title' => $_POST['title'],
             'content' => $_POST['content'],
-            'image' => uniqid() . $_POST['image'],
+            'image' => uploadImagePost($_FILES['image'], $_POST['id']),
             'created_at' => date('Y-m-d'),
             'author' => $_SESSION['id'] // CHECK ME!!
         ];
