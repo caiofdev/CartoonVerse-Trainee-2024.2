@@ -236,6 +236,16 @@ input[type="file"] {
 #image {
   background-color: var(--cor-branca-mas-nem-tanto);
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.perfil-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 950px) {

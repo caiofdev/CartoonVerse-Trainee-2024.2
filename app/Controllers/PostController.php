@@ -64,8 +64,10 @@ class PostController
         $parameters = [
             'title' => $_POST['title'],
             'content' => $_POST['content'],
-            'image' => uploadImagePost($_FILES['image'], $_POST['id'])
         ];
+        if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+            $parameters['image'] = uploadImagePost($_FILES['image'], $_POST['id']);
+        }
         
         $id = $_POST['id'];
 
@@ -73,17 +75,6 @@ class PostController
 
         header('Location: /admin/post-list');
         
-        // $sql = sprintf("UPDATE `posts` SET `id`= id,`title`='[value-2]',`content`='[value-3]',`image`='[value-4]',`created_at`='[value-5]',`author`='[value-6]' WHERE 1",
-        //                  $table,
-        //                  implode(', ', array_keys($parameters)),
-        //                  ':' . implode(', :', array_keys($parameters))
-        //                 );
-        // try {
-        //     $stmt = $this->pdo->prepare($sql);
-        //     $stmt->execute($parameters);
-        // } catch (Exception $e) {
-        //     die($e->getMessage());
-        // }
     }
 
     public function index_user_post_list(){

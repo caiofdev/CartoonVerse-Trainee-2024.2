@@ -17,7 +17,7 @@
         <div class="modal-body-editar-post">
           <!-- Dados do post -->
            <div class="modal-form">
-            <form action="/admin/editar-post" method="POST" enctype="multipart/form-data" class="modal-form" id="dados-user">
+            <form action="editar-post" method="POST" enctype="multipart/form-data" class="modal-form" id="dados-user">
               <div class="input-group-editar-post" id="id">
                 <input type="text" placeholder="ID" value="<?=$post->id?>" 
                 name="id"/>
@@ -36,9 +36,9 @@
               </div>
               <!-- Imagem do post -->
                 <label for="input-image" class="user-image-editar-post" tabindex="0" id="image">
-                  
+                  <!-- <img src="<?=$post->image?>" alt="Imagem do post: <?=$post->title?>"> -->
                 </label>
-                <input type="file" accept="image/png,image/jpeg" class="input-image-editar-post" name="image" id="input-image">
+                <input type="file" class="input-image-editar-post" name="image" id="input-image" required>
               <div class="input-group-editar-post">
                 <input type="text" placeholder="Autor" value="<?=$post->author?>" name="author" readonly/>
               </div>
