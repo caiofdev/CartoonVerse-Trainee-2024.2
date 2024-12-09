@@ -49,7 +49,11 @@
     font-family: comiccartoon;
     font-size: var(--font-size-header);
   }
-  
+
+  /* Caso haja algum erro */
+  .error {
+    color: red;
+  }
   /* Botão de novo usuário */
   #usuario {
     display: flex;

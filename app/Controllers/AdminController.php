@@ -39,10 +39,13 @@ class AdminController
     // Função para criar um novo usuário
     public function createUser()
     {
+        session_start();
         $email = $_POST['email'];
+
         $existe = App::get('database')->selectOne('users', ['email' => $email]);
+        
         if ($existe) {
-            $_SESSION['erro-email'] = 'Email ja cadastrado';
+            $_SESSION['erro-email'] = 'Já existe um usuário com esse email.';
             return redirect('admin/users/');
         }
         $parameters = [
