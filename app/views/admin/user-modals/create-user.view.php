@@ -38,6 +38,11 @@
                     </div>
 
                     <div class="input-group">
+                        <?php 
+                            if(isset($_SESSION['erro-imagem']))
+                                echo $_SESSION['erro-imagem'];
+                                unset($_SESSION['erro-imagem']);
+                        ?>
                         <input type="email" 
                                name="email" 
                                placeholder="Email" 
