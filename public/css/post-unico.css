@@ -7,6 +7,10 @@
     src: url(../assets/fonts/Comicartoon.ttf) format('truetype');
 }
 
+:root {
+    --general-background-color: #b0c4c4;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +18,7 @@
 }
 
 body {
-    background-color: #4A5759;
+    background-color: var(--general-background-color);
     justify-content: center
 }
 .principal {
@@ -28,11 +32,11 @@ body {
 .title{
     width: 100%;
     height: auto;
+    /* border: #000000 1px solid; */
+    margin-top: 15px;
     padding: 5px;
     color: #000000;
-    background-color: #b0c4c4;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    background-color: var(--general-background-color);
     display: flex;
     justify-content: center;
     font-size: 26px;
@@ -54,8 +58,6 @@ body {
 }
 
 .conteudo{
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     width: 100%;
     display: flex;
     padding: 20px;
@@ -70,7 +72,7 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 10px 0;
 }
 .autor img{
@@ -84,7 +86,8 @@ body {
 }
 .texto{
     /* border: 1px solid red; */
-    padding-top: 5px;
+    padding: 5px 160px 0px 160px;
+    /* margin: 0px 50px; */
     color: #000000;
     background-color: #b0c4c4;
     text-align: left;
@@ -97,15 +100,21 @@ body {
     .title {
         padding: 3%;
         padding-bottom: 0;
-        font-size: 40px;
+        font-size: 48px;
     }
 
     .conteudo {
-        font-size: 38px;
+        font-size: 48px;
     }
 
+    .nome-autor {
+        padding: 10px 0;
+    }
+    
     .texto {
-        font-size: 38px;
+        font-size: 48px;
+        padding: 0px;
+        margin: 0 20px;
     }
 
 }

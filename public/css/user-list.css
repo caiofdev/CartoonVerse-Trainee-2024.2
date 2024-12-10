@@ -6,7 +6,7 @@
   }
   
   :root {
-    --height-container: 100vh;
+    --height-container: 100%;
     --font-size-header: 36px;
     --font-size-usuario: 32px;
     --font-size-usuario-bi: 44px;
@@ -27,7 +27,7 @@
   }
   
   .container {
-    width: 99%;
+    width: 100%;
     height: var(--height-container);
     margin-left: 1%;
     background-color: #586262a8;

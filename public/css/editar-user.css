@@ -110,7 +110,7 @@ input[type="file"] {
   margin-top: var(--margin-top-first);
 }
 
-.input-group input {
+#modalVisualizar .input-group input {
   width: 100%;
   height: var(--font-size);
   padding: 10px;
@@ -124,7 +124,7 @@ input[type="file"] {
   padding-left: 30px;
 }
 
-.input-group input[readonly] {
+#modalVisualizar .input-group input[readonly] {
   cursor: not-allowed;
 }
 
