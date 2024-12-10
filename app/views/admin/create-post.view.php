@@ -57,7 +57,7 @@
                     class="input-author-create-post"
                     name="author"
                     value="<?php echo $_SESSION['id']; ?>"
-                    required
+                    
                     placeholder="Autor" readonly
                   />
               </div>
