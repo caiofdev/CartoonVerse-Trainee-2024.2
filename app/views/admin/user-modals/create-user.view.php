@@ -7,7 +7,7 @@
                 <form action="/admin/users/create" 
                       method="POST" 
                       enctype="multipart/form-data" 
-                      id="create-user" 
+                      id="modalCriar" 
                       data-modal-id="modalCriar">
                     
                     <!-- Imagem do usuário -->
@@ -18,7 +18,6 @@
                             </svg>
                         </label>
 
-                        
                         <input type="file" 
                                id="input-image" 
                                name="image" 

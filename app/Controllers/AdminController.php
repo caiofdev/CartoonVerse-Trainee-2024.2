@@ -65,6 +65,7 @@ class AdminController
     public function updateUser(){
         session_start();
         $email = $_POST['email'];
+        
         $existe = App::get('database')->selectOne('users', ['email' => $email]);
         
         if ($existe) {

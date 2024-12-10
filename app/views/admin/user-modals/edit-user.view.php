@@ -13,7 +13,7 @@
                 <form action="/admin/users/update" 
                 method="POST" 
                 enctype="multipart/form-data" 
-                id="edit-user-<?=$user->id?>" 
+                id="modalEditar-<?=$user->id?>" 
                 data-modal-id="modalEditar-<?=$user->id?>">
                 
                     <input type="hidden" name="id" value="<?=$user->id?>">
