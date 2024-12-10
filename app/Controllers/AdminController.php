@@ -45,9 +45,10 @@ class AdminController
         $existe = App::get('database')->selectOne('users', ['email' => $email]);
         
         if ($existe) {
-            $_SESSION['erro-email'] = 'Já existe um usuário com esse email.';
-            return redirect('admin/users/');
+            echo json_encode(['error' => 'Já existe um usuário com esse email.']);
+            exit();
         }
+
         $parameters = [
             'name' => $_POST['name'],
             'email' => $_POST['email'],
@@ -57,7 +58,8 @@ class AdminController
 
         App::get('database')->insert('users', $parameters);
 
-        redirect('admin/users');
+        echo json_encode(['success' => true]);
+        exit();
     }
 
     public function updateUser(){

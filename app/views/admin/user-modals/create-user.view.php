@@ -37,6 +37,9 @@
                                required>
                     </div>
 
+                    <!-- Erro email -->
+                    <p class="error-message" style="display:none; color:red;"></p>
+
                     <div class="input-group">
                         <input type="email" 
                                name="email" 
