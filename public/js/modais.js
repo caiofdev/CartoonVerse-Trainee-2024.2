@@ -10,7 +10,7 @@ function fecharModal(id) {
 
 // Fecha o modal ao clicar fora dele
 window.onclick = function (event) {
-  const modais = document.getElementsByClassName("modal")
+  const modais = [...document.getElementsByClassName("modal"), ...document.getElementsByClassName("modal-excluir")]
   for (let modal of modais) {
     if (event.target === modal) {
       modal.style.display = "none"
@@ -26,7 +26,7 @@ function mostrarErroModal(id, mensagem) {
   erroElemento.style.display = 'block';
 }
 
-document.querySelectorAll('form').forEach(form => {
+document.querySelectorAll('form[data-modal-id]').forEach(form => {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
@@ -37,10 +37,11 @@ document.querySelectorAll('form').forEach(form => {
     })
     .then(response => response.json())
     .then(data => {
+      const modalId = this.dataset.modalId;
       if (data.error) {
-        const modalId = this.dataset.modalId;
         mostrarErroModal(modalId, data.error);
       } else {
+        fecharModal(modalId);
         location.reload();
       }
     })

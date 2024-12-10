@@ -65,5 +65,5 @@
     </div>
 </div>
 
-<script src="../../../../public/js/modais.js"></script>
-<script src="../../../../public/js/upload.js"></script>
+<script src="/public/js/modais.js"></script>
+<script src="/public/js/upload.js"></script>

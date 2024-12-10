@@ -142,6 +142,7 @@ class QueryBuilder
         }
     }
 
+    // Função para deletar um usuário
     public function delete($table, $id)
     {
         try {

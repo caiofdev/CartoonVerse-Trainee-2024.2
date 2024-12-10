@@ -17,6 +17,10 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
   
+  #modalExcluir .modal {
+    padding-top: 80px;
+  }
+
   /* Estilo do conteúdo do modal */
   #modalExcluir .modal-content {
     background-color: #B0C4C4;

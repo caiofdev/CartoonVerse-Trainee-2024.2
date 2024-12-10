@@ -23,18 +23,6 @@
 
   <div id="main">
      <!-- Tabela -->
-     <p class='error'>
-       <?php
-          session_start();
-          if(isset($_SESSION['erro-email'])) {
-              echo "<script>
-                      abrirModal('modalCriar');
-                      mostrarErroModal('modalCriar', 'Erro! " . $_SESSION['erro-email'] . "');
-                    </script>";
-          }
-          unset($_SESSION['erro-email']);
-       ?>
-     </p>
      <table>
       <tr>
         <th class="head id"><p>ID</p></th>
