@@ -29,7 +29,7 @@ class PostController
         $parameters = [
             'title' => $_POST['title'],
             'content' => $_POST['content'],
-            'image' => uploadImagePost($_FILES['image'], $_POST['id']),
+            'image' => uploadImagePost($_FILES['image']),
             'created_at' => date('Y-m-d'),
             'author' => $_SESSION['id'] // CHECK ME!!
         ];

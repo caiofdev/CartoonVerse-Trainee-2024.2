@@ -14,14 +14,15 @@
           onclick="fecharModal('modalCriarPost')"
           >&times;</a
         >
+        <h1>CRIAR POST</h1>
         <div class="modal-body-create-post">
-          <div class="modal-form">
+          <div class="modal-form-create-post">
             <form id="formulario" action="create-post" method="post" enctype="multipart/form-data" class="modal-form">
               <!-- <label for="titulo">Título</label> -->
               <div class="input-group-create-post" id="Título">
                 <input
                     type="text"
-                    id="titulo"
+                    class="input-titulo-create-post"
                     name="title"
                     required
                     placeholder="Título"
@@ -37,14 +38,13 @@
                     placeholder="Conteúdo"
                   ></textarea>
               </div>
-              <label for="input-image" class="label-imagem-create-post" id="image" tabindex="0"
+              <label for="input-image" class="label-imagem-create-post image" id="image" tabindex="0"
               >
-              <!-- <img src="<?= $post->image?>" alt="Imagem do Post"> -->
               </label
               >
               <input
                 type="file"
-                class="input-image-create-post"
+                class="input-image-create-post input-image"
                 id="input-image"
                 name="image"
                 required
@@ -54,6 +54,7 @@
                   <input
                     type="text"
                     id="autor"
+                    class="input-author-create-post"
                     name="author"
                     value="<?php echo $_SESSION['id']; ?>"
                     required
@@ -64,7 +65,7 @@
                 >Data de criação</label
               > -->
               <div class="input-group-create-post">
-                <input type="date" id="data-criacao" name="created_at" value="<?php echo date('Y-m-d'); ?>" readonly required />
+                <input type="text" id="data-criacao-create-post" name="created_at" value="<?= date('Y-m-d')?>" readonly required />
               </div>
               <div class="botoes-create-post">
                 <button type="button" class="fechar-create-post" onclick="fecharModal('modalCriarPost')">Cancelar</button>

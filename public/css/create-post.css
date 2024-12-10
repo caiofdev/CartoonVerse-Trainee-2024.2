@@ -15,14 +15,27 @@ textarea {
 }
 :root {
   --cor-branca-mas-nem-tanto: antiquewhite;
+  --font-size-create-post: 20px;
+  --font-size-buttons-create-post: 24px;
+  --font-size-buttons-hover-create-post: 32px;
+  --font-size-titulo-create-post: 26px;
 }
 ::placeholder {
   text-align: center;
 }
 
-::-webkit-scrollbar {
-  display: none;
-  /* height: 90%; */
+.modal-create-post ::-webkit-scrollbar {
+  /* / height: 90%; / */
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--cor-branca-mas-nem-tanto);
+}
+
+.modal-create-post ::-webkit-scrollbar-thumb {
+  /* background: #3333331d;  */
+  background: #13ACB1;
 }
 
 .label-imagem-create-post {
@@ -80,10 +93,10 @@ textarea {
   flex-direction: column;
   position: relative;
   text-align: center;
-  gap: 30px;
+  gap: 0;
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   width: var(--modal-content-width);
   height: var(--modal-content-height);
   overflow-y: scroll;
@@ -100,9 +113,15 @@ textarea {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 28px;
+  font-size: 40px;
   cursor: pointer;
 }
+
+/* .modal-form-create-post form {
+  display: flex;
+  padding-top: 0;
+  height: fit-content;
+} */
 
 /* #formulario {
   (border: 1px solid black;)
@@ -130,15 +149,16 @@ textarea {
 
 .input-group-create-post input, textarea {
   width: 100%;
-  height: calc(var(--font-size) + 10px);
+  height: calc(var(--font-size-create-post) + 10px);
   border-radius: 10px;
   border: none;
   background-color: transparent;
   outline: none;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   color: #000;
-  font-size: var(--font-size);
+  font-size: var(--font-size-create-post);
   padding-left: 30px;
+  padding-right: 30px;
 }
 
 .input-group-create-post input {
@@ -154,6 +174,16 @@ textarea {
 
 .input-group-create-post input[readonly] {
   cursor: default;
+}
+
+.input-group-create-post .input-titulo-create-post,.input-group-create-post .input-author-create-post {
+  width: 90%;
+}
+
+.input-group-create-post .input-titulo-create-post {
+  margin-top: 0;
+  height: calc(var(--font-size-titulo-create-post) + 20px);
+  font-size: var(--font-size-titulo-create-post);
 }
 
 /* .preview {
@@ -184,11 +214,12 @@ input[type="file"] {
 /* #autor {
   color: black;
 } */
-#data-criacao {
+#data-criacao-create-post {
   width: 25%;
   padding: 0;
-  margin: 0;
+  margin-right: 0;
   text-align: center;
+  justify-content: center;
   justify-self: center;
 }
 
@@ -207,7 +238,8 @@ input[type="file"] {
 }
 
 .fechar-create-post, .criar-create-post {
-  width: 40%;
+  width: 32%;
+  height: fit-content;
   background-color: var(--cor-branca-mas-nem-tanto);
   color: #000;
   border: none;
@@ -215,21 +247,34 @@ input[type="file"] {
   border-radius: 40px;
   cursor: pointer;
   font-family: sugar-bread;
-  font-size: var(--font-size-buttons);
+  font-size: var(--font-size-buttons-create-post);
   text-align: center;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   margin-bottom: 24px;
+  transition: all 200ms ease-in-out;
 }
 
-.fechar-create-post:hover {
+.fechar-create-post {
   background-color: #7E241E;
   color: white;
 }
 
-.criar-create-post:hover {
+.criar-create-post {
   background-color: #13ACB1;
   color: white;
 }
+
+
+.fechar-create-post:hover, .criar-create-post:hover {
+  width: 48%;
+  font-size: var(--font-size-buttons-hover-create-post);
+  border: 2px solid #fff;
+}
+
+/* .criar-create-post:hover {
+  width: 48%;
+  font-size: var(--font-size-buttons-hover-create-post);
+} */
 .input-group-create-post input, textarea, #data-criacao {
   background-color: var(--cor-branca-mas-nem-tanto);
 }

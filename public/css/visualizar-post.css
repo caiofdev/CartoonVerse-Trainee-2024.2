@@ -16,10 +16,10 @@
     background-color: #b0c4c4;
 } */
 
-::-webkit-scrollbar {
-    display: none;
-    /* height: 90%; */
-}
+/* ::-webkit-scrollbar {
+  / height: 90%; /
+} */
+ 
 /* #modalVisualizarPost ::-webkit-scrollbar-thumb {
     /* background: #3333331d;
     background-color: #595959;

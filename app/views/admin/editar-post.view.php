@@ -17,14 +17,14 @@
         <div class="modal-body-editar-post">
           <!-- Dados do post -->
            <div class="modal-form">
-            <form action="editar-post" method="POST" enctype="multipart/form-data" class="modal-form" id="dados-user">
+            <form action="editar-post" method="post" enctype="multipart/form-data" class="modal-form" id="dados-user">
               <div class="input-group-editar-post" id="id">
                 <input type="text" placeholder="ID" value="<?=$post->id?>" 
                 name="id"/>
               </div>
               <div class="input-group-editar-post" id="Título">
                 <input type="text" placeholder="Título" value="<?=$post->title?>" 
-                name="title"/>
+                name="title" required/>
               </div>
               <div class="input-group-editar-post">
                 <textarea
@@ -32,13 +32,14 @@
                   name="content"
                   rows="5"
                   placeholder="Conteúdo"
+                  required
                 ><?=$post->content?></textarea>
               </div>
               <!-- Imagem do post -->
-                <label for="input-image" class="user-image-editar-post" tabindex="0" id="image">
-                  <!-- <img src="<?=$post->image?>" alt="Imagem do post: <?=$post->title?>"> -->
+                <label for="input-image" class="label-image-editar-post image" tabindex="0" id="image">
+                  <img src="<?=$post->image?>" id="imagemAtual" class="imagemAtual">
                 </label>
-                <input type="file" class="input-image-editar-post" name="image" id="input-image" required>
+                <input type="file" class="input-image-editar-post input-image" name="image" id="input-image" required>
               <div class="input-group-editar-post">
                 <input type="text" placeholder="Autor" value="<?=$post->author?>" name="author" readonly/>
               </div>

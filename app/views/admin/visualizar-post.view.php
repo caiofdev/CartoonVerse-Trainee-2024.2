@@ -42,7 +42,7 @@
                 <input type="text" placeholder="Autor" value="<?= $post->author ?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post">
-                <input type="date" placeholder="Data de Criação" form="dados-user" value="<?=$post->created_at?>" readonly/>
+                <input type="text" placeholder="Data de Criação" form="dados-user" value="<?=$post->created_at?>" readonly/>
               </div>
               <div class="button-fechar-visualizar-post">
                 <button class="fechar-visualizar-post" onclick="fecharModal('modalVisualizarPost-<?= $post->id ?>')" form="dados-user" type="button">Fechar</button>

@@ -30,7 +30,7 @@ function redirect($path)
     header("Location: /{$path}");
 }
 
-function uploadImagePost($file, $id)
+function uploadImagePost($file)
 {
     if (!isset($file) || !isset($file['error']) || empty($file['tmp_name'])) {
         return '../../public/assets/img/post/' . "default-thumb.png";
@@ -62,7 +62,7 @@ function uploadImagePost($file, $id)
     $fileName = pathinfo($file['name'], PATHINFO_FILENAME);
 
     // Se o ID do usuário for fornecido, inclua-o no nome do arquivo
-    if ($id) {
+    if (isset($id)) {
         $fileName = "{$id}";
     }
 
