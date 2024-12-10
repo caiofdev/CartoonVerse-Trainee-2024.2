@@ -1,4 +1,5 @@
 <?php
+namespace App\Core\database;
 
 namespace App\Core\Database;
 
@@ -9,22 +10,103 @@ class QueryBuilder
 {
     protected $pdo;
 
-
-    public function __construct($pdo)
+    public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table)
+    public function checkAndCreateDefaultUser()
     {
-        $sql = "select * from {$table}";
+        // Verifica se há usuários no banco de dados
+        $sql = "SELECT COUNT(*) FROM users";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $userCount = intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
+        if ($userCount === 0) {
+            try {
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->execute();
+                $userCount = intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
+                // Se não houver usuários, cria um usuário padrão
+                    $defaultUser = [
+                        'name' => 'Usuário Exemplo',
+                        'email' => 'default@example.com',
+                        'password' => password_hash('password', PASSWORD_DEFAULT),
+                        'image' => '/public/assets/img/profile/chopp.jpg'
+                    ];
+
+                    $this->insert('users', $defaultUser);
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+        }
+    }
+
+    public function selectAll($table, $inicio = null, $rows_count = null)
+    {
+        $sql = "SELECT * FROM {$table}";
+
+        if ($inicio >= 0 && $rows_count > 0) {
+            $sql .= " LIMIT {$inicio}, {$rows_count}";
+        }
 
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
-
             return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
+    public function countAll($table)
+    {
+        $sql = "SELECT COUNT(*) FROM {$table}";
+
+        try {
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function selectOne($table, $parameters)
+    {
+        $sql = sprintf(
+            'SELECT * FROM %s WHERE %s = :%s',
+            $table,
+            implode(', ', array_keys($parameters)),
+            implode(', :', array_keys($parameters))
+        );
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function insert($table, $parameters){
+        $sql = sprintf(
+            'INSERT INTO %s (%s) VALUES (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+            
         } catch (Exception $e) {
             die($e->getMessage());
         }

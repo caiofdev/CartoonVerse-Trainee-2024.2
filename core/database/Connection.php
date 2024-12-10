@@ -1,17 +1,12 @@
 <?php
 
-namespace App\Core\Database;
+namespace App\Core\database;
 
 use PDO;
 use PDOException;
 
 class Connection
 {
-    /**
-     * Create a new PDO connection.
-     *
-     * @param array $config
-     */
     public static function make($config)
     {
         try {
