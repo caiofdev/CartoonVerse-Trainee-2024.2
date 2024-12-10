@@ -1,7 +1,4 @@
-@font-face {
-    font-family: "Sugarbread";
-    src: url(../assets/Sugar\ Bread.otf) format('opentype');
-}
+@import url(fonts.css);
 
 * {
     margin: 0;
@@ -23,21 +20,22 @@ a {
     display: flex;
     padding: 4px 10px 7px 10px;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
     background: #4A5759;
 }
 
-.left-side-desktop {
+.home-side-desktop {
     display: flex;
     gap: 36px;
     align-items: center;
 }
-.left-side-desktop div {
+.home-side-desktop div {
     width: 34px;
     height: 34px;
-    background: url(../assets/Home-light.png) no-repeat top center/cover;
+    background: url(/public/assets/img/Home-light.png) no-repeat top center/cover;
 }
-.left-side-desktop a {
+.home-side-desktop a {
     color: white;
     line-height: normal;
     text-decoration: none;
@@ -55,7 +53,7 @@ a {
     width: 100%;
     position: fixed;
     top: 0;
-    right: -768px;
+    left: -768px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -68,7 +66,7 @@ a {
     margin-left: auto;
     width: 36px;
     height: 36px;
-    background: url(../assets/close-light.png) center;
+    background: url(/public/assets/img/close-light.png) center;
 }
 .off-screen-hamb-menu #sec-container {
     display: flex;
@@ -80,7 +78,7 @@ a {
 .off-screen-hamb-menu #text-container a {
     display: flex;
     align-items: center;
-    font-family: "Sugarbread";
+    font-family: sugar-bread;
 }
 
 .off-screen-hamb-menu ul {
@@ -124,7 +122,7 @@ a {
     align-items: flex-start;
 }
 .off-screen-hamb-menu.active {
-    right: 0;
+    left: 0;
 }
 /* .left-side-phone {
     height: 40px;
@@ -163,16 +161,9 @@ a {
 .logo {
     width: 73px;
     height: 50px;
-    background: url(../assets/logo1.png) no-repeat local center/cover;
+    background: url(/public/assets/img/logo1.png) no-repeat local center/cover;
     margin: 0 auto;
 }
-
-/* .phone-right-side #search {
-    width: 28px;
-    height: 28px;
-    margin-left: auto;
-    background: url(../assets/Search-light.png) no-repeat local center/cover;
-} */
 
 .right-side-desktop {
     display: none;
@@ -180,27 +171,27 @@ a {
     align-items: center;
 }
 .right-side-desktop #search  {
-    background: url(../assets/Search-light.png) no-repeat local center/cover;
+    background: url(/public/assets/img/Search-light.png) no-repeat top center/cover;
     width: 28px;
     height: 28px;
 }
 .right-side-desktop #profile {
-    background: url(../assets/user2-light.png) no-repeat top center/cover;
+    background: url(/public/assets/img/user2-light.png) no-repeat top center/cover;
     width: 40px;
     height: 40px;
     border-radius: 100px;
 }
 
 .right-side-desktop #profile:hover {
-    background: url(../assets/user2.png) no-repeat top center/cover;
+    background: url(/public/assets/img/user2.png) no-repeat top center/cover;
 }
 .right-side-desktop #search:hover {
-    background: url(../assets/Search.png) no-repeat top center/cover;
+    background: url(/public/assets/img/Search.png) no-repeat top center/cover;
 }
-.left-side-desktop #home:hover{
-    background: url(../assets/Home.png) no-repeat top center/cover;
+.home-side-desktop #home:hover{
+    background: url(/public/assets/img/Home.png) no-repeat top center/cover;
 }
-.left-side-desktop #posts:hover{
+.home-side-desktop #posts:hover{
     color: black;
 }
 /* 
@@ -211,11 +202,12 @@ a {
     .navbar{
         padding: 10px 35px 10px 35px;
         justify-content: space-between;
+        flex-direction: row;
     }
-    .left-side-desktop{
+    .home-side-desktop{
         display: flex;
     }
-    .left-side-desktop div {
+    .home-side-desktop div {
         width: 40px;
         height: 40px;
     }
@@ -240,6 +232,6 @@ a {
         height: 26px;
     }
     #home:hover {
-        background: url(../assets/Home.png) no-repeat top center/cover;
+        background: url(/public/assets/img/Home.png) no-repeat top center/cover;
     }
 }

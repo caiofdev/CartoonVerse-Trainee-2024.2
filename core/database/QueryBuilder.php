@@ -1,8 +1,10 @@
 <?php
 namespace App\Core\database;
 
-use PDO;
-use Exception;
+namespace App\Core\Database;
+
+use App\Core\App;
+use PDO, Exception;
 
 class QueryBuilder
 {
@@ -109,15 +111,52 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+    public function selectOne($table, $id){
+        
+        $sql = "select * from {$table} where id = ?";
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            // $stmt->execute(['id' => $id]);
+            return $stmt->fetchObject();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
-    // Função para atualizar um usuário existente
-    public function update($table, $id, $parameters)
-    {
+    public function getBySimilar($table, $column, $name){
+        // $sql = "select * from $table where $column like :name";
+        $sql = sprintf('SELECT * FROM %s WHERE %s LIKE ?', $table, $column);
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(1, "%$name%");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+    
+    public function insert($table, $parameters){
+        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
+                         $table,
+                         implode(', ', array_keys($parameters)),
+                         ':' . implode(', :', array_keys($parameters))
+                        );
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
-        $sql = sprintf("UPDATE %s SET %s WHERE id = %s",
+    public function update($table, $id, $parameters){
+        $sql = sprintf('UPDATE %s SET %s WHERE id = %s', 
             $table,
-            implode(', ', array_map(function($parameters) {
-                return $parameters . ' = :' . $parameters;
+            implode(', ', array_map(function($param){
+                return $param . ' = :' . $param;
             }, array_keys($parameters))),
             $id
         );
@@ -125,71 +164,47 @@ class QueryBuilder
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($parameters);
-
         } catch (Exception $e) {
-            echo "Erro ao atualizar o usuário: " . $e->getMessage();
+            die($e->getMessage());
         }
+        
+        // $sql = sprintf("UPDATE `posts` SET `id`= id,`title`='[value-2]',`content`='[value-3]',`image`='[value-4]',`created_at`='[value-5]',`author`='[value-6]' WHERE 1",
+        //                  $table,
+        //                  implode(', ', array_keys($parameters)),
+        //                  ':' . implode(', :', array_keys($parameters))
+        //                 );
+        // try {
+        //     $stmt = $this->pdo->prepare($sql);
+        //     $stmt->execute($parameters);
+        // } catch (Exception $e) {
+        //     die($e->getMessage());
+        // }
     }
 
-    // Função para deletar um usuário
-    public function delete($table, $id)
-    {
+    public function delete($table, $id){
+        $sql = "DELETE FROM {$table} WHERE id = ?";
         try {
-
-            // Verificar se o usuário tem posts
-            if ($this->userHasPosts($id) > 0) {
-                // Deletar os posts do usuário
-                $this->deletePostsByUserId($id);
-            }
-
-            // Deletar o usuário
-            $sql = sprintf("DELETE FROM %s WHERE id = :id", $table);
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(1, $id);
             $stmt->execute();
-
-            $this->resetAutoIncrement($table);
-        }
-        catch (Exception $e) {
-            echo "Erro ao deletar o usuário: " . $e->getMessage();
+        } catch (Exception $e) {
+            die($e->getMessage());
         }
     }
-
-    // Função para verificar se um usuário tem posts
-    public function userHasPosts($userId)
+    public function countAll($table)
     {
+        $sql = "SELECT COUNT(*) FROM {$table}";
+
         try {
-            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = :user_id");
-            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+
+            $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
+
             return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
         } catch (Exception $e) {
-            echo "Erro ao verificar se o usuário tem posts: " . $e->getMessage();
-            return 0;
+            die($e->getMessage());
         }
     }
-
-    // Função para deletar os posts de um usuário
-    public function deletePostsByUserId($userId)
-{
-    try {
-        $sql = "DELETE FROM posts WHERE user_id = :user_id";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-    } catch (Exception $e) {
-        echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
-    }
+    
 }
-
-    public function resetAutoIncrement($table)
-    {
-        try {
-            $sql = "ALTER TABLE {$table} AUTO_INCREMENT = 1";
-            $this->pdo->exec($sql);
-        } catch (Exception $e) {
-            echo "Erro ao resetar o auto-increment: " . $e->getMessage();
-        }
-    }   
-}
-

@@ -187,192 +187,195 @@
   
 /* Estilo geral da paginação */
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  background-color: #c5d9d9; /* cor de fundo combinando com a página */
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+padding: 10px;
+margin: 0;
+background-color: #c5d9d9; /* cor de fundo combinando com a página */
+border-radius: 10px;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo dos itens de paginação */
 .pagination .page-item {
-  margin: 0 5px;
+margin: 0 5px;
 }
 
 .pagination .page-link {
-  display: inline-block;
-  padding: 8px 12px;
-  text-decoration: none;
-  color: #000; /* cor do texto */
-  font-weight: bold;
-  background-color: #e8f0f0; /* cor de fundo dos botões */
-  border: 1px solid #a5b8b8; /* borda combinando com o design */
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
+display: inline-block;
+padding: 8px 12px;
+text-decoration: none;
+color: #000; /* cor do texto */
+font-weight: bold;
+background-color: #e8f0f0; /* cor de fundo dos botões */
+border: 1px solid #a5b8b8; /* borda combinando com o design */
+border-radius: 5px;
+transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Estilo ao passar o mouse */
 .pagination .page-link:hover {
-  background-color: #a5b8b8; /* cor ao passar o mouse */
-  color: #fff; /* cor do texto ao passar o mouse */
-  transform: scale(1.05);
+background-color: #a5b8b8; /* cor ao passar o mouse */
+color: #fff; /* cor do texto ao passar o mouse */
+transform: scale(1.05);
 }
 
 /* Estilo do botão ativo */
 .pagination .page-item.active .page-link {
-  background-color: #007bff; /* cor do botão ativo */
-  color: #fff;
-  border: none;
+background-color: #007bff; /* cor do botão ativo */
+color: #fff;
+border: none;
 }
 
 /* Estilo do botão desabilitado */
 .pagination .page-item.disabled .page-link {
-  background-color: #d9d9d9;
-  color: #7a7a7a;
-  cursor: not-allowed;
+background-color: #d9d9d9;
+color: #7a7a7a;
+cursor: not-allowed;
 }
 
 /* Margem extra para separação da tabela */
 .pagination-container {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 
-  
-  .bi:hover {
-    cursor: pointer;
-  }
-  
-  /* Estilos gerais do modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
-    background-color: #666;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: center;
-    gap: 30px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 40vw;
-    height: 73vh;
-  }
-  
-  .modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  
-  /* Botão de fechar (X) */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /* Imagem do usuário */
-  .user-image {
-    background-color: var(--fundo-input);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-  }
-  
-  /* Estilos dos campos de entrada */
-  .input-group {
-    margin: 10px 0;
-  }
-  
-  .input-group input {
-    width: 100%;
-    height: 37px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    color: #fff;
-    padding-left: 30px;
-  }
-  
-  .input-group input[readonly] {
-    cursor: not-allowed;
-  }
-  
-  /* Botões de ação */
-  .modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
-  .confirm, .cancel {
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: sugar-bread;
-  }
-  
-  .cancel {
-    background-color: var(--fundo-input);
-  }
-  
-  .confirm:hover, .cancel:hover {
-    background-color: var(--fundo-input);
-  }
-  
-  
-  .close:hover, .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* 4K */
-  @media (min-width: 2560px) {
-    :root {
-      --height-container: 114vh;
-    }
-  }
-  
-  /* MOBILE */
-  @media (max-width: 768px) {
 
-    .pagination .page-link {
-      font-size: 14px;
-      padding: 8px 10px;
-    }
-    
-    :root {
-      --font-size-header: 24px;
-      --font-size-usuario: 12px;
-      --font-size-usuario-bi: 20px;
-      --margin-top-main: 4%;
-      --font-size-table-th: 20px;
-      --font-size-table: 15px;
-      --margin-right-id-p: 12px;
-      --font-size-acoes-bi: 16px;
-      --margin-right-paginacao: 2%;
-      --font-size-paginacao-bi: 24px;
-    }
+.bi:hover {
+  cursor: pointer;
+}
+
+/* Estilos gerais do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #666;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  gap: 30px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40vw;
+  height: 73vh;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Botão de fechar (X) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Imagem do usuário */
+.user-image {
+  background-color: var(--fundo-input);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+/* Estilos dos campos de entrada */
+.input-group {
+  margin: 10px 0;
+}
+
+.input-group input {
+  width: 100%;
+  height: 37px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--fundo-input);
+  color: #fff;
+  padding-left: 30px;
+}
+
+.input-group input[readonly] {
+  cursor: not-allowed;
+  background-color: var(--fundo-input);
+}
+
+/* Botões de ação */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.confirm, .cancel {
+  background-color: var(--fundo-input);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: sugar-bread;
+}
+
+.cancel {
+  background-color: var(--fundo-input);
+}
+
+.confirm:hover, .cancel:hover {
+  background-color: var(--fundo-input);
+}
+
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+  :root {
+    --height-container: 114vh;
   }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .pagination .page-link {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  
+  :root {
+    --font-size-header: 24px;
+    --font-size-usuario: 12px;
+    --font-size-usuario-bi: 20px;
+    --margin-top-main: 4%;
+    --font-size-table-th: 20px;
+    --font-size-table: 15px;
+    --margin-right-id-p: 12px;
+    --font-size-acoes-bi: 16px;
+    --margin-right-paginacao: 2%;
+    --font-size-paginacao-bi: 24px;
+  }
+}

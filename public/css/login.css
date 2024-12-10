@@ -12,12 +12,23 @@
   --logo-order: 0;
 }
 
+
+/* Fazendo o Autocomplete não ficar branco, não mecham PELO AMOR DE DEUS!!!! */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
 body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../assets/background-login.jpg);
+  background: url(/public/assets/img/background-login.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -43,6 +54,15 @@ body {
   color: white;
   text-align: center;
   text-shadow: 2px 2px #13acb1;
+}
+
+.mensagem-erro p{
+  justify-self: center;
+  text-align: center;
+  color: #7e241e;
+  font-size: 20px;
+  font-family: open-sans;
+  font-weight: 700;
 }
 
 .login {

@@ -16,10 +16,20 @@
   <body>
     <div class="container">
       <div class="login">
-        <form action="/pagina-dos-dados" method="post" id="formulario">
+        <form action="/login" method="POST" id="formulario">
           <h1 id="titulo">LOGIN</h1>
+          <div class="mensagem-erro">
+            <p>
+              <?php 
+                if(isset($_SESSION['mensagem-erro']))
+                  echo $_SESSION['mensagem-erro'];
+                
+                unset($_SESSION['mensagem-erro']);
+              ?>
+            </p>
+          </div>
           <div class="input-container">
-            <input placeholder="Email" type="email" id="email" required />
+            <input placeholder="Email" type="email" name="email" id="email" required />
             <img
               src="/public/assets/Icons/icons8-email-96.png"
               alt="Email"
@@ -27,7 +37,7 @@
             />
           </div>
           <div class="input-container">
-            <input placeholder="Senha" type="password" id="senha" required />
+            <input placeholder="Senha" type="password" name="senha" id="senha" required />
             <img
               src="/public/assets/Icons/icons8-lock-96.png"
               alt="Email"
@@ -44,7 +54,7 @@
         </form>
       </div>
       <img
-        src="/public/assets/Logo 2 sem fundo.png"
+        src="/public/assets/logo/Logo 2 sem fundo.png"
         alt="Logo"
         class="logo"
         role="button"

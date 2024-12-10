@@ -12,21 +12,21 @@
   --margin-top-buttons: 16%;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #F4F4F4;
-}
+/* #modalVisualizarPost ::-webkit-scrollbar-track {
+    background-color: #b0c4c4;
+} */
 
-::-webkit-scrollbar {
-    width: 2px;
-    background: #F4F4F4;
-}
-::-webkit-scrollbar-thumb {
-    background: #B0C4C4;
-    height: 90%;
-}
+/* ::-webkit-scrollbar {
+  / height: 90%; /
+} */
+ 
+/* #modalVisualizarPost ::-webkit-scrollbar-thumb {
+    /* background: #3333331d;
+    background-color: #595959;
+} */
 
 /* Estilos gerais do modal */
-.modal {
+.modal-visualizar-post {
   display: none;
   position: fixed;
   z-index: 1;
@@ -35,11 +35,11 @@
   top: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(	176, 196, 196, 0.5);
+  background-color: rgba(11, 11, 11, 0.762);
 }
 
-.modal-content {
-  background-color: white;
+.modal-content-visualizar-post {
+  background-color: #b0c4c4;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -54,14 +54,14 @@
   margin-bottom: 20vh;
 }
 
-.modal-body {
+.modal-body-visualizar-post {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
 /* Botão de fechar (X) */
-.close {
+.close-visualizar-post {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -70,13 +70,12 @@
 }
 
 /* Imagem do usuário */
-.user-image {
+.user-image-visualizar-post {
   /* border: #7E241E 1px solid; */
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   width: 50%;
   height: 168px;
   display: flex;
-  margin-left: 25%;
   justify-self: center;
   justify-content: center;
   align-content: center;
@@ -85,12 +84,22 @@
   /* margin: 0 auto 20px; */
 }
 
+.user-image-visualizar-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #input-image {
   display: none;
 }
 
+#id {
+  display: none;
+}
+
 /* Estilos dos campos de dados */
-.input-group {
+.input-group-visualizar-post {
   display: flex;
   flex-direction: column;
   margin: 40px 0;
@@ -101,12 +110,12 @@
   margin-top: 12%;
 } */
 
-.input-group input, textarea {
+.input-group-visualizar-post input, textarea {
   width: 100%;
   height: calc(var(--font-size) + 10px);
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   outline: none;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   color: #000;
@@ -114,36 +123,37 @@
   padding-left: 30px;
 }
 
-.input-group input {
+.input-group-visualizar-post input {
   text-align: center;
 }
 
-.input-group textarea {
-  height: 400px;
+.input-group-visualizar-post textarea {
+  height: 100vh;
   width: 90%;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px;
   resize: none;
 }
 
-.input-group input[readonly], textarea[readonly] {
+.input-group-visualizar-post input[readonly], textarea[readonly] {
   cursor: default;
 }
 
 #data-criacao {
-  display: flex;
   width: 25%;
+  padding: 0;
+  margin: 0;
   text-align: center;
   justify-self: center;
 }
 
-.close:hover, .close:focus {
+.close-visualizar-post:hover, .close-visualizar-post:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
 /* Botão de fechar */
-.button-fechar {
+.button-fechar-visualizar-post {
   display: flex;
   height: fit-content;
   justify-content: center;
@@ -153,9 +163,9 @@
 }
 
 
-.fechar {
+.fechar-visualizar-post {
   width: 100%;
-  background-color: transparent;
+  background-color: var(--cor-branca-mas-nem-tanto);
   color: #000;
   border: none;
   padding: 10px 20px;
@@ -168,7 +178,7 @@
   margin-bottom: 24px;
 }
 
-.fechar:hover {
+.fechar-visualizar-post:hover {
   background-color: #7E241E;
   color: white;
 }
