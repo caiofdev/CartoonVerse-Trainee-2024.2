@@ -40,9 +40,8 @@ class AdminController
     public function createUser()
     {
         session_start();
-        $email = $_POST['email'];
 
-        $existe = App::get('database')->selectOne('users', ['email' => $email]);
+        $existe = App::get('database')->selectOne('users', ['email' => $_POST['email']]);
         
         if ($existe) {
             echo json_encode(['error' => 'Já existe um usuário com esse email.']);
@@ -56,14 +55,13 @@ class AdminController
             'image' => uploadImage($_FILES['image'], $_POST['email'])
         ];
 
-        App::get('database')->insert('users', $parameters);
-
         echo json_encode(['success' => true]);
+        
+        App::get('database')->insert('users', $parameters);
         exit();
     }
 
     public function updateUser(){
-        session_start();
         $email = $_POST['email'];
         
         $existe = App::get('database')->selectOne('users', ['email' => $email]);
