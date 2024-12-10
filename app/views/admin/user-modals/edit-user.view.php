@@ -10,7 +10,12 @@
         >
         <div class="modal-body">
             <div class="modal-form">
-                <form action="/admin/users/update" method="POST" enctype="multipart/form-data">
+                <form action="/admin/users/update" 
+                method="POST" 
+                enctype="multipart/form-data" 
+                id="edit-user-<?=$user->id?>" 
+                data-modal-id="modalEditar-<?=$user->id?>">
+                
                     <input type="hidden" name="id" value="<?=$user->id?>">
                     
                     <!-- Imagem do usuário -->
@@ -33,6 +38,9 @@
                                required>
                     </div>
 
+                    <!-- Erro email -->
+                    <p class="error-message" style="display:none; color:red;"></p>
+                    
                     <div class="input-group">
                         <input type="email" 
                                name="email" 

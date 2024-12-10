@@ -55,21 +55,24 @@ function mostrarErroModal(id, mensagem) {
   erroElemento.style.display = 'block';
 }
 
-document.querySelector('#new-user').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(this);
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
 
-  fetch(this.action, {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.error) {
-      mostrarErroModal('modalCriar', data.error);
-    } else {
-      location.reload();
-    }
-  })
-  .catch(error => console.error('Error:', error));
+    fetch(this.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        const modalId = this.dataset.modalId;
+        mostrarErroModal(modalId, data.error);
+      } else {
+        location.reload();
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
 });
