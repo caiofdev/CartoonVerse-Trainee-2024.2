@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;    
+    align-items: flex-start;
 }
 .footer ul {
     color: white;
@@ -136,12 +136,19 @@
         width: 28px;
         height: 28px;
     }
-    .footer #pilares {
+    #pilares {
         display: flex;
-        flex-direction: column;
+        align-items: auto;
         justify-content: center;
-        align-items: flex-start;
+        text-align: center;
+        padding-left: 0px;
     }
+    #pilares li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .codejr-logo {
         width: 173px;
         height: 40px;       
