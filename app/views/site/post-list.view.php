@@ -11,12 +11,13 @@
 00..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <title>CartoonVerse</title>
 </head>
+<?php require("navbar.html"); ?>
 <body>
     <div class="general-container">
         
         <div class="search-bar">
             <form id="searchForm" method="GET" action="search-post">
-                <input id="search" type="text" name="title" placeholder="PESQUISA" required>
+                <input id="search" type="text" name="title" placeholder="PESQUISA" >
                 <button type="submit" id="searchButton">
                     <div id="lupa"></div>
                 </button>
@@ -26,7 +27,7 @@
             <ul id="list">
                 <?php foreach($posts as $post):?>
                     <li>
-                        <a href="/post?id=<?= $post->id ?>">  
+                        <a href="/post/<?= $post->id ?>">  
                             <div id="post">
                                 <p id="titulo"><?= $post->title ?></p>
                                 <p id="autor-data">
@@ -50,21 +51,6 @@
         </div>
     </div>
     <script src="/public/js/post-list-pags.js"></script>
-    <!-- <script>
-        document.getElementById('searchButton').addEventListener('click', async () => {
-            
-            const query = document.getElementById('search').value;
-            const resultsDiv = document.getElementById('list');
-            if (query) {
-                try {
-                    const response = await fetch(`search-post?title=${encodeURIComponent(query)}`);
-                    const results = await response;
-                    resultsDiv.innerHTML = results;
-                } catch (error) {
-                    resultsDiv.innerHTML = '<p>Erro ao buscar resultados.</p>';
-                    console.error(error);
-                }
-            }});
-    </script> -->
+<?php require("footer.html"); ?>  
 </body>
 </html>

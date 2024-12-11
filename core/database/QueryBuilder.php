@@ -111,19 +111,6 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
-    public function selectOne($table, $id){
-        
-        $sql = "select * from {$table} where id = ?";
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(1, $id);
-            $stmt->execute();
-            // $stmt->execute(['id' => $id]);
-            return $stmt->fetchObject();
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
 
     public function getBySimilar($table, $column, $name){
         // $sql = "select * from $table where $column like :name";
@@ -138,19 +125,6 @@ class QueryBuilder
         }
     }
     
-    public function insert($table, $parameters){
-        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
-                         $table,
-                         implode(', ', array_keys($parameters)),
-                         ':' . implode(', :', array_keys($parameters))
-                        );
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute($parameters);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
 
     public function update($table, $id, $parameters){
         $sql = sprintf('UPDATE %s SET %s WHERE id = %s', 
@@ -187,21 +161,6 @@ class QueryBuilder
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(1, $id);
             $stmt->execute();
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
-    public function countAll($table)
-    {
-        $sql = "SELECT COUNT(*) FROM {$table}";
-
-        try {
-
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
-
-            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
-
         } catch (Exception $e) {
             die($e->getMessage());
         }
