@@ -1,13 +1,3 @@
-/* Paleta
-1 000
-2 212627
-3 4a5759
-4 b0c4c4
-5 fff
-6 13acb1
-7 7e241e
-*/
-
 :root {
   --fundo: #b0c4c4;
   --textos: #000000;
@@ -19,7 +9,6 @@
   --posts: #fff;
 }
 
-/* Estilos Globais */
 body {
   margin: 0;
   padding: 0;
@@ -30,7 +19,6 @@ body {
   background-position: center;
 }
 
-/* Hero Section */
 .hero-dashboard {
   text-align: center;
   color: white;
@@ -53,7 +41,6 @@ body {
   text-shadow: 1px 1px #000000;
 }
 
-/* Seção de Links Administrativos */
 .admin-links {
   display: flex;
   justify-content: center;
@@ -87,14 +74,12 @@ body {
   color: #555;
 }
 
-/* Efeito de Hover nos Links */
 .admin-link:hover {
   transform: scale(1.05);
 }
 
-/* Botão de Logout */
 .logout h2 {
-  color: #d9534f; /* Cor de destaque para o logout */
+  color: #d9534f;
   font-family: sugar-bread;
 }
 
@@ -103,9 +88,23 @@ body {
   font-family: open-sans;
 }
 
+@media (max-width: 1024px) and (min-width: 780px) {
+  .admin-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .admin-link {
+    width: 90%;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-dashboard h1 {
-  padding-top: 1px;
+    padding-top: 1px;
+    font-size: 2rem;
   }
 
   .admin-links {
@@ -113,12 +112,17 @@ body {
     padding-top: 15px;
     gap: 20px;
   }
+
   .admin-link {
-    width: 35%;
+    width: 80%;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .hero-dashboard h1 {
+    font-size: 1.8rem;
+  }
+
   .admin-links {
     flex-direction: column;
     padding-top: 20px;
@@ -126,6 +130,16 @@ body {
   }
 
   .admin-link {
-    width: 50%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-dashboard h1 {
+    font-size: 1.5rem;
+  }
+
+  .admin-link {
+    width: 100%;
   }
 }
