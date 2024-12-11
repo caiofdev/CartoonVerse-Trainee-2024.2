@@ -27,10 +27,11 @@
   }
   
   .container {
-    width: 99%;
+    width: calc(100% - 82px); /* Adjust width to account for sidebar */
+    margin-left: 82px; /* Offset by sidebar width */
     height: var(--height-container);
-    margin-left: 1%;
     background-color: #586262a8;
+    transition: margin-left 0.5s, width 0.5s; /* Smooth transition */
   }
   
   /* Header */
@@ -360,6 +361,11 @@ margin-top: 20px;
 
 /* MOBILE */
 @media (max-width: 768px) {
+
+  .container {
+    width: 100%; /* Full width on mobile */
+    margin-left: 0; /* No offset on mobile */
+  }
 
   .pagination .page-link {
     font-size: 14px;

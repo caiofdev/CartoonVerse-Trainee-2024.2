@@ -40,9 +40,12 @@ body {
   background-color: var(--fundo);
   height: 100vh;
   border-radius: 0px 14px 14px 0px;
-  position: relative;
+  position: fixed; /* Change to fixed */
+  left: 0; /* Align to the left */
+  top: 0; /* Align to the top */
   transition: all 0.5s;
-  min-width: 82px;
+  width: 82px; /* Set a fixed width */
+  z-index: 1000; /* Ensure it overlays other content */
 }
 
 #sidebar-content {
@@ -164,7 +167,7 @@ body {
 
 /* Sidebar Aberta */
 #sidebar.open-sidebar {
-  min-width: 15%;
+  width: 250px; /* Adjust width when open */
 }
 
 #sidebar.open-sidebar .item-description {
@@ -206,5 +209,8 @@ body {
   }
   .open-btn {
     display: none;
+  }
+  #sidebar.open-sidebar {
+    width: 100%; /* Full width on mobile when open */
   }
 }
