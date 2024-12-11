@@ -23,7 +23,7 @@
 
     <!-- Links Administrativos -->
     <div class="admin-links">
-      <form action="/admin/post-list" method="GET">
+      <form action="/admin/posts" method="GET">
         <button type="submit" class="admin-link">
           <h2>Publicações</h2>
           <p>Acessar publicações</p>

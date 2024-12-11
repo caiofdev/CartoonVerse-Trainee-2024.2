@@ -19,7 +19,8 @@ class AdminController
         foreach ($posts as $post) {
 
             // troca o id pelo nome de cada um
-            $post->author = App::get('database')->selectOne('users', $post->author)->name; 
+            $author = App::get('database')->selectOne('users', ['id' => $post->author]);
+            $post->author = $author ? $author['name'] : 'Unknown';
             
         }
         return view('admin/post-list', compact('posts'));

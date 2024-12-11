@@ -10,6 +10,9 @@
 <body>
     <div class="container">
     <div id="header">
+
+    <?php require __DIR__ . '/sidebar.view.php' ?>
+
     <!-- Titulo -->
     <h1>LISTA DE USUARIOS</h1>
       <button id="usuario" onclick="abrirModal('modalCriar')">
