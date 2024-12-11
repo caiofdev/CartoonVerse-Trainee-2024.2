@@ -104,7 +104,7 @@ class AdminController
             header('Location: /admin/dashboard');
         }
 
-        return viewSite('login');
+        return view('login');
     }
 
     public function dashboard(){
