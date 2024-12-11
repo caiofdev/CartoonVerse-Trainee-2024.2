@@ -51,14 +51,19 @@
                         </span>
                     </a>
                 </li>
+                <?php
+                    // Ainda vou ver como tá pegando o user logado
+                    session_start();
+                    $user = $_SESSION['user'];
+                ?>
                 <div id="user">
-                        <img src="/public/assets/img/chopp.jpg" id="user-avatar" alt="Avatar">
-                        <p id="info-user">
-                            <span class="item-description">
-                                Caio Webson Codinson
-                            </span>
-                        </p>
-                    </div>
+                    <img src="/public/assets/img/chopp.jpg" id="user-avatar" alt="Avatar">
+                    <p id="info-user">
+                        <span class="item-description">
+                            <?php echo htmlspecialchars($user['name']); ?>
+                        </span>
+                    </p>
+                </div>
         </div>
     </nav>
     <script src="/public/js/sidebar.js"></script>
