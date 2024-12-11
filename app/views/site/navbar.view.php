@@ -20,7 +20,7 @@
                     <div id="sec-container">
                         <img src="/public/assets/Icons/Home2-light.png" alt="">
                         <div id="text-container">
-                            <a href="#">HOME</a>
+                            <a href="">HOME</a>
                         </div>
                     </div>
                     <div id="span-container">
@@ -31,7 +31,7 @@
                     <div id="sec-container">
                         <img src="/public/assets/Icons/Activity-feed-light.png" alt="">
                         <div id="text-container">
-                            <a href="#">POSTS</a>
+                            <a href="post-list">POSTS</a>
                         </div>
                     </div>
                     <div id="span-container">
@@ -42,7 +42,7 @@
                     <div id="sec-container">
                         <img src="/public/assets/Icons/user2-light.png" alt="Home">
                         <div id="text-container">
-                            <a href="#">LOGIN</a>
+                            <a href="login">LOGIN</a>
                         </div>
                     </div>
                     <div id="span-container">
@@ -55,14 +55,14 @@
         <nav class="navbar">
             <!-- Desktop version -> media rule -->
             <div class="home-side-desktop">
-                <a href="#">
+                <a href="">
                     <div id="home"></div>
                 </a>
-                <a href="#" id="posts">Posts</a>
+                <a href="post-list" id="posts">Posts</a>
             </div>
             
 
-            <a class='logo-link' href="#">
+            <a class='logo-link' href="">
                 <div class="logo"></div>
             </a>
             <div class="hamb-menu" onclick="toggleMenu()">
@@ -73,10 +73,10 @@
 
             <!-- Desktop version -> media rule -->
             <div class="right-side-desktop">
-                <a href="#">
+                <a href="search-post">
                     <div id="search"></div>
                 </a>
-                <a href="#">
+                <a href="login">
                     <div id="profile"></div>
                 </a>
             </div>
