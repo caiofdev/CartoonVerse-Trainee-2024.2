@@ -111,22 +111,21 @@
     <section class="carrossel-section">
       <h1>POSTS DESTAQUE</h1>
       <div class="carousel">  
-        <?php foreach($posts as $post): ?>
-          <div class="carousel-slides">  
+        <div class="carousel-slides">  
+          <?php foreach($posts as $post): ?>
             <div class="slide active">  
               <img src="<?= $post->image ?>" alt="Imagem de <?=($post->author)?>">  
             </div> 
-            <?php endforeach; ?>
-          </div>  
-          
+          <?php endforeach; ?>
+        </div>  
+        <div class="carousel-indicators">
           <?php foreach($posts as $index => $post): ?>
             <?php if ($index < 5): ?>
-              <div class="carousel-indicators">
-                <span class="indicator <?= $index === 0 ? 'active' : '' ?>" onclick="currentSlide(<?= $index + 1 ?>)"></span>
-              </div>
+              <span class="indicator <?= $index === 0 ? 'active' : '' ?>" onclick="currentSlide(<?= $index + 1 ?>)"></span>
             <?php endif; ?>
           <?php endforeach; ?>
         </div>
+      </div>
     </section>
 
   <?php require __DIR__ . '/footer.view.php' ?>
