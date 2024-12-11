@@ -13,6 +13,9 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
+
+  <?php require __DIR__ . '/navbar.view.php' ?>
+
     <!-- Main Section -->
     <section class="hero">
       <img
@@ -108,29 +111,25 @@
     <section class="carrossel-section">
       <h1>POSTS DESTAQUE</h1>
       <div class="carousel">  
+        <?php foreach($posts as $post): ?>
           <div class="carousel-slides">  
-              <div class="slide active">  
-                  <img src="https://super.abril.com.br/wp-content/uploads/2018/07/566ee0ae82bee174ca0300dahomer-simpson1.jpeg?quality=70&strip=info&w=720&h=440&crop=1" alt="Imagem 1">  
-              </div>  
-              <div class="slide">  
-                  <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BB9A325FBD603DB140BE78B630ABB64D72030DD55928192851959DE28441AB75/scale?width=440&aspectRatio=1.78&format=webp" alt="Imagem 2">  
-              </div>  
-              <div class="slide"> 
-                  <img src="https://recreio.com.br/media/_versions/legacy/2020/12/17/31-anos-de-simpsons-9-curiosidades-sobre-a-serie-de-sucesso-1226089_widexl.png" alt="Imagem 3">  
-              </div>  
-              <div class="slide">  
-                  <img src="https://aventurasnahistoria.com.br/media/uploads/2024/03/simpsons-3.jpg" alt="Imagem 4">  
-              </div>  
+            <div class="slide active">  
+              <img src="<?= $post->image ?>" alt="Imagem de <?=($post->author)?>">  
+            </div> 
+            <?php endforeach; ?>
           </div>  
-    <div class="carousel-indicators">
-      <span class="indicator active" onclick="currentSlide(1)"></span>
-      <span class="indicator" onclick="currentSlide(2)"></span>
-      <span class="indicator" onclick="currentSlide(3)"></span>
-      <span class="indicator" onclick="currentSlide(4)"></span>
-    </div>
-  </div>
-  </section>
+          
+          <?php foreach($posts as $index => $post): ?>
+            <?php if ($index < 5): ?>
+              <div class="carousel-indicators">
+                <span class="indicator <?= $index === 0 ? 'active' : '' ?>" onclick="currentSlide(<?= $index + 1 ?>)"></span>
+              </div>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </div>
+    </section>
 
+  <?php require __DIR__ . '/footer.view.php' ?>
 
     <script src="/public/js/landing-page.js"></script>
   </body>

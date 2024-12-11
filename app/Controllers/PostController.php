@@ -7,23 +7,6 @@ use Exception;
 
 class PostController
 {
-
-    public function index()
-    {
-        $posts = App::get('database')->selectAll('posts');
-        
-        foreach ($posts as $post) {
-
-            // troca o id pelo nome de cada um
-            $post->author = App::get('database')->selectOne('users', $post->author)->name; 
-            
-        }
-        return view('admin/post-list', compact('posts'));
-    }
-    public function getCreate(){
-        return view('admin/create-post');
-    }
-
     public function create(){
 	//session_start();
         $parameters = [
@@ -44,11 +27,11 @@ class PostController
     
     public function delete(){
         $id = $_POST['id'];
-        if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
+        if (!is_numeric($id)) {
             header('Location: /admin/post-list');
         }
 
-        $post = App::get('database')->selectOne('posts', $id); // ve se existe um post com esse id
+        $post = App::get('database')->selectOne('posts', $id);
         if (!$post) {
             header('Location: /admin/post-list');
             return;
@@ -106,15 +89,13 @@ class PostController
             // troca o id pelo nome de cada um
             $post->author = App::get('database')->selectOne('users', $post->author)->name; 
         }
-        
 
         $totalPages = ceil($rows_count / $itemsPage);
 
         return view('site/post-list', compact('posts', 'page', 'totalPages'));
 
-
-        // return view('site/post-list', compact('posts'));
     }
+    
     public function searchPost() {
         if (isset($_GET['title'])) {   
             $title = htmlspecialchars($_GET['title']);

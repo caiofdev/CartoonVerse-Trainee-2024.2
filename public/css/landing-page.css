@@ -173,6 +173,13 @@ body {
 }
 
 /* Carrossel */
+.carrossel-section{
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .carrossel-section h1 {
   font-family: comicartoon;
   font-size: 50px;

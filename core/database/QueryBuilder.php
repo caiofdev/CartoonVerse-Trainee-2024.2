@@ -1,6 +1,4 @@
 <?php
-namespace App\Core\database;
-
 namespace App\Core\Database;
 
 use App\Core\App;
@@ -51,6 +49,19 @@ class QueryBuilder
         if ($inicio >= 0 && $rows_count > 0) {
             $sql .= " LIMIT {$inicio}, {$rows_count}";
         }
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function selectRecentPosts($table, $limit)
+    {
+        $sql = "SELECT * FROM {$table} ORDER BY created_at DESC LIMIT {$limit}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
