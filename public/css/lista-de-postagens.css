@@ -94,7 +94,11 @@ button {
     border-radius: var(--default-border-radius);
 }
 .search-bar #lupa:hover {
+    margin-right: 4px;
+    height: 32px;
+    width: 32px;
     background: url(/public/assets/img/Search-light.png) no-repeat local center/cover;
+    border-radius: 0px;
 }
 .search-bar p {
     margin: auto;

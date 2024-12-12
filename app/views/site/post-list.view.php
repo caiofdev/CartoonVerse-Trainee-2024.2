@@ -27,7 +27,7 @@
             <ul id="list">
                 <?php foreach($posts as $post):?>
                     <li>
-                        <a href="/post?id=<?= $post->id ?>">  
+                        <a href="post?id=<?= $post->id ?>">  
                             <div id="post">
                                 <p id="titulo"><?= $post->title ?></p>
                                 <p id="autor-data">
