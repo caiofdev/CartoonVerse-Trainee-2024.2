@@ -30,12 +30,12 @@ body {
 }
 
 .container {
-  width: calc(100% - 82px); /* Adjust width to account for sidebar */
-  margin-left: 82px; /* Offset by sidebar width */
+  width: calc(100% - 82px);
+  margin-left: 82px;
   height: var(--height-container);
   background-color: #586262a8;
   overflow: hidden;
-  transition: margin-left 0.5s, width 0.5s; /* Smooth transition */
+  transition: margin-left 0.5s, width 0.5s;
 }
 
 #header {
@@ -235,7 +235,7 @@ td {
   }
   #header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 2%;
   }
   #novo {
@@ -252,5 +252,9 @@ td {
     flex-direction: column;
     align-items: flex-start;
     gap: 8%;
+  }
+  .container {
+    width: 100%;
+    margin-left: 0;
   }
 }

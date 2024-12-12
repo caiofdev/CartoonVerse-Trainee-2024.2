@@ -17,7 +17,6 @@
             </button>
             <ul id="side-items">
                 <?php
-                    // Ainda vou ver como tá pegando o user logado
                     session_start();
                     $user = $_SESSION['id'];
                     $current_page = basename($_SERVER['REQUEST_URI']);
