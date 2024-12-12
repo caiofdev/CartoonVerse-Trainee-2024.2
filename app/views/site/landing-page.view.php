@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
+    <?php require('navbar.html'); ?>
     <!-- Main Section -->
     <section class="hero">
       <img
@@ -133,5 +134,6 @@
 
 
     <script src="/public/js/landing-page.js"></script>
+    <?php require("footer.html"); ?>
   </body>
 </html>

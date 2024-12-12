@@ -32,5 +32,5 @@ use App\Core\Router;
     $router->get('post-list', 'PostController@index_user_post_list');
     $router->get('search-post', 'PostController@searchPost');
 
-    $router->get('post/{id}', 'PostController@user_view_single_post');
+    $router->get('post?id={id}', 'PostController@user_view_single_post');
 ?>
