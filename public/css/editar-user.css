@@ -223,15 +223,60 @@
   }
   
   /* MOBILE */
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     :root {
-      --modal-content-width: 90vw;
-      --modal-content-height: 92vh;
-      --font-size: 32px;
+      --modal-content-width: 95vw;
+      --modal-content-height: 85vh;
+      --font-size: 20px;
+      --font-size-buttons: 18px;
+      --margin-top-first: 5%;
+      --flex-direction-buttons: column;
+      --margin-top-buttons: 15%;
+      --margin-bottom-buttons: 20px;
+      --margin-bottom-cancel: 20px;
+    }
+  }
+  
+  /* TABLET */
+  @media (min-width: 481px) and (max-width: 768px) {
+    :root {
+      --modal-content-width: 85vw;
+      --modal-content-height: 75vh;
+      --font-size: 22px;
+      --font-size-buttons: 20px;
       --margin-top-first: 6%;
       --flex-direction-buttons: column;
-      --font-size-buttons: 16px;
-      --margin-top-buttons: 40%;
+      --margin-top-buttons: 18%;
+      --margin-bottom-buttons: 24px;
+      --margin-bottom-cancel: 0px;
+    }
+  }
+  
+  /* SMALL DESKTOP */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+      --modal-content-width: 80vw;
+      --modal-content-height: 75vh;
+      --font-size: 26px;
+      --font-size-buttons: 22px;
+      --margin-top-first: 7%;
+      --flex-direction-buttons: row;
+      --margin-top-buttons: 18%;
+      --margin-bottom-buttons: 24px;
+      --margin-bottom-cancel: 24px;
+    }
+  }
+  
+  /* LARGE DESKTOP */
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    :root {
+      --modal-content-width: 50vw;
+      --modal-content-height: 70vh;
+      --font-size: 32px;
+      --font-size-buttons: 28px;
+      --margin-top-first: 10%;
+      --flex-direction-buttons: row;
+      --margin-top-buttons: 16%;
       --margin-bottom-buttons: 24px;
       --margin-bottom-cancel: 24px;
     }

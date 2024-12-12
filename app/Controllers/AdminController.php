@@ -12,6 +12,14 @@ class AdminController
         return viewAdmin('dashboard-admin');
     }
 
+    public function sidebar()
+    {
+        session_start();
+        $user = App::get('database')->selectOne('users', ['id' => $_SESSION['id']]);
+
+        return viewAdmin('sidebar', compact('user'));
+    }
+
     public function adm_post_list()
     {
         $posts = App::get('database')->selectAll('posts');

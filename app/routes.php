@@ -10,7 +10,12 @@ use App\Core\Router;
     $router->get('admin/dashboard', 'AdminController@index');
     $router->get('admin/posts', 'AdminController@adm_post_list');
     $router->get('admin/users', 'AdminController@adm_user_list');
-
+    
+    $router->get('admin/users', 'AdminController@adm_user_list');
+    $router->get('admin/users', 'AdminController@adm_user_list');
+    $router->get('admin/users', 'AdminController@adm_user_list');
+    
+    
     $router->post('admin/users/create', 'AdminController@createUser');
     $router->post('admin/users/update', 'AdminController@updateUser');
     $router->post('admin/users/delete', 'AdminController@deleteUser');

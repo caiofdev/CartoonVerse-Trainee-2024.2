@@ -18,7 +18,6 @@
             <ul id="side-items">
                 <?php
                     session_start();
-                    $user = $_SESSION['id'];
                     $current_page = basename($_SERVER['REQUEST_URI']);
                 ?>
                 <li class="side-item <?php echo $current_page == 'dashboard' ? 'active' : ''; ?>">
@@ -56,14 +55,15 @@
                         </span>
                     </a>
                 </li>
-                <div id="user">
-                    <img src="<?$user['image']?>" id="user-avatar" alt="Avatar">
-                    <p id="info-user">
-                        <span class="item-description">
-                            <?php echo htmlspecialchars($user['name']); ?>
-                        </span>
-                    </p>
-                </div>
+            </ul>
+            <div id="user">
+                <img src="<?php echo htmlspecialchars($user['image']); ?>" id="user-avatar" alt="Avatar">
+                <p id="info-user">
+                    <span class="item-description">
+                        <?php echo htmlspecialchars($user['name']); ?>
+                    </span>
+                </p>
+            </div>
         </div>
     </nav>
     <script src="/public/js/sidebar.js"></script>
