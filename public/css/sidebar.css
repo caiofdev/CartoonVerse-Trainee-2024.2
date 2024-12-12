@@ -116,6 +116,7 @@ body {
 
 .side-item.active {
   background-color: var(--botoes);
+  color: #fff; /* Ensure text color changes */
 }
 
 .side-item.active a {

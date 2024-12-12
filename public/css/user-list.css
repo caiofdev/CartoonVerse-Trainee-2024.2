@@ -225,7 +225,7 @@ transform: scale(1.05);
 
 /* Estilo do botão ativo */
 .pagination .page-item.active .page-link {
-background-color: #007bff; /* cor do botão ativo */
+background-color: #13acb1; /* cor do botão ativo */
 color: #fff;
 border: none;
 }
