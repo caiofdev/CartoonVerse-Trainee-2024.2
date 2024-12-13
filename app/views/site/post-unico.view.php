@@ -15,14 +15,14 @@
     <div class ="principal">
         <div class="title">
             <h1>
-                <?php $post['titulo']; ?>
+                <?php $post->title; ?>
             </h1>
         </div>
         <div class="conteudo">
             <div class="autor">
-                <img src=<?= $author['image'] ?>  alt="Icone do perfil">
+                <img src=<?= $author->image ?>>
                 <p nome-autor><?= $post->author?> -</p>
-                <p class="data"><?=$post['created_at']?></p>
+                <p class="data"><?=$post->created_at?></p>
             </div>
             <div class="texto">
                 <p>
