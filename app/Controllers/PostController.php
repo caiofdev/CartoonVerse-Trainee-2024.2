@@ -135,14 +135,16 @@ class PostController
         // var_dump($id);
         // if (isset($_GET['id'])) {
         //     $postId = htmlspecialchars($_GET['id']);
-            
+        
         $id = $_GET['id'];
         if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
             header('Location: /site/post-list');
             return;
         }
         $post = App::get('database')->selectOne('posts', ['id' => $id]);
-        $author = App::get('database')->selectOne('users', ['id' => $post->author]);
+        var_dump($post);
+        $author = App::get('database')->selectOne('users', ['id' => $post["author"]]);
+        // var_dump($author);
         if (!$post) {
             header('Location: /post-list');
             return;
