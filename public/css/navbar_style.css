@@ -186,6 +186,8 @@ a {
     background: url(/public/assets/img/user2.png) no-repeat top center/cover;
 }
 .right-side-desktop #search:hover {
+    width: 32px;
+    height: 32px;
     background: url(/public/assets/img/Search.png) no-repeat top center/cover;
 }
 .home-side-desktop #home:hover{
