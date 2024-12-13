@@ -31,7 +31,8 @@ class PostController
             'content' => $_POST['content'],
             'image' => uploadImagePost($_FILES['image']),
             'created_at' => date('Y-m-d'),
-            'author' => $_SESSION['id'] // CHECK ME!!
+            'author' => "AUTOR-troque-me"
+            // 'author' => $_SESSION['id'] // CHECK ME!!
         ];
         // var_dump($parameters);
         App::get('database')->insert('posts', $parameters);
@@ -104,7 +105,8 @@ class PostController
         
         foreach ($posts as $post) {
             // troca o id pelo nome de cada um
-            $post->author = App::get('database')->selectOne('users', ['id' => $post->author])->name; 
+            $nome = App::get('database')->selectOne('users', ['id' => $post->author])['name']; 
+            $post->author = $nome;
         }
         
 
