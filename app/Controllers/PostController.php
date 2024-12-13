@@ -15,7 +15,7 @@ class PostController
         foreach ($posts as $post) {
 
             // troca o id pelo nome de cada um
-            $post->author = App::get('database')->selectOne('users', $post->author)->name; 
+            $post->author = App::get('database')->selectOne('users', ['id'=>$post->author])->name; 
             
         }
         return view('admin/post-list', compact('posts'));
@@ -129,25 +129,24 @@ class PostController
         }
     }
 
-    public function user_view_single_post($id){
-        var_dump($id);
+    public function user_view_single_post(){
+        // var_dump($id);
         // if (isset($_GET['id'])) {
         //     $postId = htmlspecialchars($_GET['id']);
             
-            if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
-                header('Location: /site/post-list');
-                return;
-            }
+        $id = $_GET['id'];
+        if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
+            header('Location: /site/post-list');
+            return;
+        }
+        $post = App::get('database')->selectOne('posts', ['id' => $id]);
+        $author = App::get('database')->selectOne('users', ['id' => $post->author]);
+        if (!$post) {
+            header('Location: /post-list');
+            return;
+        }
+        return view('site/post-unico', compact('post', 'author'));
 
-            $post = App::get('database')->selectOne('posts', ['id' => $id]);
-            $author = App::get('database')->selectOne('users', ['id' => $post->author]);
-            if (!$post) {
-                header('Location: /site/post-list');
-                return;
-            }
-            return view('site/post-unico', compact('post', 'author'));
-
-        // }
     }
 }
 

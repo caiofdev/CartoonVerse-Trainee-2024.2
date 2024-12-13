@@ -45,11 +45,9 @@ body {
 }
 
 .imagem_principal{
-    display: flex;
-    justify-content: center;
+    
     margin-top: 20px;
     max-width: 100%;
-    
 }
 .imagem_principal img {
     width: fit-content;
