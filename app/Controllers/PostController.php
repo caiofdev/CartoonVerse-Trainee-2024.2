@@ -142,7 +142,7 @@ class PostController
             return;
         }
         $post = App::get('database')->selectOne('posts', ['id' => $id]);
-        var_dump($post);
+        // var_dump($post);
         $author = App::get('database')->selectOne('users', ['id' => $post["author"]]);
         // var_dump($author);
         if (!$post) {
