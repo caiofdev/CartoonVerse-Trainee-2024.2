@@ -19,6 +19,8 @@ textarea {
   --font-size-buttons-create-post: 24px;
   --font-size-buttons-hover-create-post: 28px;
   --font-size-titulo-create-post: 26px;
+  --modal-content-width: 50%;
+  --modal-content-height: 80vh;
 }
 ::placeholder {
   text-align: center;
@@ -136,9 +138,9 @@ textarea {
   justify-content: center;
   width: 50%;
 } */
-#input-image {
+/* #input-image {
   display: none;
-}
+} */
 
 .input-group-create-post {
   display: flex;
@@ -148,7 +150,7 @@ textarea {
 }
 
 .input-group-create-post input, textarea {
-  width: 100%;
+  width: 90%;
   height: calc(var(--font-size-create-post) + 10px);
   border-radius: 10px;
   border: none;
@@ -176,7 +178,7 @@ textarea {
   cursor: default;
 }
 
-.input-group-create-post .input-titulo-create-post,.input-group-create-post .input-author-create-post {
+.input-group-create-post .input-titulo-create-post,.input-group-create-post .input-author-create-post, .input-image-create-post {
   width: 90%;
 }
 

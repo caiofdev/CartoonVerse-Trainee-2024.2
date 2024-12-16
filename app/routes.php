@@ -16,7 +16,7 @@ use App\Core\Router;
     // Exibe a dashboard
     $router->get('admin/dashboard', 'AdminController@dashboard');
     // Rota de envio - Logout
-    $router->post('logout', 'AdminController@logout');
+    $router->post('admin/logout', 'AdminController@logout');
     
     $router->get('admin/post-list', 'PostController@index');
     

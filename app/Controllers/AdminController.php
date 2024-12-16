@@ -100,7 +100,7 @@ class AdminController
 
         session_start();
         
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['user'])){
             header('Location: /admin/dashboard');
         }
 
@@ -119,7 +119,7 @@ class AdminController
 
         if($user != false){
             session_start();
-            $_SESSION['id'] = $user->id;
+            $_SESSION['user'] = $user;
             header('Location: /admin/dashboard');
         }
         else {

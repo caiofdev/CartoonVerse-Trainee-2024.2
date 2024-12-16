@@ -38,17 +38,19 @@
                     placeholder="Conteúdo"
                   ></textarea>
               </div>
-              <label for="input-image" class="label-imagem-create-post image" id="image" tabindex="0"
+              <!-- <label for="input-image" class="label-imagem-create-post image" id="image" tabindex="0"
               >
               </label
-              >
-              <input
-                type="file"
-                class="input-image-create-post input-image"
-                id="input-image"
-                name="image"
-                required
-              />
+              > -->
+              <div class="input-group-create-post">
+                <input
+                  type="file"
+                  class="input-image-create-post input-image"
+                  id="input-image"
+                  name="image"
+                  required
+                />
+              </div>
               <!-- <label for="autor">Autor</label> -->
               <div class="input-group-create-post">
                   <input
@@ -56,7 +58,7 @@
                     id="autor"
                     class="input-author-create-post"
                     name="author"
-                    value="<?php echo $_SESSION['id']; ?>"
+                    value="<?= $author ?>"
                     
                     placeholder="Autor" readonly
                   />
@@ -65,7 +67,7 @@
                 >Data de criação</label
               > -->
               <div class="input-group-create-post">
-                <input type="text" id="data-criacao-create-post" name="created_at" value="<?= date('Y-m-d')?>" readonly required />
+                <input type="text" id="data-criacao-create-post" name="created_at" value="<?= date('Y-m-d')?>" readonly />
               </div>
               <div class="botoes-create-post">
                 <button type="button" class="fechar-create-post" onclick="fecharModal('modalCriarPost')">Cancelar</button>

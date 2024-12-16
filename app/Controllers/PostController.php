@@ -14,25 +14,27 @@ class PostController
         $posts = App::get('database')->selectAll('posts');
         
         foreach ($posts as $post) {
-
             // troca o id pelo nome de cada um
-            $autor = App::get('database')->selectOne('users', ['id'=>$post->author])->name;
-            
+            $post->author = App::get('database')->selectOne('users', ['id'=>$post->author])->name;            
         }
-        return view('admin/post-list', compact('posts'));
+
+        $author = App::get('database')->selectOne('users', ['id'=>$_SESSION['user']->id])->name;
+
+
+        return view('admin/post-list', compact('posts', 'author'));
     }
     public function getCreate(){
         return view('admin/create-post');
     }
 
     public function create(){
-	//session_start();
+	session_start();
         $parameters = [
             'title' => $_POST['title'],
             'content' => $_POST['content'],
             'image' => uploadImagePost($_FILES['image']),
             'created_at' => date('Y-m-d'),
-            'author' => "AUTOR-troque-me"
+            'author' => $_SESSION['user']->id
             // 'author' => $_SESSION['id'] // CHECK ME!!
         ];
         // var_dump($parameters);
@@ -50,7 +52,7 @@ class PostController
             header('Location: /admin/post-list');
         }
 
-        $post = App::get('database')->selectOne('posts', $id); // ve se existe um post com esse id
+        $post = App::get('database')->selectOne('posts', ['id' => $id]); // ve se existe um post com esse id
         if (!$post) {
             header('Location: /admin/post-list');
             return;

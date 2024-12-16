@@ -1,3 +1,8 @@
+<?php
+  if(!isset($_SESSION['user'])){
+    header('Location: /login');
+  }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -52,7 +57,7 @@
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
           </svg> -->
-              <p><?= $autor ?></p>
+              <p><?= $post->author ?></p>
             </td>
             <td class="data"><p><?= $post->created_at ?></p></td>
             <td class="acoes">
@@ -101,8 +106,7 @@
           </tr>
 
 
-          <!-- Modal de Criar -->
-          <?php require __DIR__ . '/create-post.view.php' ?>
+          
           <!-- Modal de Visualizar -->
           <?php require __DIR__ . '/visualizar-post.view.php' ?>
           <!-- Modal de Editar -->
@@ -110,6 +114,8 @@
           <!-- Modal de Excluir -->
           <?php require __DIR__ . '/delete-post.view.php' ?>
           <?php endforeach; ?>
+          <!-- Modal de Criar -->
+          <?php require __DIR__ . '/create-post.view.php' ?>
         </table>
 
 

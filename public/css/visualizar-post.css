@@ -90,9 +90,9 @@
   object-fit: cover;
 }
 
-#input-image {
+/* #input-image {
   display: none;
-}
+} */
 
 #id {
   display: none;

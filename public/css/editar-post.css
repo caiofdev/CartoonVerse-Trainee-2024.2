@@ -87,9 +87,9 @@
   /* margin: 0 auto 20px; */
 }
 
-#input-image {
+/* #input-image {
   display: none;
-}
+} */
 
 .perfil-image {
   width: 100%;
@@ -110,7 +110,7 @@
 } */
 
 .input-group-editar-post input, textarea {
-  width: 100%;
+  width: 90%;
   height: calc(var(--font-size) + 10px);
   border-radius: 10px;
   border: none;

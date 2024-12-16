@@ -36,10 +36,15 @@
                 ><?=$post->content?></textarea>
               </div>
               <!-- Imagem do post -->
-                <label for="input-image" class="label-image-editar-post image" tabindex="0" id="image">
-                  <img src="<?=$post->image?>" id="imagemAtual" class="imagemAtual">
-                </label>
-                <input type="file" class="input-image-editar-post input-image" name="image" id="input-image" required>
+              <div class="input-group-editar-post">
+                <input
+                  type="file"
+                  class="input-image-editar-post input-image"
+                  id="input-image"
+                  name="image"
+                  value="<?=$post->image?>"
+                />
+              </div>
               <div class="input-group-editar-post">
                 <input type="text" placeholder="Autor" value="<?=$post->author?>" name="author" readonly/>
               </div>
