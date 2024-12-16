@@ -65,7 +65,7 @@ class QueryBuilder
 
     public function selectAll($table, $inicio = null, $rows_count = null)
     {
-        $sql = "SELECT * FROM {$table}";
+        $sql = "SELECT * FROM {$table} ORDER BY id DESC";
 
         if ($inicio >= 0 && $rows_count > 0) {
             $sql .= " LIMIT {$inicio}, {$rows_count}";

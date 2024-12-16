@@ -32,7 +32,7 @@ textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--cor-branca-mas-nem-tanto);
+  background-color: #B0C4C4;
 }
 
 .modal-create-post ::-webkit-scrollbar-thumb {

@@ -8,10 +8,48 @@ use Exception;
 class PostController
 {
 
+    // public function index()
+    // {
+    //     session_start();
+    //     $posts = App::get('database')->selectAll('posts');
+        
+    //     foreach ($posts as $post) {
+    //         // troca o id pelo nome de cada um
+    //         $post->author = App::get('database')->selectOne('users', ['id'=>$post->author])->name;            
+    //     }
+
+    //     $author = App::get('database')->selectOne('users', ['id'=>$_SESSION['user']->id])->name;
+
+
+    //     return view('admin/post-list', compact('posts', 'author'));
+    // }
+
     public function index()
     {
         session_start();
-        $posts = App::get('database')->selectAll('posts');
+
+        $page = 1;
+
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $page = intval($_GET['page']);
+
+            if($page <= 0){
+                return redirect('admin/post-list');
+            }
+        }
+
+        $itemsPage = 5;
+        $inicio = $itemsPage * $page - $itemsPage;
+
+        $rows_count = App::get('database')->countAll('posts');
+
+        if($inicio > $rows_count){
+            return redirect('admin/post-list');
+        }
+
+        $posts = App::get('database')->selectAll('posts', $inicio, $itemsPage);
+
+        $totalPages = ceil($rows_count / $itemsPage);
         
         foreach ($posts as $post) {
             // troca o id pelo nome de cada um
@@ -21,8 +59,12 @@ class PostController
         $author = App::get('database')->selectOne('users', ['id'=>$_SESSION['user']->id])->name;
 
 
-        return view('admin/post-list', compact('posts', 'author'));
+        return view('admin/post-list', compact('posts', 'author', 'page', 'totalPages'));
     }
+
+
+
+
     public function getCreate(){
         return view('admin/create-post');
     }
