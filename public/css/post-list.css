@@ -218,6 +218,7 @@ td {
   background-color: transparent; /* cor de fundo combinando com a página */
   border-radius: 10px;
   overflow-x: scroll;
+  font-family: open-sans;
   /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
