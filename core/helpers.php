@@ -20,6 +20,13 @@ function viewAdmin($name, $data = [])
     return require "app/views/admin/{$name}.view.php";
 }
 
+function viewSite($name, $data = [])
+{
+    extract($data);
+
+    return require "app/views/site/{$name}.view.php";
+}
+
 function redirect($path)
 {
     header("Location: /{$path}");

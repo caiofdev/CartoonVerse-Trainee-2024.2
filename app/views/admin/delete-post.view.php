@@ -13,7 +13,7 @@
         <h1>Tem certeza que deseja<br>excluir este post?</h1>
         <div class="botoes-delete-post">
           <button class="fechar-delete-post" type="button" onclick="fecharModal('modalDeletePost-<?= $post->id ?>')">Cancelar</button>
-          <form action="delete-post" method="POST" class="modal-form">
+          <form action="delete-post" method="post" class="modal-form">
             <button type="submit" name="id" class="excluir-delete-post" value="<?= $post->id ?>">Excluir</button>
           </form>
         </div>

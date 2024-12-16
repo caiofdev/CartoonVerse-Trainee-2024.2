@@ -44,6 +44,25 @@ class QueryBuilder
         }
     }
 
+    public function verificaLogin($email, $senha)
+    {
+        $sql = sprintf('SELECT * FROM users WHERE email = :email AND password = :password');
+        
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                'email' => $email,
+                'password' => $senha
+            ]);
+
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+            return $user;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function selectAll($table, $inicio = null, $rows_count = null)
     {
         $sql = "SELECT * FROM {$table}";
