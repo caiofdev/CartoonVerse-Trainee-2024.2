@@ -150,7 +150,7 @@ class PostController
         
         foreach ($posts as $post) {
             // troca o id pelo nome de cada um
-            $nome = App::get('database')->selectOne('users', ['id' => $post->author])['name']; 
+            $nome = App::get('database')->selectOne('users', ['id' => $post->author])->name; 
             $post->author = $nome;
         }
         

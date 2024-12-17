@@ -21,7 +21,7 @@
         <div class="conteudo">
             <div class="autor">
                 <img src=<?= $author->image ?>>
-                <p nome-autor><?= $post->author?> -</p>
+                <p nome-autor><?= $author->name?> -</p>
                 <p class="data"><?=$post->created_at?></p>
             </div>
             <div class="texto">

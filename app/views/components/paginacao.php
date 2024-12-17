@@ -1,4 +1,4 @@
-<nav aria-label="Page navigation example">
+<nav aria-label="Page navigation example" class='pagination'>
     <ul class="pagination">
 
         <li class="page-item <?= $page <= 1 ? 'disabled' : '' ?>">

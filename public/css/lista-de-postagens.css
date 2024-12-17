@@ -106,7 +106,8 @@ button {
 
 .posts-div {
     /* margin-top: 20px; */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    margin: auto 0;
 }
 .posts-div li {
     display: flex;
@@ -139,6 +140,72 @@ button {
     justify-content: center;
     font-size: 18px;
 }
+
+/* Estilo geral da paginação */
+.pagination {
+    width: 60%;
+    height: fit-content;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+    background-color: transparent; /* cor de fundo combinando com a página */
+    border-radius: 10px;
+    overflow-x: scroll;
+    font-family: open-sans;
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* Estilo dos itens de paginação */
+  .pagination .page-item {
+    margin: 0 5px;
+  }
+  
+  .pagination .page-link {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #000; /* cor do texto */
+    font-weight: bold;
+    background-color: #e8f0f0; /* cor de fundo dos botões */
+    border: 1px solid #a5b8b8; /* borda combinando com o design */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Estilo ao passar o mouse */
+  .pagination .page-link:hover {
+    background-color: #a5b8b8; /* cor ao passar o mouse */
+    color: #fff; /* cor do texto ao passar o mouse */
+    transform: scale(1.05);
+  }
+  
+  /* Estilo do botão ativo */
+  .pagination .page-item.active .page-link {
+    background-color: #007bff; /* cor do botão ativo */
+    color: #fff;
+    border: none;
+  }
+  
+  /* Estilo do botão desabilitado */
+  .pagination .page-item.disabled .page-link {
+    background-color: #d9d9d9;
+    color: #7a7a7a;
+    cursor: not-allowed;
+  }
+  
+  /* Margem extra para separação da tabela */
+  .pagination-container {
+    margin-top: 20px;
+  }
+  
+  .bi:hover {
+    cursor: pointer;
+  }
 
 .div-botao-pagina {
     margin-top: auto;
