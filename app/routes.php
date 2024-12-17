@@ -11,11 +11,6 @@ use App\Core\Router;
     $router->get('admin/posts', 'AdminController@adm_post_list');
     $router->get('admin/users', 'AdminController@adm_user_list');
     
-    $router->get('admin/users', 'AdminController@adm_user_list');
-    $router->get('admin/users', 'AdminController@adm_user_list');
-    $router->get('admin/users', 'AdminController@adm_user_list');
-    
-    
     $router->post('admin/users/create', 'AdminController@createUser');
     $router->post('admin/users/update', 'AdminController@updateUser');
     $router->post('admin/users/delete', 'AdminController@deleteUser');
@@ -33,7 +28,6 @@ use App\Core\Router;
     $router->get('', 'UserController@index'); //lp
     $router->get('post-list', 'PostController@index_user_post_list');
 
-    $router->get('post-list', 'PostController@index_user_post_list');
     $router->get('search-post', 'PostController@searchPost');
     
     $router->get('post/id={id}', 'PostController@user_view_single_post');

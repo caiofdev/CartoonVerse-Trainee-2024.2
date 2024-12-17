@@ -8,22 +8,6 @@ use Exception;
 class PostController
 {
 
-    // public function index()
-    // {
-    //     session_start();
-    //     $posts = App::get('database')->selectAll('posts');
-        
-    //     foreach ($posts as $post) {
-    //         // troca o id pelo nome de cada um
-    //         $post->author = App::get('database')->selectOne('users', ['id'=>$post->author])->name;            
-    //     }
-
-    //     $author = App::get('database')->selectOne('users', ['id'=>$_SESSION['user']->id])->name;
-
-
-    //     return view('admin/post-list', compact('posts', 'author'));
-    // }
-
     public function index()
     {
         session_start();

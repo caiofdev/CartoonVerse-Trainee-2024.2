@@ -18,7 +18,7 @@ class UserController
     {
         session_start();
         
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['user'])){
             header('Location: /admin/dashboard');
         }
 
@@ -33,7 +33,7 @@ class UserController
 
         if($user != false){
             session_start();
-            $_SESSION['id'] = $user->id;
+            $_SESSION['user'] = $user;
             header('Location: /admin/dashboard');
         }
         else {

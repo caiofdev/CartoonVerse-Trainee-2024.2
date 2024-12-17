@@ -9,6 +9,7 @@ class AdminController
 {
     public function index()
     {
+        session_start();
         return viewAdmin('dashboard-admin');
     }
 
@@ -28,7 +29,7 @@ class AdminController
 
             // troca o id pelo nome de cada um
             $author = App::get('database')->selectOne('users', ['id' => $post->author]);
-            $post->author = $author ? $author['name'] : 'Unknown';
+            $post->author = $author ? $author->name : 'Unknown';
             
         }
         return view('admin/post-list', compact('posts'));
