@@ -16,6 +16,7 @@ textarea {
 :root {
   --cor-branca-mas-nem-tanto: antiquewhite;
   --font-size-create-post: 20px;
+  --font-size-input-image-create-post: 18px;
   --font-size-buttons-create-post: 24px;
   --font-size-buttons-hover-create-post: 28px;
   --font-size-titulo-create-post: 26px;
