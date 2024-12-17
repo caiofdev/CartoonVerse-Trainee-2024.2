@@ -14,6 +14,7 @@
         <span class="close-visualizar-post" id="closeCriar" onclick="fecharModal('modalVisualizarPost-<?= $post->id ?>')"
           >&times;</span
         >
+        <h1>VISUALIZAR POST</h1>
         <div class="modal-body-visualizar-post">
           <!-- Dados do post -->
            <div class="modal-form">
@@ -22,7 +23,7 @@
                 <input type="text" placeholder="ID" value="<?=$post->id?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post" id="Título">
-                <input type="text" placeholder="Título" value="<?=$post->title?>" form="dados-user" readonly/>
+                <input type="text" placeholder="Título" class="input-titulo-visualizar-post" value="<?=$post->title?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post">
                 <textarea
@@ -34,14 +35,14 @@
                 ><?=$post->content?></textarea>
               </div>
               <!-- Imagem do post -->
-                <label for="dados-image" class="user-image-visualizar-post" tabindex="0" id="image">
+                <label for="dados-image" class="user-image-visualizar-post" tabindex="0" id="image-visualizar-post">
                   <img src="<?= ($post->image)?>" alt="Imagem de <?= ($post->title)?>">
                 </label>
               <div class="input-group-visualizar-post">
                 <input type="text" placeholder="Autor" value="<?= $post->author ?>" form="dados-user" readonly/>
               </div>
               <div class="input-group-visualizar-post">
-                <input type="text" placeholder="Data de Criação" form="dados-user" value="<?=$post->created_at?>" readonly/>
+                <input type="text" placeholder="Data de Criação" form="dados-user" value="<?=$post->created_at?>" id="data-criacao-visualizar-post" readonly/>
               </div>
               <div class="button-fechar-visualizar-post">
                 <button class="fechar-visualizar-post" onclick="fecharModal('modalVisualizarPost-<?= $post->id ?>')" form="dados-user" type="button">Fechar</button>

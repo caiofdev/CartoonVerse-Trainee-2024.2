@@ -26,7 +26,6 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: fit-content;
     margin: 20px;
 }
 .title{
@@ -42,17 +41,6 @@ body {
     font-size: 26px;
     font-weight: 400;
     font-family:'Inter';
-}
-
-.imagem_principal{
-    
-    margin-top: 20px;
-    max-width: 100%;
-}
-.imagem_principal img {
-    width: fit-content;
-    border-radius: 20px;
-    max-width: 100%;
 }
 
 .conteudo{
@@ -92,6 +80,16 @@ body {
     font-size: 24px;
     font-weight: 400;
     font-family: "Inter";
+}
+
+.imagem_principal{
+    margin-top: 20px;
+    max-width: 100%;
+}
+.imagem_principal img {
+    width: fit-content;
+    border-radius: 20px;
+    max-width: 100%;
 }
 
 @media (max-device-width: 768px) {

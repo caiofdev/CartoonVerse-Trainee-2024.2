@@ -40,15 +40,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-        <div class="div-botao-pagina">
-            <div class="first">&#171;</div>
-            <div class="prev">&lt;</div>
-            <div class="numero">
-                <div>1</div>
-            </div>
-            <div class="prox">&gt;</div>
-            <div class="last">&#187;</div>
-        </div>
+        <?php require __DIR__ . '/../components/paginacao.php' ?>
     </div>
     <script src="/public/js/post-list-pags.js"></script>
 <?php require("footer.html"); ?>  

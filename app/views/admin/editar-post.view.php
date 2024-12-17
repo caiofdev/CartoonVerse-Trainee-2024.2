@@ -14,6 +14,7 @@
         <span class="close-editar-post" id="closeCriar" onclick="fecharModal('modalEditarPost-<?= $post->id ?>')"
           >&times;</span
         >
+        <h1>EDITAR POST</h1>
         <div class="modal-body-editar-post">
           <!-- Dados do post -->
            <div class="modal-form">
@@ -23,7 +24,7 @@
                 name="id"/>
               </div>
               <div class="input-group-editar-post" id="Título">
-                <input type="text" placeholder="Título" value="<?=$post->title?>" 
+                <input type="text" placeholder="Título" class="input-titulo-editar-post" value="<?=$post->title?>" 
                 name="title" required/>
               </div>
               <div class="input-group-editar-post">
@@ -49,7 +50,7 @@
                 <input type="text" placeholder="Autor" value="<?=$post->author?>" name="author" readonly/>
               </div>
               <div class="input-group-editar-post">
-                <input type="date" name="created_at" placeholder="Data de Criação" value="<?=$post->created_at?>" id="data-criacao" readonly/>
+                <input type="text" name="created_at" placeholder="Data de Criação" value="<?=$post->created_at?>" id="data-criacao" readonly/>
               </div>
               <div class="button-editar-post">
                 <button class="fechar-editar-post" onclick="fecharModal('modalEditarPost-<?= $post->id ?>')" type="button">Fechar</button>

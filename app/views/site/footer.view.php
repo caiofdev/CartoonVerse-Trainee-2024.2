@@ -41,7 +41,7 @@
             <ul id="pilares">
                 PILARES
                 <li>
-                    <a href="#">
+                    <a href="/post-list">
                         Missão, 
                         Visão e 
                         Valores
