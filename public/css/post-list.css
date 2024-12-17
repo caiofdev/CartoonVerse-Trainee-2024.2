@@ -189,7 +189,7 @@ td {
 
 /* Estilo geral da paginação */
 .pagination {
-  width: 80%;
+  width: 100%;
   height: fit-content;
   justify-self: center;
   display: flex;
