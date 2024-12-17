@@ -185,7 +185,7 @@ a {
 }
 
 .right-side-desktop #profile:hover {
-    background: url(/public/assets/img/user2.png) no-repeat top center/cover;
+    background: url(/public/assets/Icons/user2.png) no-repeat top center/cover;
 }
 .right-side-desktop #search:hover {
     width: 32px;
