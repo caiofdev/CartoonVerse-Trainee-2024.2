@@ -55,14 +55,14 @@
         <nav class="navbar">
             <!-- Desktop version -> media rule -->
             <div class="home-side-desktop">
-                <a href="">
+                <a href="/">
                     <div id="home"></div>
                 </a>
                 <a href="post-list" id="posts">Posts</a>
             </div>
             
 
-            <a class='logo-link' href="">
+            <a class='logo-link' href="/">
                 <div class="logo"></div>
             </a>
             <div class="hamb-menu" onclick="toggleMenu()">
@@ -73,7 +73,7 @@
 
             <!-- Desktop version -> media rule -->
             <div class="right-side-desktop">
-                <a href="search-post">
+                <a href="/post-list">
                     <div id="search"></div>
                 </a>
                 <a href="login">
