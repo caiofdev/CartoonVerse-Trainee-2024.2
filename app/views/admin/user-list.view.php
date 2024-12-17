@@ -15,6 +15,9 @@
 <body>
     <div class="container">
     <div id="header">
+
+    <?php require __DIR__ . '/sidebar.view.php'; ?>
+
     <!-- Titulo -->
     <h1>LISTA DE USUARIOS</h1>
       <button id="usuario" onclick="abrirModal('modalCriar')">
@@ -28,18 +31,6 @@
 
   <div id="main">
      <!-- Tabela -->
-     <p class='error'>
-       <?php
-          session_start();
-          if(isset($_SESSION['erro-email'])) {
-              echo "<script>
-                      abrirModal('modalCriar');
-                      mostrarErroModal('modalCriar', 'Erro! " . $_SESSION['erro-email'] . "');
-                    </script>";
-          }
-          unset($_SESSION['erro-email']);
-       ?>
-     </p>
      <table>
       <tr>
         <th class="head id"><p>ID</p></th>

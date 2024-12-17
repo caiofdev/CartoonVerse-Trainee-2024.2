@@ -59,6 +59,7 @@ a {
     align-items: flex-end;
     text-align: left;
     transition: 0.3s ease;
+    z-index: 1000;
 }
 .off-screen-hamb-menu #quit-div {
     margin: 25px;

@@ -5,17 +5,6 @@
   font-family: sugar-bread, sans-serif;
 }
 
-/*
-Paleta
-000
-212627
-4a5759
-b0c4c4
-fff
-13acb1
-7e241e
-*/
-
 :root {
   --fundo: #b0c4c4;
   --textos: #000;
@@ -32,17 +21,19 @@ body {
   min-height: 100vh;
   background-color: #6c6c6c45;
 }
-/* Sidebar Fechada */
 
 #sidebar {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--fundo);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 82px;
   height: 100vh;
-  border-radius: 0px 14px 14px 0px;
-  position: relative;
+  background-color: var(--fundo);
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  z-index: 1000;
   transition: all 0.5s;
-  min-width: 82px;
 }
 
 #sidebar-content {
@@ -75,7 +66,7 @@ body {
   padding-top: 2px;
   color: #000;
   cursor: pointer;
-  display: none; /* Esconde o ícone por padrão */
+  display: none;
 }
 
 #open-btn-icon {
@@ -146,7 +137,6 @@ body {
   flex-direction: column;
 }
 
-/* Abrindo Sidebar */
 .open-sidebar #open-btn-icon {
   transform: rotate(180deg);
 }
@@ -162,9 +152,8 @@ body {
   white-space: normal;
 }
 
-/* Sidebar Aberta */
 #sidebar.open-sidebar {
-  min-width: 15%;
+  width: 250px;
 }
 
 #sidebar.open-sidebar .item-description {
@@ -206,5 +195,8 @@ body {
   }
   .open-btn {
     display: none;
+  }
+  #sidebar.open-sidebar {
+    width: 100%;
   }
 }

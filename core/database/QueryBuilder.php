@@ -1,6 +1,4 @@
 <?php
-namespace App\Core\database;
-
 namespace App\Core\Database;
 
 use App\Core\App;
@@ -80,6 +78,19 @@ class QueryBuilder
         }
     }
 
+    public function selectRecentPosts($table, $limit)
+    {
+        $sql = "SELECT * FROM {$table} ORDER BY created_at DESC LIMIT {$limit}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function countAll($table)
     {
         $sql = "SELECT COUNT(*) FROM {$table}";
@@ -144,6 +155,19 @@ class QueryBuilder
         }
     }
     
+    public function insert($table, $parameters){
+        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
+                         $table,
+                         implode(', ', array_keys($parameters)),
+                         ':' . implode(', :', array_keys($parameters))
+                        );
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
     public function update($table, $id, $parameters){
         $sql = sprintf('UPDATE %s SET %s WHERE id = %s', 
@@ -160,29 +184,84 @@ class QueryBuilder
         } catch (Exception $e) {
             die($e->getMessage());
         }
-        
-        // $sql = sprintf("UPDATE `posts` SET `id`= id,`title`='[value-2]',`content`='[value-3]',`image`='[value-4]',`created_at`='[value-5]',`author`='[value-6]' WHERE 1",
-        //                  $table,
-        //                  implode(', ', array_keys($parameters)),
-        //                  ':' . implode(', :', array_keys($parameters))
-        //                 );
-        // try {
-        //     $stmt = $this->pdo->prepare($sql);
-        //     $stmt->execute($parameters);
-        // } catch (Exception $e) {
-        //     die($e->getMessage());
-        // }
     }
 
-    public function delete($table, $id){
-        $sql = "DELETE FROM {$table} WHERE id = ?";
+    // Função para deletar um usuário
+    public function delete($table, $id)
+    {
+        try {
+
+            // Verificar se o usuário tem posts
+            if ($this->userHasPosts($id) > 0) {
+                // Deletar os posts do usuário
+                $this->deletePostsByUserId($id);
+            }
+
+            // Deletar o usuário
+            $sql = sprintf("DELETE FROM %s WHERE id = :id", $table);
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $this->resetAutoIncrement($table);
+        }
+        catch (Exception $e) {
+            echo "Erro ao deletar o usuário: " . $e->getMessage();
+        }
+    }
+
+    // Função para verificar se um usuário tem posts
+    public function userHasPosts($userId)
+    {
+        try {
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = :user_id");
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+        } catch (Exception $e) {
+            echo "Erro ao verificar se o usuário tem posts: " . $e->getMessage();
+            return 0;
+        }
+    }
+
+    // Função para deletar os posts de um usuário
+    public function deletePostsByUserId($userId)
+{
+    try {
+        $sql = "DELETE FROM posts WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (Exception $e) {
+        echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+    }
+}
+
+    public function resetAutoIncrement($table)
+    {
+        try {
+            $sql = "ALTER TABLE {$table} AUTO_INCREMENT = 1";
+            $this->pdo->exec($sql);
+        } catch (Exception $e) {
+            echo "Erro ao resetar o auto-increment: " . $e->getMessage();
+        }
+    }
+    
+    public function verificaLogin($email, $senha){
+        $sql = sprintf('SELECT * FROM users WHERE email = :email AND password = :password');
+
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(1, $id);
-            $stmt->execute();
+            $stmt->execute([
+                'email' => $email,
+                'password' => $senha
+            ]);
+
+            $user = $stmt->fetch(PDO::FETCH_OBJ); 
+
+            return $user;
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
-    
 }

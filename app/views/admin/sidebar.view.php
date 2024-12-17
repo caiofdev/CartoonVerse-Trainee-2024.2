@@ -16,49 +16,54 @@
                 <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
             <ul id="side-items">
-                <li class="side-item active">
-                    <a href="#">
+                <?php
+                    session_start();
+                    $current_page = basename($_SERVER['REQUEST_URI']);
+                ?>
+                <li class="side-item <?php echo $current_page == 'dashboard' ? 'active' : ''; ?>">
+                    <a href="/admin/dashboard">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Dashboard
                         </span>
                     </a>
                 </li>
-    
-                <li class="side-item">
-                    <a href="#">
+        
+                <li class="side-item <?php echo $current_page == 'posts' ? 'active' : ''; ?>">
+                    <a href="/admin/posts">
                         <i class="fa-solid fa-image"></i>
                         <span class="item-description">
                             Publicações
                         </span>
                     </a>
                 </li>
-    
-                <li class="side-item">
-                    <a href="#">
+        
+                <li class="side-item <?php echo $current_page == 'users' ? 'active' : ''; ?>">
+                    <a href="/admin/users">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Usuários
                         </span>
                     </a>
                 </li>
-
-                <li class="side-item">
-                    <a href="#">
+    
+                <li class="side-item <?php echo $current_page == 'logout' ? 'active' : ''; ?>">
+                    <a href="/logout">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="item-description">
                             Logout
                         </span>
                     </a>
                 </li>
-                <div id="user">
-                        <img src="/public/assets/img/chopp.jpg" id="user-avatar" alt="Avatar">
-                        <p id="info-user">
-                            <span class="item-description">
-                                Caio Webson Codinson
-                            </span>
-                        </p>
-                    </div>
+            </ul>
+            <div id="user">
+                <img src="<?php echo htmlspecialchars($user['image']); ?>" id="user-avatar" alt="Avatar">
+                <p id="info-user">
+                    <span class="item-description">
+                        <?php echo htmlspecialchars($user['name']); ?>
+                    </span>
+                </p>
+            </div>
         </div>
     </nav>
     <script src="/public/js/sidebar.js"></script>

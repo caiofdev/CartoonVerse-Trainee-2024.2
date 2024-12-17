@@ -8,7 +8,7 @@
         </li>
 
         <?php for($page_number = 1; $page_number <= $totalPages; $page_number++): ?>
-        <li class="page-item <?= $page_number == $currentPage ? 'active' : '' ?>">
+        <li class="page-item <?= $page_number == $page ? 'active' : '' ?>">
             <a class="page-link" href="?page=<?= $page_number ?>"><?= $page_number ?></a>
         </li>
         <?php endfor; ?> 

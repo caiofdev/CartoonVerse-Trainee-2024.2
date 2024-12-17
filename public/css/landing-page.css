@@ -173,6 +173,13 @@ body {
 }
 
 /* Carrossel */
+.carrossel-section{
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .carrossel-section h1 {
   font-family: comicartoon;
   font-size: 50px;
@@ -205,13 +212,12 @@ body {
 }
 
 .carousel-indicators {
-  position: relative;
+  position: absolute;
   bottom: 10px;
   left: 50%;
-  transform: translateX(-50%); /* Fica no meio da tela*/
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  padding-bottom: 100px;
   gap: 8px;
 }
 
@@ -220,7 +226,7 @@ body {
   height: 12px;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px rgba(1, 1, 1, 4); /* Sombra para destaque */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s ease;

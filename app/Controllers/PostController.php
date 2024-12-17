@@ -90,7 +90,7 @@ class PostController
     
     public function delete(){
         $id = $_POST['id'];
-        if (!is_numeric($id)) { // se nao for numerico pula fora pra evitar confusao
+        if (!is_numeric($id)) {
             header('Location: /admin/post-list');
         }
 
@@ -153,15 +153,13 @@ class PostController
             $nome = App::get('database')->selectOne('users', ['id' => $post->author])['name']; 
             $post->author = $nome;
         }
-        
 
         $totalPages = ceil($rows_count / $itemsPage);
 
         return view('site/post-list', compact('posts', 'page', 'totalPages'));
 
-
-        // return view('site/post-list', compact('posts'));
     }
+    
     public function searchPost() {
         if (isset($_GET['title'])) {   
             $title = htmlspecialchars($_GET['title']);

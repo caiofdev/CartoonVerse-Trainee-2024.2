@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --modal-content-width: 40vw;
+    --modal-content-height: 90vh;
+    --font-size: 24px;
+    --width-height-user-image: 168px;
+    --margin-top-first: 12%;
+    --flex-direction-buttons: row;
+    --font-size-buttons: 24px;
+    --margin-top-buttons: 16%;
+    --margin-bottom-buttons: 24px;
+    --margin-bottom-cancel: 24px;
+  }
+  
+  /* Estilos gerais do modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-excluir {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #B0C4C4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    gap: 30px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: var(--modal-content-width);
+    height: var(--modal-content-height);
+  }
+  
+  .modal-content-excluir {
+    background-color: #B0C4C4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    gap: 30px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30vw;
+    height: auto;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  
+  /* Botão de fechar (X) */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Imagem do usuário */
+  .user-image {
+    background-color: transparent;
+    width: var(--width-height-user-image);
+    height: var(--width-height-user-image);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+    margin: 0 auto 20px;
+  }
+  
+  #image {
+    overflow: hidden;
+    font-size: 100px;
+    align-items: center;
+    justify-content: center;
+    transition: background 300ms ease-in-out;
+  }
+  
+  #image img {
+    object-fit: contain;
+  }
+  
+  #input-image {
+    object-fit: contain;
+  }
+  
+  #image:hover {
+    background-color: #13ACB1;
+    color: white;
+  }
+  
+  .perfil-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  .user-image:hover {
+    cursor: pointer;
+  }
+  
+  /* Estilos dos campos de entrada */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+  
+  #first {
+    margin-top: var(--margin-top-first);
+  }
+  
+  .input-group input {
+    width: 100%;
+    height: var(--font-size);
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+    color: #000;
+    font-size: 26px;
+    padding-left: 30px;
+  }
+  
+  .input-group input[readonly] {
+    cursor: not-allowed;
+  }
+  
+  /* Botões de ação */
+  .modal-buttons {
+    display: flex;
+    flex-direction: var(--flex-direction-buttons);
+    height: fit-content;
+    justify-content: space-between;
+    /* margin-top: var(--margin-top-buttons); */
+    position: absolute;
+    bottom: 0%;
+    right: 30px;
+    left: 30px;
+  }
+  
+  .confirm, .cancel {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-family: sugar-bread;
+    font-size: var(--font-size-buttons);
+    box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
+    margin-bottom: var(--margin-bottom-buttons);
+  }
+  
+  .cancel {
+    margin-bottom: var(--margin-bottom-cancel);
+  }
+  
+  .cancel:hover {
+    background-color: #7E241E;
+  }
+  
+  .confirm:hover {
+    background-color: #13ACB1;
+  }
+  
+  .confirm:hover, .cancel:hover {
+    color: white;
+  }
+  
+  
+  .close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 4K */
+  @media (min-width:2560px) {
+    :root {
+      --modal-content-width: 40vw;
+      --modal-content-height: 72vh;
+      --font-size: 56px;
+      --width-height-user-image: 208px;
+      --font-size-buttons: 48px;
+    }
+  }
+  
+  /* MOBILE */
+  @media (max-width: 480px) {
+    :root {
+      --modal-content-width: 95vw;
+      --modal-content-height: 85vh;
+      --font-size: 20px;
+      --font-size-buttons: 18px;
+      --margin-top-first: 5%;
+      --flex-direction-buttons: column;
+      --margin-top-buttons: 15%;
+      --margin-bottom-buttons: 20px;
+      --margin-bottom-cancel: 20px;
+    }
+  }
+  
+  /* TABLET */
+  @media (min-width: 481px) and (max-width: 768px) {
+    :root {
+      --modal-content-width: 85vw;
+      --modal-content-height: 75vh;
+      --font-size: 22px;
+      --font-size-buttons: 20px;
+      --margin-top-first: 6%;
+      --flex-direction-buttons: column;
+      --margin-top-buttons: 18%;
+      --margin-bottom-buttons: 24px;
+      --margin-bottom-cancel: 0px;
+    }
+  }
+  
+  /* SMALL DESKTOP */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+      --modal-content-width: 80vw;
+      --modal-content-height: 75vh;
+      --font-size: 26px;
+      --font-size-buttons: 22px;
+      --margin-top-first: 7%;
+      --flex-direction-buttons: row;
+      --margin-top-buttons: 18%;
+      --margin-bottom-buttons: 24px;
+      --margin-bottom-cancel: 24px;
+    }
+  }
+  
+  /* LARGE DESKTOP */
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    :root {
+      --modal-content-width: 50vw;
+      --modal-content-height: 70vh;
+      --font-size: 32px;
+      --font-size-buttons: 28px;
+      --margin-top-first: 10%;
+      --flex-direction-buttons: row;
+      --margin-top-buttons: 16%;
+      --margin-bottom-buttons: 24px;
+      --margin-bottom-cancel: 24px;
+    }
+  }

@@ -9,7 +9,35 @@ class AdminController
 {
     public function index()
     {
+        return viewAdmin('dashboard-admin');
+    }
 
+    public function sidebar()
+    {
+        session_start();
+        $user = App::get('database')->selectOne('users', ['id' => $_SESSION['id']]);
+
+        return viewAdmin('sidebar', compact('user'));
+    }
+
+    public function adm_post_list()
+    {
+        $posts = App::get('database')->selectAll('posts');
+        
+        foreach ($posts as $post) {
+
+            // troca o id pelo nome de cada um
+            $author = App::get('database')->selectOne('users', ['id' => $post->author]);
+            $post->author = $author ? $author['name'] : 'Unknown';
+            
+        }
+        return view('admin/post-list', compact('posts'));
+    }
+    public function getCreate(){
+        return view('admin/create-post');
+    }
+
+    public function adm_user_list(){
         $page = 1;
 
         if(isset($_GET['page']) && !empty($_GET['page'])){
@@ -40,9 +68,8 @@ class AdminController
     public function createUser()
     {
         session_start();
-        $email = $_POST['email'];
 
-        $existe = App::get('database')->selectOne('users', ['email' => $email]);
+        $existe = App::get('database')->selectOne('users', ['email' => $_POST['email']]);
         
         if ($existe) {
             echo json_encode(['error' => 'Já existe um usuário com esse email.']);
@@ -56,19 +83,20 @@ class AdminController
             'image' => uploadImage($_FILES['image'], $_POST['email'])
         ];
 
-        App::get('database')->insert('users', $parameters);
-
         echo json_encode(['success' => true]);
+        
+        App::get('database')->insert('users', $parameters);
         exit();
     }
 
     public function updateUser(){
         session_start();
+        $id = $_POST['id'];
         $email = $_POST['email'];
         
         $existe = App::get('database')->selectOne('users', ['email' => $email]);
         
-        if ($existe) {
+        if ($existe && $existe['id'] != $id) {
             echo json_encode(['error' => 'Já existe um usuário com esse email.']);
             exit();
         }
@@ -82,9 +110,9 @@ class AdminController
             $parameters['image'] = uploadImage($_FILES['image'], $_POST['email']);
         }
 
-        App::get('database')->update('users', $_POST['id'], $parameters);
-
         echo json_encode(['success' => true]);
+        App::get('database')->update('users', $id, $parameters);
+
         exit();
     }
 
@@ -94,39 +122,6 @@ class AdminController
         App::get('database')->delete('users', $id);
 
         redirect('admin/users');
-    }
-
-    public function login(){
-
-        session_start();
-        
-        if(isset($_SESSION['user'])){
-            header('Location: /admin/dashboard');
-        }
-
-        return viewSite('login');
-    }
-
-    public function dashboard(){
-        return viewAdmin('dashboard-admin');
-    }
-
-    public function fazerLogin(){
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-
-        $user = APP::get('database')->verificaLogin($email, $senha);
-
-        if($user != false){
-            session_start();
-            $_SESSION['user'] = $user;
-            header('Location: /admin/dashboard');
-        }
-        else {
-            session_start();
-            $_SESSION['mensagem-erro'] = "Usuário não encontrado! Email e/ou senha incorretos!";
-            header('Location: /login');
-        }
     }
 
     public function logout(){
