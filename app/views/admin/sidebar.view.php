@@ -54,16 +54,16 @@
                         </span>
                     </a>
                 </li>
-            </ul>
-            <div id="user">
-                <img src="<?=$_SESSION['user']->image; ?>" id="user-avatar" alt="Avatar">
-                <p id="info-user">
-                    <span class="item-description">
-                        <?=$_SESSION['user']->name; ?>
-                    </span>
-                </p>
+                <div id="user">
+                    <img src="<?=$_SESSION['user']->image; ?>" id="user-avatar" alt="Avatar">
+                    <p id="info-user">
+                        <span class="item-description">
+                            <?=$_SESSION['user']->name; ?>
+                        </span>
+                    </p>
+                </div>
             </div>
-        </div>
+        </ul>
     </nav>
     <script src="/public/js/sidebar.js"></script>
 </body>

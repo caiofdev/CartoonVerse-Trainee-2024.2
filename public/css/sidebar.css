@@ -168,14 +168,11 @@ body {
 
 @media (min-width: 769px) and (max-width: 1440px) {
   #user {
-    padding-top: 40vh;
+    padding-top: 10vh;
   }
 }
 
 @media (max-width: 768px) {
-  #user {
-    padding-top: 35vh;
-  }
   #hamburguer {
     display: block;
     align-self: end;
@@ -191,12 +188,14 @@ body {
   }
   #sidebar-content {
     display: none;
-    padding: 20px;
   }
   .open-btn {
     display: none;
   }
   #sidebar.open-sidebar {
     width: 100%;
+  }
+  #user {
+    padding-top: 10vh;
   }
 }
