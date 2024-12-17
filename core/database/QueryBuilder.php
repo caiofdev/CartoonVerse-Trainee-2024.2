@@ -131,9 +131,14 @@ class QueryBuilder
         }
     }
 
-    public function getBySimilar($table, $column, $name){
+    public function getBySimilar($table, $column, $name, $inicio = null, $rows_count = null){
         // $sql = "select * from $table where $column like :name";
-        $sql = sprintf('SELECT * FROM %s WHERE %s LIKE ?', $table, $column);
+        $sql = sprintf('SELECT * FROM %s WHERE %s LIKE ? ORDER BY id DESC', $table, $column);
+
+        if ($inicio >= 0 && $rows_count > 0) {
+            $sql .= " LIMIT {$inicio}, {$rows_count}";
+        }
+
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(1, "%$name%");

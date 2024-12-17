@@ -163,16 +163,37 @@ class PostController
         // return view('site/post-list', compact('posts'));
     }
     public function searchPost() {
+        $page = 1;
+
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $page = intval($_GET['page']);
+
+            if($page <= 0){
+                return redirect('site/post-list');
+            }
+        }
+        $itemsPage = 6;
+        $inicio = $itemsPage * $page - $itemsPage;
+
+        $rows_count = App::get('database')->countAll('posts');
+
+        if($inicio > $rows_count){
+            return redirect('site/post-list');
+        }
+
         if (isset($_GET['title'])) {   
             $title = htmlspecialchars($_GET['title']);
-            $posts = App::get('database')->getBySimilar('posts', 'title', $title);
+            $posts = App::get('database')->getBySimilar('posts', 'title', $title, $inicio, $itemsPage);
             
             foreach ($posts as $post) {
                 // troca o id pelo nome de cada um
                 $post->author = App::get('database')->selectOne('users', ['id' => $post->author])->name; 
+                // var_dump($post);
             }
-            
-            return view('site/post-list',compact('posts'));
+
+            $totalPages = ceil($rows_count / $itemsPage);
+
+            return view('site/post-list',compact('posts', 'page', 'totalPages'));
         }
     }
 
