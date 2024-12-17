@@ -34,7 +34,7 @@
           <p>Gerenciar usuários</p>
         </button>
       </form>
-      <form action="logout" method="post">
+      <form action="/logout" method="post">
         <button type="submit" class="admin-link logout">
           <h2>Logout</h2>
           <p>Encerrar sessão</p>

@@ -22,6 +22,7 @@ use App\Core\Router;
     $router->get('admin/editar-post','PostController@getEdit');
     $router->post('admin/editar-post', 'PostController@edit');
 
+    $router->get('logout', 'AdminController@logout');
     $router->post('logout', 'AdminController@logout');
     
     //USER
