@@ -8,23 +8,26 @@
   --modal-content-width: 50%;
   --modal-content-height: 80vh;
   --font-size: 20px;
-  --font-size-buttons: 28px;
+  --font-size-titulo-editar-post: 26px;
+  --font-size-buttons-editar-post: 24px;
+  --font-size-buttons-hover-editar-post: 28px;
   --margin-top-buttons: 16%;
   --cor-branca-mas-nem-tanto: antiquewhite;
 }
 
-/* #modalEditarPost ::-webkit-scrollbar-track {
-  background-color: #b0c4c4;
-} */
+.modal-editar-post ::-webkit-scrollbar {
+  /* / height: 90%; / */
+  width: 6px;
+}
 
-/* ::-webkit-scrollbar {
-  / height: 90%; /
-} */
+.modal-editar-post ::-webkit-scrollbar-track {
+  background-color: #B0C4C4;
+}
 
-/* #modalEditarPost ::-webkit-scrollbar-thumb {
-   background: #3333331d; 
-  background-color: #595959;
-} */
+.modal-editar-post ::-webkit-scrollbar-thumb {
+  /* background: #3333331d;  */
+  background: #13ACB1;
+}
 
 /* Estilos gerais do modal */
 .modal-editar-post {
@@ -45,10 +48,10 @@
   flex-direction: column;
   position: relative;
   text-align: center;
-  gap: 30px;
+  gap: 0px;
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 10 0px 0px 10px;
   width: var(--modal-content-width);
   height: var(--modal-content-height);
   overflow-y: scroll;
@@ -126,6 +129,12 @@
   text-align: center;
 }
 
+.input-group-editar-post .input-titulo-editar-post {
+  margin-top: 0;
+  height: calc(var(--font-size-titulo-editar-post) + 20px);
+  font-size: var(--font-size-titulo-editar-post);
+}
+
 .input-group-editar-post textarea {
   height: 100vh;
   width: 90%;
@@ -163,7 +172,8 @@
 
 
 .fechar-editar-post, .confirmar-editar-post {
-  width: 40%;
+  width: 32%;
+  height: fit-content;
   background-color: var(--cor-branca-mas-nem-tanto);
   color: #000;
   border: none;
@@ -171,20 +181,27 @@
   border-radius: 40px;
   cursor: pointer;
   font-family: sugar-bread;
-  font-size: var(--font-size-buttons);
+  font-size: var(--font-size-buttons-editar-post);
   text-align: center;
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   margin-bottom: 24px;
+  transition: all 200ms ease-in-out;
 }
 
-.fechar-editar-post:hover {
+.fechar-editar-post {
   background-color: #7E241E;
   color: white;
 }
 
-.confirmar-editar-post:hover {
+.confirmar-editar-post {
   background-color: #13ACB1;
   color: white;
+}
+
+.fechar-editar-post:hover, .confirmar-editar-post:hover {
+  width: 40%;
+  font-size: var(--font-size-buttons-hover-create-post);
+  border: 2px solid #fff;
 }
 
 /* MOBILE */

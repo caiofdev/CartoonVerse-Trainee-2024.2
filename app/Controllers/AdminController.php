@@ -9,6 +9,7 @@ class AdminController
 {
     public function index()
     {
+        session_start();
 
         $page = 1;
 

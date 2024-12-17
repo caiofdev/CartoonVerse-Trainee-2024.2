@@ -30,7 +30,6 @@
      <!-- Tabela -->
      <p class='error'>
        <?php
-          session_start();
           if(isset($_SESSION['erro-email'])) {
               echo "<script>
                       abrirModal('modalCriar');
