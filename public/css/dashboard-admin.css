@@ -89,6 +89,10 @@ body {
 }
 
 @media (max-width: 1024px) and (min-width: 780px) {
+  .admin-link h2 {
+    font-size: 1.2rem;
+  }
+
   .admin-links {
     flex-direction: row;
     flex-wrap: wrap;
@@ -105,6 +109,10 @@ body {
   .hero-dashboard h1 {
     padding-top: 1px;
     font-size: 2rem;
+  }
+
+  .admin-link h2 {
+    font-size: 1.1rem;
   }
 
   .admin-links {
