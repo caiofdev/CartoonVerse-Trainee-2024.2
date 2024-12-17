@@ -159,20 +159,6 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
-    
-    public function insert($table, $parameters){
-        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
-                         $table,
-                         implode(', ', array_keys($parameters)),
-                         ':' . implode(', :', array_keys($parameters))
-                        );
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute($parameters);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
 
     public function update($table, $id, $parameters){
         $sql = sprintf('UPDATE %s SET %s WHERE id = %s', 
@@ -252,21 +238,5 @@ class QueryBuilder
         }
     }
     
-    public function verificaLogin($email, $senha){
-        $sql = sprintf('SELECT * FROM users WHERE email = :email AND password = :password');
 
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([
-                'email' => $email,
-                'password' => $senha
-            ]);
-
-            $user = $stmt->fetch(PDO::FETCH_OBJ); 
-
-            return $user;
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
 }
