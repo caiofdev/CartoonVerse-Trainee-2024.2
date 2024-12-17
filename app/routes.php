@@ -25,7 +25,7 @@ use App\Core\Router;
     $router->post('logout', 'AdminController@logout');
     
     //USER
-    $router->get('', 'UserController@index'); //lp
+    $router->get('', 'UserController@index'); //landing page
     $router->get('post-list', 'PostController@index_user_post_list');
 
     $router->get('search-post', 'PostController@searchPost');
@@ -34,4 +34,3 @@ use App\Core\Router;
     
     $router->get('login', 'UserController@login');
     $router->post('login', 'UserController@fazerLogin');
-?>
