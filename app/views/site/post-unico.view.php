@@ -15,22 +15,22 @@
     <div class ="principal">
         <div class="title">
             <h1>
-                <?= $post['title']; ?>
+                <?= $post->title; ?>
             </h1>
         </div>
         <div class="conteudo">
             <div class="autor">
-                <img src=<?= $author['image'] ?>>
-                <p nome-autor><?= $post['author']?> -</p>
-                <p class="data"><?=$post['created_at']?></p>
+                <img src=<?= $author->image ?>>
+                <p nome-autor><?= $post->author?> -</p>
+                <p class="data"><?=$post->created_at?></p>
             </div>
             <div class="texto">
                 <p>
-                    <?= $post['content'] ?>
+                    <?= $post->content ?>
                 </p>
             </div>  
             <div class="imagem_principal">
-                <img src="<?=$post['image'] ?>" alt="Imagem da publicação">
+                <img src="<?=$post->image ?>" alt="Imagem da publicação">
             </div>
         </div> 
     </div>

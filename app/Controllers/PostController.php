@@ -188,7 +188,7 @@ class PostController
         }
         $post = App::get('database')->selectOne('posts', ['id' => $id]);
         // var_dump($post);
-        $author = App::get('database')->selectOne('users', ['id' => $post["author"]]);
+        $author = App::get('database')->selectOne('users', ['id' => $post->author]);
         // var_dump($author);
         if (!$post) {
             header('Location: /post-list');
