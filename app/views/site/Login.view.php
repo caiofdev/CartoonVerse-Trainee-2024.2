@@ -51,6 +51,13 @@
           >
             Login
           </button>
+          <button
+            type="button"
+            class="voltar-button"
+            onclick="window.location.href='/'"
+          >
+            Voltar
+          </button>
         </form>
       </div>
       <img
