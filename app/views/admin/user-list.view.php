@@ -91,4 +91,5 @@
   </div>
 </body>
 <script src="/public/js/modais.js"></script>
+<script src="/public/js/erroModalUser.js"></script>
 </html>
