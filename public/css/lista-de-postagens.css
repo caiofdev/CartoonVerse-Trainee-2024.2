@@ -125,6 +125,9 @@ button {
     background: #4A5759;
     border-radius: var(--default-border-radius);
 }
+#post {
+    overflow: hidden;
+}
 .posts-div #post img {
     align-self: stretch;
     max-width: 100%;
