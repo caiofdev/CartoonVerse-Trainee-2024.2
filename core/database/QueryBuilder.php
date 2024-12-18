@@ -205,7 +205,7 @@ class QueryBuilder
     public function userHasPosts($userId)
     {
         try {
-            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = :user_id");
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM posts WHERE author = :user_id");
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();
             return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
@@ -217,16 +217,16 @@ class QueryBuilder
 
     // Função para deletar os posts de um usuário
     public function deletePostsByUserId($userId)
-{
-    try {
-        $sql = "DELETE FROM posts WHERE user_id = :user_id";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-    } catch (Exception $e) {
-        echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+    {
+        try {
+            $sql = "DELETE FROM posts WHERE author = :user_id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (Exception $e) {
+            echo "Erro ao deletar os posts do usuário: " . $e->getMessage();
+        }
     }
-}
 
     public function resetAutoIncrement($table)
     {

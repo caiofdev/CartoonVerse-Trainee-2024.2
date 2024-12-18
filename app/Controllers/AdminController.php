@@ -140,11 +140,16 @@ class AdminController
     }
 
     public function deleteUser(){
+        header('Content-Type: application/json');
         $id = $_POST['id'];
 
-        App::get('database')->delete('users', $id);
-
-        redirect('admin/users');
+        try {
+            App::get('database')->delete('users', $id);
+            echo json_encode(['success' => true]);
+        } catch (Exception $e) {
+            echo json_encode(['error' => 'Erro ao deletar usuário.']);
+        }
+        exit();
     }
 
     public function logout(){
