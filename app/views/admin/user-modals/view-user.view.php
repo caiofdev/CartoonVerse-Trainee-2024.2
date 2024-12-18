@@ -9,11 +9,11 @@
         <h1>VISUALIZAR USUARIO</h1>
         <div class="modal-body">
             <!-- Dados do Usuário -->
-            <div class="modal-form">
+            <div class="modal-form" id='parent'>
                 <form action="users/verify" method="GET" class="modal-form" id="dados-user" autocomplete="off">
                     <!-- Imagem do usuário -->
                     <label for="dados-image" class="user-image-view" tabindex="0" id="image-view">
-                        <img src="<?=($user->image)?>" alt="Imagem de <?=($user->name)?>" class="user-image-view">
+                        <img src="<?=($user->image)?>" alt=" " class="user-image-view" id="img-prev">
                     </label>
                     <div class="input-group" id="first">
                         <input type="text" placeholder="id" value="<?=($user->id)?>" form="dados-user" readonly/>
