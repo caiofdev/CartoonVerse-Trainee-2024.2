@@ -33,7 +33,7 @@
                                 <p id="autor-data">
                                     <br><?= $post->author . ' • ' . $post->created_at ?>
                                 </p>
-                                <img src=<?= '/public/assets/img/'.$post->image ?> alt="">
+                                <img src=<?= $post->image ?> alt="">
                             </div>
                         </a>
                     </li>
