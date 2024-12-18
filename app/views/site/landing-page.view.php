@@ -76,7 +76,7 @@
       />
     </map>
 
-    <section class="about-section">
+    <section class="about-section" id='mvv'>
       <h2>Bem-vindo ao CartoonVerse!</h2>
       <p class="about-text">
         Nosso objetivo é trazer a nostalgia dos desenhos animados clássicos para
