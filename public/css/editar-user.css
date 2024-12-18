@@ -88,10 +88,6 @@
     object-fit: contain;
   }
   
-  #input-image {
-    object-fit: contain;
-  }
-  
   #image:hover {
     background-color: #13ACB1;
     color: white;
@@ -121,8 +117,8 @@
   
   .input-group input {
     width: 90%;
-    height: calc(var(--font-size) + 10px);
-    padding: 0px 30px;
+    height: auto; /* Altura automática */
+    padding: 10px 16px;
     border-radius: 15px;
     border: none;
     background-color: var(--cor-branca-mas-nem-tanto);
@@ -130,6 +126,8 @@
     box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
     color: #000;
     font-size: var(--font-size);
+    line-height: 1.5; /* Melhora alinhamento vertical */
+    box-sizing: border-box;
   }
   
   .input-group input[readonly] {
@@ -142,9 +140,8 @@
     flex-direction: var(--flex-direction-buttons);
     height: fit-content;
     justify-content: space-between;
-    /* margin-top: var(--margin-top-buttons); */
-    /* position: absolute; */
-    bottom: 0%;
+    margin-top: auto;
+    margin-bottom: var(--margin-bottom-buttons);
     right: 30px;
     left: 30px;
   }
@@ -163,8 +160,22 @@
     box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
     margin-bottom: var(--margin-bottom-buttons);
     transition: all 200ms ease-in-out;
+    white-space: nowrap; /* Ensure text does not wrap */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
   }
   
+  @media (max-width: 480px) {
+    .confirm, .cancel {
+      font-size: 16px; /* Increase font size for mobile */
+      padding: 12px 24px; /* Increase padding for mobile */
+      width: 80%; /* Increase width for mobile */
+    }
+
+    .input-group input {
+      height: calc(var(--font-size) + 12px); /* Adjust height for mobile */
+    }
+  }
 
   .confirm {
     background-color: #13ACB1;
@@ -204,15 +215,19 @@
   /* MOBILE */
   @media (max-width: 480px) {
     :root {
-      --modal-content-width: 95vw;
+      --modal-content-width: 95vw; /* Further increase width for mobile */
       --modal-content-height: 85vh;
-      --font-size: 20px;
-      --font-size-buttons: 18px;
+      --font-size: 18px;
+      --font-size-buttons: 16px;
       --margin-top-first: 5%;
       --flex-direction-buttons: column;
-      --margin-top-buttons: 15%;
+      --margin-top-buttons: 10%;
       --margin-bottom-buttons: 20px;
       --margin-bottom-cancel: 20px;
+    }
+
+    .input-group input {
+      height: calc(var(--font-size) + 14px); /* Further adjust height for mobile */
     }
   }
   
@@ -221,13 +236,24 @@
     :root {
       --modal-content-width: 85vw;
       --modal-content-height: 75vh;
-      --font-size: 22px;
-      --font-size-buttons: 20px;
+      --font-size: 20px;
+      --font-size-buttons: 18px;
       --margin-top-first: 6%;
       --flex-direction-buttons: column;
-      --margin-top-buttons: 18%;
+      --margin-top-buttons: 12%;
       --margin-bottom-buttons: 24px;
       --margin-bottom-cancel: 0px;
+    }
+
+    .input-group input {
+      padding: 10px 16px;
+      border-radius: 15px;
+      font-size: 10px;
+      line-height: 1.5; /* Melhora alinhamento vertical */
+    }
+
+    input-image {
+      width: 500px;
     }
   }
   
@@ -236,13 +262,17 @@
     :root {
       --modal-content-width: 80vw;
       --modal-content-height: 75vh;
-      --font-size: 26px;
-      --font-size-buttons: 22px;
+      --font-size: 24px;
+      --font-size-buttons: 20px;
       --margin-top-first: 7%;
       --flex-direction-buttons: row;
-      --margin-top-buttons: 18%;
+      --margin-top-buttons: 14%;
       --margin-bottom-buttons: 24px;
       --margin-bottom-cancel: 24px;
+    }
+
+    .input-group input {
+      height: calc(var(--font-size) + 12px); /* Adjust height for small desktops */
     }
   }
   
@@ -251,12 +281,16 @@
     :root {
       --modal-content-width: 50vw;
       --modal-content-height: 70vh;
-      --font-size: 32px;
-      --font-size-buttons: 28px;
+      --font-size: 28px;
+      --font-size-buttons: 24px;
       --margin-top-first: 10%;
       --flex-direction-buttons: row;
       --margin-top-buttons: 16%;
       --margin-bottom-buttons: 24px;
       --margin-bottom-cancel: 24px;
+    }
+
+    .input-group input {
+      height: calc(var(--font-size) + 12px); /* Adjust height for large desktops */
     }
   }
