@@ -165,7 +165,6 @@ a {
     height: 50px;
     background: url(/public/assets/img/logo1.png) no-repeat local center/cover;
     margin: 0 auto;
-    margin-left: 62px;
 }
 
 .right-side-desktop {
@@ -230,6 +229,7 @@ a {
     .logo {
         width: 85px;
         height: 85px;
+        margin-left: 62px;
         display: flex;
         justify-content: center;
     }
