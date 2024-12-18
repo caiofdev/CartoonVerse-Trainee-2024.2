@@ -6,8 +6,10 @@
   
   :root {
     --modal-content-width: 40vw;
-    --modal-content-height: 90vh;
-    --font-size: 24px;
+    --modal-content-height: 70vh;
+    --font-size: 20px;
+    --font-size-buttons-user: 24px;
+    --font-size-buttons-hover-user: 28px;
     --width-height-user-image: 168px;
     --margin-top-first: 12%;
     --flex-direction-buttons: row;
@@ -15,6 +17,7 @@
     --margin-top-buttons: 16%;
     --margin-bottom-buttons: 24px;
     --margin-bottom-cancel: 24px;
+    --modal-content-height-criar-editar: 68vh;
   }
   
   /* Estilos gerais do modal */
@@ -30,50 +33,25 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
   
-  .modal-excluir {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 200px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
+  .modal-content-editar, .modal-content-criar {
     background-color: #B0C4C4;
     display: flex;
     flex-direction: column;
     position: relative;
     text-align: center;
-    gap: 30px;
+    gap: 0px;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
     width: var(--modal-content-width);
-    height: var(--modal-content-height);
+    height: var(--modal-content-height-criar-editar);
   }
   
-  .modal-content-excluir {
-    background-color: #B0C4C4;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: center;
-    gap: 30px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30vw;
-    height: auto;
-  }
   
   .modal-body {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 0px;
   }
   
   /* Botão de fechar (X) */
@@ -125,10 +103,6 @@
     object-fit: contain;
   }
   
-  input[type="file"] {
-    display: none;
-  }
-  
   .user-image:hover {
     cursor: pointer;
   }
@@ -138,6 +112,7 @@
     display: flex;
     flex-direction: column;
     margin: 40px 0;
+    align-items: center;
   }
   
   #first {
@@ -145,17 +120,16 @@
   }
   
   .input-group input {
-    width: 100%;
-    height: var(--font-size);
-    padding: 10px;
+    width: 90%;
+    height: calc(var(--font-size) + 10px);
+    padding: 0px 30px;
     border-radius: 15px;
     border: none;
-    background-color: transparent;
+    background-color: var(--cor-branca-mas-nem-tanto);
     outline: none;
     box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
     color: #000;
-    font-size: 26px;
-    padding-left: 30px;
+    font-size: var(--font-size);
   }
   
   .input-group input[readonly] {
@@ -169,13 +143,15 @@
     height: fit-content;
     justify-content: space-between;
     /* margin-top: var(--margin-top-buttons); */
-    position: absolute;
+    /* position: absolute; */
     bottom: 0%;
     right: 30px;
     left: 30px;
   }
   
   .confirm, .cancel {
+    width: 32%;
+    height: fit-content;
     background-color: transparent;
     color: #000;
     border: none;
@@ -183,25 +159,28 @@
     border-radius: 40px;
     cursor: pointer;
     font-family: sugar-bread;
-    font-size: var(--font-size-buttons);
+    font-size: var(--font-size-buttons-user);
     box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
     margin-bottom: var(--margin-bottom-buttons);
+    transition: all 200ms ease-in-out;
+  }
+  
+
+  .confirm {
+    background-color: #13ACB1;
+    color: white;
   }
   
   .cancel {
+    background-color: #7E241E;
+    color: white;
     margin-bottom: var(--margin-bottom-cancel);
   }
   
-  .cancel:hover {
-    background-color: #7E241E;
-  }
-  
-  .confirm:hover {
-    background-color: #13ACB1;
-  }
-  
   .confirm:hover, .cancel:hover {
-    color: white;
+    width: 40%;
+    border: 2px solid white;
+    font-size: var(--font-size-buttons-hover-user);
   }
   
   

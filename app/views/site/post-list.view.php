@@ -11,7 +11,7 @@
 00..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <title>CartoonVerse</title>
 </head>
-<?php require("navbar.html"); ?>
+<?php require("navbar.view.php"); ?>
 <body>
     <div class="general-container">
         
@@ -43,6 +43,6 @@
         <?php require __DIR__ . '/../components/paginacao.php' ?>
     </div>
     <script src="/public/js/post-list-pags.js"></script>
-<?php require("footer.html"); ?>  
+<?php require("footer.view.php"); ?>  
 </body>
 </html>

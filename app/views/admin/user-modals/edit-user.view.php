@@ -4,30 +4,32 @@
 </head>
 
 <div id="modalEditar-<?=$user->id?>" class="modal hidden">
-      <div class="modal-content">
+      <div class="modal-content-editar">
         <span class="close" id="closeEditar" onclick="fecharModal('modalEditar-<?=$user->id?>')"
           >&times;</span
         >
+        <h1>EDITAR USUARIO</h1>
         <div class="modal-body">
             <div class="modal-form">
                 <form action="/admin/users/update" 
                 method="POST" 
                 enctype="multipart/form-data" 
                 id="modalEditar-<?=$user->id?>" 
-                data-modal-id="modalEditar-<?=$user->id?>">
+                data-modal-id="modalEditar-<?=$user->id?>"
+                autocomplete="off"
+                >
                 
                     <input type="hidden" name="id" value="<?=$user->id?>">
                     
                     <!-- Imagem do usuário -->
                     <div class="form-group">
-                        <label for="image-<?=$user->id?>" class="user-image-view">
-                            <img src="<?=$user->image?>" alt="Imagem de <?=$user->name?>" class="preview-image">
-                        </label>
-                        <input type="file" 
-                               id="image-<?=$user->id?>" 
-                               name="image" 
-                               accept="image/png,image/jpeg,image/jpg" 
-                               class="input-image">
+                        <div class="input-group">
+                            <input type="file" 
+                                id="image-<?=$user->id?>" 
+                                name="image" 
+                                accept="image/png,image/jpeg,image/jpg" 
+                                class="input-image">
+                        </div>
                     </div>
 
                     <div class="input-group">

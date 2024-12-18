@@ -1,6 +1,7 @@
 <div id="modalCriar" class="modal">
-    <div class="modal-content">
+    <div class="modal-content-criar">
         <span class="close" onclick="fecharModal('modalCriar')">&times;</span>
+        <h1>CRIAR USUARIO</h1>
         <div class="modal-body">
             <div class="modal-form">
                 <!-- Fix: Add proper action path and enctype -->
@@ -8,20 +9,17 @@
                       method="POST" 
                       enctype="multipart/form-data" 
                       id="modalCriar" 
-                      data-modal-id="modalCriar">
+                      data-modal-id="modalCriar"
+                      autocomplete="off">
                     
                     <!-- Imagem do usuário -->
-                    <div class="form-group">
-                        <label for="input-image" class="user-image">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                            </svg>
-                        </label>
-
+                    <div class="input-group">
                         <input type="file" 
                                id="input-image" 
                                name="image" 
-                               class="input-image" >
+                               class="input-image"
+                               required 
+                               >
                     </div>
 
                     <div class="input-group">

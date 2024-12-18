@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,1
 00..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<?php require("navbar.html"); ?>
+<?php require("navbar.view.php"); ?>
 <body>
     <div class ="principal">
         <div class="title">
@@ -34,6 +34,6 @@
             </div>
         </div> 
     </div>
-<?php require("footer.html"); ?>  
+<?php require("footer.view.php"); ?>  
 </body>
 </html>

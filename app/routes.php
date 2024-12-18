@@ -31,7 +31,7 @@ use App\Core\Router;
 
     $router->get('search-post', 'PostController@searchPost');
     
-    $router->get('post/id={id}', 'PostController@user_view_single_post');
+    $router->get('post', 'PostController@user_view_single_post');
     
     $router->get('login', 'UserController@login');
     $router->post('login', 'UserController@fazerLogin');

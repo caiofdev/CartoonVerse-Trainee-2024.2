@@ -164,6 +164,7 @@ a {
     height: 50px;
     background: url(/public/assets/img/logo1.png) no-repeat local center/cover;
     margin: 0 auto;
+    margin-left: 62px;
 }
 
 .right-side-desktop {
@@ -184,7 +185,7 @@ a {
 }
 
 .right-side-desktop #profile:hover {
-    background: url(/public/assets/img/user2.png) no-repeat top center/cover;
+    background: url(/public/assets/Icons/user2.png) no-repeat top center/cover;
 }
 .right-side-desktop #search:hover {
     width: 32px;
@@ -196,6 +197,11 @@ a {
 }
 .home-side-desktop #posts:hover{
     color: black;
+}
+.right-side-desktop #search:hover  {
+    background: url(/public/assets/img/Search.png) no-repeat top center/cover;
+    width: 28px;
+    height: 28px;
 }
 /* 
 .phone-right-side #search:hover {

@@ -189,7 +189,7 @@ td {
 
 /* Estilo geral da paginação */
 .pagination {
-  width: 60%;
+  width: 100%;
   height: fit-content;
   justify-self: center;
   display: flex;
@@ -198,10 +198,9 @@ td {
   list-style: none;
   padding: 10px;
   margin: 0;
-  justify-content: start;
+  justify-content: center;
   background-color: transparent; /* cor de fundo combinando com a página */
   border-radius: 10px;
-  overflow-x: scroll;
   font-family: open-sans;
   /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
 }
@@ -279,7 +278,7 @@ td {
     --font-size-header: 24px;
     --font-size-novo: 14px;
     --font-size-novo-bi: 20px;
-    --margin-top-main: 10%;
+    --margin-top-main: 4%;
     --font-size-table-th: 14px;
     --font-size-table: 12px;
     --margin-left-id-p: 4%;
@@ -303,13 +302,72 @@ td {
     padding-left: 5px;
     padding-right: 5px;
   }
-  .paginacao {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8%;
-  }
   .container {
     width: 100%;
     margin-left: 0;
+  }
+  .pagination {
+    width: 80%;
+    /* overflow-x: scroll; */
+    /* justify-content: start; */
+  }
+}
+
+@media (max-width: 433px) {
+  :root {
+    --font-size-header: 20px;
+    --font-size-novo: 10px;
+    --font-size-novo-bi: 16px;
+    --margin-top-main: 5%;
+    --font-size-table-th: 16px;
+    --font-size-table: 12px;
+    --margin-right-id-p: 10px;
+    --font-size-acoes-bi: 14px;
+    --margin-right-paginacao: 3%;
+    --font-size-paginacao-bi: 20px;
+  }
+
+  #header {
+    flex-direction: column;
+
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --font-size-header: 18px;
+    --font-size-novo: 8px;
+    --font-size-novo-bi: 14px;
+    --margin-top-main: 6%;
+    --font-size-table-th: 14px;
+    --font-size-table: 10px;
+    --margin-right-id-p: 8px;
+    --font-size-acoes-bi: 12px;
+    --margin-right-paginacao: 4%;
+    --font-size-paginacao-bi: 18px;
+  }
+
+  #header {
+    flex-direction: row;
+    align-items: center;
+    padding: 4%;
+  }
+  
+  #novo {
+    align-self: center;
+    margin-top: 0;
+  }
+
+  table {
+    font-size: var(--font-size-table);
+  }
+
+  th, td {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  #hamburguer {
+    top: 2%;
   }
 }
