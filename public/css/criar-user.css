@@ -5,9 +5,12 @@
   }
   
   :root {
+    --cor-branca-mas-nem-tanto: antiquewhite;
     --modal-content-width: 40vw;
     --modal-content-height: 90vh;
-    --font-size: 40px;
+    --font-size: 20px;
+    --font-size-buttons-user: 24px;
+    --font-size-buttons-hover-user: 28px;
     --width-height-user-image: 168px;
     --margin-top-first: 12%;
     --flex-direction-buttons: row;
@@ -27,7 +30,7 @@
     top: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(11, 11, 11, 0.762);
   }
   
   .modal-content {
@@ -91,10 +94,6 @@
     object-fit: cover;
   }
   
-  input[type="file"] {
-    display: none;
-  }
-  
   .user-image:hover {
     cursor: pointer;
   }
@@ -106,22 +105,17 @@
     margin: 40px 0;
   }
   
-  #first {
-    margin-top: var(--margin-top-first);
-  }
-  
   .input-group input {
     width: 100%;
-    height: var(--font-size);
-    padding: 10px;
+    height: calc(var(--font-size) + 10px);
+    padding: 0px 30px;
     border-radius: 20px;
     border: none;
-    background-color: transparent;
+    background-color: var(--cor-branca-mas-nem-tanto);
     outline: none;
     box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
     color: #000;
     font-size: var(--font-size);
-    padding-left: 30px;
   }
   
   .input-group input[readonly] {
@@ -142,6 +136,8 @@
   }
   
   .confirm, .cancel {
+    width: 32%;
+    height: fit-content;
     background-color: transparent;
     color: #000;
     border: none;
@@ -149,25 +145,28 @@
     border-radius: 40px;
     cursor: pointer;
     font-family: sugar-bread;
-    font-size: var(--font-size-buttons);
+    font-size: var(--font-size-buttons-user);
     box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
     margin-bottom: var(--margin-bottom-buttons);
+    transition: all 200ms ease-in-out;
+  }
+  
+
+  .confirm {
+    background-color: #13ACB1;
+    color: white;
   }
   
   .cancel {
+    background-color: #7E241E;
+    color: white;
     margin-bottom: var(--margin-bottom-cancel);
   }
   
-  .cancel:hover {
-    background-color: #7E241E;
-  }
-  
-  .confirm:hover {
-    background-color: #13ACB1;
-  }
-  
   .confirm:hover, .cancel:hover {
-    color: white;
+    width: 40%;
+    border: 2px solid white;
+    font-size: var(--font-size-buttons-hover-user);
   }
   
   

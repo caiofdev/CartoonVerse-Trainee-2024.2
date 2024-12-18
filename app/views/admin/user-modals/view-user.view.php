@@ -6,16 +6,15 @@
 <div id="modalVisualizar-<?=$user->id ?? '1'?>" class="modal">
     <div class="modal-content">
         <span class="close" id="closeCriar" onclick="fecharModal('modalVisualizar-<?=$user->id?>')">&times;</span>
+        <h1>VISUALIZAR USUARIO</h1>
         <div class="modal-body">
             <!-- Dados do Usuário -->
             <div class="modal-form">
-                <form action="users/verify" method="GET" class="modal-form" id="dados-user">
-                  
+                <form action="users/verify" method="GET" class="modal-form" id="dados-user" autocomplete="off">
                     <!-- Imagem do usuário -->
                     <label for="dados-image" class="user-image-view" tabindex="0" id="image-view">
-                        <img src="<?=($user->image)?>" alt="Imagem de <?=($user->name)?>">
+                        <img src="<?=($user->image)?>" alt="Imagem de <?=($user->name)?>" class="user-image-view">
                     </label>
-                    <input type="file" accept="image/png,image/jpeg" class="input-image-view" form="dados-user" name="input-image" id="input-image" readonly>
                     <div class="input-group" id="first">
                         <input type="text" placeholder="id" value="<?=($user->id)?>" form="dados-user" readonly/>
                     </div>

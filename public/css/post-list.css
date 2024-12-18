@@ -201,7 +201,6 @@ td {
   justify-content: center;
   background-color: transparent; /* cor de fundo combinando com a página */
   border-radius: 10px;
-  overflow-x: scroll;
   font-family: open-sans;
   /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
 }
@@ -273,13 +272,13 @@ td {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 100px) {
   :root {
     --overflow-main: scroll;
     --font-size-header: 24px;
     --font-size-novo: 14px;
     --font-size-novo-bi: 20px;
-    --margin-top-main: 10%;
+    --margin-top-main: 4%;
     --font-size-table-th: 14px;
     --font-size-table: 12px;
     --margin-left-id-p: 4%;
@@ -303,13 +302,13 @@ td {
     padding-left: 5px;
     padding-right: 5px;
   }
-  .paginacao {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8%;
-  }
   .container {
     width: 100%;
     margin-left: 0;
+  }
+  .pagination {
+    width: 80%;
+    /* overflow-x: scroll; */
+    /* justify-content: start; */
   }
 }

@@ -18,7 +18,7 @@
       <div id="header">
 
       <?php require __DIR__ . '/sidebar.view.php' ?>
-
+      <div></div>
         <!-- Titulo -->
         <h1>LISTA DE POSTS</h1>
         <button id="novo" onclick="abrirModal('modalCriarPost')">

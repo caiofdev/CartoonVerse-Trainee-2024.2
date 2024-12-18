@@ -65,7 +65,7 @@ class PostController
         ];
         // var_dump($parameters);
         App::get('database')->insert('posts', $parameters);
-        header('Location: /admin/post-list');
+        header('Location: /admin/posts');
     }
 
     public function getDelete(){
@@ -75,16 +75,16 @@ class PostController
     public function delete(){
         $id = $_POST['id'];
         if (!is_numeric($id)) {
-            header('Location: /admin/post-list');
+            header('Location: /admin/posts');
         }
 
         $post = App::get('database')->selectOne('posts', ['id' => $id]); // ve se existe um post com esse id
         if (!$post) {
-            header('Location: /admin/post-list');
+            header('Location: /admin/posts');
             return;
         }        
         App::get('database')->delete('posts', $id);
-        header('Location: /admin/post-list');
+        header('Location: /admin/posts');
     }
     public function getEdit(){
         return view('admin/editar-post');
@@ -103,7 +103,7 @@ class PostController
 
         App::get('database')->update('posts', $id, $parameters);
 
-        header('Location: /admin/post-list');
+        header('Location: /admin/posts');
         
     }
 
