@@ -25,6 +25,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <input type="file" 
+                                value="<?=$user->image?>"
                                 id="image-<?=$user->id?>" 
                                 name="image" 
                                 accept="image/png,image/jpeg,image/jpg" 

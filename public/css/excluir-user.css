@@ -52,7 +52,7 @@
 
   .modal .modal-content-excluir p {
     font-family: open-sans;
-    font-size: 20px;
+    font-size: var(--font-size);
     color: #7e241e;
   }
   
@@ -129,9 +129,19 @@
     :root {
       --modal-content-width: 95vw;
       --modal-content-height: 85vh;
-      --font-size: 20px;
+      --font-size: 16px;
+      --font-size-buttons-excluir-user: 24px;
+      --font-size-buttons-hover-excluir-user: 28px;
       --font-size-buttons: 18px;
       --margin-top-buttons: 15%;
+    }
+
+    .btn-cancelar .btn-confirmar {
+      width: 50%;
+    }
+    
+    .btn-cancelar:hover, .btn-confirmar:hover {
+      width: 38%;
     }
   }
   
