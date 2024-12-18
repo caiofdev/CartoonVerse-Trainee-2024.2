@@ -356,14 +356,13 @@ td {
   }
 
   #header {
-    flex-direction: row;
-    align-items: center;
-    padding: 4%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2%;
   }
   
   #novo {
-    align-self: center;
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   table {

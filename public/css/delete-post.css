@@ -129,3 +129,21 @@ button {
     width: 80%;
   }
 }
+
+@media (max-width: 767px) {
+  .botoes-delete-post {
+    flex-direction: column;
+  }
+
+  .botoes-delete-post .excluir-delete-post, .botoes-delete-post .fechar-delete-post {
+    width: 72%;
+  }
+
+  .botoes-delete-post .excluir-delete-post {
+    margin-top: 20px;
+  }
+
+  .botoes-delete-post .excluir-delete-post:hover, .botoes-delete-post .fechar-delete-post:hover {
+    width: 80%;
+  }
+}
