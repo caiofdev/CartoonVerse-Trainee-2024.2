@@ -117,12 +117,12 @@
   display: flex;
   height: fit-content;
   justify-content: center;
-  position: relative;
-  margin-top: auto;
-  margin-bottom: 24px;
+  position: absolute;
+  bottom: 0%;
   left: 30px;
   right: 30px;
 }
+
 
 .fechar {
   width: 60%;
@@ -139,9 +139,6 @@
   box-shadow: 0px 4px 8px rgba(11, 11, 11, 0.762);
   margin-bottom: 24px;
   transition: all 200ms ease-in-out;
-  white-space: nowrap; /* Ensure text does not wrap */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
 }
 
 .fechar:hover {
