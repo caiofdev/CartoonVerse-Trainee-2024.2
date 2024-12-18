@@ -124,12 +124,17 @@ button {
     gap: 10px;
     background: #4A5759;
     border-radius: var(--default-border-radius);
+
 }
 #post {
-    overflow: hidden;
+    height: 37vh;
+    width: 5vh;
+    /* overflow: hidden; */
 }
 .posts-div #post img {
     align-self: stretch;
+    margin: auto;
+    overflow: hidden;
     max-width: 100%;
     max-height: 100%;
     border-radius: var(--default-border-radius);
