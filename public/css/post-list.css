@@ -272,7 +272,7 @@ td {
   }
 }
 
-@media (max-width: 768px) and (min-width: 100px) {
+@media (max-width: 768px) {
   :root {
     --overflow-main: scroll;
     --font-size-header: 24px;
@@ -310,5 +310,64 @@ td {
     width: 80%;
     /* overflow-x: scroll; */
     /* justify-content: start; */
+  }
+}
+
+@media (max-width: 433px) {
+  :root {
+    --font-size-header: 20px;
+    --font-size-novo: 10px;
+    --font-size-novo-bi: 16px;
+    --margin-top-main: 5%;
+    --font-size-table-th: 16px;
+    --font-size-table: 12px;
+    --margin-right-id-p: 10px;
+    --font-size-acoes-bi: 14px;
+    --margin-right-paginacao: 3%;
+    --font-size-paginacao-bi: 20px;
+  }
+
+  #header {
+    flex-direction: column;
+
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --font-size-header: 18px;
+    --font-size-novo: 8px;
+    --font-size-novo-bi: 14px;
+    --margin-top-main: 6%;
+    --font-size-table-th: 14px;
+    --font-size-table: 10px;
+    --margin-right-id-p: 8px;
+    --font-size-acoes-bi: 12px;
+    --margin-right-paginacao: 4%;
+    --font-size-paginacao-bi: 18px;
+  }
+
+  #header {
+    flex-direction: row;
+    align-items: center;
+    padding: 4%;
+  }
+  
+  #novo {
+    align-self: center;
+    margin-top: 0;
+  }
+
+  table {
+    font-size: var(--font-size-table);
+  }
+
+  th, td {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  #hamburguer {
+    top: 2%;
   }
 }
