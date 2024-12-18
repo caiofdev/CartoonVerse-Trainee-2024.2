@@ -297,19 +297,19 @@ input[type="file"] {
 }
 
 @media (max-width: 950px) {
-  .close-create-post {
+  /* .close-create-post {
     position: absolute;
     top: 5%;
     right: 5%;
-    /* border-radius: 50%; */
+    / border-radius: 50%; /
     height: 1px;
   }
   #formulario {
     width: 90%;
     height: 80vh;
     justify-content: space-evenly;
-    /* height: 90vh; */
-    gap: 15px;
+    / height: 90vh; /
+    gap: 0px;
   }
   #data-criacao {
     width: 50%;
@@ -317,5 +317,40 @@ input[type="file"] {
   }
   .botoes-create-post {
     justify-content: center;
+  } */
+  :root {
+    --modal-content-width: 90vw;
+    --modal-content-height: 90vh;
+    --font-size: 20px;
+    --font-size-titulo-create-post: 24px;
+    --font-size-buttons-create-post: 18px;
+    --font-size-buttons-hover-create-post: 22px;
+  }
+  .general-container-create-post {
+    width: 90vw;
+    height: 90vh;
+  }
+  .general-container-create-post h1 {
+    font-size: 24px;
+  }
+  .input-group-create-post input {
+    padding-left: 0px;
+  }
+  .input-group-create-post #data-criacao-create-post {
+    width: 50vw;
+    font-size: 24px;
+  }
+
+  .botoes-create-post {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fechar-create-post, .criar-create-post {
+    width: 72%;
+  }
+
+  .fechar-create-post:hover, .criar-create-post:hover {
+    width: 80%;
   }
 }
