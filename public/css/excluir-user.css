@@ -109,7 +109,7 @@
   
   .btn-confirmar:hover, .btn-cancelar:hover {
     font-size: var(--font-size-buttons-hover-excluir-user);
-    width: 46%;
+    width: 48%;
     border: 2px solid #fff;
   }  
   /* MOBILE */
@@ -130,10 +130,15 @@
       --modal-content-width: 95vw;
       --modal-content-height: 85vh;
       --font-size: 16px;
-      --font-size-buttons-excluir-user: 24px;
-      --font-size-buttons-hover-excluir-user: 28px;
+      --font-size-buttons-excluir-user: 20px;
+      --font-size-buttons-hover-excluir-user: 24px;
       --font-size-buttons: 18px;
       --margin-top-buttons: 15%;
+    }
+
+    .modal .modal-content-excluir {
+      margin-left: 5vw;
+      margin-right: 5vw;
     }
 
     .btn-cancelar .btn-confirmar {
