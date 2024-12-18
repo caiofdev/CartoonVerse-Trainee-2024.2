@@ -6,7 +6,7 @@
 }
 
 :root {
-  --fundo: #b0c4c4;
+  --fundo: #45afafe4;
   --textos: #000;
   --slogan: #fff;
   --destaque: #13acb1;
@@ -180,7 +180,6 @@ body {
     margin-bottom: 0;
   }
   #sidebar {
-    background-color: transparent;
     position: fixed;
     right: 0;
     top: 0;
