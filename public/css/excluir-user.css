@@ -112,17 +112,21 @@
     width: 48%;
     border: 2px solid #fff;
   }  
-  /* MOBILE */
-  @media (max-width: 768px) {
+  /* MOBILE
+  @media (max-width: 768px) and (min-height: 481px){
     #modalExcluir .modal-content {
       width: 260px;
     }
     .btn-cancelar,
     .btn-confirmar {
-      font-size: 12px;
+      font-size: 22px;
       margin: 3px;
     }
-  }
+
+    .btn-cancelar:hover, .btn-confirmar:hover {
+      font-size: 26px;
+    }
+  } */
 
   /* MOBILE */
   @media (max-width: 480px) {
@@ -130,34 +134,54 @@
       --modal-content-width: 95vw;
       --modal-content-height: 85vh;
       --font-size: 16px;
-      --font-size-buttons-excluir-user: 20px;
-      --font-size-buttons-hover-excluir-user: 24px;
+      --font-size-buttons-excluir-user: 10px;
+      --font-size-buttons-hover-excluir-user: 14px;
       --font-size-buttons: 18px;
       --margin-top-buttons: 15%;
     }
 
     .modal .modal-content-excluir {
+      width: 260px;
       margin-left: 5vw;
       margin-right: 5vw;
+      justify-self: center;
     }
 
-    .btn-cancelar .btn-confirmar {
-      width: 50%;
+    .modal .modal-footer {
+      flex-direction: column;
+    }
+
+    .btn-cancelar, .btn-confirmar {
+      width: 72%;
+    }
+
+    .btn-confirmar {
+      margin-top: 20px;
     }
     
     .btn-cancelar:hover, .btn-confirmar:hover {
-      width: 38%;
+      width: 80%;
     }
   }
   
   /* TABLET */
   @media (min-width: 481px) and (max-width: 768px) {
     :root {
-      --modal-content-width: 90vw;
-      --modal-content-height: 80vh;
-      --font-size: 0px;
+      --modal-content-width: 95vw;
+      --modal-content-height: 85vh;
+      --font-size: 16px;
+      --font-size-buttons-excluir-user: 24px;
+      --font-size-buttons-hover-excluir-user: 28px;
       --font-size-buttons: 20px;
       --margin-top-buttons: 20%;
+    }
+
+    .btn-cancelar .btn-confirmar {
+      width: 38%;
+    }
+    
+    .btn-cancelar:hover, .btn-confirmar:hover {
+      width: 50%;
     }
   }
   
