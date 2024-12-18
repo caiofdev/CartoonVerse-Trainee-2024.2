@@ -20,18 +20,18 @@
         </div>
         <div class="conteudo">
             <div class="autor">
-                <img src=<?= $author->image ?>>
-                <p nome-autor><?= $author->name?> -</p>
-                <p class="data"><?=$post->created_at?></p>
+                <img src=<?=$author->image?>>
+                <p class="nome-autor"><?=$author->name?></p>
             </div>
+            <p class="data"><?=$post->created_at?></p>
             <div class="texto">
                 <p>
                     <?= $post->content ?>
                 </p>
+                <div class="imagem_principal">
+                    <img src="<?=$post->image ?>" alt="Imagem da publicação">
+                </div>
             </div>  
-            <div class="imagem_principal">
-                <img src="<?=$post->image ?>" alt="Imagem da publicação">
-            </div>
         </div> 
     </div>
 <?php require("footer.view.php"); ?>  
