@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Modal de Criar -->
-    <div id="modalEditarPost-<?= $post->id ?>" class="modal-editar-post">
+    <div id="modalEditarPost-<?= $post->id ?>" class="modal-editar-post modal">
       <div class="modal-content-editar-post">
         <span class="close-editar-post" id="closeCriar" onclick="fecharModal('modalEditarPost-<?= $post->id ?>')"
           >&times;</span

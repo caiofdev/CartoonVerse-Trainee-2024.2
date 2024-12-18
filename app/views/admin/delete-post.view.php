@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/public/css/delete-post.css" />
   </head>
   <body>
-    <div id="modalDeletePost-<?= $post->id ?>" class="modal-delete-post">
+    <div id="modalDeletePost-<?= $post->id ?>" class="modal-delete-post modal">
       <div class="modal-content-delete-post">
         <a class="close-delete-post" onclick="fecharModal('modalDeletePost-<?= $post->id ?>')">&times;</a>
         <h1>Tem certeza que deseja<br>excluir este post?</h1>

@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Modal de Visualizar -->
-    <div id="modalVisualizarPost-<?= $post->id ?>" class="modal-visualizar-post">
+    <div id="modalVisualizarPost-<?= $post->id ?>" class="modal-visualizar-post modal">
       <div class="modal-content-visualizar-post">
         <span class="close-visualizar-post" id="closeCriar" onclick="fecharModal('modalVisualizarPost-<?= $post->id ?>')"
           >&times;</span

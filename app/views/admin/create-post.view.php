@@ -7,7 +7,7 @@
     <title>CartoonVerse</title>
   </head>
   <body>
-    <div id="modalCriarPost" class="modal-create-post">
+    <div id="modalCriarPost" class="modal-create-post modal">
       <div class="general-container-create-post">
         <a
           class="close-create-post"
