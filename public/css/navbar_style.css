@@ -17,6 +17,7 @@ a {
 }
 
 .navbar {
+    width: 100vw;
     display: flex;
     padding: 4px 10px 7px 10px;
     justify-content: space-between;
