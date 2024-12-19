@@ -167,13 +167,14 @@
   
   @media (max-width: 480px) {
     .confirm, .cancel {
-      font-size: 16px; /* Increase font size for mobile */
+      font-size: 12px; /* Diminuir a fonte para 12px */
       padding: 12px 24px; /* Increase padding for mobile */
-      width: 80%; /* Increase width for mobile */
+      width: 45%; /* Diminuir a largura dos botões para 45% */
     }
 
     .input-group input {
       height: calc(var(--font-size) + 12px); /* Adjust height for mobile */
+      font-size: 12px; /* Diminuir a fonte para 12px */
     }
   }
 
@@ -245,10 +246,15 @@
       --margin-bottom-cancel: 0px;
     }
 
+    .confirm, .cancel {
+      width: 45%; /* Diminuir a largura dos botões para 45% */
+      font-size: 14px; /* Diminuir a fonte para 14px */
+    }
+
     .input-group input {
       padding: 10px 16px;
       border-radius: 15px;
-      font-size: 10px;
+      font-size: 14px; /* Diminuir a fonte para 14px */
       line-height: 1.5; /* Melhora alinhamento vertical */
     }
 
@@ -271,8 +277,14 @@
       --margin-bottom-cancel: 24px;
     }
 
+    .confirm, .cancel {
+      width: 45%; /* Diminuir a largura dos botões para 45% */
+      font-size: 16px; /* Diminuir a fonte para 16px */
+    }
+
     .input-group input {
       height: calc(var(--font-size) + 12px); /* Adjust height for small desktops */
+      font-size: 16px; /* Diminuir a fonte para 16px */
     }
   }
   
@@ -290,7 +302,13 @@
       --margin-bottom-cancel: 24px;
     }
 
+    .confirm, .cancel {
+      width: 45%; /* Diminuir a largura dos botões para 45% */
+      font-size: 18px; /* Diminuir a fonte para 18px */
+    }
+
     .input-group input {
       height: calc(var(--font-size) + 12px); /* Adjust height for large desktops */
+      font-size: 18px; /* Diminuir a fonte para 18px */
     }
   }
